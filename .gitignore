@@ -1,2 +1,5 @@
 /.idea
 /var/
+/index.php
+/media/
+/app/etc/local.xml
