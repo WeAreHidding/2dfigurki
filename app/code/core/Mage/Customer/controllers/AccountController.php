@@ -272,6 +272,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
      */
     public function createPostAction()
     {
+        var_dump(124); die();
         $errUrl = $this->_getUrl('*/*/create', array('_secure' => true));
 
         if (!$this->_validateFormKey()) {

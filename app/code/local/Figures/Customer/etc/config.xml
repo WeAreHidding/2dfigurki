@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Figures_Customer>
+            <version>0.1.0</version>
+        </Figures_Customer>
+    </modules>
+
+    <frontend>
+        <routers>
+            <customer>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <Figures_Customer before="Mage_Customer">Figures_Customer</Figures_Customer>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+</config>
