@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Figures_Routing>
+            <version>0.1.0</version>
+        </Figures_Routing>
+    </modules>
+    <global>
+        <helpers>
+            <figures_routing>
+                <class>Figures_Routing_Helper</class>
+            </figures_routing>
+        </helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <figures_routing>
+                        <class>Figures_Routing_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </figures_routing>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <figures_routing>
+                <use>standard</use>
+                <args>
+                    <frontName>figures_routing</frontName>
+                    <module>Figures_Routing</module>
+                </args>
+            </figures_routing>
+        </routers>
+    </frontend>
+</config>

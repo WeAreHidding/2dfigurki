@@ -41,9 +41,6 @@
 </div>
 
 <header id="header" class="page-header">
-    <?php if(Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
-    <p>tetste</p>
-    <?php endif; ?>
     <div class="page-header-container">
         <a class="logo" href="<?php echo $this->getUrl('') ?>">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
@@ -68,6 +65,13 @@
             </a>
 
             <div class="account-cart-wrapper">
+                <?php if (Mage::getSingleton('customer/session')->isLoggedIn() && (Mage::getSingleton('customer/session')->getCustomerGroupId() == 20)) : ?>
+                    <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+                        <span class="icon"></span>
+                        <span class="label"><?php echo $this->__('Add an artwork'); ?></span>
+                    </a>
+                <?php endif; ?>
+
                 <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
                     <span class="icon"></span>
                     <span class="label"><?php echo $this->__('Account'); ?></span>

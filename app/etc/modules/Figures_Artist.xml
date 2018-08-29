@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Figures_Artist>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Figures_Artist>
+    </modules>
+</config>
