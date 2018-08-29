@@ -40,10 +40,9 @@ class Figures_Routing_Controller_Router extends Mage_Core_Controller_Varien_Rout
     public function checkPartnerUrl($request, $pathInfoInLowercase)
     {
         if (preg_match('/new-artwork.html/', $pathInfoInLowercase, $matches)) {
-            $request->setModuleName('sitemap_html')
-                ->setControllerName('index')
-                ->setActionName('universeSitemap')
-                ->setParam('universe_id', $unId);
+            $request->setModuleName('figures_artist')
+                ->setControllerName('workshop')
+                ->setActionName('index');
 
             return true;
         }

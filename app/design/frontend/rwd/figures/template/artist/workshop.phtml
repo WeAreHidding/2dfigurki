@@ -1,0 +1,49 @@
+<!--Form Tittle-->
+<div class="page-title">
+    <h2><?php echo $this->__('Add an new artwork') ?></h2>
+</div>
+<!--Form Information-->
+<form id="person-form-validate" method="post" action="/figures_artist/workshop/save">
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="artist_name">
+                    <div class="field artist_name">
+                        <label class="required" for="artist_name"><em>*</em><?php echo $this->__('Nickname')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="" name="artist_name" id="artist_name">
+                        </div>
+                    </div>
+                    <div class="field char_name">
+                        <label for="char_name"><em>*</em><?php echo $this->__('Character name')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text" maxlength="255" title="Character name" value="" name="char_name" id="char_name">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="gender">
+                    <div class="field description">
+                        <label class="required" for="description"><em>*</em><?php echo $this->__('Description')?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="description" value="" name="description" id="description">
+                        </div>
+                    </div>
+                    <div class="field ws_image">
+                        <label for="ws_image"><?php echo $this->__('Browse') ?></label>
+                        <div class="input-box">
+                            <input id="ws_image" name="ws_image" type="file"/>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--Button & Link-->
+    <div class="buttons-set">
+        <p class="required">* <?php echo $this->__('Required Fields')?></p>
+        <p class="back-link"><a class="back-link" href="<?php echo $this->getBaseUrl();?>"><small>&laquo;</small>Back</a></p>
+        <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
+    </div>
+</form>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <figures_artist_workshop_index>
+        <reference name="content">
+            <block type="page/html"
+                   name="workshop_form"
+                   template="artist/workshop.phtml" />
+        </reference>
+    </figures_artist_workshop_index>
+</layout>

@@ -66,7 +66,7 @@
 
             <div class="account-cart-wrapper">
                 <?php if (Mage::getSingleton('customer/session')->isLoggedIn() && (Mage::getSingleton('customer/session')->getCustomerGroupId() == 20)) : ?>
-                    <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+                    <a href="" onclick="location='<?php echo Mage::getBaseUrl() ?>new-artwork.html'" class="skip-link skip-account">
                         <span class="icon"></span>
                         <span class="label"><?php echo $this->__('Add an artwork'); ?></span>
                     </a>

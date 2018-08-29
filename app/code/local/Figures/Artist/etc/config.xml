@@ -42,6 +42,24 @@
             </figures_artist_setup>
         </resources>
     </global>
+    <frontend>
+        <routers>
+            <figures_artist>
+                <use>standard</use>
+                <args>
+                    <module>Figures_Artist</module>
+                    <frontName>figures_artist</frontName>
+                </args>
+            </figures_artist>
+        </routers>
+        <layout>
+            <updates>
+                <figures_artist>
+                    <file>figures_artist.xml</file>
+                </figures_artist>
+            </updates>
+        </layout>
+    </frontend>
     <adminhtml>
         <menu>
             <figures_artist module="figures_artist">
