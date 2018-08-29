@@ -42,4 +42,37 @@
             </figures_artist_setup>
         </resources>
     </global>
+    <adminhtml>
+        <menu>
+            <figures_artist module="figures_artist">
+                <title>Artist</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <workshop module="figures_artist">
+                        <title>Workshop</title>
+                        <sort_order>1</sort_order>
+                        <action>adminhtml/artist_workshop</action>
+                    </workshop>
+                </children>
+            </figures_artist>
+        </menu>
+        <layout>
+            <updates>
+                <figures_artist>
+                    <file>figures/artist.xml</file>
+                </figures_artist>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Figures_Artist before="Mage_Adminhtml">Figures_Artist_Adminhtml</Figures_Artist>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>
