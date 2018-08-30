@@ -30,7 +30,7 @@ class Figures_Artist_WorkshopController extends Mage_Core_Controller_Front_Actio
                     ->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
                 $uploader->setAllowRenameFiles(true);
                 $uploader->setFilesDispersion(true);
-                $path = Mage::getBaseDir('media') . DS . 'media/workshop/user_images/' . $customerId . '/';
+                $path = Mage::getBaseDir('media') . DS . 'workshop/user_images/' . $customerId . '/';
                 if (!is_dir($path)) {
                     mkdir($path, 0777, true);
                 }
@@ -38,7 +38,7 @@ class Figures_Artist_WorkshopController extends Mage_Core_Controller_Front_Actio
                 $filename = $uploader->getUploadedFileName();
                 $model->setData('image_path', $filename);
             } catch (Exception $e) {
-                var_dump($e); die();
+//                var_dump($e); die();
             }
         }
 

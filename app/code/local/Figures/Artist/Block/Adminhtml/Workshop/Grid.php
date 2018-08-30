@@ -89,7 +89,8 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
         $this->addColumn('image_path', array(
             'header'    => Mage::helper('catalog')->__('image_path'),
             'width'     => 100,
-            'index'     => 'image_path'
+            'index'     => 'image_path',
+            'renderer'  => 'Figures_Artist_Block_Adminhtml_Workshop_Renderer'
         ));
 
 
