@@ -1,3 +1,6 @@
+<?php
+/** $this Figures_Artist_Block_Workshop */
+?>
 <!--Form Tittle-->
 <div class="page-title">
     <h2><?php echo $this->__('Add an new artwork') ?></h2>
@@ -11,7 +14,7 @@
                     <div class="field artist_name">
                         <label class="required" for="artist_name"><em>*</em><?php echo $this->__('Nickname')?></label>
                         <div class="input-box">
-                            <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="" name="artist_name" id="artist_name">
+                            <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $this->getArtistNickname() ?>" name="artist_name" id="artist_name">
                         </div>
                     </div>
                     <div class="field char_name">
@@ -23,12 +26,19 @@
                 </div>
             </li>
             <li class="fields">
-                <div class="gender">
+                <div class="additional_data">
                     <div class="field description">
                         <label class="required" for="description"><em>*</em><?php echo $this->__('Description')?></label>
                         <div class="input-box">
                             <input type="text" class="input-text required-entry" maxlength="255" title="description" value="" name="description" id="description">
                         </div>
+                    </div>
+                    <div class="field tags">
+                        <label for="tags"><?php echo $this->__('Tags (Press Enter to submit)')?></label>
+                        <ul id="submittedTags"></ul>
+
+                            <input type="hidden" class="input-text" maxlength="255" title="description" value="" name="tags" id="tags">
+
                     </div>
                     <div class="field ws_image">
                         <label for="ws_image"><?php echo $this->__('Browse') ?></label>
@@ -47,3 +57,10 @@
         <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
     </div>
 </form>
+
+<script type="text/javascript">
+    jQuery('#submittedTags').tagit({
+        singleField: true,
+        singleFieldNode: jQuery('#tags')
+    });
+</script>

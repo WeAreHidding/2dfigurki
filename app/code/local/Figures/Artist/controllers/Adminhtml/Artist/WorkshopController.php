@@ -5,7 +5,15 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function indexAction()
     {
         $this->loadLayout();
-        $this->getLayout()->getBlock('workshop_grid');
         $this->renderLayout();
+    }
+
+    public function gridAction()
+    {
+
+        $this->loadLayout();
+        $this->getResponse()->setBody(
+            $this->getLayout()->createBlock('figures_artist/adminhtml_workshop_grid')->toHtml()
+        );
     }
 }

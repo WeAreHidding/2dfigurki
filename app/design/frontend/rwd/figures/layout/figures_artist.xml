@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <figures_artist_workshop_index>
+        <reference name="head">
+            <action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>
+            <action method="addCss"><stylesheet>css/plugins/tagit/jquery.tagit.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/plugins/tagit/tagit.ui-zendesk.css</stylesheet></action>
+        </reference>
         <reference name="content">
-            <block type="page/html"
+            <block type="figures_artist/workshop"
                    name="workshop_form"
                    template="artist/workshop.phtml" />
         </reference>

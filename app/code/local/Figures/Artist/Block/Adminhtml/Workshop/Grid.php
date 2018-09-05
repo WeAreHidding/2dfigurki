@@ -16,16 +16,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
     }
 
     /**
-     * Retirve currently edited product model
-     *
-     * @return Mage_Catalog_Model_Product
-     */
-    protected function _getProduct()
-    {
-        return Mage::registry('current_product');
-    }
-
-    /**
      * Prepare collection
      *
      * @return Mage_Adminhtml_Block_Widget_Grid
@@ -55,42 +45,49 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
      */
     protected function _prepareColumns()
     {
-        $this->addColumn('id', array(
-            'header'    => Mage::helper('catalog')->__('ID'),
-            'sortable'  => true,
-            'width'     => 60,
-            'index'     => 'id'
-        ));
-
         $this->addColumn('customer_id', array(
-            'header'    => Mage::helper('catalog')->__('customer_id'),
+            'header'    => Mage::helper('catalog')->__('Customer ID'),
             'sortable'  => true,
             'width'     => 60,
             'index'     => 'customer_id'
         ));
 
-        $this->addColumn('artist_name', array(
-            'header'    => Mage::helper('catalog')->__('artist_name'),
+        $this->addColumn('Nickname', array(
+            'header'    => Mage::helper('catalog')->__('Nickname'),
+            'width'     => 100,
             'index'     => 'artist_name'
         ));
 
         $this->addColumn('char_name', array(
-            'header'    => Mage::helper('catalog')->__('char_name'),
+            'header'    => Mage::helper('catalog')->__('Char Name'),
             'width'     => 100,
             'index'     => 'char_name'
         ));
 
+        $this->addColumn('tags', array(
+            'header'    => Mage::helper('catalog')->__('Tags'),
+            'width'     => 200,
+            'index'     => 'tags'
+        ));
+
         $this->addColumn('description', array(
-            'header'    => Mage::helper('catalog')->__('description'),
-            'width'     => 100,
+            'header'    => Mage::helper('catalog')->__('Description'),
             'index'     => 'description'
         ));
 
         $this->addColumn('image_path', array(
-            'header'    => Mage::helper('catalog')->__('image_path'),
+            'header'    => Mage::helper('catalog')->__('Image'),
             'width'     => 100,
             'index'     => 'image_path',
-            'renderer'  => 'Figures_Artist_Block_Adminhtml_Workshop_Renderer'
+            'renderer'  => 'Figures_Artist_Block_Adminhtml_Workshop_Renderer',
+            'sortable'  => false,
+            'filter'    => false
+        ));
+
+        $this->addColumn('status', array(
+            'header'    => Mage::helper('catalog')->__('Status'),
+            'width'     => 100,
+            'index'     => 'status'
         ));
 
 
@@ -99,6 +96,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
 
     public function getGridUrl()
     {
-        return $this->getUrl('*/*/analogGrid', array('_current'=>true));
+        return $this->getUrl('*/*/grid', array('_current' => true));
     }
 }
