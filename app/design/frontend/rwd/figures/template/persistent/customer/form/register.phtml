@@ -69,9 +69,9 @@
             <?php endif ?>
                 <li class="fields">
                     <div class="field">
-                        <label for="artist_nickname"><?php echo $this->__('Nickname') ?></label>
+                        <label for="artist_nickname" class="required"><?php echo $this->__('Nickname') ?></label>
                         <div class="input-box">
-                            <input type="text" name="artist_nickname" id="artist_nickname" title="<?php echo $this->quoteEscape($this->__('Nickname')) ?>" class="input-text" />
+                            <input type="text" name="artist_nickname" id="artist_nickname" title="<?php echo $this->quoteEscape($this->__('Nickname')) ?>" class="input-text required-entry" />
                         </div>
                     </div>
                     <div class="field">
@@ -94,6 +94,12 @@
                     </div>
                     <label for="is_subscribed"><?php echo $this->__('Become a partner') ?></label>
                 </li>
+<!--                <li class="control">-->
+                    <div class="input-box">
+                        <span><input type="checkbox" id="privacy_policy" name="privacy_policy" value="1" title="<?php echo $this->__('Accept the privacy policy') ?>" class="checkbox required-entry"><?php echo $this->__('Accept the privacy policy') ?> (<a href="<?php echo Mage::helper('cms/page')->getPageUrl( 6 ) ?>"><?php echo $this->__('privacy policy'); ?></a>)</span>
+                    </div>
+
+<!--                </li>-->
                 <?php echo $this->getChildHtml('persistent.remember.me'); ?>
             </ul>
             <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>

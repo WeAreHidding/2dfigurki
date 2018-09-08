@@ -27,7 +27,6 @@ $editableData = $this->getEditableData();
 </div>
 <div class="main-col">
     <div class="entry-edit">
-
         <div id="info">
             <div class="entry-edit-head" style="height:18px !important;"><h4>Artist info</h4></div>
             <fieldset>
@@ -67,15 +66,18 @@ $editableData = $this->getEditableData();
                         </tr>
                         <tr>
                             <td style="padding-top: 10px">
-                                <button class="scalable" type="button">Download full version</button>
+                                <a target="_blank" rel="noopener noreferrer" href="<?php echo $customer['image'] ?>">Download full version</a>
                             </td>
                         </tr>
                     </table>
                     <div style="padding-top: 20px">
                         <p style="font-weight:bold;">Description</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $editableData['description'] ?>" name="artist_name" id="artist_name" style="width: 100%;">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $editableData['tags'] ?>" name="artist_name" id="artist_name" style="width: 100%;">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
+                    </div>
+                    <div style="padding-top:20px; text-align:right">
+                        <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>
                     </div>
                 </fieldset>
         </div>
@@ -85,11 +87,15 @@ $editableData = $this->getEditableData();
 <script type="text/javascript">
     function saveGeneralData() {
         var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>';
+
+        var description = document.getElementById('description').value;
+        var tags = document.getElementById('tags').value;
         new Ajax.Request(url, {
-            parameters: {isAjax: 1, method: 'POST',data1:4,data2:5},
-            onSuccess: function(transport) {
-                alert(125125);
-            }
+            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:'<?php echo $editableData['id'] ?>'},
+            onFailure: function() {
+                alert('Save failed');
+            },
+            onSuccess: function() {}
         });
     }
 

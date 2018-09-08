@@ -12,9 +12,8 @@
             <li class="fields">
                 <div class="artist_name">
                     <div class="field artist_name">
-                        <label class="required" for="artist_name"><em>*</em><?php echo $this->__('Nickname')?></label>
                         <div class="input-box">
-                            <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $this->getArtistNickname() ?>" name="artist_name" id="artist_name">
+                            <input type="hidden" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $this->getArtistNickname() ?>" name="artist_name" id="artist_name">
                         </div>
                     </div>
                     <div class="field char_name">

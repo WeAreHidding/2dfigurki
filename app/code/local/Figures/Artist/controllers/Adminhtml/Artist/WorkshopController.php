@@ -20,14 +20,31 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function editGeneralAction()
     {
         $this->loadLayout();
-//        $this->getLayout()->createBlock('workshop_general')->toHtml();
-//        $this->_addContent($this->getLayout()->createBlock('figures_artist/adminhtml_workshop_edit'))
-//            ->_addLeft($this->getLayout()->createBlock('figures_artist/adminhtml_workshop_edit_tab_generalInfo'));
         $this->renderLayout();
     }
 
     public function saveGeneralAction()
     {
-        var_dump(12512); die();
+        $params = $this->getRequest()->getParams();
+        $connection = $this->_getConnection();
+
+        $connection->update('artist_work',
+            ['description' => $params['description'], 'tags' => $params['tags']], 'id=' . $params['id']);
+    }
+
+    /**
+     * @return Figures_Artist_Model_Artist
+     */
+    protected function _getArtistModel()
+    {
+        return Mage::getModel('figures_artist/artist');
+    }
+
+    /**
+     * @return Varien_Db_Adapter_Pdo_Mysql
+     */
+    protected function _getConnection()
+    {
+        return Mage::getModel('core/resource')->getConnection('core_write');
     }
 }

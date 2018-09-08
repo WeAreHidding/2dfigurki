@@ -29,12 +29,15 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_General extends Mage_Adminht
     {
         $customerId = $this->_rowData['customer_id'];
         $customer = Mage::getModel('customer/customer')->load($customerId);
+        $filepath = Mage::getBaseDir('media') . DS . 'workshop/user_images/' . $this->_rowData['customer_id'] . $this->_rowData['image_path'];
+        $filepath = str_replace("\\", "\\\\\\", $filepath);
 
         return [
             'customer_id' => $customerId,
             'nickname'    => $customer->getData('artist_nickname'),
             'bo_link'     => Mage::helper("adminhtml")->getUrl("adminhtml/customer/edit/", array("id" => $customerId)),
-            'image'       => Mage::getBaseUrl('media') . DS . 'workshop/user_images/' . $this->_rowData['customer_id'] . $this->_rowData['image_path']
+            'image'       => Mage::getBaseUrl('media') . DS . 'workshop/user_images/' . $this->_rowData['customer_id'] . $this->_rowData['image_path'],
+            'filepath'    => $filepath
         ];
     }
 
