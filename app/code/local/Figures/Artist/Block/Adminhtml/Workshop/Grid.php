@@ -98,4 +98,9 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
     {
         return $this->getUrl('*/*/grid', array('_current' => true));
     }
+
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/editGeneral', array('id' => $row->getId()));
+    }
 }

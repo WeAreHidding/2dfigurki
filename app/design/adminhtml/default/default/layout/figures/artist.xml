@@ -1,9 +1,17 @@
 <?xml version="1.0"?>
 <layout>
     <adminhtml_artist_workshop_index>
-
         <reference name="content">
             <block type="figures_artist/adminhtml_workshop_grid" name="workshop_grid"/>
         </reference>
     </adminhtml_artist_workshop_index>
+
+    <adminhtml_artist_workshop_editgeneral>
+        <reference name="head">
+            <action method="addCss"><stylesheet>figures/progress.css</stylesheet></action>
+        </reference>
+        <reference name="content">
+            <block type="figures_artist/adminhtml_workshop_forms_general" name="workshop_general"/>
+        </reference>
+    </adminhtml_artist_workshop_editgeneral>
 </layout>

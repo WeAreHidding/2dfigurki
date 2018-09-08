@@ -1,0 +1,102 @@
+<?php
+$customer = $this->getCustomerInfo();
+$editableData = $this->getEditableData();
+?>
+<div style="margin-bottom:10px;text-align:right">
+    <button class="scalable back" type="button" style="margin-right:10px" onclick="saveGeneralData()">Back</button>
+    <button class="scalable success" type="button" style="margin-right:10px">Accept</button>
+    <button class="scalable delete" type="button">Decline</button>
+</div>
+<div class="side-col">
+    <h3>Progress</h3>
+    <?php if ($editableData['status'] != 'Declined') : ?>
+        <div class="header-progress-container">
+            <ol class="header-progress-list">
+                <li id="pg_check" class="header-progress-item done">Check</li>
+                <li id="pg_accept" class="header-progress-item done">Accept</li>
+                <li id="pg_accept" class="header-progress-item todo">Product</li>
+            </ol>
+        </div>
+    <?php else : ?>
+        <em style="margin-left:5px">Declined</em>
+    <?php endif; ?>
+        <h3>Operations</h3>
+        <ul class="tabs">
+            <li onclick="startProductCreation()" style="cursor: pointer">Product creation</li>
+        </ul>
+</div>
+<div class="main-col">
+    <div class="entry-edit">
+
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Artist info</h4></div>
+            <fieldset>
+                <table cellspacing="0" class="form-list">
+                    <tr>
+                        <td style="padding-right: 100px">
+                            <div>
+                                <?php echo $this->__('Customer Id:'); ?>
+                                <a href="<?php echo $customer['bo_link'] ?>" style="font-weight:bold;"><?php echo $customer['customer_id'] ?></a>
+                            </div>
+                            <div style="margin-top:20px">
+                                <?php echo $this->__('NickName:'); ?>
+                                <label style="font-weight:bold;"><?php echo $customer['nickname'] ?></label>
+                            </div>
+        <!--                <td class="input-ele" width="150">-->
+        <!--                    <select id="analog[is_analog_parent]" name="analog[is_analog_parent]">-->
+        <!--                        <option value="1">--><?php //echo $this->__('Yes'); ?><!--</option>-->
+        <!--                        <option value="0">--><?php //echo $this->__('No'); ?><!--</option>-->
+        <!--                    </select>-->
+                        </td>
+                        <td style="padding-right: 10px">
+                            <em>More info will be after partner cabinet implementation</em>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div id="proposed">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Proposed Info</h4></div>
+                <fieldset id="proposed_info">
+                    <table cellspacing="0" class="form-list">
+                        <tr>
+                            <td>
+                                <img src="<?php echo $customer['image'] ?>" width='500px'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 10px">
+                                <button class="scalable" type="button">Download full version</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="padding-top: 20px">
+                        <p style="font-weight:bold;">Description</p>
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $editableData['description'] ?>" name="artist_name" id="artist_name" style="width: 100%;">
+                        <p style="font-weight:bold; padding-top:10px">Tags</p>
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Nickname" value="<?php echo $editableData['tags'] ?>" name="artist_name" id="artist_name" style="width: 100%;">
+                    </div>
+                </fieldset>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function saveGeneralData() {
+        var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>';
+        new Ajax.Request(url, {
+            parameters: {isAjax: 1, method: 'POST',data1:4,data2:5},
+            onSuccess: function(transport) {
+                alert(125125);
+            }
+        });
+    }
+
+    function startProductCreation() {
+        var info = document.getElementById('info');
+        var proposed = document.getElementById('proposed');
+        info.style.display = 'none';
+        proposed.style.display = 'none';
+    }
+</script>
