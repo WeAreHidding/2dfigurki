@@ -1,12 +1,15 @@
 <?php
 $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
+
+$formCategories = $this->getFormCategories();
+$genreCategories = $this->getGenreCategories();
+$genreItemCategories = $this->getGenreItemCategories();
+
 ?>
-<div style="margin-bottom:10px;text-align:right">
+<div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
-    <button class="scalable" type="button" onclick="setStatus('Pending')" id="pending_btn">Review</button>
-    <button class="scalable success" type="button" style="margin-right:10px" onclick="setStatus('Accepted')" id="accept_btn">Accept</button>
-    <button class="scalable delete" type="button" onclick="setStatus('Declined')" id="decline_btn">Decline</button>
+    <button class="scalable" type="button" onclick="addProductBlock()" id="pending_btn">Add product</button>
 </div>
 <div class="side-col">
     <h3>Progress</h3>
@@ -15,7 +18,7 @@ $editableData = $this->getEditableData();
             <ol class="header-progress-list">
                 <li id="pg_check" class="header-progress-item done">Check</li>
                 <li id="pg_accept" class="header-progress-item done">Accept</li>
-                <li id="pg_accept" class="header-progress-item todo">Product</li>
+                <li id="pg_accept" class="header-progress-item done">Product</li>
             </ol>
         </div>
     <?php else : ?>
@@ -23,7 +26,237 @@ $editableData = $this->getEditableData();
     <?php endif; ?>
     <h3>Operations</h3>
     <ul class="tabs">
-        <li onclick="startProductCreation()" style="cursor: pointer"><a class="tab-item-link">View info</a></li>
-        <li onclick="startProductCreation()" style="cursor: pointer"><a class="tab-item-link">Product creation</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $editableData['id'] ?>" class="tab-item-link">View info</a></li>
+        <li style="cursor: pointer"><a class="tab-item-link">Product creation</a></li>
     </ul>
 </div>
+<div id="product_block" class="main-col">
+    <div id="productForm" class="entry-edit">
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Add product</h4></div>
+            <fieldset>
+                <table cellspacing="0" class="form-list">
+                    <tr>
+                        <h5>Category:</h5>
+                        <td style="padding-right: 100px">
+                            <div>
+                                <p><?php echo $this->__('Physical form:'); ?></p>
+                                <?php if ($formCategories) :?>
+                                    <select id="FORM_old" name="FORM_old">
+                                        <?php foreach ($formCategories as $category) : ?>
+                                            <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php else : ?>
+                                    <p style="margin:0">---</p>
+                                <?php endif; ?>
+                                <input type="text" class="input-text" maxlength="255" title="FORM" name="FORM" id="FORM" style="width:100%;margin-top:5px;">
+                                <p style="margin:0"><?php echo $this->__('Name:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                        <td style="padding-right: 100px">
+                            <div>
+                                <p><?php echo $this->__('Genre:'); ?></p>
+                                <?php if ($genreCategories) :?>
+                                    <select id="GENRE_old" name="GENRE_old">
+                                        <?php foreach ($genreCategories as $category) : ?>
+                                            <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php else : ?>
+                                    <p style="margin:0">---</p>
+                                <?php endif; ?>
+                                <input type="text" class="input-text" maxlength="255" title="GENRE" name="GENRE" id="GENRE" style="width:100%;margin-top:5px;">
+                                <p style="margin:0"><?php echo $this->__('Name:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                        <td style="padding-right: 100px">
+                            <div>
+                                <p><?php echo $this->__('Genre item:'); ?></p>
+                                <?php if ($genreItemCategories) :?>
+                                    <select id="GENRE_ITEM_old" name="GENRE_ITEM_old">
+                                        <?php foreach ($genreItemCategories as $category) : ?>
+                                            <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php else : ?>
+                                    <p style="margin:0">---</p>
+                                <?php endif; ?>
+                                <input type="text" class="input-text" maxlength="255" title="GENRE_ITEM" name="GENRE_ITEM" id="GENRE_ITEM" style="width:100%;margin-top:5px;">
+                                <p style="margin:0"><?php echo $this->__('Name:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 100px;padding-top:20px">
+                            <h5>Product:</h5>
+                            <div>
+                                <p style="margin:0"><?php echo $this->__('Name:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                        <td style="padding-right: 100px;padding-top:40px">
+                            <div>
+                                <p style="margin:0"><?php echo $this->__('Sku:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                        <td style="padding-right: 100px;padding-top:40px">
+                            <div>
+                                <p style="margin:0"><?php echo $this->__('Price:'); ?></p>
+                                <input type="text" class="input-text" maxlength="255" title="cat_name" name="cat_name" id="cat_name" style="width:100%;margin-top:5px;">
+                            </div>
+                        </td>
+                        <td style="padding-right: 100px;padding-top:40px">
+                            <div>
+                                <p style="margin:0"><?php echo $this->__('Image:'); ?></p>
+                                <input id="ws_image" name="ws_image" type="file"/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="saveGeneral" class="scalable" type="button" onclick="saveProduct(formCounter)">Save product</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var formCounter = 0;
+
+    $j = jQuery.noConflict();
+
+
+
+    function addProductBlock() {
+        formCounter = formCounter + 1;
+        var form =  "<div id=\"productForm\" class=\"entry-edit\">\n" +
+            "        <div id=\"info\">\n" +
+            "            <div class=\"entry-edit-head\" style=\"height:18px !important;\"><h4>Add product</h4></div>\n" +
+            "            <fieldset>\n" +
+            "                <table cellspacing=\"0\" class=\"form-list\">\n" +
+            "                    <tr>\n" +
+            "                        <h5>Category:</h5>\n" +
+            "                        <td style=\"padding-right: 100px\">\n" +
+            "                            <div>\n" +
+            "                                <p><?php echo $this->__('Physical form:'); ?></p>\n" +
+            "                                <?php if ($formCategories) :?>\n" +
+            "                                    <select id=\"FORM_old\" name=\"FORM_old\">\n" +
+            "                                        <?php foreach ($formCategories as $category) : ?>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                        <?php endforeach; ?>\n" +
+            "                                    </select>\n" +
+            "                                <?php else : ?>\n" +
+            "                                    <p style=\"margin:0\">---</p>\n" +
+            "                                <?php endif; ?>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"FORM\" name=\"FORM\" id=\"FORM\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Name:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                        <td style=\"padding-right: 100px\">\n" +
+            "                            <div>\n" +
+            "                                <p><?php echo $this->__('Genre:'); ?></p>\n" +
+            "                                <?php if ($genreCategories) :?>\n" +
+            "                                    <select id=\"GENRE_old\" name=\"GENRE_old\">\n" +
+            "                                        <?php foreach ($genreCategories as $category) : ?>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                        <?php endforeach; ?>\n" +
+            "                                    </select>\n" +
+            "                                <?php else : ?>\n" +
+            "                                    <p style=\"margin:0\">---</p>\n" +
+            "                                <?php endif; ?>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"GENRE\" name=\"GENRE\" id=\"GENRE\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Name:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                        <td style=\"padding-right: 100px\">\n" +
+            "                            <div>\n" +
+            "                                <p><?php echo $this->__('Genre item:'); ?></p>\n" +
+            "                                <?php if ($genreItemCategories) :?>\n" +
+            "                                    <select id=\"GENRE_ITEM_old\" name=\"GENRE_ITEM_old\">\n" +
+            "                                        <?php foreach ($genreItemCategories as $category) : ?>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                        <?php endforeach; ?>\n" +
+            "                                    </select>\n" +
+            "                                <?php else : ?>\n" +
+            "                                    <p style=\"margin:0\">---</p>\n" +
+            "                                <?php endif; ?>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"GENRE_ITEM\" name=\"GENRE_ITEM\" id=\"GENRE_ITEM\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Name:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                    </tr>\n" +
+            "                    <tr>\n" +
+            "                        <td style=\"padding-right: 100px;padding-top:20px\">\n" +
+            "                            <h5>Product:</h5>\n" +
+            "                            <div>\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Name:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
+            "                            <div>\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Sku:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
+            "                            <div>\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Price:'); ?></p>\n" +
+            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"cat_name\" name=\"cat_name\" id=\"cat_name\" style=\"width:100%;margin-top:5px;\">\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
+            "                            <div>\n" +
+            "                                <p style=\"margin:0\"><?php echo $this->__('Image:'); ?></p>\n" +
+            "                                <input id=\"ws_image\" name=\"ws_image\" type=\"file\"/>\n" +
+            "                            </div>\n" +
+            "                        </td>\n" +
+            "                    </tr>\n" +
+            "                </table>\n" +
+            "                <div style=\"padding-top:20px; text-align:right\">\n" +
+            "                    <button id=\"saveGeneral\" class=\"scalable\" type=\"button\" onclick=\"saveProduct(formCounter)\">Save product</button>\n" +
+            "                </div>\n" +
+            "            </fieldset>\n" +
+            "        </div>\n" +
+            "    </div>";
+
+        $j('#product_block').append(form);
+
+        // var mainBlock = document.getElementById('product_block');
+        // mainBlock.appendChild(form);
+    }
+
+    function saveProduct(formId) {
+
+    }
+
+    //todo after
+    // function readURL(input) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();
+    //
+    //         reader.onload = function (e) {
+    //             $('#blah').attr('src', e.target.result);
+    //         }
+    //
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
+    //
+    // $("#imgInp").change(function(){
+    //     readURL(this);
+    // });
+
+    function goBack() {
+        location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
+    }
+</script>

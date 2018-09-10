@@ -2,7 +2,7 @@
 $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
 ?>
-<div style="margin-bottom:10px;text-align:right">
+<div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
     <button class="scalable" type="button" onclick="setStatus('Pending')" id="pending_btn">Review</button>
     <button class="scalable success" type="button" style="margin-right:10px" onclick="setStatus('Accepted')" id="accept_btn">Accept</button>
@@ -24,7 +24,7 @@ $editableData = $this->getEditableData();
         <h3>Operations</h3>
         <ul class="tabs">
             <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
-            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') ?>" class="tab-item-link">Product creation</a></li>
+            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
         </ul>
 </div>
 <div class="main-col">
@@ -43,11 +43,6 @@ $editableData = $this->getEditableData();
                                 <?php echo $this->__('NickName:'); ?>
                                 <label style="font-weight:bold;"><?php echo $customer['nickname'] ?></label>
                             </div>
-        <!--                <td class="input-ele" width="150">-->
-        <!--                    <select id="analog[is_analog_parent]" name="analog[is_analog_parent]">-->
-        <!--                        <option value="1">--><?php //echo $this->__('Yes'); ?><!--</option>-->
-        <!--                        <option value="0">--><?php //echo $this->__('No'); ?><!--</option>-->
-        <!--                    </select>-->
                         </td>
                         <td style="padding-right: 10px">
                             <em>More info will be after partner cabinet implementation</em>
@@ -74,9 +69,9 @@ $editableData = $this->getEditableData();
                     </table>
                     <div style="padding-top: 20px">
                         <p style="font-weight:bold;">Description</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;" onkeypress="wasChanged()">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;" onkeypress="wasChanged()">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
                     </div>
                     <div style="padding-top:20px; text-align:right">
                         <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>
@@ -119,13 +114,6 @@ $editableData = $this->getEditableData();
                 refreshButtons();
             }
         });
-    }
-
-    function startProductCreation() {
-        var info = document.getElementById('info');
-        var proposed = document.getElementById('proposed');
-        info.style.display = 'none';
-        proposed.style.display = 'none';
     }
 
     function refreshButtons() {

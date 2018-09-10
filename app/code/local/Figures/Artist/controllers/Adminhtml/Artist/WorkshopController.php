@@ -47,6 +47,12 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $this->renderLayout();
     }
 
+    public function createProductAction()
+    {
+        $params = $this->getRequest()->getParams();
+
+    }
+
     /**
      * @return Figures_Artist_Model_Artist
      */
