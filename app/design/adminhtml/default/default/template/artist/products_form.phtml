@@ -1,0 +1,29 @@
+<?php
+$customer = $this->getCustomerInfo();
+$editableData = $this->getEditableData();
+?>
+<div style="margin-bottom:10px;text-align:right">
+    <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
+    <button class="scalable" type="button" onclick="setStatus('Pending')" id="pending_btn">Review</button>
+    <button class="scalable success" type="button" style="margin-right:10px" onclick="setStatus('Accepted')" id="accept_btn">Accept</button>
+    <button class="scalable delete" type="button" onclick="setStatus('Declined')" id="decline_btn">Decline</button>
+</div>
+<div class="side-col">
+    <h3>Progress</h3>
+    <?php if ($editableData['status'] != 'Declined') : ?>
+        <div class="header-progress-container">
+            <ol class="header-progress-list">
+                <li id="pg_check" class="header-progress-item done">Check</li>
+                <li id="pg_accept" class="header-progress-item done">Accept</li>
+                <li id="pg_accept" class="header-progress-item todo">Product</li>
+            </ol>
+        </div>
+    <?php else : ?>
+        <em style="margin-left:5px">Declined</em>
+    <?php endif; ?>
+    <h3>Operations</h3>
+    <ul class="tabs">
+        <li onclick="startProductCreation()" style="cursor: pointer"><a class="tab-item-link">View info</a></li>
+        <li onclick="startProductCreation()" style="cursor: pointer"><a class="tab-item-link">Product creation</a></li>
+    </ul>
+</div>

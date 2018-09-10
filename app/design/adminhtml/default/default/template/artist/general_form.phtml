@@ -3,9 +3,10 @@ $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
 ?>
 <div style="margin-bottom:10px;text-align:right">
-    <button class="scalable back" type="button" style="margin-right:10px" onclick="saveGeneralData()">Back</button>
-    <button class="scalable success" type="button" style="margin-right:10px">Accept</button>
-    <button class="scalable delete" type="button">Decline</button>
+    <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
+    <button class="scalable" type="button" onclick="setStatus('Pending')" id="pending_btn">Review</button>
+    <button class="scalable success" type="button" style="margin-right:10px" onclick="setStatus('Accepted')" id="accept_btn">Accept</button>
+    <button class="scalable delete" type="button" onclick="setStatus('Declined')" id="decline_btn">Decline</button>
 </div>
 <div class="side-col">
     <h3>Progress</h3>
@@ -22,7 +23,8 @@ $editableData = $this->getEditableData();
     <?php endif; ?>
         <h3>Operations</h3>
         <ul class="tabs">
-            <li onclick="startProductCreation()" style="cursor: pointer">Product creation</li>
+            <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
+            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') ?>" class="tab-item-link">Product creation</a></li>
         </ul>
 </div>
 <div class="main-col">
@@ -72,9 +74,9 @@ $editableData = $this->getEditableData();
                     </table>
                     <div style="padding-top: 20px">
                         <p style="font-weight:bold;">Description</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;" onkeypress="wasChanged()">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
-                        <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;" onkeypress="wasChanged()">
                     </div>
                     <div style="padding-top:20px; text-align:right">
                         <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>
@@ -85,17 +87,37 @@ $editableData = $this->getEditableData();
 </div>
 
 <script type="text/javascript">
+    var rowId = '<?php echo $editableData['id'] ?>';
+    var currentStatus = '<?php echo $editableData['status'] ?>';
+
+    refreshButtons();
+
     function saveGeneralData() {
         var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>';
 
         var description = document.getElementById('description').value;
         var tags = document.getElementById('tags').value;
         new Ajax.Request(url, {
-            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:'<?php echo $editableData['id'] ?>'},
+            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId},
             onFailure: function() {
                 alert('Save failed');
             },
             onSuccess: function() {}
+        });
+    }
+
+    function setStatus(status) {
+        var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/saveStatus') ?>';
+
+        new Ajax.Request(url, {
+            parameters: {method: 'POST', status:status, id:rowId},
+            onFailure: function() {
+                alert('Save failed');
+            },
+            onSuccess: function() {
+                currentStatus = status;
+                refreshButtons();
+            }
         });
     }
 
@@ -104,5 +126,25 @@ $editableData = $this->getEditableData();
         var proposed = document.getElementById('proposed');
         info.style.display = 'none';
         proposed.style.display = 'none';
+    }
+
+    function refreshButtons() {
+        var accept = document.getElementById('accept_btn');
+        var decline = document.getElementById('decline_btn');
+        var review = document.getElementById('pending_btn');
+
+        if (currentStatus === 'Pending') {
+            accept.style.display = 'inline-block';
+            decline.style.display = 'inline-block';
+            review.style.display = 'none';
+        } else {
+            accept.style.display = 'none';
+            decline.style.display = 'none';
+            review.style.display = 'inline-block';
+        }
+    }
+
+    function goBack() {
+        location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
     }
 </script>

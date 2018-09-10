@@ -32,6 +32,21 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             ['description' => $params['description'], 'tags' => $params['tags']], 'id=' . $params['id']);
     }
 
+    public function saveStatusAction()
+    {
+        $params = $this->getRequest()->getParams();
+        $connection = $this->_getConnection();
+
+        $connection->update('artist_work',
+            ['status' => $params['status']], 'id=' . $params['id']);
+    }
+
+    public function editProductsAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
     /**
      * @return Figures_Artist_Model_Artist
      */

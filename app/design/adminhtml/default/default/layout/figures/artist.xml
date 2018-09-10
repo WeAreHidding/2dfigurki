@@ -14,4 +14,9 @@
             <block type="figures_artist/adminhtml_workshop_forms_general" name="workshop_general"/>
         </reference>
     </adminhtml_artist_workshop_editgeneral>
+    <adminhtml_artist_workshop_editproducts>
+        <reference name="content">
+            <block type="figures_artist/adminhtml_workshop_forms_products" name="workshop_general"/>
+        </reference>
+    </adminhtml_artist_workshop_editproducts>
 </layout>
