@@ -1,0 +1,88 @@
+<div id="info">
+    <div class="entry-edit-head" style="height:18px !important;"><h4>Add product</h4></div>
+    <fieldset>
+        <table cellspacing="0" class="form-list">
+            <tr>
+                <h5>Category:</h5>
+                <td style="padding-right: 100px">
+                    <div>
+                        <p><?php echo $this->__('Physical form:'); ?></p>
+                        <?php if ($formCategories) :?>
+                            <select id="FORM_old" name="FORM_old">
+                                <?php foreach ($formCategories as $category) : ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <p style="margin:0">---</p>
+                        <?php endif; ?>
+                        <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="FORM" name="FORM" id="FORM" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+                <td style="padding-right: 100px">
+                    <div>
+                        <p><?php echo $this->__('Genre:'); ?></p>
+                        <?php if ($genreCategories) :?>
+                            <select id="GENRE_old" name="GENRE_old">
+                                <?php foreach ($genreCategories as $category) : ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <p style="margin:0">---</p>
+                        <?php endif; ?>
+                        <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="GENRE" name="GENRE" id="GENRE" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+                <td style="padding-right: 100px">
+                    <div>
+                        <p><?php echo $this->__('Genre item:'); ?></p>
+                        <?php if ($genreItemCategories) :?>
+                            <select id="GENRE_ITEM_old" name="GENRE_ITEM_old">
+                                <?php foreach ($genreItemCategories as $category) : ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <p style="margin:0">---</p>
+                        <?php endif; ?>
+                        <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="GENRE_ITEM" name="GENRE_ITEM" id="GENRE_ITEM" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 100px;padding-top:20px">
+                    <h5>Product:</h5>
+                    <div>
+                        <p style="margin:0"><?php echo $this->__('Title:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="title" name="title" id="title" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+                <td style="padding-right: 100px;padding-top:40px">
+                    <div>
+                        <p style="margin:0"><?php echo $this->__('Sku:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="sku" name="sku" id="sku" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+                <td style="padding-right: 100px;padding-top:40px">
+                    <div>
+                        <p style="margin:0"><?php echo $this->__('Price:'); ?></p>
+                        <input type="text" class="input-text" maxlength="255" title="price" name="price" id="price" style="width:100%;margin-top:5px;">
+                    </div>
+                </td>
+                <td style="padding-right: 100px;padding-top:40px">
+                    <div>
+                        <p style="margin:0"><?php echo $this->__('Image:'); ?></p>
+                        <input id="ws_image" name="ws_image" type="file"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div style="padding-top:20px; text-align:right">
+            <button id="saveGeneral" class="scalable" type="button" onclick="saveProduct(formCounter)">Save product</button>
+        </div>
+    </fieldset>
+</div>

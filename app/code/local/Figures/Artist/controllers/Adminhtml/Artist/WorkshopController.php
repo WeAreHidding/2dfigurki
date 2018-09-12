@@ -50,6 +50,39 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function createProductAction()
     {
         $params = $this->getRequest()->getParams();
+        $dataArray = json_decode($params['productData'], true);
+
+        $formToCreate = $genreToCreate = $gIToCreate = true;
+        if (!$formCategory = $dataArray['form']) {
+            $formCategory = $dataArray['form_old'];
+            $formToCreate = false;
+        }
+        if (!$genreCategory = $dataArray['genre']) {
+            $genreCategory = $dataArray['genre_old'];
+            $genreToCreate = false;
+        }
+        if (!$gICategory = $dataArray['genre_item']) {
+            $gICategory = $dataArray['genre_item_old'];
+            $gIToCreate = false;
+        }
+        if ($formToCreate) {
+            $this->_getProductCreatorModel()->createCategory(['name' => $formCategory]);
+        }
+        if ($genreToCreate) {
+            $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory]);
+        }
+        if ($gIToCreate) {
+            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory]);
+        }
+
+        $productData = [
+            'name' => $dataArray['title'],
+            'sku'  => $dataArray['sku'],
+            'price' => $dataArray['price'],
+            'parent_cat' => $gICategory
+        ];
+
+        $this->_getProductCreatorModel()->createProduct($productData);
 
     }
 
@@ -59,6 +92,14 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     protected function _getArtistModel()
     {
         return Mage::getModel('figures_artist/artist');
+    }
+
+    /**
+     * @return Figures_Artist_Model_ProductCreator
+     */
+    protected function _getProductCreatorModel()
+    {
+        return Mage::getModel('figures_artist/productCreator');
     }
 
     /**

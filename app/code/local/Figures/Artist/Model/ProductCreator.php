@@ -13,7 +13,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
     {
         Mage::app("admin");
         $parentId = $categoryData['parent_id'] ?: 2;
-        $url = urlencode($categoryData['url_key']);
+        $url = $this->formatUrlKey($categoryData['name']);
         try{
             $category = Mage::getModel('catalog/category');
             $category->setName($categoryData['name']);
@@ -35,66 +35,59 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
 
     public function createProduct($productData)
     {
-        Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
-        $product = Mage::getModel('catalog/product');
-//    if(!$product->getIdBySku('testsku61')):
+//$product = Mage::getModel('catalog/product');
+        $product = new Mage_Catalog_Model_Product();
+// Build the product
+        $product->setSku($productData['sku']);
+        $product->setAttributeSetId(4);
+        $product->setTypeId('simple');
+        $product->setName($productData['name']);
+        $category = Mage::getResourceModel('catalog/category_collection')
+            ->addFieldToFilter('name', $productData['parent_cat'])
+            ->getFirstItem(); // The parent category
 
-        try{
-            $product
-//    ->setStoreId(1) //you can set data in store scope
-                ->setWebsiteIds(array(1)) //website ID the product is assigned to, as an array
-                ->setAttributeSetId(9) //ID of a attribute set named 'default'
-                ->setTypeId('simple') //product type
-                ->setCreatedAt(strtotime('now')) //product creation time
-//    ->setUpdatedAt(strtotime('now')) //product update time
 
-                ->setSku($productData['sku']) //SKU
-                ->setName($productData['name']) //product name
-//                ->setWeight(4.0000)
-                ->setStatus(1) //product status (1 - enabled, 2 - disabled)
-                ->setTaxClassId(4) //tax class (0 - none, 1 - default, 2 - taxable, 4 - shipping)
-                ->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH) //catalog and search visibility
-//                ->setManufacturer(28) //manufacturer id
-//                ->setColor(24)
-//                ->setNewsFromDate('06/26/2014') //product set as new from
-//                ->setNewsToDate('06/30/2014') //product set as new to
-//                ->setCountryOfManufacture('AF') //country of manufacture (2-letter country code)
-
-                ->setPrice($productData['price']) //price in form 11.22
-                ->setCost($productData['price']) //price in form 11.22
-//                ->setSpecialPrice(00.44) //special price in form 11.22
-//                ->setSpecialFromDate('06/1/2014') //special price from (MM-DD-YYYY)
-//                ->setSpecialToDate('06/30/2014') //special price to (MM-DD-YYYY)
-//                ->setMsrpEnabled(1) //enable MAP
-//                ->setMsrpDisplayActualPriceType(1) //display actual price (1 - on gesture, 2 - in cart, 3 - before order confirmation, 4 - use config)
-//                ->setMsrp(99.99) //Manufacturer's Suggested Retail Price
-
-//                ->setMetaTitle('test meta title 2')
-//                ->setMetaKeyword('test meta keyword 2')
-//                ->setMetaDescription('test meta description 2')
-//
-//                ->setDescription('This is a long description')
-//                ->setShortDescription('This is a short description')
-
-                ->setMediaGallery (array('images'=>array (), 'values'=>array ())) //media gallery initialization
-                ->addImageToMediaGallery('media/catalog/product/1/0/10243-1.png', array('image','thumbnail','small_image'), false, false) //assigning image, thumb and small image to media gallery
-
-                ->setStockData(array(
-                        'use_config_manage_stock' => 0, //'Use config settings' checkbox
-                        'manage_stock'=>1, //manage stock
-                        'min_sale_qty'=>1, //Minimum Qty Allowed in Shopping Cart
-                        'max_sale_qty'=>99, //Maximum Qty Allowed in Shopping Cart
-                        'is_in_stock' => 1, //Stock Availability
-                        'qty' => 999 //qty
-                    )
-                )
-
-                ->setCategoryIds(array(3, 10)); //assign product to categories
+        $product->setCategoryIds(array($category->getId())); # some cat id's, my is 7
+        $product->setWebsiteIDs(array(1)); # Website id, my is 1 (default frontend)
+//        $product->setDescription('Full description here');
+//        $product->setShortDescription('Short description here');
+        $product->setPrice($productData['price']); # Set some price
+# Custom created and assigned attributes
+//        $product->setHeight('my_custom_attribute1_val');
+//        $product->setWidth('my_custom_attribute2_val');
+//        $product->setDepth('my_custom_attribute3_val');
+//        $product->setType('my_custom_attribute4_val');
+//Default Magento attribute
+        $product->setWeight(4.0000);
+        $product->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
+        $product->setStatus(1);
+        $product->setTaxClassId(0); # My default tax class
+        $product->setStockData(array(
+            'is_in_stock' => 1,
+            'qty' => 99999
+        ));
+        $product->setCreatedAt(strtotime('now'));
+        try {
             $product->save();
-//endif;
-        }catch(Exception $e){
-            Mage::log($e->getMessage());
         }
+        catch (Exception $ex) {
+            //Handle the error
+        }
+    }
+
+    /**
+     * Format URL key from name or defined key
+     *
+     * @param string $str
+     * @return string
+     */
+    public function formatUrlKey($str)
+    {
+        $str = Mage::helper('catalog/product_url')->format($str);
+        $urlKey = preg_replace('#[^0-9a-z]+#i', '-', $str);
+        $urlKey = strtolower($urlKey);
+        $urlKey = trim($urlKey, '-');
+        return $urlKey;
     }
 
     public function isCategoryExists($categoryName)
