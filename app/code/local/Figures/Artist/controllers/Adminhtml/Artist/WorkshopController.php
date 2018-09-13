@@ -66,13 +66,13 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             $gIToCreate = false;
         }
         if ($formToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $formCategory]);
+            $this->_getProductCreatorModel()->createCategory(['name' => $formCategory, 'category_custom_type' => 'FORM']);
         }
         if ($genreToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory]);
+            $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE']);
         }
         if ($gIToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory]);
+            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM']);
         }
 
         $productData = [
