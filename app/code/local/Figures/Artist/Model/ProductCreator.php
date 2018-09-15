@@ -30,7 +30,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             return $e;
         }
 
-        return 'ok';
+        return $category->getId();
     }
 
     public function createProduct($productData)

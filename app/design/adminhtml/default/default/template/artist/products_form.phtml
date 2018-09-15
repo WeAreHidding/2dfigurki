@@ -47,9 +47,9 @@ $genreItemCategories = $this->getGenreItemCategories();
         var dataArray = {from:'admin'};
         var formIdentifier = '#productForm' + formId;
         //Select category inputs
-        dataArray['form_old']       = $j(formIdentifier + ' #FORM_old').val();
-        dataArray['genre_old']      = $j(formIdentifier + ' #GENRE_old').val();
-        dataArray['genre_item_old'] = $j(formIdentifier + ' #GENRE_ITEM_old').val();
+        dataArray['form_old']       = $j(formIdentifier + ' #FORM_old option:selected').val();
+        dataArray['genre_old']      = $j(formIdentifier + ' #GENRE_old option:selected').val();
+        dataArray['genre_item_old'] = $j(formIdentifier + ' #GENRE_ITEM_old option:selected').val();
 
         //Input category results
         dataArray['form']           = $j(formIdentifier + ' #FORM').val();
@@ -106,7 +106,7 @@ $genreItemCategories = $this->getGenreItemCategories();
             "                                <?php if ($formCategories) :?>\n" +
             "                                    <select id=\"FORM_old\" name=\"FORM_old\">\n" +
             "                                        <?php foreach ($formCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['name'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
             "                                        <?php endforeach; ?>\n" +
             "                                    </select>\n" +
             "                                <?php else : ?>\n" +
@@ -122,7 +122,7 @@ $genreItemCategories = $this->getGenreItemCategories();
             "                                <?php if ($genreCategories) :?>\n" +
             "                                    <select id=\"GENRE_old\" name=\"GENRE_old\">\n" +
             "                                        <?php foreach ($genreCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['name'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
             "                                        <?php endforeach; ?>\n" +
             "                                    </select>\n" +
             "                                <?php else : ?>\n" +
@@ -138,7 +138,7 @@ $genreItemCategories = $this->getGenreItemCategories();
             "                                <?php if ($genreItemCategories) :?>\n" +
             "                                    <select id=\"GENRE_ITEM_old\" name=\"GENRE_ITEM_old\">\n" +
             "                                        <?php foreach ($genreItemCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['name'] ?>\"><?php echo $category['name']; ?></option>\n" +
+            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
             "                                        <?php endforeach; ?>\n" +
             "                                    </select>\n" +
             "                                <?php else : ?>\n" +

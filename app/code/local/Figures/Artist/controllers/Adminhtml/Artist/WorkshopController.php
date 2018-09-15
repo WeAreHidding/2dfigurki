@@ -52,7 +52,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $params = $this->getRequest()->getParams();
         $dataArray = json_decode($params['productData'], true);
 
-        $formToCreate = $genreToCreate = $gIToCreate = true;
+        $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
         if (!$formCategory = $dataArray['form']) {
             $formCategory = $dataArray['form_old'];
             $formToCreate = false;
@@ -66,13 +66,13 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             $gIToCreate = false;
         }
         if ($formToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $formCategory, 'category_custom_type' => 'FORM']);
+            $fCatId = $this->_getProductCreatorModel()->createCategory(['name' => $formCategory, 'category_custom_type' => 'FORM']);
         }
         if ($genreToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE']);
+            $gCatId = $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE', 'parent_id' => $fCatId ?: $dataArray['genre_item_old']]);
         }
         if ($gIToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM']);
+            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM', 'parent_id' => $gCatId ?: $dataArray['genre_old']]);
         }
 
         $productData = [
