@@ -35,19 +35,15 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
 
     protected function _initRowData()
     {
-        $connection = $this->_getConnection();
-
-        $this->_rowData = $connection->fetchRow(
-            $connection->select()->from('artist_work')->where('id = ?', $this->_rowId)
-        );
+        $this->_rowData = $this->_getArtistModel()->getWorkDataById($this->_rowId);
     }
 
 
     /**
-     * @return Varien_Db_Adapter_Pdo_Mysql
+     * @return Figures_Artist_Model_Artist
      */
-    protected function _getConnection()
+    protected function _getArtistModel()
     {
-        return Mage::getModel('core/resource')->getConnection('core_write');
+        return Mage::getModel('figures_artist/artist');
     }
 }

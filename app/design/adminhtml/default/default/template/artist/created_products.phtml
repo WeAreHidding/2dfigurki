@@ -1,0 +1,83 @@
+<?php
+$customer = $this->getCustomerInfo();
+$editableData = $this->getEditableData();
+$formInfo = $this->_getFormsInfo();
+?>
+<div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;display: block">
+    <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
+</div>
+<div class="side-col">
+    <h3>Progress</h3>
+    <?php if ($editableData['status'] != 'Declined') : ?>
+        <div class="header-progress-container">
+            <ol class="header-progress-list">
+                <li id="pg_check" class="header-progress-item done">Check</li>
+                <li id="pg_accept" class="header-progress-item done">Accept</li>
+                <li id="pg_accept" class="header-progress-item todo">Product</li>
+            </ol>
+        </div>
+    <?php else : ?>
+        <em style="margin-left:5px">Declined</em>
+    <?php endif; ?>
+    <h3>Operations</h3>
+    <ul class="tabs">
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $editableData['id'] ?>" class="tab-item-link">View info</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
+        <li style="cursor: pointer"><a class="tab-item-link">Created products</a></li>
+    </ul>
+</div>
+<div class="main-col">
+    <?php if (!$formInfo) : ?>
+        <div class="entry-edit">
+            <fieldset>
+                <table cellspacing="0" class="form-list">
+                    <tr>
+                        <td>
+                            <p>NO PRODUCTS CREATED</p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    <?php endif; ?>
+    <?php foreach ($formInfo as $info) :?>
+        <?php if (isset($info['product_id'])) : ?>
+            <div class="entry-edit">
+                <fieldset>
+                    <table cellspacing="0" class="form-list">
+                        <tr>
+                            <td style="padding-right: 20px">
+                                <div>
+                                    <h5><?php echo $this->__('Product:'); ?></h5>
+                                </div>
+                            </td>
+                            <td style="padding-right: 50px">
+                                <h5><?php echo $info['name'] ?></h5>
+                            </td>
+                            <td style="padding-right: 20px">
+                                <a target="_blank" rel="noopener noreferrer" href="<?php echo $info['edit_link'] ?>" style="font-weight:bold;">Edit link</a>
+                            </td>
+                            <td style="padding-right: 10px">
+                                <a target="_blank" rel="noopener noreferrer" href="<?php echo $info['frontend_link'] ?>" style="font-weight:bold;">Frontend link</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:20px; padding-top: 20px;">
+                                <h5><?php echo $this->__('Total Sold:'); ?></h5>
+                            </td>
+                            <td style="padding-right:20px; padding-top: 20px;">
+                                <h5><?php echo $info['qty_ordered'] ?></h5>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+
+<script type="text/javascript">
+    function goBack() {
+        location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
+    }
+</script>

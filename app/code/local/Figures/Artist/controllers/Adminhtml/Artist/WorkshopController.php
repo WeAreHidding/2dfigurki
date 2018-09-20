@@ -51,6 +51,8 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     {
         $params = $this->getRequest()->getParams();
         $dataArray = json_decode($params['productData'], true);
+        var_dump($_FILES);
+        var_dump($dataArray); die();
 
         $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
         if (!$formCategory = $dataArray['form']) {
@@ -84,6 +86,12 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
         $this->_getProductCreatorModel()->createProduct($productData);
 
+    }
+
+    public function editCreatedAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
     }
 
     /**

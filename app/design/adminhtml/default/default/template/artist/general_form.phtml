@@ -25,6 +25,7 @@ $editableData = $this->getEditableData();
         <ul class="tabs">
             <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
             <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
+            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
         </ul>
 </div>
 <div class="main-col">

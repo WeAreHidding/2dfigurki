@@ -23,4 +23,12 @@
             <block type="figures_artist/adminhtml_workshop_forms_products" name="workshop_general"/>
         </reference>
     </adminhtml_artist_workshop_editproducts>
+    <adminhtml_artist_workshop_editcreated>
+        <reference name="head">
+            <action method="addCss"><stylesheet>figures/progress.css</stylesheet></action>
+        </reference>
+        <reference name="content">
+            <block type="figures_artist/adminhtml_workshop_forms_created" name="workshop_general"/>
+        </reference>
+    </adminhtml_artist_workshop_editcreated>
 </layout>

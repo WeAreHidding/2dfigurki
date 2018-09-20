@@ -7,9 +7,10 @@ $genreCategories = $this->getGenreCategories();
 $genreItemCategories = $this->getGenreItemCategories();
 
 ?>
-<div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;display: block">
+<div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;padding-right:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
     <button class="scalable" type="button" onclick="addProductBlock()" id="pending_btn">Add product</button>
+    <button style="margin-left: 50px" class="scalable" type="button" onclick="saveAll()" id="pending_btn">Save all</button>
 </div>
 <div class="side-col">
     <h3>Progress</h3>
@@ -28,6 +29,7 @@ $genreItemCategories = $this->getGenreItemCategories();
     <ul class="tabs">
         <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $editableData['id'] ?>" class="tab-item-link">View info</a></li>
         <li style="cursor: pointer"><a class="tab-item-link">Product creation</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
     </ul>
 </div>
 <div id="product_block" class="main-col">
@@ -38,14 +40,16 @@ $genreItemCategories = $this->getGenreItemCategories();
 <script type="text/javascript">
 
     var formCounter = 0;
+    var formsOnPage = [];
     var rowId = '<?php echo $editableData['id'] ?>';
 
     $j = jQuery.noConflict();
     addProductBlock();
 
-    function saveProduct(formId) {
+    function saveProduct(formId, noremove = false) {
         var dataArray = {from:'admin'};
         var formIdentifier = '#productForm' + formId;
+        dataArray['sent_form_id'] = formId;
         //Select category inputs
         dataArray['form_old']       = $j(formIdentifier + ' #FORM_old option:selected').val();
         dataArray['genre_old']      = $j(formIdentifier + ' #GENRE_old option:selected').val();
@@ -61,22 +65,85 @@ $genreItemCategories = $this->getGenreItemCategories();
         dataArray['sku']            = $j(formIdentifier + ' #sku').val();
         dataArray['price']          = $j(formIdentifier + ' #price').val();
 
+        //image
+
+        var formdata = new FormData();
+        var file = this.files;
+        formdata.append("image", file);
+        dataArray['image']          = formdata;
+
+
+
 
         if (isDataValid(dataArray)) {
             sendCreateAjax(dataArray);
+            if (!noremove) {
+                formsOnPage.splice(formsOnPage.indexOf(formId), 1);
+                $j(formIdentifier).remove();
+            }
+        }
+    }
+    
+    function saveAll() {
+        var formsToSave = formsOnPage;
+        var formsToRemove = [];
+        console.log(formsToSave);
+        for (var i = 0; i < formsToSave.length; i++) {
+            var item = formsToSave[i];
+            console.log('Saving ' + item);
+            saveProduct(item, true);
+            console.log('Ok for ' + item);
+            formsToRemove.push(item);
+        }
+
+        //remove potomuchto js huyna ebanaya
+        console.log(formsToRemove);
+        for (var i = 0; i < formsToRemove.length; i++) {
+            var item = formsToRemove[i];
+            formsToRemove.splice(formsToRemove.indexOf(item), 1);
+            $j('#productForm' + item).remove();
         }
     }
 
     function isDataValid(dataArray) {
-        if (dataArray['form_old']) {
-
+        var alertMsg = '';
+        if (!dataArray['form_old']) {
+            if (!dataArray['form']) {
+                alertMsg += '| NO INFO ABOUT "FORM CATEGORY" |';
+            }
         }
-        return true;
+        if (!dataArray['genre_old']) {
+            if (!dataArray['genre']) {
+                alertMsg += '| NO INFO ABOUT "GENRE CATEGORY" |';
+            }
+        }
+        if (!dataArray['genre_item_old']) {
+            if (!dataArray['genre_item']) {
+                alertMsg += '| NO INFO ABOUT "FANDOM CATEGORY" |';
+            }
+        }
+        if (!dataArray['title']) {
+            alertMsg += '| NO PRODUCT TITLE |';
+        }
+        if (!dataArray['price']) {
+            alertMsg += '| NO PRODUCT PRICE |';
+        }
+        if (!dataArray['sku']) {
+            alertMsg += '| NO PRODUCT SKU |';
+        }
+
+        if (!alertMsg) {
+            return true;
+        } else {
+            alertMsg += '|  ' + 'Fix erros in form' + dataArray['sent_form_id'] + '  |';
+            alert(alertMsg);
+
+            return false;
+        }
     }
 
     function sendCreateAjax(dataArray) {
         var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/createProduct') ?>';
-        console.log(dataArray);
 
         new Ajax.Request(url, {
             parameters: {method: 'POST', productData:JSON.stringify(dataArray), id:rowId},
@@ -93,9 +160,11 @@ $genreItemCategories = $this->getGenreItemCategories();
 
     function addProductBlock() {
         formCounter = formCounter + 1;
+        formsOnPage.push(formCounter);
+        
         var form =  "<div id=\"productForm" + formCounter +"\" class=\"entry-edit\">\n" +
             "        <div id=\"info\">\n" +
-            "            <div class=\"entry-edit-head\" style=\"height:18px !important;\"><h4>Add product</h4></div>\n" +
+            "            <div class=\"entry-edit-head\" style=\"height:18px !important;\"><h4>Add product (Form id:" + formCounter + ")</h4></div>\n" +
             "            <fieldset>\n" +
             "                <table cellspacing=\"0\" class=\"form-list\">\n" +
             "                    <tr>\n" +
@@ -171,14 +240,16 @@ $genreItemCategories = $this->getGenreItemCategories();
             "                        </td>\n" +
             "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
             "                            <div>\n" +
+            "                            <form role=\"form\" name=\"loadProductImage\" id=\"loadProductImage\" method=\"POST\" enctype=\"multipart/form-data\">\n" +
             "                                <p style=\"margin:0\"><?php echo $this->__('Image:'); ?></p>\n" +
             "                                <input id=\"ws_image\" name=\"ws_image\" type=\"file\"/>\n" +
             "                            </div>\n" +
+            "                            </form>\n" +
             "                        </td>\n" +
             "                    </tr>\n" +
             "                </table>\n" +
             "                <div style=\"padding-top:20px; text-align:right\">\n" +
-            "                    <button id=\"saveGeneral\" class=\"scalable\" type=\"button\" onclick=\"saveProduct(formCounter)\">Save product</button>\n" +
+            "                    <button id=\"saveGeneral\" class=\"scalable\" type=\"button\" onclick=\"saveProduct(" + formCounter + ")\">Save product</button>\n" +
             "                </div>\n" +
             "            </fieldset>\n" +
             "        </div>\n" +
