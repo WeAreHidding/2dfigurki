@@ -46,8 +46,11 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             ->addFieldToFilter('name', $productData['parent_cat'])
             ->getFirstItem(); // The parent category
 
+        if (!$categoryId = $category->getId()) {
+            $categoryId = $productData['parent_cat'];
+        }
 
-        $product->setCategoryIds(array($category->getId())); # some cat id's, my is 7
+        $product->setCategoryIds(array($categoryId)); # some cat id's, my is 7
         $product->setWebsiteIDs(array(1)); # Website id, my is 1 (default frontend)
 //        $product->setDescription('Full description here');
 //        $product->setShortDescription('Short description here');
@@ -69,12 +72,15 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $product->setCreatedAt(strtotime('now'));
         try {
             $product->save();
+
+            return $product->getId();
         }
         catch (Exception $ex) {
             //Handle the error
         }
-    }
 
+        return false;
+    }
     /**
      * Format URL key from name or defined key
      *
@@ -88,10 +94,5 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $urlKey = strtolower($urlKey);
         $urlKey = trim($urlKey, '-');
         return $urlKey;
-    }
-
-    public function isCategoryExists($categoryName)
-    {
-
     }
 }

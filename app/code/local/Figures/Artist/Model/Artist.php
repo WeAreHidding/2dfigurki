@@ -48,9 +48,21 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         $connection = $this->_getConnection();
 
         return $connection->fetchOne(
-            "SELECT COUNT(qty_ordered) FROM sales_flat_order_item WHERE product_id = {$productId}"
+            "SELECT SUM(qty_ordered) FROM sales_flat_order_item WHERE product_id = {$productId}"
         );
     }
+
+    public function saveArtistProduct($artistId, $productId, $workId)
+    {
+        $connection = $this->_getConnection();
+
+        $connection->insert('artist_product', [
+            'artist_id'  => $artistId,
+            'product_id' => $productId,
+            'work_id'    => $workId
+        ]);
+    }
+
 
     /**
      * @return Varien_Db_Adapter_Pdo_Mysql

@@ -51,8 +51,6 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     {
         $params = $this->getRequest()->getParams();
         $dataArray = json_decode($params['productData'], true);
-        var_dump($_FILES);
-        var_dump($dataArray); die();
 
         $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
         if (!$formCategory = $dataArray['form']) {
@@ -84,8 +82,13 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             'parent_cat' => $gICategory
         ];
 
-        $this->_getProductCreatorModel()->createProduct($productData);
+        $productId = $this->_getProductCreatorModel()->createProduct($productData);
 
+        if ($productId) {
+            $artistId = $dataArray['artist_id'];
+            $workId = $dataArray['work_id'];
+            $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId);
+        }
     }
 
     public function editCreatedAction()

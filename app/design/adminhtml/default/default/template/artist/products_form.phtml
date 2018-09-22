@@ -65,12 +65,10 @@ $genreItemCategories = $this->getGenreItemCategories();
         dataArray['sku']            = $j(formIdentifier + ' #sku').val();
         dataArray['price']          = $j(formIdentifier + ' #price').val();
 
-        //image
+        //additional data
 
-        var formdata = new FormData();
-        var file = this.files;
-        formdata.append("image", file);
-        dataArray['image']          = formdata;
+        dataArray['artist_id'] = '<?php echo $customer['customer_id'] ?>';
+        dataArray['work_id'] = rowId;
 
 
 
@@ -240,11 +238,9 @@ $genreItemCategories = $this->getGenreItemCategories();
             "                        </td>\n" +
             "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
             "                            <div>\n" +
-            "                            <form role=\"form\" name=\"loadProductImage\" id=\"loadProductImage\" method=\"POST\" enctype=\"multipart/form-data\">\n" +
             "                                <p style=\"margin:0\"><?php echo $this->__('Image:'); ?></p>\n" +
             "                                <input id=\"ws_image\" name=\"ws_image\" type=\"file\"/>\n" +
             "                            </div>\n" +
-            "                            </form>\n" +
             "                        </td>\n" +
             "                    </tr>\n" +
             "                </table>\n" +
