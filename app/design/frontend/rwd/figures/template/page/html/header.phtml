@@ -28,84 +28,66 @@
  */
 ?>
 
-<div class="header-language-background">
-    <div class="header-language-container">
-        <div class="store-language-container">
-            <?php echo $this->getChildHtml('store_language') ?>
+<header>
+    <div class="login">
+        <div class="container">
+            <nav class="navbar navbar-inverse pads0">
+                <div class="navbar-header">
+                </div>
+                <ul class="nav navbar-right">
+                    <li><a href="#" class="navbar-divider"> Sell Your Art</a></li>
+                    <li><a href="#" class="navbar-divider"> Log In</a></li>
+                    <li><a href="#"> Sign Up</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <?php echo $this->getChildHtml('currency_switcher') ?>
-
-        <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getChildHtml('accountLinks') ?></p>
     </div>
-</div>
 
-<header id="header" class="page-header">
-    <div class="page-header-container">
-        <a class="logo" href="<?php echo $this->getUrl('') ?>">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-        </a>
-
-        <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
-              // See app.js for details ?>
-        <div class="store-language-container"></div>
-
-        <!-- Skip Links -->
-
-        <div class="skip-links">
-            <a href="#header-nav" class="skip-link skip-nav">
-                <span class="icon"></span>
-                <span class="label"><?php echo $this->__('Menu'); ?></span>
-            </a>
-
-            <a href="#header-search" class="skip-link skip-search">
-                <span class="icon"></span>
-                <span class="label"><?php echo $this->__('Search'); ?></span>
-            </a>
-
-            <div class="account-cart-wrapper">
-                <?php if (Mage::getSingleton('customer/session')->isLoggedIn() && (Mage::getSingleton('customer/session')->getCustomerGroupId() == 20)) : ?>
-                    <a href="" onclick="location='<?php echo Mage::getBaseUrl() ?>new-artwork.html'" class="skip-link skip-account">
-                        <span class="icon"></span>
-                        <span class="label"><?php echo $this->__('Add an artwork'); ?></span>
-                    </a>
-                <?php endif; ?>
-
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                    <span class="icon"></span>
-                    <span class="label"><?php echo $this->__('Account'); ?></span>
-                </a>
-
-                <!-- Cart -->
-
-                <div class="header-minicart">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
+    <div class="search">
+        <div class="container">
+            <div class="blog-header py-3">
+                <div class="row align-items-center">
+                    <div class="col-2 pt-1 col_logo">
+                        <a class="navbar-brand" href="#">
+                            <img src="<?php echo $this->getSkinUrl('images/custom/bootstrap.jpg'); ?>" class="d-inline-block align-top" alt="Logotype">
+                            <span class="site_name text-muted">Company</span>
+                        </a>
+                    </div>
+                    <div class="col-8 col_search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Find your thing">
+                            <span class="input-group-btn">
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+                          </span>
+                        </div>
+                    </div>
+                    <div class="col-1 col_basket">
+                        <button class="btn btn-outline-secondary" type="button"><i class="fa fa-shopping-basket"></i></button>
+                    </div>
                 </div>
             </div>
-
-
         </div>
+    </div>
 
-        <!-- Navigation -->
-
-        <div id="header-nav" class="skip-content">
-            <?php echo $this->getChildHtml('topMenu') ?>
-        </div>
-
-        <!-- Search -->
-
-        <div id="header-search" class="skip-content">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
-
-        <!-- Account -->
-
-        <div id="header-account" class="skip-content">
-            <?php echo $this->getChildHtml('topLinks') ?>
+    <div class="catalogue navbar-collapse collapse show" id="navbarsExampleDefault">
+        <div class="container">
+            <div class="nav-scroller py-1 mb-2">
+                <ul class="nav">
+                    <li><a class="p-2 text-muted" href="#">Men's</a></li>
+                    <li><a class="p-2 text-muted" href="#">Women's</a></li>
+                    <li><a class="p-2 text-muted" href="#">Kids & Babies</a></li>
+                    <li><a class="p-2 text-muted" href="#">Device Cases</a></li>
+                    <li><a class="p-2 text-muted" href="#">Stickers</a></li>
+                    <li><a class="p-2 text-muted" href="#">Greeting Cards</a></li>
+                    <li><a class="p-2 text-muted" href="#">Wall Art</a></li>
+                    <li><a class="p-2 text-muted" href="#">Home Decor</a></li>
+                    <li><a class="p-2 text-muted" href="#">Stationary</a></li>
+                    <li><a class="p-2 text-muted" href="#">Bags</a></li>
+                    <li><a class="p-2 text-muted" href="#">Gifts</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
-
 
 <?php echo $this->getChildHtml('topContainer'); ?>
