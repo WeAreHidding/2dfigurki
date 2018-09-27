@@ -17,4 +17,18 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_General extends Figures_Arti
         $this->_rowId = $this->getRequest()->getParam('id');
         $this->_initRowData();
     }
+
+    /**
+     * @return array|bool
+     */
+    public function getProposedFormCategories()
+    {
+        $proposedCategories = $this->getEditableData()['proposed_form_category'];
+
+        if (!$proposedCategories) {
+            return false;
+        }
+
+        return explode(',', $proposedCategories);
+    }
 }

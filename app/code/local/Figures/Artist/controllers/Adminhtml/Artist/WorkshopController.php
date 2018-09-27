@@ -49,10 +49,9 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
     public function createProductAction()
     {
-        $params = $this->getRequest()->getParams();
-        $dataArray = json_decode($params['productData'], true);
-
+        $dataArray = $this->getRequest()->getParams();
         $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
+
         if (!$formCategory = $dataArray['form']) {
             $formCategory = $dataArray['form_old'];
             $formToCreate = false;
@@ -74,12 +73,14 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         if ($gIToCreate) {
             $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM', 'parent_id' => $gCatId ?: $dataArray['genre_old']]);
         }
+        $imagePath = $this->_loadImage($dataArray['work_id'], $dataArray['artist_id']);
 
         $productData = [
             'name' => $dataArray['title'],
             'sku'  => $dataArray['sku'],
             'price' => $dataArray['price'],
-            'parent_cat' => $gICategory
+            'parent_cat' => $gICategory,
+            'image_path' => $imagePath
         ];
 
         $productId = $this->_getProductCreatorModel()->createProduct($productData);
@@ -89,12 +90,39 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             $workId = $dataArray['work_id'];
             $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId);
         }
+
+        Mage::getSingleton('adminhtml/session')->addSuccess(
+            'Saved!'
+        );
+        $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $dataArray['work_id']);
     }
 
     public function editCreatedAction()
     {
         $this->loadLayout();
         $this->renderLayout();
+    }
+
+    protected function _loadImage($workId, $customerId)
+    {
+        $type = 'ws_image';
+        if (isset($_FILES[$type]['name']) && $_FILES[$type]['name'] != '') {
+            try {
+                $uploader = new Varien_File_Uploader($type);
+                $uploader
+                    ->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
+                $uploader->setAllowRenameFiles(true);
+                $uploader->setFilesDispersion(true);
+                $path = Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/';
+                if (!is_dir($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $uploader->save($path, $_FILES[$type]['name']);
+                return Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/' . $uploader->getUploadedFileName();
+            } catch (Exception $e) {
+
+            }
+        }
     }
 
     /**

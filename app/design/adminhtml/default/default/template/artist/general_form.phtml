@@ -1,6 +1,9 @@
 <?php
+/** @var $this Figures_Artist_Block_Adminhtml_Workshop_Forms_General */
+
 $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
+$proposedFormCategories = $this->getProposedFormCategories();
 ?>
 <div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
@@ -24,8 +27,10 @@ $editableData = $this->getEditableData();
         <h3>Operations</h3>
         <ul class="tabs">
             <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
-            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
-            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
+            <?php if ($editableData['status'] == 'Accepted') : ?>
+                <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
+                <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
+            <?php endif; ?>
         </ul>
 </div>
 <div class="main-col">
@@ -46,7 +51,8 @@ $editableData = $this->getEditableData();
                             </div>
                         </td>
                         <td style="padding-right: 10px">
-                            <em>More info will be after partner cabinet implementation</em>
+                            <?php echo $this->__('Work sent at:'); ?>
+                            <label style="font-weight:bold;"><?php echo $editableData['created_at'] ?></label>
                         </td>
                     </tr>
                 </table>
@@ -73,6 +79,12 @@ $editableData = $this->getEditableData();
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
+                        <?php if ($this->getFormCategories()) : ?>
+                            <p style="font-weight:bold; padding-top:10px">Form Categories</p>
+                            <?php foreach ($this->getFormCategories() as $formCategory) : ?>
+                                <input type="checkbox" name="become_a_partner" title="<?php echo $formCategory['name'] ?>" value="1" id="become_a_partner" class="checkbox" />
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div style="padding-top:20px; text-align:right">
                         <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>
@@ -113,6 +125,7 @@ $editableData = $this->getEditableData();
             onSuccess: function() {
                 currentStatus = status;
                 refreshButtons();
+                location.reload();
             }
         });
     }

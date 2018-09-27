@@ -18,11 +18,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Products extends Figures_Art
         $this->_initRowData();
     }
 
-    public function getFormCategories()
-    {
-        return $this->getCategoryByFilter('FORM');
-    }
-
     public function getGenreCategories()
     {
         return $this->getCategoryByFilter('GENRE');
@@ -31,24 +26,5 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Products extends Figures_Art
     public function getGenreItemCategories()
     {
         return $this->getCategoryByFilter('GENRE_ITEM');
-    }
-
-    public function getCategoryByFilter($customType)
-    {
-        $categoryData = [];
-        $categories = Mage::getModel('catalog/category')
-            ->getCollection()
-            ->addAttributeToSelect('*')
-            ->addFieldToFilter('category_custom_type', $customType)
-            ->addIsActiveFilter();
-
-        foreach ($categories as $category) {
-            $categoryData[] = [
-                'name' => $category->getName(),
-                'id'   => $category->getId()
-            ];
-        }
-
-        return $categoryData;
     }
 }

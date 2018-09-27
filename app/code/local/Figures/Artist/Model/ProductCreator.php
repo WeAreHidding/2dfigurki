@@ -70,16 +70,23 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             'qty' => 99999
         ));
         $product->setCreatedAt(strtotime('now'));
+
+        //load image
+        $filePath = $productData['image_path'];
+        if (file_exists($filePath)) {
+            $product->addImageToMediaGallery($filePath, array('image', 'small_image', 'thumbnail'), false, false);
+        }
+
         try {
             $product->save();
 
             return $product->getId();
         }
         catch (Exception $ex) {
+            print_r("CHTOTO STRASNOE PZDC\n\n");
+            print_r($ex); die();
             //Handle the error
         }
-
-        return false;
     }
     /**
      * Format URL key from name or defined key

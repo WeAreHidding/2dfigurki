@@ -1,4 +1,6 @@
 <?php
+/** @var $this Figures_Artist_Block_Adminhtml_Workshop_Forms_Products */
+
 $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
 
@@ -9,8 +11,8 @@ $genreItemCategories = $this->getGenreItemCategories();
 ?>
 <div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;padding-right:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
-    <button class="scalable" type="button" onclick="addProductBlock()" id="pending_btn">Add product</button>
-    <button style="margin-left: 50px" class="scalable" type="button" onclick="saveAll()" id="pending_btn">Save all</button>
+    <button class="scalable" type="button" onclick="submitAll()" id="pending_btn">Add product</button>
+<!--    <button style="margin-left: 50px" class="scalable" type="button" onclick="saveAll()" id="pending_btn">Save all</button>-->
 </div>
 <div class="side-col">
     <h3>Progress</h3>
@@ -34,223 +36,128 @@ $genreItemCategories = $this->getGenreItemCategories();
 </div>
 <div id="product_block" class="main-col">
     <div id="productForm" class="entry-edit">
+        <form id="productFormArea" class="entry-edit" method="POST" enctype="multipart/form-data" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/createProduct") ?>">
+            <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+            <input type="hidden" name="artist_id" value="<?php echo $customer['customer_id'] ?>" />
+            <input type="hidden" name="work_id" value="<?php echo $editableData['id'] ?>" />
+                <div id="productForm" class="entry-edit">
+                    <div id="info">
+                        <div class="entry-edit-head" style="height:18px !important;"><h4>Add product</h4></div>
+                        <fieldset>
+                            <table cellspacing="0" class="form-list">
+                                <tr>
+                                    <h5>Category:</h5>
+                                    <td style="padding-right: 100px">
+                                        <div>
+                                            <p><?php echo $this->__('Physical form:'); ?></p>
+                                            <?php if ($formCategories) :?>
+                                                <select id="form_old" name="form_old">
+                                                    <?php foreach ($formCategories as $category) : ?>
+                                                        <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            <?php else : ?>
+                                                <p style="margin:0">---</p>
+                                            <?php endif; ?>
+                                            <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="form" name="form" id="form" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                    <td style="padding-right: 100px">
+                                        <div>
+                                            <p><?php echo $this->__('Genre:'); ?></p>
+                                            <?php if ($genreCategories) :?>
+                                                <select id="genre_old" name="genre_old">
+                                                    <?php foreach ($genreCategories as $category) : ?>
+                                                        <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            <?php else : ?>
+                                                <p style="margin:0">---</p>
+                                            <?php endif; ?>
+                                            <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="genre" name="genre" id="genre" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                    <td style="padding-right: 100px">
+                                        <div>
+                                            <p><?php echo $this->__('Fandom:'); ?></p>
+                                            <?php if ($genreItemCategories) :?>
+                                                <select id="genre_item_old" name="genre_item_old">
+                                                    <?php foreach ($genreItemCategories as $category) : ?>
+                                                        <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            <?php else : ?>
+                                                <p style="margin:0">---</p>
+                                            <?php endif; ?>
+                                            <p style="margin:0"><?php echo $this->__('Custom Name:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="genre_item" name="genre_item" id="genre_item" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 100px;padding-top:20px">
+                                        <h5>Product:</h5>
+                                        <div>
+                                            <p style="margin:0"><?php echo $this->__('Title:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="title" name="title" id="title" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                    <td style="padding-right: 100px;padding-top:40px">
+                                        <div>
+                                            <p style="margin:0"><?php echo $this->__('Sku:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="sku" name="sku" id="sku" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                    <td style="padding-right: 100px;padding-top:40px">
+                                        <div>
+                                            <p style="margin:0"><?php echo $this->__('Price:'); ?></p>
+                                            <input type="text" class="input-text" maxlength="255" title="price" name="price" id="price" style="width:100%;margin-top:5px;">
+                                        </div>
+                                    </td>
+                                    <td style="padding-right: 100px;padding-top:40px">
+                                        <div>
+                                            <p style="margin:0"><?php echo $this->__('Image:'); ?></p>
+                                            <input id="ws_image" name="ws_image" type="file"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="loadedImageBlock" style="display:none;padding-top:20px;">
+                                <h3>Loaded image:</h3>
+                                <img id="displayLoaded" src="#" alt="Loaded image" />
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </form>
 
     </div>
 </div>
 <script type="text/javascript">
-
-    var formCounter = 0;
-    var formsOnPage = [];
-    var rowId = '<?php echo $editableData['id'] ?>';
-
     $j = jQuery.noConflict();
-    addProductBlock();
 
-    function saveProduct(formId, noremove = false) {
-        var dataArray = {from:'admin'};
-        var formIdentifier = '#productForm' + formId;
-        dataArray['sent_form_id'] = formId;
-        //Select category inputs
-        dataArray['form_old']       = $j(formIdentifier + ' #FORM_old option:selected').val();
-        dataArray['genre_old']      = $j(formIdentifier + ' #GENRE_old option:selected').val();
-        dataArray['genre_item_old'] = $j(formIdentifier + ' #GENRE_ITEM_old option:selected').val();
-
-        //Input category results
-        dataArray['form']           = $j(formIdentifier + ' #FORM').val();
-        dataArray['genre']          = $j(formIdentifier + ' #GENRE').val();
-        dataArray['genre_item']     = $j(formIdentifier + ' #GENRE_ITEM').val();
-
-        //Input product results
-        dataArray['title']          = $j(formIdentifier + ' #title').val();
-        dataArray['sku']            = $j(formIdentifier + ' #sku').val();
-        dataArray['price']          = $j(formIdentifier + ' #price').val();
-
-        //additional data
-
-        dataArray['artist_id'] = '<?php echo $customer['customer_id'] ?>';
-        dataArray['work_id'] = rowId;
-
-
-
-
-        if (isDataValid(dataArray)) {
-            sendCreateAjax(dataArray);
-            if (!noremove) {
-                formsOnPage.splice(formsOnPage.indexOf(formId), 1);
-                $j(formIdentifier).remove();
-            }
-        }
-    }
-    
-    function saveAll() {
-        var formsToSave = formsOnPage;
-        var formsToRemove = [];
-        console.log(formsToSave);
-        for (var i = 0; i < formsToSave.length; i++) {
-            var item = formsToSave[i];
-            console.log('Saving ' + item);
-            saveProduct(item, true);
-            console.log('Ok for ' + item);
-            formsToRemove.push(item);
-        }
-
-        //remove potomuchto js huyna ebanaya
-        console.log(formsToRemove);
-        for (var i = 0; i < formsToRemove.length; i++) {
-            var item = formsToRemove[i];
-            formsToRemove.splice(formsToRemove.indexOf(item), 1);
-            $j('#productForm' + item).remove();
-        }
+    function submitAll() {
+        editForm = new varienForm('productFormArea', '');
+        editForm.submit();
     }
 
-    function isDataValid(dataArray) {
-        var alertMsg = '';
-        if (!dataArray['form_old']) {
-            if (!dataArray['form']) {
-                alertMsg += '| NO INFO ABOUT "FORM CATEGORY" |';
-            }
-        }
-        if (!dataArray['genre_old']) {
-            if (!dataArray['genre']) {
-                alertMsg += '| NO INFO ABOUT "GENRE CATEGORY" |';
-            }
-        }
-        if (!dataArray['genre_item_old']) {
-            if (!dataArray['genre_item']) {
-                alertMsg += '| NO INFO ABOUT "FANDOM CATEGORY" |';
-            }
-        }
-        if (!dataArray['title']) {
-            alertMsg += '| NO PRODUCT TITLE |';
-        }
-        if (!dataArray['price']) {
-            alertMsg += '| NO PRODUCT PRICE |';
-        }
-        if (!dataArray['sku']) {
-            alertMsg += '| NO PRODUCT SKU |';
-        }
+    $j("#ws_image").change(function() {
+        readURL(this);
+    });
 
-        if (!alertMsg) {
-            return true;
-        } else {
-            alertMsg += '|  ' + 'Fix erros in form' + dataArray['sent_form_id'] + '  |';
-            alert(alertMsg);
+    function readURL(input) {
 
-            return false;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $j('#displayLoaded').attr('src', e.target.result);
+                $j('#loadedImageBlock').show();
+            };
+
+            reader.readAsDataURL(input.files[0]);
         }
-    }
-
-    function sendCreateAjax(dataArray) {
-        var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/createProduct') ?>';
-
-        new Ajax.Request(url, {
-            parameters: {method: 'POST', productData:JSON.stringify(dataArray), id:rowId},
-            onFailure: function() {
-                alert('Save failed');
-            },
-            onSuccess: function() {}
-        });
-    }
-
-    function goBack() {
-        location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
-    }
-
-    function addProductBlock() {
-        formCounter = formCounter + 1;
-        formsOnPage.push(formCounter);
-        
-        var form =  "<div id=\"productForm" + formCounter +"\" class=\"entry-edit\">\n" +
-            "        <div id=\"info\">\n" +
-            "            <div class=\"entry-edit-head\" style=\"height:18px !important;\"><h4>Add product (Form id:" + formCounter + ")</h4></div>\n" +
-            "            <fieldset>\n" +
-            "                <table cellspacing=\"0\" class=\"form-list\">\n" +
-            "                    <tr>\n" +
-            "                        <h5>Category:</h5>\n" +
-            "                        <td style=\"padding-right: 100px\">\n" +
-            "                            <div>\n" +
-            "                                <p><?php echo $this->__('Physical form:'); ?></p>\n" +
-            "                                <?php if ($formCategories) :?>\n" +
-            "                                    <select id=\"FORM_old\" name=\"FORM_old\">\n" +
-            "                                        <?php foreach ($formCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
-            "                                        <?php endforeach; ?>\n" +
-            "                                    </select>\n" +
-            "                                <?php else : ?>\n" +
-            "                                    <p style=\"margin:0\">---</p>\n" +
-            "                                <?php endif; ?>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Custom Name:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"FORM\" name=\"FORM\" id=\"FORM\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                        <td style=\"padding-right: 100px\">\n" +
-            "                            <div>\n" +
-            "                                <p><?php echo $this->__('Genre:'); ?></p>\n" +
-            "                                <?php if ($genreCategories) :?>\n" +
-            "                                    <select id=\"GENRE_old\" name=\"GENRE_old\">\n" +
-            "                                        <?php foreach ($genreCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
-            "                                        <?php endforeach; ?>\n" +
-            "                                    </select>\n" +
-            "                                <?php else : ?>\n" +
-            "                                    <p style=\"margin:0\">---</p>\n" +
-            "                                <?php endif; ?>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Custom Name:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"GENRE\" name=\"GENRE\" id=\"GENRE\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                        <td style=\"padding-right: 100px\">\n" +
-            "                            <div>\n" +
-            "                                <p><?php echo $this->__('Genre item:'); ?></p>\n" +
-            "                                <?php if ($genreItemCategories) :?>\n" +
-            "                                    <select id=\"GENRE_ITEM_old\" name=\"GENRE_ITEM_old\">\n" +
-            "                                        <?php foreach ($genreItemCategories as $category) : ?>\n" +
-            "                                            <option value=\"<?php echo $category['id'] ?>\"><?php echo $category['name']; ?></option>\n" +
-            "                                        <?php endforeach; ?>\n" +
-            "                                    </select>\n" +
-            "                                <?php else : ?>\n" +
-            "                                    <p style=\"margin:0\">---</p>\n" +
-            "                                <?php endif; ?>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Custom Name:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"GENRE_ITEM\" name=\"GENRE_ITEM\" id=\"GENRE_ITEM\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                    </tr>\n" +
-            "                    <tr>\n" +
-            "                        <td style=\"padding-right: 100px;padding-top:20px\">\n" +
-            "                            <h5>Product:</h5>\n" +
-            "                            <div>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Title:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"title\" name=\"title\" id=\"title\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
-            "                            <div>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Sku:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"sku\" name=\"sku\" id=\"sku\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
-            "                            <div>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Price:'); ?></p>\n" +
-            "                                <input type=\"text\" class=\"input-text\" maxlength=\"255\" title=\"price\" name=\"price\" id=\"price\" style=\"width:100%;margin-top:5px;\">\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                        <td style=\"padding-right: 100px;padding-top:40px\">\n" +
-            "                            <div>\n" +
-            "                                <p style=\"margin:0\"><?php echo $this->__('Image:'); ?></p>\n" +
-            "                                <input id=\"ws_image\" name=\"ws_image\" type=\"file\"/>\n" +
-            "                            </div>\n" +
-            "                        </td>\n" +
-            "                    </tr>\n" +
-            "                </table>\n" +
-            "                <div style=\"padding-top:20px; text-align:right\">\n" +
-            "                    <button id=\"saveGeneral\" class=\"scalable\" type=\"button\" onclick=\"saveProduct(" + formCounter + ")\">Save product</button>\n" +
-            "                </div>\n" +
-            "            </fieldset>\n" +
-            "        </div>\n" +
-            "    </div>";
-
-        $j('#product_block').append(form);
     }
 </script>

@@ -38,7 +38,7 @@ class Figures_Artist_WorkshopController extends Mage_Core_Controller_Front_Actio
                 $filename = $uploader->getUploadedFileName();
                 $model->setData('image_path', $filename);
             } catch (Exception $e) {
-//                var_dump($e); die();
+
             }
         }
 
