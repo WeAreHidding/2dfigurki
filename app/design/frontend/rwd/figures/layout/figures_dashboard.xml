@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <figures_dashboard_dashboard_index>
+        <!--<reference name="head">-->
+            <!--&lt;!&ndash;<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>&ndash;&gt;-->
+        <!--</reference>-->
+        <reference name="content">
+            <block type="figures_dashboard/dashboard"
+                   name="customer_dashboard"
+                   template="dashboard/dashboard.phtml" />
+        </reference>
+    </figures_dashboard_dashboard_index>
+</layout>

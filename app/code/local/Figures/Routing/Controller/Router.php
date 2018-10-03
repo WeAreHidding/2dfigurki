@@ -45,6 +45,12 @@ class Figures_Routing_Controller_Router extends Mage_Core_Controller_Varien_Rout
                 ->setActionName('index');
 
             return true;
+        } elseif (preg_match('/customer_dashboard/', $pathInfoInLowercase, $matches)) {
+            $request->setModuleName('figures_dashboard')
+                ->setControllerName('dashboard')
+                ->setActionName('index');
+
+            return true;
         }
     }
 }
