@@ -1,5 +1,180 @@
 <?php
 /** @var $this Figures_Dashboard_Block_Dashboard */
-//die();
 ?>
-<p><?php echo $this->getXuy(); ?></p>
+<link rel="stylesheet" href="../plugins/dropzone/dropzone.min.css">
+<script src="../plugins/dropzone/dropzone.min.js"></script>
+
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+            <strong>BS</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu">
+                    <!--data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"-->
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <!--<ul class="collapse list-unstyled" id="homeSubmenu">-->
+                <!--<li>-->
+                <!--<a href="#">Home 1</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-pen"></i>
+                    Design
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    Statistics
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-toolbox"></i>
+                    Tips & Tools
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-alt"></i>
+                    Account
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-language"></i>
+                    English
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="content__info">
+                <h2>Add new design</h2>
+                <form action="../parser.php" class="dropzone"></form>
+                <a href="#">Need help uploading?</a>
+                <div class="row dropzone__info">
+                    <div class="col-2">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="col-10">
+                        <h3>File requirements: </h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span> At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis, quibusdam quidem sint tempore vitae. Deserunt.</p>
+                        <h3>Design guide: </h3><p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>. Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae, soluta sunt ullam ut, vel!</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row content__form">
+                <div class="col-6">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                    <br>
+                    <label>Title</label>
+                    <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+                </div>
+                <div class="col-6">
+                    <label>Main Tag</label>
+                    <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                    <br>
+                    <label>Tags</label>
+                    <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+                </div>
+            </div>
+
+            <div class="row content__types">
+                <div class="col-12">
+                    <h3>What product your design is suitable for?</h3>
+                    <ul class="type_images list-inline">
+                        <li>
+                            <img src="../img/logo.jpg" alt="img">
+                            <button class="btn btn-info">Figurine</button>
+                        </li>
+                        <li>
+                            <img src="../img/logo.jpg" alt="img">
+                            <button class="btn btn-info">Pin</button>
+                        </li>
+                        <li>
+                            <img src="../img/logo.jpg" alt="img">
+                            <button class="btn btn-info">T-Shirt</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row content__agrees">
+                <ul class="list-inline">
+                    <li>
+                        <input id="form_agree" type="checkbox"><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label>
+                    </li>
+                    <li>
+                        <input id="form_confirm" type="checkbox"><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label>
+                    </li>
+                    <li>
+                        <button class="btn btn-info">Submit</button>
+                        <button class="btn btn-outline-info">Save for later</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

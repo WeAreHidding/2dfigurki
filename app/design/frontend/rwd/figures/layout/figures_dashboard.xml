@@ -1,9 +1,19 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <figures_dashboard_dashboard_index>
-        <!--<reference name="head">-->
-            <!--&lt;!&ndash;<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>&ndash;&gt;-->
-        <!--</reference>-->
+        <reference name="head">
+            <!--<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>-->
+            <action method="addCss"><stylesheet>css/plugins/jquery.mCustomScrollbar.min.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom/dashboard.css</stylesheet></action>
+            <action method="addJs"><script>js/plugins/popper.min.js</script></action>
+            <action method="addJs"><script>js/plugins/jquery.mCustomScrollbar.min.js</script></action>
+            <action method="addJs"><script>js/dashboard/dashboard.js</script></action>
+        </reference>
+
+        <remove name="header" />
+        <remove name="footer" />
+        <remove name="right" />
+
         <reference name="content">
             <block type="figures_dashboard/dashboard"
                    name="customer_dashboard"
