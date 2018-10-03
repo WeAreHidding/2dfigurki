@@ -4,7 +4,6 @@
     <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,17 +28,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="figures_dashboard.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="figures_dashboard.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+            <state relative-caret-position="184">
+              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/js/dashboard/dashboard.js">
+      <file leaf-file-name="dropzone.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/dropzone.min.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -47,21 +46,7 @@
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -149,8 +134,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="745" />
-    <option name="y" value="-13" />
+    <option name="x" value="850" />
+    <option name="y" value="187" />
     <option name="width" value="974" />
     <option name="height" value="1094" />
   </component>
@@ -214,7 +199,17 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="rwd" type="462c0819:PsiDirectoryNode" />
               <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
+              <item name="skin" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="rwd" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
@@ -224,7 +219,6 @@
               <item name="rwd" type="462c0819:PsiDirectoryNode" />
               <item name="default" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,15 +238,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\js" />
-      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\css\custom" />
-      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\css\plugins" />
-      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\images\custom" />
-      <recent name="C:\OpenServer\domains\local.2df.com\js\plugins" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OSPanel\domains\local.2df.com\app\design\frontend\rwd\figures\template" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\css\plugins" />
+      <recent name="C:\OpenServer\domains\local.2df.com\js\plugins" />
+      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\js" />
+      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\css\custom" />
+      <recent name="C:\OpenServer\domains\local.2df.com\skin\frontend\rwd\default\images\custom" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -285,6 +279,7 @@
       <workItem from="1537029375477" duration="784000" />
       <workItem from="1537092447457" duration="21000" />
       <workItem from="1537695093751" duration="3260000" />
+      <workItem from="1538593438934" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535201693796</created>
@@ -311,46 +306,43 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19221000" />
+    <option name="totallyTimeSpent" value="20121000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32890365" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38870433" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34551495" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18496802" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2835498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="File Transfer" order="7" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2835498" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.34632036" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,15 +665,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
+    <entry file="file://$PROJECT_DIR$/js/plugins/popper.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="92">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.concat.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="8088" selection-start-line="4" selection-start-column="8088" selection-end-line="4" selection-end-column="8088" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/jquery.mCustomScrollbar.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42839" selection-start-column="42839" selection-end-column="42839" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -690,46 +693,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/plugins/popper.min.js">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.concat.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="8088" selection-start-line="4" selection-start-column="8088" selection-end-line="4" selection-end-column="8088" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/js/plugins/dropzone.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/jquery.mCustomScrollbar.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42839" selection-start-column="42839" selection-end-column="42839" />
-          <folding>
-            <element signature="e#22473#22648#2" expanded="true" />
-            <element signature="e#23341#23504#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/dropzone.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        <state relative-caret-position="184">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/js/dashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
