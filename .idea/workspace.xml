@@ -2,9 +2,576 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" />
+      <change beforePath="$PROJECT_DIR$/js/dashboard/dashboard.js" afterPath="$PROJECT_DIR$/js/dashboard/dashboard.js" />
+      <change beforePath="$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.concat.min.js" afterPath="$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.min.js" />
+    </list>
+    <list id="685e2a51-3fff-46c0-b542-7f689c379b5b" name="New changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_varchar_1" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_varchar_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_datetime_1" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_datetime_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_tmp_1" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_tmp_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_log_visitor_info_1" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_log_visitor_info_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_Zend_LocaleC_es_419_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_Zend_LocaleC_es_419_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--0/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_country_AZ" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_country_AZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_country_BA" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_country_BA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencynumber_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencynumber_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencysymbol_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencysymbol_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_nametocurrency_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_nametocurrency_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_country_MN" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_country_MN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_country_MY" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_country_MY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_country_RS" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_country_RS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_country_CN" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_country_CN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_country_HK" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_country_HK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_country_TW" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_country_TW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--1/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_tier_price_1" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_tier_price_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_language_az" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_language_az" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_language_bs" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_language_bs" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_language_mn" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_language_mn" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_language_ms" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_language_ms" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_language_sr" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_language_sr" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_language_zh" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_language_zh" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_language_zh" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_language_zh" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_language_zh" afterPath="$PROJECT_DIR$/var/cache/mage--2/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_language_zh" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--3/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_decimal_1" afterPath="$PROJECT_DIR$/var/cache/mage--3/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_decimal_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--3/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_group_price_1" afterPath="$PROJECT_DIR$/var/cache/mage--3/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_group_price_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---d6e_FOOTER_LOCALEEN_US" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---d6e_FOOTER_LOCALEEN_US" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_FOOTER_LOCALEEN_US" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_FOOTER_LOCALEEN_US" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_az_Latn_AZ_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_bs_Latn_BA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencysymbol_USD" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencysymbol_USD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencytoname_USD" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencytoname_USD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_nametocurrency_USD" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_nametocurrency_USD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_mn_Cyrl_MN_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_ms_Latn_MY_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_sr_Latn_RS_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hans_CN_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_HK_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleC_zh_Hant_TW_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleL_uk_month_gregorian_format_abbreviated" afterPath="$PROJECT_DIR$/var/cache/mage--4/mage---internal-metadatas---d6e_Zend_LocaleL_uk_month_gregorian_format_abbreviated" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--5/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencytoregion_US" afterPath="$PROJECT_DIR$/var/cache/mage--5/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_currencytoregion_US" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_1" afterPath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_opt_tmp_1" afterPath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_opt_tmp_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_Zend_LocaleL_uk_day_" afterPath="$PROJECT_DIR$/var/cache/mage--6/mage---internal-metadatas---d6e_Zend_LocaleL_uk_day_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_CONFIGURATION_FILES_ACCESS_LEVEL_VERIFICATION" afterPath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_CONFIGURATION_FILES_ACCESS_LEVEL_VERIFICATION" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_1" afterPath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleC_uk_date_" afterPath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleC_uk_date_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleC_uk_time_" afterPath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleC_uk_time_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_month_gregorian_format_abbreviated" afterPath="$PROJECT_DIR$/var/cache/mage--7/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_month_gregorian_format_abbreviated" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_decimal_tmp_1" afterPath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_decimal_tmp_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_am_" afterPath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_am_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_pm_" afterPath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_pm_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_day_" afterPath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_day_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleL_uk_month_" afterPath="$PROJECT_DIR$/var/cache/mage--8/mage---internal-metadatas---d6e_Zend_LocaleL_uk_month_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--9/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_1" afterPath="$PROJECT_DIR$/var/cache/mage--9/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--9/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_days_" afterPath="$PROJECT_DIR$/var/cache/mage--9/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_days_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--a/mage---d6e_ADMIN_NOTIFICATIONS_LASTCHECK" afterPath="$PROJECT_DIR$/var/cache/mage--a/mage---d6e_ADMIN_NOTIFICATIONS_LASTCHECK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_ADMIN_NOTIFICATIONS_LASTCHECK" afterPath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_ADMIN_NOTIFICATIONS_LASTCHECK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_int_1" afterPath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_int_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_month_" afterPath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_month_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_months_" afterPath="$PROJECT_DIR$/var/cache/mage--a/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_months_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_int_1" afterPath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_int_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_1" afterPath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_opt_agr_tmp_1" afterPath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_price_opt_agr_tmp_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_symbols_" afterPath="$PROJECT_DIR$/var/cache/mage--b/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_symbols_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_cataloginventory_stock_item_1" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_cataloginventory_stock_item_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_index_event_1" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_index_event_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_report_viewed_product_index_1" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_report_viewed_product_index_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_country_EG" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_country_EG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_country_BG" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_country_BG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_country_BD" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_country_BD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_country_ES" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_country_ES" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_country_DK" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_country_DK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_country_AT" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_country_AT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_country_CH" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_country_CH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_country_DE" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_country_DE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_country_CA" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_country_CA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_country_GB" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_country_GB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_full" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_full" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_long" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_long" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_country_FI" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_country_FI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_country_CA" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_country_CA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_country_ID" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_country_ID" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_country_GE" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_country_GE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_language_" afterPath="$PROJECT_DIR$/var/cache/mage--c/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_language_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_text_1" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_entity_text_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_eav_attribute_1" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_eav_attribute_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_report_event_1" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_report_event_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_country_ZA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_country_ZA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_language_af" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_language_af" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_country_DZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_country_DZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_language_ar" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_language_ar" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_language_ar" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_language_ar" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_country_KW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_country_KW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_language_ar" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_language_ar" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_country_MA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_country_MA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_language_ar" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_language_ar" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_country_SA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_country_SA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_language_ar" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_language_ar" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_country_BY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_country_BY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_language_be" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_language_be" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_language_bg" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_language_bg" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_language_bn" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_language_bn" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_language_ca" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_language_ca" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_country_CZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_country_CZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_language_cs" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_language_cs" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_country_GB" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_country_GB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_language_cy" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_language_cy" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_language_da" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_language_da" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_language_de" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_language_de" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_language_de" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_language_de" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_language_de" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_language_de" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_country_GR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_country_GR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_language_el" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_language_el" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_country_AU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_country_AU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_country_IE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_country_IE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_country_NZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_country_NZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AQ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AQ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AX" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AX" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_AZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BB" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BJ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BJ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_BZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CX" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CX" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_CZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DJ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DJ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_DZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_EH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ER" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ER" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ES" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ES" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ET" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ET" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FJ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FJ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_FR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GB" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GQ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GQ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_GY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_HU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ID" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ID" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IQ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IQ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_IT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_JP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_KZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LB" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_LY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ME" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ME" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ML" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ML" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MQ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MQ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MX" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MX" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_MZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_NZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_OM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_OM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_PY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_QA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_QA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_RW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SB" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SB" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SJ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SJ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ST" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ST" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_SZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TD" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TD" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TJ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TJ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_TZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_US" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_US" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UY" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UY" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UZ" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_UZ" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VC" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VC" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VG" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VG" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_VU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_WF" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_WF" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_WS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_WS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_YE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_YE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_YT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_YT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZM" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZM" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZW" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_country_ZW" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_medium" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_medium" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_short" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_date_short" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_field_week" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_field_week" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_language_en" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_language_en" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_relative_0" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_relative_0" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_country_AR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_country_AR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_country_CL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_country_CL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_country_CO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_country_CO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_country_CR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_country_CR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_country_ES" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_country_ES" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_country_MX" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_country_MX" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_country_PA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_country_PA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_country_PE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_country_PE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_country_VE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_country_VE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_language_es" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_language_es" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_country_EE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_country_EE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_language_et" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_language_et" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_country_IR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_country_IR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_language_fa" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_language_fa" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_language_fi" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_language_fi" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_country_PH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_country_PH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_language_fr" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_language_fr" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_country_FR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_country_FR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_language_fr" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_language_fr" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_country_ES" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_country_ES" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_language_gl" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_language_gl" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_country_IN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_country_IN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_language_gu" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_language_gu" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_country_IL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_country_IL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_language_he" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_language_he" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_country_IN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_country_IN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_language_hi" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_language_hi" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_country_HR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_country_HR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_language_hr" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_language_hr" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_country_HU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_country_HU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_language_hu" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_language_hu" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_language_id" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_language_id" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_country_IS" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_country_IS" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_language_is" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_language_is" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_country_CH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_country_CH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_language_it" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_language_it" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_country_IT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_country_IT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_language_it" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_language_it" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_country_JP" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_country_JP" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_language_ja" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_language_ja" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_language_ka" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_language_ka" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_country_KH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_country_KH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_language_km" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_language_km" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_country_KR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_country_KR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_language_ko" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_language_ko" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_country_LA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_country_LA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_language_lo" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_language_lo" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_country_LT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_country_LT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_language_lt" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_language_lt" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_country_LV" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_country_LV" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_language_lv" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_language_lv" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_country_MK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_country_MK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_language_mk" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_language_mk" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_country_NO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_country_NO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_language_nb" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_language_nb" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_country_NL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_country_NL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_language_nl" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_language_nl" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_country_NO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_country_NO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_language_nn" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_language_nn" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_country_PL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_country_PL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_language_pl" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_language_pl" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_country_BR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_country_BR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_language_pt" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_language_pt" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_country_PT" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_country_PT" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_language_pt" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_language_pt" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_country_RO" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_country_RO" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_language_ro" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_language_ro" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_country_RU" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_country_RU" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_language_ru" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_language_ru" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_country_SK" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_country_SK" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_language_sk" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_language_sk" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_country_SI" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_country_SI" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_language_sl" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_language_sl" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_country_AL" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_country_AL" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_language_sq" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_language_sq" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_country_SE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_country_SE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_language_sv" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_language_sv" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_country_KE" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_country_KE" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_language_sw" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_language_sw" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_country_TH" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_country_TH" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_language_th" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_language_th" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_country_TR" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_country_TR" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_language_tr" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_language_tr" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_country_UA" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_country_UA" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_language_uk" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_language_uk" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_country_VN" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_country_VN" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_language_vi" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_language_vi" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_territory_2" afterPath="$PROJECT_DIR$/var/cache/mage--d/mage---internal-metadatas---d6e_Zend_LocaleL_en_US_territory_2" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--e/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_tmp_1" afterPath="$PROJECT_DIR$/var/cache/mage--e/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_index_eav_tmp_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_product_index_1" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_category_product_index_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_decimal_1" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_decimal_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_varchar_1" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_catalog_product_entity_varchar_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_customer_eav_attribute_website_1" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_DB_PDO_MYSQL_DDL_customer_eav_attribute_website_1" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_af_ZA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_DZ_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_EG_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_KW_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_MA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ar_SA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_be_BY_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_bg_BG_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_bn_BD_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ca_ES_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_cs_CZ_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_cy_GB_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_da_DK_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_AT_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_CH_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_de_DE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_el_GR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_001_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_001_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_AU_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_CA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_GB_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_IE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_NZ_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_en_US_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_AR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CL_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CO_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_CR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_ES_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_MX_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_PA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_PE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_es_VE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_et_EE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fa_IR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fi_FI_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_language_fil" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fil_PH_language_fil" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fr_CA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_fr_FR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_gl_ES_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_gu_IN_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_he_IL_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hi_IN_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hr_HR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_hu_HU_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_id_ID_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_is_IS_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_it_CH_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_it_IT_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ja_JP_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ka_GE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_km_KH_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ko_KR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lo_LA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lt_LT_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_lv_LV_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_mk_MK_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nb_NO_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nl_NL_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_nn_NO_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pl_PL_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pt_BR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_pt_PT_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ro_RO_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_ru_RU_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sk_SK_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sl_SI_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sq_AL_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sv_SE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_sw_KE_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_th_TH_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_tr_TR_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_uk_UA_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_parentlocale_" afterPath="$PROJECT_DIR$/var/cache/mage--f/mage---internal-metadatas---d6e_Zend_LocaleC_vi_VN_parentlocale_" />
+      <change beforePath="$PROJECT_DIR$/var/session/sess_18a3agik0a6q57j8k3d5a9hdu6" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/var/session/sess_jf4celdljgdmiulc724hv96vg3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/var/session/sess_mtkc5cv39vq2n3jc8se1io33i0" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/var/session/sess_oupir2er2p4vdkmt6600kodh74" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/var/session/sess_uhtbmr4pjl91o4suoslhq45441" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,36 +599,49 @@
       <file leaf-file-name="figures_dashboard.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+            <state relative-caret-position="437">
+              <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/js/dashboard/dashboard.js">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="page.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="898">
+              <caret line="85" column="100" lean-forward="false" selection-start-line="85" selection-start-column="100" selection-end-line="85" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="v4-shims.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/v4-shims.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="161">
+              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            <state relative-caret-position="230">
+              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,11 +650,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>finset</find>
-      <find>Please enter the following information to create your account.</find>
-      <find>register.phtml</find>
-      <find>newsletter</find>
-      <find>createpostac</find>
       <find>Account</find>
       <find>customer-&gt;setG</find>
       <find>class=&quot;skip-link skip-account&quot;</find>
@@ -99,7 +674,16 @@
       <find>main</find>
       <find>header</find>
       <find>script</find>
+      <find>ss/plugins/fontawesome_web/css/v4-shims.min</find>
+      <find>plugins/bootstrap.min.js</find>
+      <find>v4-shims.min</find>
+      <find>dropzone.min.js</find>
+      <find>$</find>
+      <find>dropzone.min.css</find>
     </findStrings>
+    <replaceStrings>
+      <replace>jQuery</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>D:\OSPanel\domains\local.2df.com\app\design\frontend\rwd</dir>
       <dir>D:\OSPanel\domains\local.2df.com\app\design\frontend\rwd\default\layout</dir>
@@ -127,15 +711,15 @@
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/header.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/footer.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/pager.phtml" />
-        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/styles.css" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" />
-        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" />
-        <option value="$PROJECT_DIR$/js/dashboard/dashboard.js" />
         <option value="$PROJECT_DIR$/js/plugins/popper.min.js" />
         <option value="$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.concat.min.js" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/jquery.mCustomScrollbar.min.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml" />
+        <option value="$PROJECT_DIR$/js/dashboard/dashboard.js" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml" />
       </list>
     </option>
   </component>
@@ -148,6 +732,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="745" />
     <option name="y" value="-13" />
@@ -158,73 +743,33 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
+              <item name="local.2df.com" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="rwd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="rwd" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="rwd" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local.2df.com" type="462c0819:PsiDirectoryNode" />
-              <item name="skin" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="rwd" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="local.2df.com" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -267,12 +812,16 @@
       </list>
     </option>
   </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="" />
+      <changelist id="685e2a51-3fff-46c0-b542-7f689c379b5b" name="New changelist" comment="" />
       <created>1535197211102</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -285,6 +834,7 @@
       <workItem from="1537029375477" duration="784000" />
       <workItem from="1537092447457" duration="21000" />
       <workItem from="1537695093751" duration="3260000" />
+      <workItem from="1538592871897" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535201693796</created>
@@ -311,46 +861,33 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19221000" />
+    <option name="totallyTimeSpent" value="19700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32890365" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38870433" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18496802" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
-      <window_info anchor="bottom" id="Messages" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="File Transfer" order="7" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2835498" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.34632036" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7402453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34632036" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31449893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835498" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,25 +930,37 @@
     <MESSAGE value="gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1449">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -425,35 +974,35 @@
     <entry file="file://$PROJECT_DIR$/app/etc/modules/Figures_Customer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1449">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
-          <caret line="70" column="152" selection-start-line="70" selection-start-column="122" selection-end-line="70" selection-end-column="152" />
+          <caret line="70" column="152" lean-forward="false" selection-start-line="70" selection-start-column="122" selection-end-line="70" selection-end-column="152" />
         </state>
       </provider>
     </entry>
@@ -468,61 +1017,63 @@
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/persistent/customer/form/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="989">
-          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+          <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/layout/persistent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
-          <caret line="30" column="33" selection-end-line="69" />
+          <caret line="30" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/persistent.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
+        <state relative-caret-position="-552">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Block/Form/Register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
+          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/etc/modules/Figures_Customer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="129" selection-start-line="6" selection-start-column="129" selection-end-line="6" selection-end-column="129" />
+          <caret line="6" column="129" lean-forward="false" selection-start-line="6" selection-start-column="129" selection-end-line="6" selection-end-column="129" />
         </state>
       </provider>
     </entry>
@@ -537,54 +1088,56 @@
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/persistent/customer/form/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="989">
-          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+          <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/layout/persistent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
-          <caret line="30" column="33" selection-end-line="69" />
+          <caret line="30" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/persistent.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
+        <state relative-caret-position="-552">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Block/Form/Register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
+          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -592,35 +1145,35 @@
     <entry file="file://$PROJECT_DIR$/app/code/local/Figures/Customer/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/etc/modules/Figures_Customer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_artist.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
-          <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
+          <caret line="124" column="18" lean-forward="false" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -641,95 +1194,97 @@
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <caret line="43" column="10" lean-forward="false" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/page.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/page/html/footer.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2231">
-          <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
+          <caret line="97" column="14" lean-forward="false" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/plugins/popper.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.concat.min.js">
+    <entry file="file://$PROJECT_DIR$/js/plugins/jquery.mCustomScrollbar.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="4" column="8088" selection-start-line="4" selection-start-column="8088" selection-end-line="4" selection-end-column="8088" />
+          <caret line="4" column="8088" lean-forward="false" selection-start-line="4" selection-start-column="8088" selection-end-line="4" selection-end-column="8088" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/jquery.mCustomScrollbar.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42839" selection-start-column="42839" selection-end-column="42839" />
-          <folding>
-            <element signature="e#22473#22648#2" expanded="true" />
-            <element signature="e#23341#23504#2" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="42839" lean-forward="false" selection-start-line="0" selection-start-column="42839" selection-end-line="0" selection-end-column="42839" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/plugins/v4-shims.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/page.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="898">
+          <caret line="85" column="100" lean-forward="false" selection-start-line="85" selection-start-column="100" selection-end-line="85" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/figures_dashboard.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        <state relative-caret-position="437">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/js/dashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

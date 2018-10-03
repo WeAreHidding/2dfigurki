@@ -5,9 +5,9 @@
             <!--<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>-->
             <action method="addCss"><stylesheet>css/plugins/jquery.mCustomScrollbar.min.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/custom/dashboard.css</stylesheet></action>
-            <action method="addJs"><script>js/plugins/popper.min.js</script></action>
-            <action method="addJs"><script>js/plugins/jquery.mCustomScrollbar.min.js</script></action>
-            <action method="addJs"><script>js/dashboard/dashboard.js</script></action>
+            <action method="addJs"><script>plugins/popper.min.js</script></action>
+            <action method="addJs"><script>plugins/jquery.mCustomScrollbar.min.js</script></action>
+            <action method="addJs"><script>dashboard/dashboard.js</script></action>
         </reference>
 
         <remove name="header" />
