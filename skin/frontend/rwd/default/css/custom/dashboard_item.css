@@ -1,0 +1,17 @@
+.dashboard h3 {
+    text-align: left; }
+
+.dashboard .row {
+    margin: 0; }
+
+.dashboard .col-5 {
+    background: white;
+    padding: 15px; }
+.dashboard .col-5 h4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #595959; }
+.dashboard .col-5 li {
+    text-align: center; }
+.dashboard .col-5 button {
+    margin-top: 30px; }
