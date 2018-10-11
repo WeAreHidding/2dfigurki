@@ -23,12 +23,18 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_General extends Figures_Arti
      */
     public function getProposedFormCategories()
     {
+        $formCategories = $this->getFormCategories();
         $proposedCategories = $this->getEditableData()['proposed_form_category'];
-
-        if (!$proposedCategories) {
+        if (!$formCategories || !$proposedCategories) {
             return false;
         }
+        $proposedCategories = explode(',', $proposedCategories);
+        $result = [];
+        foreach ($formCategories as $formCategory) {
+            $formCategory['is_used'] = in_array($formCategory['id'], $proposedCategories) ? 1 : 0;
+            $result[] = $formCategory;
+        }
 
-        return explode(',', $proposedCategories);
+        return $result;
     }
 }

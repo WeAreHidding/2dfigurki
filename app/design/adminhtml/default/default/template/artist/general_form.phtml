@@ -79,10 +79,14 @@ $proposedFormCategories = $this->getProposedFormCategories();
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
-                        <?php if ($this->getFormCategories()) : ?>
+                        <?php if ($proposedFormCategories) : ?>
                             <p style="font-weight:bold; padding-top:10px">Form Categories</p>
-                            <?php foreach ($this->getFormCategories() as $formCategory) : ?>
-                                <input type="checkbox" name="become_a_partner" title="<?php echo $formCategory['name'] ?>" value="1" id="become_a_partner" class="checkbox" />
+                            <?php foreach ($proposedFormCategories as $formCategory) : ?>
+                                <input type="checkbox" name="category_<?php echo $formCategory['id'] ?>"
+                                       title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="category_<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
+                                       <?php echo $formCategory['is_used'] ? 'checked' : ''?>
+                                />
+                                <span><?php echo $formCategory['name'] ?></span>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
@@ -95,6 +99,8 @@ $proposedFormCategories = $this->getProposedFormCategories();
 </div>
 
 <script type="text/javascript">
+    $j = jQuery.noConflict();
+
     var rowId = '<?php echo $editableData['id'] ?>';
     var currentStatus = '<?php echo $editableData['status'] ?>';
 
@@ -105,13 +111,27 @@ $proposedFormCategories = $this->getProposedFormCategories();
 
         var description = document.getElementById('description').value;
         var tags = document.getElementById('tags').value;
+        var categories = getChosenCategories()
         new Ajax.Request(url, {
-            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId},
+            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId, form_category:categories},
             onFailure: function() {
                 alert('Save failed');
             },
             onSuccess: function() {}
         });
+    }
+    
+    function getChosenCategories() {
+        var checkedElements = $j(':checkbox');
+
+        var values = checkedElements.map(function() {
+            return {
+                id: this.id,
+                value: this.title
+            };
+        }).get();
+
+        return values;
     }
 
     function setStatus(status) {
@@ -145,6 +165,14 @@ $proposedFormCategories = $this->getProposedFormCategories();
             review.style.display = 'inline-block';
         }
     }
+
+    $j(":checkbox").change(function() {
+        if(this.checked) {
+            this.value = 1;
+        } else {
+            this.value = 0;
+        }
+    });
 
     function goBack() {
         location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
