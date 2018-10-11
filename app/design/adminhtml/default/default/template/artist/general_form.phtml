@@ -76,6 +76,7 @@ $proposedFormCategories = $this->getProposedFormCategories();
                     </table>
                     <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/saveGeneral") ?>" style="padding-top: 20px">
                         <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                        <input type="hidden" name="id" value="<?php echo $editableData['id'] ?>" />
                         <p style="font-weight:bold;">Description</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
@@ -83,7 +84,7 @@ $proposedFormCategories = $this->getProposedFormCategories();
                         <?php if ($proposedFormCategories) : ?>
                             <p style="font-weight:bold; padding-top:10px">Form Categories</p>
                             <?php foreach ($proposedFormCategories as $formCategory) : ?>
-                                <input type="checkbox" name="category_<?php echo $formCategory['id'] ?>"
+                                <input type="checkbox" name="<?php echo $formCategory['id'] ?>"
                                        title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
                                        <?php echo $formCategory['is_used'] ? 'checked' : ''?>
                                 />
@@ -110,20 +111,6 @@ $proposedFormCategories = $this->getProposedFormCategories();
     function saveGeneralData() {
         editForm = new varienForm('generalFormArea', '');
         editForm.submit();
-        //var url = '<?php //echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>//';
-        //
-        //var description = document.getElementById('description').value;
-        //var tags = document.getElementById('tags').value;
-        //var categories = getChosenCategories();
-        //
-        //console.log(categories);
-        //new Ajax.Request(url, {
-        //    parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId, form_category:categories},
-        //    onFailure: function() {
-        //        alert('Save failed');
-        //    },
-        //    onSuccess: function() {}
-        //});
     }
     
     function getChosenCategories() {

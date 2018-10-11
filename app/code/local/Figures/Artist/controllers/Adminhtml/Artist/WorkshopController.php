@@ -2,6 +2,12 @@
 
 class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_Controller_Action
 {
+    protected $_generalParams = [
+        'form_key',
+        'description',
+        'tags'
+    ];
+
     public function indexAction()
     {
         $this->loadLayout();
@@ -23,14 +29,31 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $this->renderLayout();
     }
 
+    /**
+     * @throws Zend_Db_Adapter_Exception
+     */
     public function saveGeneralAction()
     {
         $params = $this->getRequest()->getParams();
-        var_dump($params); die();
+
+        $formCategories = [];
+        foreach ($params as $key => $param) {
+            if (in_array($key, $this->_generalParams)) {
+                continue;
+            }
+            $formCategories[] = $key;
+        }
+        if ($formCategories) {
+            $formCategories = implode(',', $formCategories);
+        }
+
         $connection = $this->_getConnection();
 
         $connection->update('artist_work',
-            ['description' => $params['description'], 'tags' => $params['tags']], 'id=' . $params['id']);
+            ['description' => $params['description'], 'tags' => $params['tags'], 'proposed_form_category' => $formCategories],
+            'id=' . $params['id']);
+
+        $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $params['id']);
     }
 
     public function saveStatusAction()
