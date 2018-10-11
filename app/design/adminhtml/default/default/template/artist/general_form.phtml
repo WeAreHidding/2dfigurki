@@ -74,7 +74,8 @@ $proposedFormCategories = $this->getProposedFormCategories();
                             </td>
                         </tr>
                     </table>
-                    <div style="padding-top: 20px">
+                    <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/saveGeneral") ?>" style="padding-top: 20px">
+                        <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
                         <p style="font-weight:bold;">Description</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
@@ -83,13 +84,13 @@ $proposedFormCategories = $this->getProposedFormCategories();
                             <p style="font-weight:bold; padding-top:10px">Form Categories</p>
                             <?php foreach ($proposedFormCategories as $formCategory) : ?>
                                 <input type="checkbox" name="category_<?php echo $formCategory['id'] ?>"
-                                       title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="category_<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
+                                       title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
                                        <?php echo $formCategory['is_used'] ? 'checked' : ''?>
                                 />
                                 <span><?php echo $formCategory['name'] ?></span>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                    </div>
+                    </form>
                     <div style="padding-top:20px; text-align:right">
                         <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>
                     </div>
@@ -107,31 +108,30 @@ $proposedFormCategories = $this->getProposedFormCategories();
     refreshButtons();
 
     function saveGeneralData() {
-        var url = '<?php echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>';
-
-        var description = document.getElementById('description').value;
-        var tags = document.getElementById('tags').value;
-        var categories = getChosenCategories()
-        new Ajax.Request(url, {
-            parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId, form_category:categories},
-            onFailure: function() {
-                alert('Save failed');
-            },
-            onSuccess: function() {}
-        });
+        editForm = new varienForm('generalFormArea', '');
+        editForm.submit();
+        //var url = '<?php //echo $this->getUrl('adminhtml/artist_workshop/saveGeneral') ?>//';
+        //
+        //var description = document.getElementById('description').value;
+        //var tags = document.getElementById('tags').value;
+        //var categories = getChosenCategories();
+        //
+        //console.log(categories);
+        //new Ajax.Request(url, {
+        //    parameters: {isAjax: 1, method: 'POST', description:description, tags:tags, id:rowId, form_category:categories},
+        //    onFailure: function() {
+        //        alert('Save failed');
+        //    },
+        //    onSuccess: function() {}
+        //});
     }
     
     function getChosenCategories() {
         var checkedElements = $j(':checkbox');
 
-        var values = checkedElements.map(function() {
-            return {
-                id: this.id,
-                value: this.title
-            };
+        return checkedElements.map(function() {
+            return this.id
         }).get();
-
-        return values;
     }
 
     function setStatus(status) {

@@ -26,6 +26,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function saveGeneralAction()
     {
         $params = $this->getRequest()->getParams();
+        var_dump($params); die();
         $connection = $this->_getConnection();
 
         $connection->update('artist_work',
