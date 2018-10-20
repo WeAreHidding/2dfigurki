@@ -1,7 +1,6 @@
 <?php
 /** @var $this Figures_Dashboard_Block_Dashboard */
 ?>
-
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -10,13 +9,13 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li id="menu-home" onclick="menuToggle(this);">
+            <li id="menu-home" class="active"  onclick="menuToggle(this);">
                 <a href="#Home">
                     <i class="fas fa-home"></i>
                     Home
                 </a>
             </li>
-            <li id="menu-design" class="active" onclick="menuToggle(this);">
+            <li id="menu-design" onclick="menuToggle(this);">
                 <a href="#Design">
                     <i class="fas fa-tshirt"></i>
                     Design
@@ -40,24 +39,27 @@
                     Tips & Tools
                 </a>
             </li>
-            <li id="menu-account" onclick="menuToggle(this);">
-                <a href="#Account">
-                    <i class="fas fa-user-alt"></i>
-                    Account
-                </a>
-            </li>
-            <li id="menu-eng" onclick="menuToggle(this);">
-                <a href="#English">
-                    <i class="fas fa-language"></i>
-                    English
-                </a>
-            </li>
-            <li id="menu-logout" onclick="menuToggle(this);">
-                <a href="#Logout">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
-                </a>
-            </li>
+            <div class="components__bottom">
+                <li id="menu-account" onclick="menuToggle(this);">
+                    <a href="#Account">
+                        <i class="fas fa-user-alt"></i>
+                        Account
+                    </a>
+                </li>
+                <li id="menu-eng" onclick="menuToggle(this);">
+                    <a href="#English">
+                        <i class="fas fa-language"></i>
+                        English
+                    </a>
+                </li>
+                <li><hr></li>
+                <li id="menu-logout" onclick="menuToggle(this);">
+                    <a href="#Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </li>
+            </div>
         </ul>
 
     </nav>
@@ -78,99 +80,275 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
+                        <li>Hello, Nickname</li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <div class="container">
-            <div id="content_main" class="content_main">
-                <div class="content__info">
-                    <h2>Add new design</h2>
-                    <form action="../parser.php" class="dropzone"></form>
+            <div id="content_home" class="content_main">
+                <h1>Home</h1>
+            </div>
+            <div id="content_dash" class="content_main" style="display: none;">
+                <div class="dashboard">
+                    <h1>Hello, Nickname</h1>
+                    <div class="row">
+                        <div class="col-5 dashboard__credit">
+                            <ul class="list-inline">
+                                <li class="dashboard__title">
+                                    <h2><i class="fas fa-credit-card"></i> Credit</h2>
+                                    <h3>Since Last Payout</h3>
+                                </li>
+                                <li><hr></li>
+                                <li><h4>USD</h4></li>
+                                <li><h5>0.00</h5></li>
+                                <li><hr></li>
+                                <li><h6>Sales</h6></li>
+                                <li><h5>30</h5></li>
+                                <li><h6>Items</h6></li>
+                                <li><button class="btn btn-info">View more</button></li>
+                            </ul>
+                        </div>
+                        <div class="offset-1 col-5 dashboard__comissions">
+                            <ul class="list-inline">
+                                <li class="dashboard__title">
+                                    <h2><i class="fas fa-credit-card"></i> Comissions</h2>
+                                    <select title="select_state" class="form-control" name="state">
+                                        <option value="AL">Last 30 Days: 21 Aug. - 19 Sep</option>
+                                    </select>
+                                </li>
+                                <li><hr></li>
+                                <li><h4>USD</h4></li>
+                                <li><h5>0.00</h5></li>
+                                <li><hr></li>
+                                <li><h6>Sales</h6></li>
+                                <li><h5>30</h5></li>
+                                <li><h6>items</h6></li>
+                                <li><button class="btn btn-info">View more</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_design" class="content_main" style="display: none;">
+                <div class="design">
+                    <h1>Add new design</h1>
+                    <div class="dropblock">
+                        <form action="../../parser.php" class="dropzone"></form>
+                    </div>
                     <a href="#">Need help uploading?</a>
-                    <div class="row dropzone__info">
-                        <div class="col-2">
+
+                    <div class="row design__dropzone">
+                        <div class="col-1">
                             <i class="fas fa-info-circle"></i>
                         </div>
-                        <div class="col-10">
-                            <h3>File requirements: </h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span> At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis, quibusdam quidem sint tempore vitae. Deserunt.</p>
-                            <h3>Design guide: </h3><p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>. Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae, soluta sunt ullam ut, vel!</p>
+                        <div class="col-11">
+                            <h2>File requirements: </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>
+                                At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,
+                                quibusdam quidem sint tempore vitae. Deserunt.</p>
+                            <br>
+                            <h2>Design guide: </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.
+                                Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,
+                                soluta sunt ullam ut, vel!</p>
                         </div>
                     </div>
-                </div>
-                <hr>
 
-                <div class="row content__form">
-                    <div class="col-6">
-                        <label>Title</label>
-                        <input type="text" class="form-control" placeholder="Short Title For Your Design">
-                        <br>
-                        <label>Title</label>
-                        <textarea class="form-control" placeholder="Brief description of your design"></textarea>
-                    </div>
-                    <div class="col-6">
-                        <label>Main Tag</label>
-                        <input type="text" class="form-control" placeholder="Short Title For Your Design">
-                        <br>
-                        <label>Tags</label>
-                        <textarea class="form-control" placeholder="Brief description of your design"></textarea>
-                    </div>
-                </div>
+                    <hr>
 
-                <div class="row content__types">
-                    <div class="col-12">
-                        <h3>What product your design is suitable for?</h3>
-                        <ul class="type_images list-inline">
+                    <div class="row design__form">
+                        <div class="col-6">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label>Main Tag</label>
+                            <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                            <label>Tags</label>
+                            <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row design__types">
+                        <div class="col-12">
+                            <h2>What product your design is suitable for?</h2>
+                            <ul class="design__types-products list-inline">
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info">Figurine</button>
+                                </li>
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info">Pin</button>
+                                </li>
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info">T-Shirt</button>
+                                </li>
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info">Keychain</button>
+                                </li>
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info">Notebook</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row design__agrees">
+                        <ul class="list-inline">
                             <li>
-                                <img src="../img/logo.jpg" alt="img">
-                                <button class="btn btn-info">Figurine</button>
+                                <input id="form_agree" type="checkbox"><h3><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label></h3>
                             </li>
                             <li>
-                                <img src="../img/logo.jpg" alt="img">
-                                <button class="btn btn-info">Pin</button>
+                                <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
                             </li>
                             <li>
-                                <img src="../img/logo.jpg" alt="img">
-                                <button class="btn btn-info">T-Shirt</button>
+                                <button class="btn btn-info">Submit</button>
+                                <button class="btn btn-outline-info">Save for later</button>
                             </li>
                         </ul>
                     </div>
+
                 </div>
 
-                <div class="row content__agrees">
-                    <ul class="list-inline">
-                        <li>
-                            <input id="form_agree" type="checkbox"><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label>
-                        </li>
-                        <li>
-                            <input id="form_confirm" type="checkbox"><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label>
-                        </li>
-                        <li>
-                            <button class="btn btn-info">Submit</button>
-                            <button class="btn btn-outline-info">Save for later</button>
-                        </li>
+                <link rel="stylesheet" href="../plugins/dropzone/dropzone.min.css">
+                <script src="../plugins/dropzone/dropzone.min.js"></script>
+
+            </div>
+            <div id="content_stats" class="content_main" style="display: none;">
+                <div class="statistics">
+
+                    <ul class="nav nav-tabs">
+                        <li class="nav-link"><a data-toggle="tab" href="#menu-credit" class="active show">Credit</a></li>
+                        <li class="nav-link"><a data-toggle="tab" href="#menu-sales">Sales</a></li>
                     </ul>
+
+                    <div class="tab-content">
+                        <div id="menu-credit" class="tab-pane fade active show">
+                            <div class="container credit">
+                                <div class="row">
+                                    <div class="offset-4 col-4 credit__title">
+                                        <h2>Credit</h2>
+                                        <span>Since Last Payout</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <select class="form-control">
+                                            <option value="0">Last 30 days</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-12">
+                                        <h3>Balance</h3>
+                                        <div class="credit__price">
+                                            <h4>USD</h4>
+                                            <h5>322</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <h3>Comissions</h3>
+                                        <div class="credit__price">
+                                            <h4>USD</h4>
+                                            <h5>500</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <h3>Items Sold</h3>
+                                        <div class="credit__price">
+                                            <h4>Items</h4>
+                                            <h5>17</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container credit-b">
+                                <div class="row">
+                                    <div class="offset-4 col-4 col-auto">
+                                        <h2>Credit Breakdown</h2>
+                                        <span>Credits appear 14 days after completed purchase.</span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="offset-lg-2 col-lg-2 col-12">
+                                        <select class="form-control">
+                                            <option value="0">All credits sources</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-12">
+                                        <select class="form-control">
+                                            <option value="0">All Points of Sale</option>
+                                            <option value="1">Marketplace</option>
+                                            <option value="2">External Marketplace</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-12">
+                                        <input type="date" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="col-lg-2 col-12">
+                                        <input type="date" class="form-control" placeholder="To">
+                                    </div>
+                                    <div class="col-lg-2 col-12">
+                                        <a onclick="" class="pointer">Clear</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="offset-4 col-4 col-auto">
+                                        <button>X</button>
+                                        <h6>No entries for the current period</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu-sales" class="tab-pane fade">
+                            <div class="container sales">
+                                <div class="row">
+                                    <div class="offset-4 col-4 col-auto">
+                                        <h2>Sales</h2>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+
+                                    <div class="offset-lg-1 col-lg-3 col-12">
+                                        <select class="form-control">
+                                            <option value="0">All Points of Sale</option>
+                                            <option value="1">Marketplace</option>
+                                            <option value="2">External Marketplace</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-12">
+                                        <input type="date" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="col-lg-3 col-12">
+                                        <input type="date" class="form-control" placeholder="To">
+                                    </div>
+                                    <div class="col-lg-1 col-12">
+                                        <a onclick="" class="pointer">Clear</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="offset-4 col-4 col-auto">
+                                        <button>X</button>
+                                        <h6>No entries for the current period</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 

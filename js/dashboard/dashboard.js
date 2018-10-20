@@ -12,21 +12,26 @@ jQuery(document).ready(function() {
 });
 
 function menuToggle(a) {
-
     jQuery(".components li").each(function() {
         jQuery(this).removeClass('active');
     });
     jQuery(a).toggleClass('active');
     var id=jQuery(a).attr('id');
-    var content=jQuery('#content_main');
 
     switch(id) {
-        case 'menu-home': content.load('/tpl/room/home.html'); break;
-        case 'menu-design': content.load('/tpl/room/design.html'); break;
-        case 'menu-dash': content.load('/tpl/room/dash.html', function () {
-            jQuery('.js-example-basic-single').select2();
-        }); break;
-        case 'menu-stats': content.load('/tpl/room/stats.html'); break;
+        case 'menu-home': loadContent("home"); break;
+        case 'menu-design': loadContent("design"); break;
+        case 'menu-dash': loadContent("dash"); break;
+        case 'menu-stats': loadContent("stats"); break;
         default: console.log('error'); break;
     }
+}
+
+function loadContent(content) {
+    jQuery('#content_home').css("display", "none");
+    jQuery('#content_dash').css("display", "none");
+    jQuery('#content_design').css("display", "none");
+    jQuery('#content_stats').css("display", "none");
+
+    jQuery('#content_'+content).css("display", "block");
 }
