@@ -1,0 +1,99 @@
+<div id="content_design" class="content_main" style="display: none;">
+    <div class="design">
+        <h1>Add new design</h1>
+        <div class="dropblock">
+            <form id="drop_form" action="/figures_dashboard/dashboard/saveInfo" class="dropzone">
+                <input type="hidden" class="input-text" maxlength="255" title="description" value="" name="tags" id="tags">
+            </form>
+        </div>
+        <a href="#">Need help uploading?</a>
+
+        <div class="row design__dropzone">
+            <div class="col-1">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <div class="col-11">
+                <h2>File requirements: </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>
+                    At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,
+                    quibusdam quidem sint tempore vitae. Deserunt.</p>
+                <br>
+                <h2>Design guide: </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.
+                    Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,
+                    soluta sunt ullam ut, vel!</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row design__form">
+            <div class="col-6">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                <label>Description</label>
+                <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+            </div>
+            <div class="col-6">
+                <label>Main Tag</label>
+                <input type="text" class="form-control" placeholder="Short Title For Your Design">
+                <label>Tags</label>
+                <textarea class="form-control" placeholder="Brief description of your design"></textarea>
+            </div>
+        </div>
+
+        <div class="row design__types">
+            <div class="col-12">
+                <h2>What product your design is suitable for?</h2>
+                <ul class="design__types-products list-inline">
+                    <li>
+                        <img src="../../img/logo.jpg" alt="img">
+                        <button class="btn btn-info">Figurine</button>
+                    </li>
+                    <li>
+                        <img src="../../img/logo.jpg" alt="img">
+                        <button class="btn btn-info">Pin</button>
+                    </li>
+                    <li>
+                        <img src="../../img/logo.jpg" alt="img">
+                        <button class="btn btn-info">T-Shirt</button>
+                    </li>
+                    <li>
+                        <img src="../../img/logo.jpg" alt="img">
+                        <button class="btn btn-info">Keychain</button>
+                    </li>
+                    <li>
+                        <img src="../../img/logo.jpg" alt="img">
+                        <button class="btn btn-info">Notebook</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row design__agrees">
+            <ul class="list-inline">
+                <li>
+                    <input id="form_agree" type="checkbox"><h3><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label></h3>
+                </li>
+                <li>
+                    <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
+                </li>
+                <li>
+                    <button class="btn btn-info" type="submit">Submit</button>
+                    <button class="btn btn-outline-info" onclick="submitDrop()">Save for later</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    function submitDrop() {
+        alert(111);
+        jQuery( "#drop_form" ).submit(function(event) {
+            alert( "Handler for .submit() called." );
+            // event.preventDefault();
+        });
+    }
+</script>

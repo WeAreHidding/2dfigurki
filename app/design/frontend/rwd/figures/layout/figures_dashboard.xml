@@ -22,9 +22,17 @@
         <remove name="right" />
 
         <reference name="content">
-            <block type="figures_dashboard/dashboard"
-                   name="customer_dashboard"
-                   template="dashboard/dashboard.phtml" />
+            <block type="figures_dashboard/dashboard" name="customer_dashboard" template="dashboard/dashboard.phtml">
+                <block type="figures_dashboard/dashboard"
+                       name="customer_dashboard_totals"
+                       template="dashboard/pages/totals.phtml" />
+                <block type="figures_dashboard/dashboard_design"
+                       name="customer_dashboard_design"
+                       template="dashboard/pages/design.phtml" />
+                <block type="figures_dashboard/dashboard"
+                       name="customer_dashboard_stats"
+                       template="dashboard/pages/stats.phtml" />
+            </block>
         </reference>
     </figures_dashboard_dashboard_index>
 </layout>
