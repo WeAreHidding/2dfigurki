@@ -135,7 +135,9 @@
                 <div class="design">
                     <h1>Add new design</h1>
                     <div class="dropblock">
-                        <form action="../../parser.php" class="dropzone"></form>
+                        <form id="drop_form" action="/figures_dashboard/dashboard/saveInfo" class="dropzone">
+                            <input type="hidden" class="input-text" maxlength="255" title="description" value="" name="tags" id="tags">
+                        </form>
                     </div>
                     <a href="#">Need help uploading?</a>
 
@@ -210,16 +212,16 @@
                                 <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
                             </li>
                             <li>
-                                <button class="btn btn-info">Submit</button>
-                                <button class="btn btn-outline-info">Save for later</button>
+                                <button class="btn btn-info" type="submit">Submit</button>
+                                <button class="btn btn-outline-info" onclick="submitDrop()">Save for later</button>
                             </li>
                         </ul>
                     </div>
 
                 </div>
 
-                <link rel="stylesheet" href="../plugins/dropzone/dropzone.min.css">
-                <script src="../plugins/dropzone/dropzone.min.js"></script>
+<!--                <link rel="stylesheet" href="../plugins/dropzone/dropzone.min.css">-->
+<!--                <script src="../plugins/dropzone/dropzone.min.js"></script>-->
 
             </div>
             <div id="content_stats" class="content_main" style="display: none;">
@@ -350,5 +352,14 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function submitDrop() {
+        alert(111);
+        jQuery( "#drop_form" ).submit(function( event ) {
+            alert( "Handler for .submit() called." );
+            // event.preventDefault();
+        });
+    }
+</script>
 
 

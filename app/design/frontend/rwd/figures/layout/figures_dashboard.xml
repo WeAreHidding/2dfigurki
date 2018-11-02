@@ -2,6 +2,7 @@
 <layout version="0.1.0">
     <figures_dashboard_dashboard_index>
         <reference name="head">
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
             <!--<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>-->
             <action method="addCss"><stylesheet>css/plugins/bootstrap.min.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/plugins/jquery.mCustomScrollbar.min.css</stylesheet></action>
