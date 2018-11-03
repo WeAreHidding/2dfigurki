@@ -15,6 +15,7 @@
             <action method="addJs"><script>plugins/popper.min.js</script></action>
             <action method="addJs"><script>plugins/dropzone.min.js</script></action>
             <action method="addJs"><script>dashboard/dashboard.js</script></action>
+            <action method="addJs"><script>dashboard/design.js</script></action>
         </reference>
 
         <remove name="header" />

@@ -1,5 +1,7 @@
 
 jQuery(document).ready(function() {
+    Dropzone.autoProcessQueue = false;
+    // Dropzone.uploadMultiple = false;
     jQuery("#sidebar").mCustomScrollbar({
         theme: "minimal"
     });
