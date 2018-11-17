@@ -33,7 +33,7 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
         return $this->getCategoryByFilter('FORM');
     }
 
-    public function getCategoryByFilter($customType)
+    public function getCategoryByFilter($customType, $parentId = false)
     {
         $categoryData = [];
         $categories = Mage::getModel('catalog/category')
@@ -41,6 +41,9 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
             ->addAttributeToSelect('*')
             ->addFieldToFilter('category_custom_type', $customType)
             ->addIsActiveFilter();
+        if ($parentId) {
+            $categories->addFieldToFilter('parent_id', $parentId);
+        }
 
         foreach ($categories as $category) {
             $categoryData[] = [
@@ -55,6 +58,26 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
     public function getEditableData()
     {
         return $this->_rowData;
+    }
+
+    /**
+     * @return array|bool
+     */
+    public function getProposedFormCategories()
+    {
+        $formCategories = $this->getFormCategories();
+        $proposedCategories = $this->getEditableData()['proposed_form_category'];
+        if (!$formCategories || !$proposedCategories) {
+            return false;
+        }
+        $proposedCategories = explode(',', $proposedCategories);
+        $result = [];
+        foreach ($formCategories as $formCategory) {
+            $formCategory['is_used'] = in_array($formCategory['id'], $proposedCategories) ? 1 : 0;
+            $result[] = $formCategory;
+        }
+
+        return $result;
     }
 
     protected function _initRowData()

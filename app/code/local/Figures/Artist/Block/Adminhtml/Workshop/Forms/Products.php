@@ -18,9 +18,9 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Products extends Figures_Art
         $this->_initRowData();
     }
 
-    public function getGenreCategories()
+    public function getGenreCategories($parentId = false)
     {
-        return $this->getCategoryByFilter('GENRE');
+        return $this->getCategoryByFilter('GENRE', $parentId);
     }
 
     public function getGenreItemCategories()

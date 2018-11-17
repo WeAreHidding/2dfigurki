@@ -74,6 +74,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function createProductAction()
     {
         $dataArray = $this->getRequest()->getParams();
+        var_dump($this->_getProposedFormCategories($dataArray['work_id'])); die();
         $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
 
         if (!$formCategory = $dataArray['form']) {
@@ -147,6 +148,16 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
             }
         }
+
+        return false;
+    }
+
+    protected function _getProposedFormCategories($workId)
+    {
+        $connection = $this->_getConnection();
+        $pfc = $connection->fetchOne($connection->select()->from('artist_work', 'proposed_form_category')->where('id = ?', $workId));
+
+        return explode(',', $pfc);
     }
 
     /**
