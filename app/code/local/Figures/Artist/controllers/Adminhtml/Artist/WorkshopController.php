@@ -160,6 +160,31 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         return explode(',', $pfc);
     }
 
+    public function getFandomCategoriesAction()
+    {
+//        var_dump('qwr');
+//        var_dump($this->getRequest()->getParams()); die();
+        $genreId = $this->getRequest()->getParam('genre_cat_id');
+
+        $categoryData = [];
+        $categories = Mage::getModel('catalog/category')
+            ->getCollection()
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('category_custom_type', 'GENRE_ITEM')
+            ->addIsActiveFilter();
+
+        $categories->addFieldToFilter('parent_id', $genreId);
+
+        foreach ($categories as $category) {
+            $categoryData[] = [
+                'name' => $category->getName(),
+                'id'   => $category->getId()
+            ];
+        }
+
+        $this->getResponse()->setBody(json_encode($categoryData));
+    }
+
     /**
      * @return Figures_Artist_Model_Artist
      */

@@ -64,8 +64,10 @@ $genreItemCategories = $this->getGenreItemCategories();
                                             <div>
                                                 <p><?php echo $this->__('Genre:'); ?></p>
                                                 <?php if ($genreCategories = $this->getGenreCategories($proposedFormCategory['id'])) :?>
-                                                    <select id="genre_old" name="genre_old_<?php echo $proposedFormCategory['id'] ?>"
-                                                            data-id="<?php echo $proposedFormCategory['id'] ?>" onchange="loadFandomCategories(this)">
+                                                    <select id="genre_old_<?php echo $proposedFormCategory['id'] ?>" name="genre_old_<?php echo $proposedFormCategory['id'] ?>"
+                                                            data-id="<?php echo $proposedFormCategory['id'] ?>"
+                                                            onchange="loadFandomCategories(this)" class="genre_select" >
+                                                        <option disabled selected value> -- select an option -- </option>
                                                         <?php foreach ($genreCategories as $category) : ?>
                                                             <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
                                                         <?php endforeach; ?>
@@ -82,9 +84,7 @@ $genreItemCategories = $this->getGenreItemCategories();
                                                 <p><?php echo $this->__('Fandom:'); ?></p>
                                                 <?php if ($genreItemCategories) :?>
                                                     <select id="genre_item_old_<?php echo $proposedFormCategory['id'] ?>" name="genre_item_old_<?php echo $proposedFormCategory['id'] ?>">
-                                                        <?php foreach ($genreItemCategories as $category) : ?>
-                                                            <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
-                                                        <?php endforeach; ?>
+                                                        <option disabled selected value> -- select an option -- </option>
                                                     </select>
                                                 <?php else : ?>
                                                     <p style="margin:0">---</p>
@@ -136,6 +136,7 @@ $genreItemCategories = $this->getGenreItemCategories();
 </div>
 <script type="text/javascript">
     $j = jQuery.noConflict();
+    var fandomSelect;
 
     function submitAll() {
         editForm = new varienForm('productFormArea', '');
@@ -163,11 +164,33 @@ $genreItemCategories = $this->getGenreItemCategories();
 
     function loadFandomCategories(select) {
         var id = $j(select).data("id");
-        var fandomSelect = $j('#genre_item_old_' + id);
+        fandomSelect = $j('#genre_item_old_' + id);
         fandomSelect.prop("disabled", true);
+        fandomSelect
+            .find('option')
+            .remove();
 
-        alert(select.value);
+        $j.get(
+            '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/getFandomCategories") ?>',
+            {
+                genre_cat_id: select.value
+            },
+            onloadFandomCategoriesSuccess
+        );
 
         fandomSelect.prop("disabled", false);
+    }
+
+    function onloadFandomCategoriesSuccess(data)
+    {
+        if (data == '[]') {
+        } else {
+            console.log(data);
+            var options = JSON.parse(data);
+            $j.each(options, function (index, options) {
+                console.log(fandomSelect);
+                fandomSelect.append('<option value="' + options.id + '">' + options.name +'</option>');
+            });
+        }
     }
 </script>
