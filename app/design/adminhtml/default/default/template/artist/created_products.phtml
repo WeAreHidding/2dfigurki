@@ -60,6 +60,9 @@ $formInfo = $this->_getFormsInfo();
                             <td style="padding-right: 10px">
                                 <a target="_blank" rel="noopener noreferrer" href="<?php echo $info['frontend_link'] ?>" style="font-weight:bold;">Frontend link</a>
                             </td>
+                            <td style="padding-right: 10px">
+                                <button class="scalable delete" type="button" onclick="deleteProduct('<?php echo $info['product_id'] ?>')" id="decline_btn">Delete this product</button>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding-right:20px; padding-top: 20px;">
@@ -77,7 +80,20 @@ $formInfo = $this->_getFormsInfo();
 </div>
 
 <script type="text/javascript">
+    $j = jQuery.noConflict();
+
     function goBack() {
         location = '<?php echo $this->getUrl('adminhtml/artist_workshop/index') ?>';
+    }
+
+    function deleteProduct(id) {
+        $j.get(
+            '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/deleteProduct") ?>',
+            {
+                product_id: id
+            }
+        );
+
+        location = "<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>";
     }
 </script>

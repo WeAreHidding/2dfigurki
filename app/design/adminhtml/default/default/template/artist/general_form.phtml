@@ -81,16 +81,14 @@ $proposedFormCategories = $this->getProposedFormCategories();
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
-                        <?php if ($proposedFormCategories) : ?>
-                            <p style="font-weight:bold; padding-top:10px">Form Categories</p>
-                            <?php foreach ($proposedFormCategories as $formCategory) : ?>
-                                <input type="checkbox" name="<?php echo $formCategory['id'] ?>"
-                                       title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
-                                       <?php echo $formCategory['is_used'] ? 'checked' : ''?>
-                                />
-                                <span><?php echo $formCategory['name'] ?></span>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                        <p style="font-weight:bold; padding-top:10px">Form Categories</p>
+                        <?php foreach ($proposedFormCategories as $formCategory) : ?>
+                            <input type="checkbox" name="<?php echo $formCategory['id'] ?>"
+                                   title="<?php echo $formCategory['name'] ?>" value="<?php echo $formCategory['is_used']?>" id="<?php echo $formCategory['id'] ?>" class="checkbox" style="margin-left: 10px"
+                                   <?php echo $formCategory['is_used'] ? 'checked' : ''?>
+                            />
+                            <span><?php echo $formCategory['name'] ?></span>
+                        <?php endforeach; ?>
                     </form>
                     <div style="padding-top:20px; text-align:right">
                         <button id="saveGeneral" class="scalable" type="button" onclick="saveGeneralData()">Save general info</button>

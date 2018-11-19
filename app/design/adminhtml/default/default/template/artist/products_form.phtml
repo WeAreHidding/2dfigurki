@@ -4,13 +4,15 @@
 $customer = $this->getCustomerInfo();
 $editableData = $this->getEditableData();
 
+$proposedFormCategories = $this->getProposedFormCategories();
 $genreItemCategories = $this->getGenreItemCategories();
 
 ?>
 <div class="content-header-floating" style="text-align:right;padding-top:10px;padding-bottom:10px;padding-right:10px;display: block">
     <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
-    <button class="scalable" type="button" onclick="submitAll()" id="pending_btn">Add product</button>
-<!--    <button style="margin-left: 50px" class="scalable" type="button" onclick="saveAll()" id="pending_btn">Save all</button>-->
+    <?php if ($proposedFormCategories) : ?>
+        <button class="scalable" type="button" onclick="submitAll()" id="pending_btn">Create products</button>
+    <?php endif; ?>
 </div>
 <div class="side-col">
     <h3>Progress</h3>
@@ -39,12 +41,19 @@ $genreItemCategories = $this->getGenreItemCategories();
             <input type="hidden" name="artist_id" value="<?php echo $customer['customer_id'] ?>" />
             <input type="hidden" name="work_id" value="<?php echo $editableData['id'] ?>" />
                 <div id="productForm" class="entry-edit">
-
-                    <?php foreach ($this->getProposedFormCategories() as $proposedFormCategory) : ?>
-                        <?php if (!$proposedFormCategory['is_used']) : ?>
-                        <?php continue; endif; ?>
+                    <?php if (!$proposedFormCategories) : ?>
                         <div id="info">
-                            <div class="entry-edit-head" style="height:18px !important;"><h4>Add product</h4></div>
+                            <fieldset>
+                                <p>Looks like you hasn't products to create :(</p>
+                                <p>Dont worry, check</p>
+                                <p><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $editableData['id'] ?>">General info</a> -> Form Categories</p>
+                                <p><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>">Or maybe you already created this products?</a></p>
+                            </fieldset>
+                        </div>
+                    <?php endif; ?>
+                    <?php foreach ($proposedFormCategories as $proposedFormCategory) : ?>
+                        <div id="info">
+                            <div class="entry-edit-head" style="height:18px !important;"><h4>Add product (FORM # <?php echo $proposedFormCategory['id'] ?>)</h4></div>
                             <fieldset>
                                 <table cellspacing="0" class="form-list">
                                     <tr>
@@ -56,8 +65,7 @@ $genreItemCategories = $this->getGenreItemCategories();
                                                         <option value="<?php echo $proposedFormCategory['id'] ?>"><?php echo $proposedFormCategory['name']; ?></option>
                                                     </select>
                                                 <p style="margin:0"><?php echo $this->__('Custom Name (Not allowed):'); ?></p>
-                                                <input type="text" class="input-text" maxlength="255" title="form_2"
-                                                       id="form" style="width:100%;margin-top:5px;" disabled>
+                                                <p style="margin:0">---</p>
                                             </div>
                                         </td>
                                         <td style="padding-right: 100px">
