@@ -1,6 +1,7 @@
 <?php
 /** @var $this Figures_Dashboard_Block_Dashboard */
 ?>
+<?php if ($this->isLoggedIn()) : ?>
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -96,5 +97,4 @@
         </div>
     </div>
 </div>
-
-
+<?php endif; ?>

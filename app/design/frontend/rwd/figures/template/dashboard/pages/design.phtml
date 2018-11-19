@@ -6,79 +6,107 @@ $formCategories = $this->getFormCategories();
 <div id="content_design" class="content_main" style="display: none;">
     <div class="design">
         <h1>Add new design</h1>
-        <div class="dropblock">
-            <form id="drop_form" action="/figures_dashboard/dashboard/saveInfo" class="dropzone" method="POST"></form>
-        </div>
-        <a href="#">Need help uploading?</a>
+        <form id="productFormArea" class="entry-edit" method="POST" enctype="multipart/form-data" action="/figures_dashboard/dashboard/saveInfo">
+<!--        <div class="dropblock">-->
+<!--            <form id="drop_form" action="/figures_dashboard/dashboard/saveInfo" class="dropzone" method="POST"></form>-->
+<!--        </div>-->
 
-        <div class="row design__dropzone">
-            <div class="col-1">
-                <i class="fas fa-info-circle"></i>
-            </div>
-            <div class="col-11">
-                <h2>File requirements: </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>
-                    At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,
-                    quibusdam quidem sint tempore vitae. Deserunt.</p>
-                <br>
-                <h2>Design guide: </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.
-                    Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,
-                    soluta sunt ullam ut, vel!</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row design__form">
-            <div class="col-6">
-                <label>Title</label>
-                <input type="text" class="form-control" id="title_front" placeholder="Short Title For Your Design">
-                <label>Description</label>
-                <textarea class="form-control" id="description_front" placeholder="Brief description of your design"></textarea>
-            </div>
-            <div class="col-6">
-                <label>Main Tag</label>
-                <input type="text" class="form-control" id="main_tag_front" placeholder="Short Title For Your Design">
-                <label>Tags</label>
-                <textarea class="form-control" id="tags_front" placeholder="Brief description of your design"></textarea>
-            </div>
-        </div>
-
-        <?php if ($formCategories) : ?>
-            <div class="row design__types">
-                <div class="col-12">
-                    <h2>What product your design is suitable for?</h2>
-                    <ul class="design__types-products list-inline">
-                        <?php foreach ($formCategories as $formCategory) : ?>
-                            <li>
-                                <img src="../../img/logo.jpg" alt="img">
-                                <button class="btn btn-info"><?php echo $formCategory['name'] ?></button>
-                                <input type="checkbox" id="<?php echo $formCategory['id'] ?>" name="form_cat">
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
+            <div class="dropblock">
+                <label for="ws_image"><?php echo $this->__('Browse') ?></label>
+                <div id="dropFiles" class="dropzone">
+                    <input id="ws_image" name="ws_image" type="file"/>
                 </div>
             </div>
-        <?php endif; ?>
+            <a href="#">Need help uploading?</a>
 
-        <div class="row design__agrees">
-            <ul class="list-inline">
-                <li>
-                    <input id="form_agree" type="checkbox"><h3><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label></h3>
-                </li>
-                <li>
-                    <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
-                </li>
-                <li>
-                    <button class="btn btn-info" type="submit">Submit</button>
-                    <button class="btn btn-outline-info">Save for later</button>
-                </li>
-            </ul>
-        </div>
+            <div class="row design__dropzone">
+                <div class="col-1">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="col-11">
+                    <h2>File requirements: </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>
+                        At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,
+                        quibusdam quidem sint tempore vitae. Deserunt.</p>
+                    <br>
+                    <h2>Design guide: </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.
+                        Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,
+                        soluta sunt ullam ut, vel!</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row design__form">
+                <div class="col-6">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="title_front" name="char_name" placeholder="Short Title For Your Design">
+                    <label>Description</label>
+                    <textarea class="form-control" id="description_front" name="description" placeholder="Brief description of your design"></textarea>
+                </div>
+                <div class="col-6">
+                    <label>Main Tag</label>
+                    <input type="text" class="form-control" id="main_tag_front" name="main_tag" placeholder="Short Title For Your Design">
+                    <label>Tags</label>
+                    <textarea class="form-control" id="tags_front" name="tags" placeholder="Brief description of your design"></textarea>
+                </div>
+            </div>
+
+            <?php if ($formCategories) : ?>
+                <div class="row design__types">
+                    <div class="col-12">
+                        <h2>What product your design is suitable for?</h2>
+                        <ul class="design__types-products list-inline">
+                            <?php foreach ($formCategories as $formCategory) : ?>
+                                <li>
+                                    <img src="../../img/logo.jpg" alt="img">
+                                    <button class="btn btn-info"><?php echo $formCategory['name'] ?></button>
+                                    <input type="checkbox" id="<?php echo $formCategory['id'] ?>" name="form_cat_<?php echo $formCategory['id'] ?>">
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <div class="row design__agrees">
+                <ul class="list-inline">
+                    <li>
+                        <input id="form_agree" type="checkbox"><h3><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label></h3>
+                    </li>
+                    <li>
+                        <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
+                    </li>
+                    <li>
+                        <button class="btn btn-info" type="submit">Submit</button>
+                        <button class="btn btn-outline-info">Save for later</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
 
     </div>
 </div>
 
 <script type="text/javascript">
+    // jQuery("div#myId").dropzone({ url: "/file/post" });
+    jQuery("#productFormArea").submit(function(e) {
+        var formData = new FormData(jQuery(this)[0]);
+        // console.log(formData);
+
+        jQuery.ajax({
+            url: "/figures_dashboard/dashboard/saveInfo",
+            type: "POST",
+            data: formData,
+            success: function (msg) {
+                console.log(msg)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        e.preventDefault();
+    });
 </script>
