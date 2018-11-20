@@ -79,6 +79,8 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         try {
             $datasArray = $this->_prepareAndValidateParamsForProduct($this->getRequest()->getParams());
             if (!$datasArray) {
+                $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $datasArray['additional_info']['work_id']);
+
                 return;
             }
             foreach ($datasArray as $key => $dataArray) {

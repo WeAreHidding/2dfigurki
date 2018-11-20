@@ -71,6 +71,11 @@
                         <sort_order>1</sort_order>
                         <action>adminhtml/artist_workshop</action>
                     </workshop>
+                    <finance module="figures_artist">
+                        <title>Artist Finance Configuration</title>
+                        <sort_order>2</sort_order>
+                        <action>adminhtml/artist_workshop</action>
+                    </finance>
                 </children>
             </figures_artist>
         </menu>
