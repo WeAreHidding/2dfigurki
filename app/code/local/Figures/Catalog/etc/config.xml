@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Figures_Catalog>
+            <version>0.0.1</version>
+        </Figures_Catalog>
+    </modules>
+    <global>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product_view>Figures_Catalog_Block_Product_View</product_view>
+                </rewrite>
+            </catalog>
+            <figures_catalog>
+                <class>Figures_Catalog_Block</class>
+            </figures_catalog>
+        </blocks>
+        <helpers>
+            <figures_dashboard>
+                <class>Figures_Catalog_Helper</class>
+            </figures_dashboard>
+        </helpers>
+    </global>
+</config>
