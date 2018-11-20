@@ -41,7 +41,9 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
             if (in_array($key, $this->_generalParams)) {
                 continue;
             }
-            $formCategories[] = $key;
+            if ($key != 'id') {
+                $formCategories[] = $key;
+            }
         }
         if ($formCategories) {
             $formCategories = implode(',', $formCategories);
@@ -73,52 +75,146 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
     public function createProductAction()
     {
-        $dataArray = $this->getRequest()->getParams();
-        $formToCreate = $genreToCreate = $gIToCreate = $fCatId = $gCatId = true;
+        $datasArray = [];
+        try {
+            $datasArray = $this->_prepareAndValidateParamsForProduct($this->getRequest()->getParams());
+            if (!$datasArray) {
+                $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $datasArray['additional_info']['work_id']);
 
-        if (!$formCategory = $dataArray['form']) {
-            $formCategory = $dataArray['form_old'];
-            $formToCreate = false;
-        }
-        if (!$genreCategory = $dataArray['genre']) {
-            $genreCategory = $dataArray['genre_old'];
-            $genreToCreate = false;
-        }
-        if (!$gICategory = $dataArray['genre_item']) {
-            $gICategory = $dataArray['genre_item_old'];
-            $gIToCreate = false;
-        }
-        if ($formToCreate) {
-            $fCatId = $this->_getProductCreatorModel()->createCategory(['name' => $formCategory, 'category_custom_type' => 'FORM']);
-        }
-        if ($genreToCreate) {
-            $gCatId = $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE', 'parent_id' => $fCatId ?: $dataArray['genre_item_old']]);
-        }
-        if ($gIToCreate) {
-            $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM', 'parent_id' => $gCatId ?: $dataArray['genre_old']]);
-        }
-        $imagePath = $this->_loadImage($dataArray['work_id'], $dataArray['artist_id']);
+                return;
+            }
+            foreach ($datasArray as $key => $dataArray) {
+                if ($key == 'additional_info') {
+                    continue;
+                }
+                $genreToCreate = $gIToCreate = $gCatId = true;
+                $fCatId = $key;
 
-        $productData = [
-            'name' => $dataArray['title'],
-            'sku'  => $dataArray['sku'],
-            'price' => $dataArray['price'],
-            'parent_cat' => $gICategory,
-            'image_path' => $imagePath
-        ];
+                if (!$genreCategory = $dataArray['genre']) {
+                    $genreCategory = $dataArray['genre_old'];
+                    $genreToCreate = false;
+                }
+                if (!$gICategory = $dataArray['genre_item']) {
+                    $gICategory = $dataArray['genre_item_old'];
+                    $gIToCreate = false;
+                }
 
-        $productId = $this->_getProductCreatorModel()->createProduct($productData);
+                if ($genreToCreate) {
+                    $gCatId = $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE', 'parent_id' => $fCatId ?: $dataArray['genre_item_old']]);
+                }
+                if ($gIToCreate) {
+                    $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM', 'parent_id' => $gCatId ?: $dataArray['genre_old']]);
+                }
+                $imagePath = $this->_loadImage($datasArray['additional_info']['work_id'], $datasArray['additional_info']['artist_id'], $fCatId);
 
-        if ($productId) {
-            $artistId = $dataArray['artist_id'];
-            $workId = $dataArray['work_id'];
-            $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId);
+                $productData = [
+                    'name' => $dataArray['title'],
+                    'sku' => $dataArray['sku'],
+                    'price' => $dataArray['price'],
+                    'parent_cat' => $gICategory,
+                    'image_path' => $imagePath
+                ];
+
+                $productId = $this->_getProductCreatorModel()->createProduct($productData);
+
+                if ($productId) {
+                    $artistId = $datasArray['additional_info']['artist_id'];
+                    $workId = $datasArray['additional_info']['work_id'];
+                    $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId, null, $fCatId);
+                }
+            }
+            Mage::getSingleton('adminhtml/session')->addSuccess(
+                'Saved!'
+            );
+        } catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError(
+                $e->getMessage()
+            );
+            $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $datasArray['additional_info']['work_id']);
         }
 
-        Mage::getSingleton('adminhtml/session')->addSuccess(
-            'Saved!'
-        );
-        $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $dataArray['work_id']);
+        $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $datasArray['additional_info']['work_id']);
+    }
+
+    protected function _prepareAndValidateParamsForProduct($params)
+    {
+        $proposedFormCategories = $this->_getProposedFormCategories($params['work_id']);
+        $dataByFormCategory = [];
+        foreach ($proposedFormCategories as $proposedFormCategory) {
+            foreach ($params as $key => $param) {
+                if(stristr($key, $proposedFormCategory) !== FALSE) {
+                    unset($params[$key]);
+                    unset($dataByFormCategory['additional_info'][$key]);
+                    $key = str_replace('_' . $proposedFormCategory, '', $key);
+                    $dataByFormCategory[$proposedFormCategory][$key] = $param;
+                } else {
+                    $dataByFormCategory['additional_info'][$key] = $param;
+                }
+            }
+        }
+
+        //validation
+        $isValid = true;
+        $invalidMessage = '';
+
+        if ($dataByFormCategory) {
+            foreach ($dataByFormCategory as $key => $items) {
+                if ($key == 'additional_info') {
+                    continue;
+                }
+
+                if (!$_FILES['ws_image_' . $key]['name']) {
+                    $isValid = false;
+                    $invalidMessage = 'Please load image for FORM #' . $key;
+                    break;
+                }
+                
+                if (!$items['sku'] || !$items['title'] || !$items['price']) {
+                    $isValid = false;
+                    $invalidMessage = 'Please fill data for FORM #' . $key;
+                    break;
+                }
+                if ($items['genre'] && $items['genre_item']) {
+                    continue;
+                } elseif ($items['genre_old'] && $items['genre_item_old']) {
+                    continue;
+                }
+
+                $isValid = false;
+                $invalidMessage = 'Please fill data for FORM #' . $key;
+                break;
+            }
+        }
+
+        if (!$isValid) {
+            Mage::getSingleton('adminhtml/session')->addError(
+                $invalidMessage
+            );
+            return false;
+        }
+
+        return $dataByFormCategory;
+    }
+
+    protected function _loadImage($workId, $customerId, $formCatId)
+    {
+        $type = 'ws_image_' . $formCatId;
+        if (isset($_FILES[$type]['name']) && $_FILES[$type]['name'] != '') {
+            $uploader = new Varien_File_Uploader($type);
+            $uploader
+                ->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
+            $uploader->setAllowRenameFiles(true);
+            $uploader->setFilesDispersion(true);
+            $path = Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/' . $formCatId . '/';
+            if (!is_dir($path)) {
+                mkdir($path, 0777, true);
+            }
+            $uploader->save($path, $_FILES[$type]['name']);
+
+            return Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/' . $formCatId . '/' . $uploader->getUploadedFileName();
+        }
+
+        return false;
     }
 
     public function editCreatedAction()
@@ -127,26 +223,43 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $this->renderLayout();
     }
 
-    protected function _loadImage($workId, $customerId)
+    protected function _getProposedFormCategories($workId)
     {
-        $type = 'ws_image';
-        if (isset($_FILES[$type]['name']) && $_FILES[$type]['name'] != '') {
-            try {
-                $uploader = new Varien_File_Uploader($type);
-                $uploader
-                    ->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
-                $uploader->setAllowRenameFiles(true);
-                $uploader->setFilesDispersion(true);
-                $path = Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/';
-                if (!is_dir($path)) {
-                    mkdir($path, 0777, true);
-                }
-                $uploader->save($path, $_FILES[$type]['name']);
-                return Mage::getBaseDir('media') . DS . 'workshop/admin_images/' . $workId . '/' . $customerId . '/' . $uploader->getUploadedFileName();
-            } catch (Exception $e) {
+        $connection = $this->_getConnection();
+        $pfc = $connection->fetchOne($connection->select()->from('artist_work', 'proposed_form_category')->where('id = ?', $workId));
 
-            }
+        return explode(',', $pfc);
+    }
+
+    public function getFandomCategoriesAction()
+    {
+        $genreId = $this->getRequest()->getParam('genre_cat_id');
+
+        $categoryData = [];
+        $categories = Mage::getModel('catalog/category')
+            ->getCollection()
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('category_custom_type', 'GENRE_ITEM')
+            ->addIsActiveFilter();
+
+        $categories->addFieldToFilter('parent_id', $genreId);
+
+        foreach ($categories as $category) {
+            $categoryData[] = [
+                'name' => $category->getName(),
+                'id'   => $category->getId()
+            ];
         }
+
+        $this->getResponse()->setBody(json_encode($categoryData));
+    }
+
+    public function deleteProductAction()
+    {
+        $productId = $this->getRequest()->getParam('product_id');
+
+        $this->_getConnection()->query("DELETE FROM catalog_product_entity WHERE entity_id = {$productId}");
+        $this->_getConnection()->query("DELETE FROM artist_product WHERE product_id = {$productId}");
     }
 
     /**

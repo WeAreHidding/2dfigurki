@@ -14,103 +14,104 @@ main {
   padding-bottom: 60px;
   padding-top: 60px; }
 
-h2 {
+main h2 {
   font-size: 25px;
   margin: 0; }
 
-.list-inline li {
+main li {
   line-height: 1.5em;
   padding-bottom: 2%; }
 
-.product-author p {
+main p {
   font-size: 12px;
   margin: 0; }
 
-.list-inline a {
+main button {
+  width: 50%; }
+
+main .list-inline a {
   padding-right: 15px; }
 
-.product-author {
-  padding-bottom: 15px;}
+main .product-author p {
+  text-indent: 15px; }
 
-.product-author p {
-  text-indent: 15px;}
-
-.product-author button {
+main .product-author button {
   padding: 0;
   width: 100px;
   font-size: 13px;
   text-transform: uppercase;
   margin-top: 10px; }
 
-.product-author img {
+main .product-author img {
   width: 100%;
   height: 100px;
   border-radius: .25em; }
 
-.product-author h3 {
+main .product-author h3 {
   font-weight: bold;
   font-size: 18px;
   margin: 0; }
 
-.product-author span {
+main .product-author span {
   color: darkgray;
   font-size: 11px; }
 
-.product-author li {
+main .product-author li {
   padding: 0;
   line-height: 1em; }
 
-.product-type {
+main .product-type {
   color: darkgray; }
 
-.product-quality {
+main .product-quality {
   font-size: 12px;
   margin-left: 30px; }
 
-.product-price {
+main .product-price {
   font-weight: bold;
   text-align: center;
   font-size: 25px; }
 
-.product-buy {
+main .product-buy {
   text-align: center;
   padding: 0; }
-.product-buy button {
+main .product-buy button {
   width: 200px; }
 
-.product-delivery {
+main .product-delivery {
   text-align: center; }
-.product-delivery span {
+main .product-delivery span {
   color: #000;
   font-size: 11px; }
 
-.product-like {
+main .product-like {
   text-align: center; }
-.product-like span {
+main .product-like span {
   font-size: 15px; }
 
-.product-to-price {
+main .product-to-price {
   background: #f2f2f6;
   padding: 15px; }
 
-.product-design {
+main .product-design {
   padding: 30px 0; }
-.product-design h2 {
+main .product-design h2 {
   text-align: center;
   padding-bottom: 30px; }
-.product-design .item {
+main .product-design .item {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
-.product-design img {
+main .product-design img {
   width: 100%;
   max-height: 150px;
   margin: 0 auto;
   display: block; }
-.product-design h3 {
+main .product-design h3 {
   font-size: 15px;
   font-weight: bold;
   padding-top: 10px; }
+
 
 .cont-pad {
   padding-left: 15px;
@@ -347,5 +348,31 @@ h2 {
 
 .checked {
   color: orange; }
+
+.owl-prev {
+  width: 15px;
+  height: 100px;
+  position: absolute;
+  top: -40px;
+  margin-left: 0;
+  display: block !important;
+  border:0 solid black;
+}
+
+.owl-next {
+  width: 15px;
+  height: 100px;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  display: block !important;
+  border:0 solid black;
+}
+.owl-prev i, .owl-next i {
+  transform : scale(1,6);
+  color: #ccc;
+}
+
+
 
 

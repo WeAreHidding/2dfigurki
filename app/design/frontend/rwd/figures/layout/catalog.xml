@@ -196,11 +196,17 @@ Product view
             <action method="addJs"><script>varien/product.js</script></action>
             <action method="addJs"><script>varien/product_options.js</script></action>
             <action method="addJs"><script>varien/configurable.js</script></action>
+            <action method="addJs"><script>plugins/fotorama/fotorama.js</script></action>
+            <action method="addJs"><script>plugins/owl/assets/owlcarousel/owl.carousel.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script></action>
 
             <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/plugins/fotorama/fotorama.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/plugins/owl/assets/owlcarousel/assets/owl.carousel.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/plugins/owl/assets/owlcarousel/assets/owl.theme.default.css</name></action>
         </reference>
         <reference name="content">
             <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">

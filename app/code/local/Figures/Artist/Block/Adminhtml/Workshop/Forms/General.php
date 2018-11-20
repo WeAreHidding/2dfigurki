@@ -25,9 +25,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_General extends Figures_Arti
     {
         $formCategories = $this->getFormCategories();
         $proposedCategories = $this->getEditableData()['proposed_form_category'];
-        if (!$formCategories || !$proposedCategories) {
-            return false;
-        }
         $proposedCategories = explode(',', $proposedCategories);
         $result = [];
         foreach ($formCategories as $formCategory) {

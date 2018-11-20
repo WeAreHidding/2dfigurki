@@ -23,7 +23,7 @@ class Figures_Artist_Model_Source_CategoryType extends Mage_Eav_Model_Entity_Att
                     'value' => 'GENRE'
                 ),
                 array(
-                    'label' => 'Genre item',
+                    'label' => 'Fandom',
                     'value' => 'GENRE_ITEM'
                 ),
             );
