@@ -53,22 +53,6 @@ $formCategories = $this->getFormCategories();
                 </div>
             </div>
 
-<<<<<<< HEAD
-        <?php if ($formCategories) : ?>
-            <div class="row design__types">
-                <div class="col-12">
-                    <h2>What product your design is suitable for?</h2>
-                    <ul class="design__types-products list-inline">
-                        <?php foreach ($formCategories as $formCategory) : ?>
-                            <li>
-                                <img src="../../img/logo.jpg" alt="img">
-                                <label class="btn btn-info label-btn" for="<?php echo $formCategory['id']?>"><?php echo $formCategory['name'] ?></label>
-                                <input class="form_cat" type="checkbox" id="<?php echo $formCategory['id'] ?>" name="form_cat">
-                            </li>
-                        <?php endforeach; ?>
-
-                    </ul>
-=======
             <?php if ($formCategories) : ?>
                 <div class="row design__types">
                     <div class="col-12">
@@ -83,7 +67,6 @@ $formCategories = $this->getFormCategories();
                             <?php endforeach; ?>
                         </ul>
                     </div>
->>>>>>> 58591f1810a662a2f660fe3a4f05434e92f63a80
                 </div>
             <?php endif; ?>
 
