@@ -53,10 +53,11 @@ $formCategories = $this->getFormCategories();
                         <?php foreach ($formCategories as $formCategory) : ?>
                             <li>
                                 <img src="../../img/logo.jpg" alt="img">
-                                <button class="btn btn-info"><?php echo $formCategory['name'] ?></button>
-                                <input type="checkbox" id="<?php echo $formCategory['id'] ?>" name="form_cat">
+                                <label class="btn btn-info label-btn" for="<?php echo $formCategory['id']?>"><?php echo $formCategory['name'] ?></label>
+                                <input class="form_cat" type="checkbox" id="<?php echo $formCategory['id'] ?>" name="form_cat">
                             </li>
                         <?php endforeach; ?>
+
                     </ul>
                 </div>
             </div>

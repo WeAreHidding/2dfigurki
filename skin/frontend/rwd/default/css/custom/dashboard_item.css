@@ -75,9 +75,19 @@
     height: 100px;
     width: 100px;
     display: flex; }
-.design .design__types .design__types-products li button {
+
+.design .design__types .design__types-products input:checked +   .design .design__types .design__types-products label {
+    background: red!important;
+}
+
+.design .design__types .design__types-products label {
     width: 100%;
     border: 1px solid black; }
+.design .design__types .design__types-products input {
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
+}
+
 .design .design__agrees {
     text-align: center; }
 .design .design__agrees a {
