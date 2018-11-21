@@ -19,7 +19,7 @@
     text-align: center;
     color: deepskyblue; }
 .design .dropblock {
-    margin: 30px 0; }
+    /*margin: 30px 0;*/ }
 .design .dropzone {
     border: 3px dashed #666769;
     background: #ecf4f7;
@@ -76,8 +76,8 @@
     width: 100px;
     display: flex; }
 
-.design .design__types .design__types-products input:checked +   .design .design__types .design__types-products label {
-    background: red!important;
+.design .design__types .design__types-products li input[type="checkbox"]:checked + label {
+    background: #9654CC;
 }
 
 .design .design__types .design__types-products label {
@@ -86,6 +86,7 @@
 .design .design__types .design__types-products input {
     /*-webkit-appearance: none;*/
     /*-moz-appearance: none;*/
+    display: none;
 }
 
 .design .design__agrees {
