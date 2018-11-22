@@ -39,6 +39,39 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         );
     }
 
+
+    /**
+     * @param $customerId
+     * @return mixed
+     */
+    public function getDesignsByCustomer($customerId)
+    {
+        $connection = $this->_getConnection();
+
+        $workData = $connection->fetchAll(
+            $connection->select()
+                ->from(['artist_work'], ['id', 'customer_id', 'status', 'char_name', 'description', 'image_path'])
+                ->where('customer_id = ?', $customerId)
+        );
+        if ($workData) {
+            foreach ($workData as $key => $workItem) {
+                $workData[$key]['image_path'] = Mage::getBaseUrl('media') . 'workshop/user_images/' .
+                    $workItem['customer_id'] . $workItem['image_path'];
+                $workData[$key]['product_data'] =
+                    $connection->fetchAll(
+                        $connection->select()
+                            ->from('artist_product')
+                            ->where('artist_id = ?', $workItem['customer_id'])
+                            ->where('work_id = ?', $workItem['id'])
+                    );
+            }
+
+            return $workData;
+        }
+
+        return false;
+    }
+
     /**
      * @param $productId
      * @return string
@@ -52,6 +85,14 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         );
     }
 
+    /**
+     * @param $artistId
+     * @param $productId
+     * @param $workId
+     * @param $mainTag
+     * @param $formCategoryId
+     * @throws Zend_Db_Adapter_Exception
+     */
     public function saveArtistProduct($artistId, $productId, $workId, $mainTag, $formCategoryId)
     {
         $connection = $this->_getConnection();
@@ -94,7 +135,6 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         );
         return strtr($string, $converter);
     }
-
 
     /**
      * @return Varien_Db_Adapter_Pdo_Mysql

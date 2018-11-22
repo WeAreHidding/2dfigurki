@@ -5,27 +5,27 @@
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
-            <strong>BS</strong>
+            <h3>Customer Dashboard</h3>
+            <img src="<?php echo $this->getSkinUrl('images/logo.png') ?>" style="width: 60px; cursor: pointer" onclick="location = '<?php echo Mage::getBaseUrl() ?>'">
         </div>
 
         <ul class="list-unstyled components">
-            <li id="menu-home" class="active"  onclick="menuToggle(this);">
-                <a href="#Home">
-                    <i class="fas fa-home"></i>
-                    Home
-                </a>
-            </li>
-            <li id="menu-design" onclick="menuToggle(this);">
-                <a href="#Design">
-                    <i class="fas fa-tshirt"></i>
-                    Design
-                </a>
-            </li>
-            <li id="menu-dash" onclick="menuToggle(this);">
+            <li id="menu-dash" class="active" onclick="menuToggle(this);">
                 <a href="#Dashboard">
                     <i class="fas fa-tachometer-alt"></i>
                     Dashboard
+                </a>
+            </li>
+            <li id="menu-design" onclick="menuToggle(this);">
+                <a href="#NewDesign">
+                    <i class="fas fa-file-medical"></i>
+                    Add New Design
+                </a>
+            </li>
+            <li id="menu-design-management" onclick="menuToggle(this);">
+                <a href="#DesignManagement">
+                    <i class="fas fa-images"></i>
+                    Uploaded Designs
                 </a>
             </li>
             <li id="menu-stats" onclick="menuToggle(this);">
@@ -88,12 +88,10 @@
         </nav>
 
         <div class="container">
-            <div id="content_home" class="content_main">
-                <h1>Home</h1>
-            </div>
             <?php echo $this->getChildHtml('customer_dashboard_design'); ?>
+            <?php echo $this->getChildHtml('customer_dashboard_design_management'); ?>
             <?php echo $this->getChildHtml('customer_dashboard_totals'); ?>
-                <?php echo $this->getChildHtml('customer_dashboard_stats'); ?>
+            <?php echo $this->getChildHtml('customer_dashboard_stats'); ?>
         </div>
     </div>
 </div>

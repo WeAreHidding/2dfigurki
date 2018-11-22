@@ -6,16 +6,14 @@
             <!--<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>-->
             <action method="addCss"><stylesheet>css/plugins/bootstrap.min.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/plugins/jquery.mCustomScrollbar.min.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/plugins/dropzone.min.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/custom/dashboard.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/custom/dashboard_item.css</stylesheet></action>
             <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
             <action method="addJs"><script>plugins/bootstrap.min.js</script></action>
             <action method="addJs"><script>plugins/jquery.mCustomScrollbar.min.js</script></action>
             <action method="addJs"><script>plugins/popper.min.js</script></action>
-            <action method="addJs"><script>plugins/dropzone.min.js</script></action>
             <action method="addJs"><script>dashboard/dashboard.js</script></action>
-            <action method="addJs"><script>dashboard/design.js</script></action>
+            <!--<action method="addJs"><script>dashboard/design.js</script></action>-->
         </reference>
 
         <remove name="header" />
@@ -30,6 +28,9 @@
                 <block type="figures_dashboard/dashboard_design"
                        name="customer_dashboard_design"
                        template="dashboard/pages/design.phtml" />
+                <block type="figures_dashboard/dashboard_designManagement"
+                       name="customer_dashboard_design_management"
+                       template="dashboard/pages/design_management.phtml" />
                 <block type="figures_dashboard/dashboard"
                        name="customer_dashboard_stats"
                        template="dashboard/pages/stats.phtml" />

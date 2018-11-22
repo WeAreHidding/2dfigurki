@@ -1,0 +1,22 @@
+<?php
+/** @var $this Figures_Dashboard_Block_Dashboard_DesignManagement */
+
+$designsData = $this->getDesignData();
+//echo '<pre>';
+//print_r($designsData);
+//echo '</pre>';
+//die();
+?>
+<?php if ($designsData) : ?>
+    <div id="content_design_management" class="content_main" style="display: none;">
+    <?php foreach ($designsData as $designItem) : ?>
+        <div class="container">
+            <img style="width:100px" src="<?php echo $designItem['image_path'] ?>">
+            <label> <?php echo $designItem['status'] ?></label>
+            <label> <?php echo $designItem['char_name'] ?></label>
+        </div>
+
+
+    <?php endforeach; ?>
+    </div>
+<?php endif; ?>

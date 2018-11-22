@@ -3,6 +3,7 @@ jQuery(document).ready(function() {
     jQuery("#sidebar").mCustomScrollbar({
         theme: "minimal"
     });
+    loadContent("dash");
 
     jQuery('#sidebarCollapse').on('click', function () {
         jQuery('#sidebar, #content').toggleClass('active');
@@ -19,8 +20,8 @@ function menuToggle(a) {
     var id=jQuery(a).attr('id');
 
     switch(id) {
-        case 'menu-home': loadContent("home"); break;
         case 'menu-design': loadContent("design"); break;
+        case 'menu-design-management': loadContent("design_management"); break;
         case 'menu-dash': loadContent("dash"); break;
         case 'menu-stats': loadContent("stats"); break;
         default: console.log('error'); break;
@@ -28,9 +29,9 @@ function menuToggle(a) {
 }
 
 function loadContent(content) {
-    jQuery('#content_home').css("display", "none");
     jQuery('#content_dash').css("display", "none");
     jQuery('#content_design').css("display", "none");
+    jQuery('#content_design_management').css("display", "none");
     jQuery('#content_stats').css("display", "none");
 
     jQuery('#content_'+content).css("display", "block");
