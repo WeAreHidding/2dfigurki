@@ -11,7 +11,6 @@ class Figures_Customer_AccountController extends Mage_Customer_AccountController
      */
     public function createPostAction()
     {
-//        var_dump(123); die();
         $errUrl = $this->_getUrl('*/*/create', array('_secure' => true));
 
         if (!$this->_validateFormKey()) {
@@ -64,5 +63,13 @@ class Figures_Customer_AccountController extends Mage_Customer_AccountController
         }
 
         $this->_redirectError($errUrl);
+    }
+
+    /**
+     * Default customer account page
+     */
+    public function indexAction()
+    {
+        $this->_redirect('customer_dashboard');
     }
 }
