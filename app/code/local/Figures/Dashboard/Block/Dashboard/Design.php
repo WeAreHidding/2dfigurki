@@ -23,11 +23,7 @@ class Figures_Dashboard_Block_Dashboard_Design extends Figures_Dashboard_Block_D
 
     public function getFormCategories()
     {
-//        return $this->_getCategoryByFilter('FORM');
-        $mas[0]=["id"=>1,"name"=>"category"];
-        $mas[1]=["id"=>2,"name"=>"category"];
-        $mas[2]=["id"=>3,"name"=>"category"];
-        return $mas;
+        return $this->_getCategoryByFilter('FORM');
     }
 
 }

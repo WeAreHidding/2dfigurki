@@ -1,0 +1,13 @@
+<config>
+    <menu>
+        <cms>
+            <children>
+                <header module="figures_artist">
+                    <title>Header</title>
+                    <sort_order>50</sort_order>
+                    <action>adminhtml/header</action>
+                </header>
+            </children>
+        </cms>
+    </menu>
+</config>

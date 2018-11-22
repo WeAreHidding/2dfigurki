@@ -62,6 +62,7 @@
 .design .design__form .col-6 input {
     margin-bottom: 15px; }
 .design .design__types {
+    text-align: center;
     margin: 30px 0; }
 .design .design__types h2 {
     font-size: 16px; }
@@ -81,8 +82,7 @@
 }
 
 .design .design__types .design__types-products label {
-    width: 100%;
-    border: 1px solid black; }
+    width: 100%; }
 .design .design__types .design__types-products input {
     /*-webkit-appearance: none;*/
     /*-moz-appearance: none;*/

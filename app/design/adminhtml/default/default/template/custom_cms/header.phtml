@@ -1,0 +1,20 @@
+<?php
+/** @var $this Figures_Cms_Block_Adminhtml_Header */
+$headerItems = $this->getHeaderItems();
+?>
+<?php foreach ($headerItems as $headerItem) : ?>
+    <div class="entry-edit">
+        <div class="entry-edit-head" style="height:18px !important;"><h4>Edit menu item "<?php echo $headerItem['name'] ?>"</h4></div>
+        <fieldset>
+            <span>Name : </span>
+            <input type="text" class="input-text" value="<?php echo $headerItem['name'] ?>" name="tags" id="tags" style="width: 40%; float: right; margin-right: 50%">
+            <p></p>
+            <span>Link : </span>
+            <input type="text" class="input-text" value="<?php echo $headerItem['link'] ?>" name="tags" id="tags" style="width: 40%; float: right; margin-right: 50%"">
+            <p></p>
+            <span>Image (not working yet) : </span>
+            <input type="text" class="input-text" value="<?php echo $headerItem['image_path'] ?>" name="tags" id="tags" style="width: 40%; float: right; margin-right: 50%"">
+            <p></p>
+        </fieldset>
+    </div>
+<?php endforeach; ?>
