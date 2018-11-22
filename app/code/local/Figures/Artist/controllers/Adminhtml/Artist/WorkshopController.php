@@ -108,11 +108,15 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                 $imagePath = $this->_loadImage($datasArray['additional_info']['work_id'], $datasArray['additional_info']['artist_id'], $fCatId);
 
                 $productData = [
-                    'name' => $dataArray['title'],
-                    'sku' => $dataArray['sku'],
-                    'price' => $dataArray['price'],
-                    'parent_cat' => $gICategory,
-                    'image_path' => $imagePath
+                    'name'        => $dataArray['title'],
+                    'sku'         => $dataArray['sku'],
+                    'price'       => $dataArray['price'],
+                    'parent_cat'  => $gICategory,
+                    'image_path'  => $imagePath,
+                    'main_tag'    => $dataArray['main_tag'],
+                    'tags'        => $dataArray['tags'],
+                    'description' => $dataArray['description'],
+                    'artist_id'   => $datasArray['additional_info']['artist_id']
                 ];
 
                 $productId = $this->_getProductCreatorModel()->createProduct($productData);
@@ -169,7 +173,8 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     break;
                 }
                 
-                if (!$items['sku'] || !$items['title'] || !$items['price']) {
+                if (!$items['sku'] || !$items['title'] || !$items['price'] ||
+                    !$items['main_tag'] || !$items['tags'] || !$items['description']) {
                     $isValid = false;
                     $invalidMessage = 'Please fill data for FORM #' . $key;
                     break;

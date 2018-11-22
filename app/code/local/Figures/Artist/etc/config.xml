@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Artist>
-            <version>0.1.1</version>
+            <version>0.1.2</version>
         </Figures_Artist>
     </modules>
     <global>

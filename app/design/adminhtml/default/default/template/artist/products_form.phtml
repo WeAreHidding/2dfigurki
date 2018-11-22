@@ -129,6 +129,29 @@ $genreItemCategories = $this->getGenreItemCategories();
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td style="padding-right: 100px;padding-top:40px">
+                                            <div>
+                                                <p style="margin:0"><?php echo $this->__('Main tag:'); ?></p>
+                                                <input type="text" class="input-text" maxlength="255" name="main_tag_<?php echo $proposedFormCategory['id'] ?>"
+                                                       id="title" style="width:100%;margin-top:5px;" value="<?php echo $editableData['main_tag'] ?>">
+                                            </div>
+                                        </td>
+                                        <td style="padding-right: 100px;padding-top:40px">
+                                            <div>
+                                                <p style="margin:0"><?php echo $this->__('Tags:'); ?></p>
+                                                <input type="text" class="input-text" maxlength="255" name="tags_<?php echo $proposedFormCategory['id'] ?>"
+                                                       id="tags" style="width:100%;margin-top:5px;" value="<?php echo $editableData['tags'] ?>">
+                                            </div>
+                                        </td>
+                                        <td style="padding-right: 100px;padding-top:40px">
+                                            <div>
+                                                <p style="margin:0"><?php echo $this->__('Description:'); ?></p>
+                                                <textarea  maxlength="255" name="description_<?php echo $proposedFormCategory['id'] ?>"
+                                                           id="description" style="width:100%;margin-top:5px;"><?php echo $editableData['description'] ?></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </table>
                                 <div id="loadedImageBlock_<?php echo $proposedFormCategory['id'] ?>" style="display:none;padding-top:20px;">
                                     <h3>Loaded image:</h3>

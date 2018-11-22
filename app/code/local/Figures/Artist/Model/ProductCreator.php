@@ -35,36 +35,33 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
 
     public function createProduct($productData)
     {
-//$product = Mage::getModel('catalog/product');
         $product = new Mage_Catalog_Model_Product();
-// Build the product
+
+        // Build the product
         $product->setSku($productData['sku']);
-        $product->setAttributeSetId(4);
-        $product->setTypeId('simple');
         $product->setName($productData['name']);
+        $product->setPrice($productData['price']);
+        $product->setDescription($productData['description']);
+        $product->setShortDescription($productData['description']);
+        $product->setMainTag($productData['main_tag']);
+        $product->setTags($productData['tags']);
+        $product->setArtistId($productData['artist_id']);
+
         $category = Mage::getResourceModel('catalog/category_collection')
             ->addFieldToFilter('name', $productData['parent_cat'])
-            ->getFirstItem(); // The parent category
-
+            ->getFirstItem();
         if (!$categoryId = $category->getId()) {
             $categoryId = $productData['parent_cat'];
         }
 
-        $product->setCategoryIds(array($categoryId)); # some cat id's, my is 7
-        $product->setWebsiteIDs(array(1)); # Website id, my is 1 (default frontend)
-//        $product->setDescription('Full description here');
-//        $product->setShortDescription('Short description here');
-        $product->setPrice($productData['price']); # Set some price
-# Custom created and assigned attributes
-//        $product->setHeight('my_custom_attribute1_val');
-//        $product->setWidth('my_custom_attribute2_val');
-//        $product->setDepth('my_custom_attribute3_val');
-//        $product->setType('my_custom_attribute4_val');
-//Default Magento attribute
+        $product->setAttributeSetId(4);
+        $product->setTypeId('simple');
+        $product->setCategoryIds(array($categoryId));
+        $product->setWebsiteIDs(array(1));
         $product->setWeight(4.0000);
         $product->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
         $product->setStatus(1);
-        $product->setTaxClassId(0); # My default tax class
+        $product->setTaxClassId(0);
         $product->setStockData(array(
             'is_in_stock' => 1,
             'qty' => 99999
@@ -83,9 +80,8 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             return $product->getId();
         }
         catch (Exception $ex) {
-            print_r("CHTOTO STRASNOE PZDC\n\n");
+            print_r("Critical during product creation! Contact developer\n\n");
             print_r($ex); die();
-            //Handle the error
         }
     }
     /**
