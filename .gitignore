@@ -34,11 +34,6 @@
 /media/xmlconnect/system/*
 !/media/xmlconnect/system/ok.gif
 
-var/
-!/var/.htaccess
+/var/
 
-!/var/package
-/var/package/*
-!/var/package/*.xml
-
-.idea/
+/.idea
