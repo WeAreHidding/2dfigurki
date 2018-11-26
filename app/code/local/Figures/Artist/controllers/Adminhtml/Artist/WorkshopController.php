@@ -52,7 +52,13 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $connection = $this->_getConnection();
 
         $connection->update('artist_work',
-            ['description' => $params['description'], 'tags' => $params['tags'], 'proposed_form_category' => $formCategories],
+            [
+                'char_name'              => $params['char_name'],
+                'description'            => $params['description'],
+                'main_tag'               => $params['main_tag'],
+                'tags'                   => $params['tags'],
+                'proposed_form_category' => $formCategories
+            ],
             'id=' . $params['id']);
 
         $this->_redirectReferer($this->getUrl('adminhtml/artist_workshop/editGeneral') . 'id/' . $params['id']);
@@ -109,27 +115,28 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
                 $productData = [
                     'name'        => $dataArray['title'],
-                    'sku'         => $dataArray['sku'],
                     'price'       => $dataArray['price'],
                     'parent_cat'  => $gICategory,
                     'image_path'  => $imagePath,
                     'main_tag'    => $dataArray['main_tag'],
                     'tags'        => $dataArray['tags'],
                     'description' => $dataArray['description'],
-                    'artist_id'   => $datasArray['additional_info']['artist_id']
+                    'artist_id'   => $datasArray['additional_info']['artist_id'],
+                    'form_cat_id' => $key,
+                    'work_id'     => $datasArray['additional_info']['work_id']
                 ];
 
                 $productId = $this->_getProductCreatorModel()->createProduct($productData);
 
                 if ($productId) {
                     $artistId = $datasArray['additional_info']['artist_id'];
-                    $workId = $datasArray['additional_info']['work_id'];
+                    $workId   = $datasArray['additional_info']['work_id'];
                     $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId, null, $fCatId);
                 }
+                Mage::getSingleton('adminhtml/session')->addSuccess(
+                    'Product defined in form # ' . $fCatId . 'is saved!'
+                );
             }
-            Mage::getSingleton('adminhtml/session')->addSuccess(
-                'Saved!'
-            );
         } catch (Exception $e) {
             Mage::getSingleton('adminhtml/session')->addError(
                 $e->getMessage()
@@ -158,9 +165,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         }
 
         //validation
-        $isValid = true;
         $invalidMessage = '';
-
         if ($dataByFormCategory) {
             foreach ($dataByFormCategory as $key => $items) {
                 if ($key == 'additional_info') {
@@ -168,16 +173,16 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                 }
 
                 if (!$_FILES['ws_image_' . $key]['name']) {
-                    $isValid = false;
                     $invalidMessage = 'Please load image for FORM #' . $key;
-                    break;
+                    unset($dataByFormCategory[$key]);
+                    continue;
                 }
                 
-                if (!$items['sku'] || !$items['title'] || !$items['price'] ||
+                if (!$items['title'] || !$items['price'] ||
                     !$items['main_tag'] || !$items['tags'] || !$items['description']) {
-                    $isValid = false;
                     $invalidMessage = 'Please fill data for FORM #' . $key;
-                    break;
+                    unset($dataByFormCategory[$key]);
+                    continue;
                 }
                 if ($items['genre'] && $items['genre_item']) {
                     continue;
@@ -185,16 +190,18 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     continue;
                 }
 
-                $isValid = false;
                 $invalidMessage = 'Please fill data for FORM #' . $key;
-                break;
+                unset($dataByFormCategory[$key]);
+                continue;
             }
         }
 
-        if (!$isValid) {
+        if ($invalidMessage) {
             Mage::getSingleton('adminhtml/session')->addError(
                 $invalidMessage
             );
+        }
+        if (!$dataByFormCategory) {
             return false;
         }
 

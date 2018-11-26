@@ -107,13 +107,8 @@ $genreItemCategories = $this->getGenreItemCategories();
                                             <h5>Product:</h5>
                                             <div>
                                                 <p style="margin:0"><?php echo $this->__('Title:'); ?></p>
-                                                <input type="text" class="input-text" maxlength="255" title="title" name="title_<?php echo $proposedFormCategory['id'] ?>" id="title" style="width:100%;margin-top:5px;">
-                                            </div>
-                                        </td>
-                                        <td style="padding-right: 100px;padding-top:40px">
-                                            <div>
-                                                <p style="margin:0"><?php echo $this->__('Sku:'); ?></p>
-                                                <input type="text" class="input-text" maxlength="255" title="sku" name="sku_<?php echo $proposedFormCategory['id'] ?>" id="sku" style="width:100%;margin-top:5px;">
+                                                <input type="text" class="input-text" maxlength="255" title="title" name="title_<?php echo $proposedFormCategory['id'] ?>" id="title" style="width:100%;margin-top:5px;"
+                                                value="<?php echo $editableData['char_name'] ?>">
                                             </div>
                                         </td>
                                         <td style="padding-right: 100px;padding-top:40px">

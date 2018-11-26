@@ -77,8 +77,12 @@ $proposedFormCategories = $this->getProposedFormCategories();
                     <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/saveGeneral") ?>" style="padding-top: 20px">
                         <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
                         <input type="hidden" name="id" value="<?php echo $editableData['id'] ?>" />
+                        <p style="font-weight:bold; padding-top:10px">Name</p>
+                        <input type="text" class="input-text required-entry" maxlength="255" title="char_name" value="<?php echo $editableData['char_name'] ?>" name="char_name" id="char_name" style="width: 100%;">
                         <p style="font-weight:bold;">Description</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Description" value="<?php echo $editableData['description'] ?>" name="description" id="description" style="width: 100%;">
+                        <p style="font-weight:bold; padding-top:10px">Main tag</p>
+                        <input type="text" class="input-text required-entry" maxlength="255" title="main_tag" value="<?php echo $editableData['main_tag'] ?>" name="main_tag" id="main_tag" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Tags</p>
                         <input type="text" class="input-text required-entry" maxlength="255" title="Tags" value="<?php echo $editableData['tags'] ?>" name="tags" id="tags" style="width: 100%;">
                         <p style="font-weight:bold; padding-top:10px">Form Categories</p>

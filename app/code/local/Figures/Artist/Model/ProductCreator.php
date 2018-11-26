@@ -38,7 +38,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $product = new Mage_Catalog_Model_Product();
 
         // Build the product
-        $product->setSku($productData['sku']);
+        $product->setSku($this->getSku($productData['form_cat_id'], $productData['work_id']));
         $product->setName($productData['name']);
         $product->setPrice($productData['price']);
         $product->setDescription($productData['description']);
@@ -84,6 +84,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             print_r($ex); die();
         }
     }
+
     /**
      * Format URL key from name or defined key
      *
@@ -97,5 +98,24 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $urlKey = strtolower($urlKey);
         $urlKey = trim($urlKey, '-');
         return $urlKey;
+    }
+
+    public function getSku($formCategoryId, $workId)
+    {
+        $category = Mage::getModel('catalog/category')
+            ->getCollection()
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('category_custom_type', 'FORM')
+            ->addFieldToFilter('entity_id', $formCategoryId)
+            ->addIsActiveFilter()
+            ->getFirstItem();
+        if (!$category->getName()) {
+            die('Critical error during sku creating');
+        }
+        if (!$prefix = $category->getSkuPrefix()){
+            $prefix = substr($category->getName(), 0, 3);
+        }
+
+        return $prefix . '_' . $workId;
     }
 }
