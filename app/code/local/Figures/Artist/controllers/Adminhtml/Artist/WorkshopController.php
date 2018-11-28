@@ -91,6 +91,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
 
                 return;
             }
+            $productsQty = $datasArray['additional_info']['created_products_qty'];
             foreach ($datasArray as $key => $dataArray) {
                 if ($key == 'additional_info') {
                     continue;
@@ -134,7 +135,8 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     $artistId = $datasArray['additional_info']['artist_id'];
                     $workId   = $datasArray['additional_info']['work_id'];
                     $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId, null, $fCatId);
-                    $this->_getConnection()->update('artist_work', ['created_products_qty' => $datasArray['additional_info']['created_products_qty'] + 1], 'id=' . $datasArray['additional_info']['work_id']);
+                    $productsQty++;
+                    $this->_getConnection()->update('artist_work', ['created_products_qty' => $productsQty], 'id=' . $datasArray['additional_info']['work_id']);
                 }
                 Mage::getSingleton('adminhtml/session')->addSuccess(
                     'Product defined in form # ' . $fCatId . 'is saved!'
@@ -272,9 +274,12 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     public function deleteProductAction()
     {
         $productId = $this->getRequest()->getParam('product_id');
+        $workId = $this->getRequest()->getParam('work_id');
+        $newQty = $this->getRequest()->getParam('new_qty');
 
         $this->_getConnection()->query("DELETE FROM catalog_product_entity WHERE entity_id = {$productId}");
         $this->_getConnection()->query("DELETE FROM artist_product WHERE product_id = {$productId}");
+        $this->_getConnection()->query("UPDATE artist_work SET created_products_qty = {$newQty} WHERE id = {$workId}");
     }
 
     /**

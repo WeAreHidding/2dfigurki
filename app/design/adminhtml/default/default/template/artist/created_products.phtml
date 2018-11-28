@@ -98,7 +98,9 @@ $formInfo = $this->_getFormsInfo();
         $j.get(
             '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/deleteProduct") ?>',
             {
-                product_id: id
+                product_id: id,
+                work_id: '<?php echo $editableData['id'] ?>',
+                new_qty: '<?php echo $editableData['created_products_qty'] - 1 ?>'
             }
         );
 
