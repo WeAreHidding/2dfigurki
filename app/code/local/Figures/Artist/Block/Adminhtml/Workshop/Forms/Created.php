@@ -30,6 +30,7 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Created extends Figures_Arti
             $return[] = [
                 'product_id'    => $productId,
                 'name'          => $product->getName(),
+                'sku'           => $product->getSku(),
                 'edit_link'     => Mage::helper("adminhtml")->getUrl("adminhtml/catalog_product/edit/", array("id" => $productId)),
                 'frontend_link' => $url,
                 'qty_ordered'   => $this->_getArtistModel()->getSummaryOrderedForProduct($productId) ?: 0

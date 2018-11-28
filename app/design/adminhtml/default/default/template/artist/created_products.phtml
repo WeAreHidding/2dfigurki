@@ -48,7 +48,7 @@ $formInfo = $this->_getFormsInfo();
                         <tr>
                             <td style="padding-right: 20px">
                                 <div>
-                                    <h5><?php echo $this->__('Product:'); ?></h5>
+                                    <h5><?php echo $this->__('Title:'); ?></h5>
                                 </div>
                             </td>
                             <td style="padding-right: 50px">
@@ -62,6 +62,14 @@ $formInfo = $this->_getFormsInfo();
                             </td>
                             <td style="padding-right: 10px">
                                 <button class="scalable delete" type="button" onclick="deleteProduct('<?php echo $info['product_id'] ?>')" id="decline_btn">Delete this product</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:20px; padding-top: 20px;">
+                                <h5><?php echo $this->__('Sku:'); ?></h5>
+                            </td>
+                            <td style="padding-right:20px; padding-top: 20px;">
+                                <h5><?php echo $info['sku'] ?></h5>
                             </td>
                         </tr>
                         <tr>

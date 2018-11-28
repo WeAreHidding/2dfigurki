@@ -116,6 +116,6 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             $prefix = substr($category->getName(), 0, 3);
         }
 
-        return $prefix . '_' . $workId;
+        return strtolower($prefix . $workId);
     }
 }

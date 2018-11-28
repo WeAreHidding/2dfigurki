@@ -39,6 +39,17 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         );
     }
 
+    /**
+     * @param $workIds
+     * @throws Zend_Db_Adapter_Exception
+     */
+    public function deleteDesigns($workIds)
+    {
+        $workIds = implode(',', $workIds);
+
+        $query = "DELETE FROM artist_work WHERE id IN({$workIds})";
+        $this->_getConnection()->query($query);
+    }
 
     /**
      * @param $customerId
@@ -50,7 +61,7 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
 
         $workData = $connection->fetchAll(
             $connection->select()
-                ->from(['artist_work'], ['id', 'customer_id', 'status', 'char_name', 'description', 'image_path'])
+                ->from('artist_work')
                 ->where('customer_id = ?', $customerId)
         );
         if ($workData) {
@@ -58,12 +69,18 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
                 $workData[$key]['image_path'] = Mage::getBaseUrl('media') . 'workshop/user_images/' .
                     $workItem['customer_id'] . $workItem['image_path'];
                 $workData[$key]['product_data'] =
-                    $connection->fetchAll(
+                    $connection->fetchCol(
                         $connection->select()
-                            ->from('artist_product')
+                            ->from('artist_product', 'product_id')
                             ->where('artist_id = ?', $workItem['customer_id'])
                             ->where('work_id = ?', $workItem['id'])
                     );
+                foreach ($workData[$key]['product_data'] as $pk => $productId) {
+                    unset($workData[$key]['product_data'][$pk]);
+                    $product = Mage::getModel('catalog/product')->load($productId);
+                    $workData[$key]['product_data'][$pk]['image_path'] = Mage::getModel('catalog/product_media_config')->getMediaUrl($product->getImage());
+                    $workData[$key]['product_data'][$pk]['link'] = Mage::getBaseUrl() . $product->getUrlPath();
+                }
             }
 
             return $workData;
@@ -134,6 +151,11 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
             'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
         );
         return strtr($string, $converter);
+    }
+
+    public function getDesignImagePrefix()
+    {
+        return Mage::getBaseDir('media') . '/workshop/user_images/';
     }
 
     /**

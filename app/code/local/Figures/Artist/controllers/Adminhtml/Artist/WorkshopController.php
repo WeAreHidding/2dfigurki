@@ -5,7 +5,9 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
     protected $_generalParams = [
         'form_key',
         'description',
-        'tags'
+        'tags',
+        'char_name',
+        'main_tag'
     ];
 
     public function indexAction()
@@ -132,6 +134,7 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     $artistId = $datasArray['additional_info']['artist_id'];
                     $workId   = $datasArray['additional_info']['work_id'];
                     $this->_getArtistModel()->saveArtistProduct($artistId, $productId, $workId, null, $fCatId);
+                    $this->_getConnection()->update('artist_work', ['created_products_qty' => $datasArray['additional_info']['created_products_qty'] + 1], 'id=' . $datasArray['additional_info']['work_id']);
                 }
                 Mage::getSingleton('adminhtml/session')->addSuccess(
                     'Product defined in form # ' . $fCatId . 'is saved!'
@@ -184,9 +187,9 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     unset($dataByFormCategory[$key]);
                     continue;
                 }
-                if ($items['genre'] && $items['genre_item']) {
+                if ($items['genre'] || $items['genre_old']) {
                     continue;
-                } elseif ($items['genre_old'] && $items['genre_item_old']) {
+                } elseif ($items['genre_item'] || $items['genre_item_old']) {
                     continue;
                 }
 

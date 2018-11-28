@@ -40,6 +40,7 @@ $genreItemCategories = $this->getGenreItemCategories();
             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
             <input type="hidden" name="artist_id" value="<?php echo $customer['customer_id'] ?>" />
             <input type="hidden" name="work_id" value="<?php echo $editableData['id'] ?>" />
+            <input type="hidden" name="created_products_qty" value="<?php echo $editableData['created_products_qty'] ?>"/>
                 <div id="productForm" class="entry-edit">
                     <?php if (!$proposedFormCategories) : ?>
                         <div id="info">

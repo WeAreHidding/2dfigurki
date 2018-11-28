@@ -9,71 +9,56 @@ $designsData = $this->getDesignData();
 ?>
 <?php if ($designsData) : ?>
     <div id="content_design_management" class="content_main" style="display: none;">
-    <?php foreach ($designsData as $designItem) : ?>
-        <div class="container">
-            <img style="width:100px" src="<?php echo $designItem['image_path'] ?>">
-            <label> <?php echo $designItem['status'] ?></label>
-            <label> <?php echo $designItem['char_name'] ?></label>
+        <div class="tools">
+        <?php foreach ($designsData as $designItem) : ?>
+            <div class="tool row">
+                <div class="col-2 tool-img">
+                    <ul>
+                        <li>
+                            <label class="customcheck">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li class="img-full"><img class="float-right" src="<?php echo $designItem['image_path'] ?>"></li>
+                    </ul>
+                </div>
+                <div class="col-2 tool-about">
+                    <h2><?php echo $designItem['char_name'] ?></h2>
+                    <h3><?php echo $designItem['description'] ?></h3>
+                    <ul class="list-inline">
+                    <?php foreach (explode(',', $designItem['tags']) as $tag) : ?>
+                        <li class="list-inline-item"><?php echo $tag ?></li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="col-3 tool-sales">
+                    <h2>Sales</h2>
+                    <h3>X times</h3>
+                    <br>
+                    <h2>Commissions</h2>
+                    <h3>X USD</h3>
+                </div>
+                <div class="col-3 tool-products">
+
+                    <?php if ($designItem['product_data']) : ?>
+                        <ul>
+                            <?php foreach ($designItem['product_data'] as $productItem) : ?>
+                            <li><a href="<?php echo $productItem['link'] ?>"><img src="<?php echo $productItem['image_path'] ?>" alt="img"></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+                <div class="col-2 tool-status">
+                    <ul class="list-inline">
+                        <?php echo $this->getStatusHtml($designItem['status']) ?>
+                        <li class="tool-link text-right"><a href="#"><i class="fas fa-share-square"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        <?php endforeach; ?>
         </div>
-
-
-    <?php endforeach; ?>
     </div>
 <?php endif; ?>
-
-<div class="tools">
-
-    <div class="tool row">
-        <div class="col-2 tool-img">
-            <ul>
-                <li>
-                    <label class="customcheck">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkmark"></span>
-                    </label>
-                </li>
-                <li class="img-full"><img class="float-right" src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt=""></li>
-            </ul>
-        </div>
-        <div class="col-2 tool-about">
-            <h2>Name</h2>
-            <h3>Description</h3>
-            <h4>tags</h4>
-            <ul class="list-inline">
-                <li class="list-inline-item">dxedsd</li>
-                <li class="list-inline-item">axsdds</li>
-                <li class="list-inline-item">nxdsds</li>
-            </ul>
-        </div>
-        <div class="col-3 tool-sales">
-            <h2>Sales</h2>
-            <h3>X times</h3>
-            <br>
-            <h2>Commissions</h2>
-            <h3>X USD</h3>
-        </div>
-        <div class="col-3 tool-products">
-            <ul>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-                <li><img src="http://3.bp.blogspot.com/-4Wn--0A_nms/TWDh7al31xI/AAAAAAAAIIQ/6dhWOQeGw9M/s1600/Optical-illusion.jpg" alt="img"></li>
-            </ul>
-        </div>
-        <div class="col-2 tool-status">
-            <ul class="list-inline">
-                <li>Pending</li>
-                <li>Accepted</li>
-                <li class="text-accept">Product Created</li>
-                <li class="text-not-accept">Rejected</li>
-                <li class="tool-link text-right"><a href="#"><i class="fas fa-share-square"></i></a></li>
-            </ul>
-        </div>
-
-    </div>
-
-</div>

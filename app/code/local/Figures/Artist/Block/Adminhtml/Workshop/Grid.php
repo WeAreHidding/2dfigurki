@@ -39,12 +39,18 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
     }
 
     /**
-     * Add columns to grid
-     *
-     * @return Mage_Adminhtml_Block_Widget_Grid
+     * @return $this
+     * @throws Exception
      */
     protected function _prepareColumns()
     {
+        $this->addColumn('id', array(
+            'header'    => Mage::helper('catalog')->__('Design ID'),
+            'sortable'  => true,
+            'width'     => 60,
+            'index'     => 'id'
+        ));
+
         $this->addColumn('customer_id', array(
             'header'    => Mage::helper('catalog')->__('Customer ID'),
             'sortable'  => true,
@@ -84,6 +90,12 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
             'filter'    => false
         ));
 
+        $this->addColumn('created_products_qty', array(
+            'header'    => Mage::helper('catalog')->__('Created<br>Product<br>Qty'),
+            'width'     => 50,
+            'index'     => 'created_products_qty'
+        ));
+
         $this->addColumn('status', array(
             'header'    => Mage::helper('catalog')->__('Status'),
             'width'     => 100,
@@ -92,6 +104,20 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
 
 
         return parent::_prepareColumns();
+    }
+
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('id');
+        $this->getMassactionBlock()->setFormFieldName('id');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label'=> Mage::helper('tax')->__('Delete'),
+            'url'  => $this->getUrl('*/artist_massactions/massDelete', array('' => '')),
+            'confirm' => Mage::helper('tax')->__('Are you sure? You will lost all products linked to this design')
+        ));
+
+        return $this;
     }
 
     public function getGridUrl()
