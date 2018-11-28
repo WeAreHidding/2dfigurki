@@ -225,3 +225,98 @@
 .statistics button:hover {
     background: darkgray;
     cursor: pointer; }
+
+
+.tools .tool {
+    background: #fff;
+    color: #000;
+    padding: 15px; }
+.tools .tool h2 {
+    font-size: 17px;
+    font-weight: bold; }
+.tools .tool h3 {
+    font-size: 15px;
+    font-weight: bold; }
+.tools .tool h4 {
+    font-size: 12px;
+    font-weight: bold; }
+.tools .tool img {
+    width: 100%;
+    height: 100%; }
+.tools .tool .tool-img ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    height: 100%; }
+.tools .tool .tool-img ul .img-full {
+    height: 100%; }
+.tools .tool .tool-img .customcheck {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+.tools .tool .tool-img .customcheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+.tools .tool .tool-img .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ddd;
+    border-radius: 5px; }
+.tools .tool .tool-img .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+.tools .tool .tool-img .customcheck:hover input ~ .checkmark {
+    background-color: #ccc; }
+.tools .tool .tool-img .customcheck input:checked ~ .checkmark {
+    background-color: #6d7fcc;
+    border-radius: 5px; }
+.tools .tool .tool-img .customcheck input:checked ~ .checkmark:after {
+    display: block; }
+.tools .tool .tool-img .customcheck .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+.tools .tool .tool-about li {
+    background: #f1f1f1;
+    font-size: 10px;
+    padding: 2px; }
+.tools .tool .tool-products img {
+    border: 1px solid #000;
+    width: 50px;
+    height: 50px; }
+.tools .tool .tool-products ul {
+    display: block;
+    margin: 0; }
+.tools .tool .tool-products ul li {
+    display: inline-flex; }
+.tools .tool .tool-sales {
+    text-align: center; }
+.tools .tool .tool-status {
+    font-size: 13px; }
+.tools .tool .tool-status .text-accept {
+    color: limegreen;
+    font-weight: bold; }
+.tools .tool .tool-status .text-not-accept {
+    color: red;
+    font-weight: bold; }
+.tools .tool .tool-status .tool-link {
+    font-size: 20px; }
+

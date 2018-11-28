@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" afterDir="false" />
     </list>
@@ -30,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="471" column="29" selection-start-line="471" selection-start-column="29" selection-end-line="471" selection-end-column="29" />
+            <state relative-caret-position="388">
+              <caret line="571" column="21" selection-start-line="571" selection-start-column="21" selection-end-line="571" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -42,8 +43,8 @@
       <file leaf-file-name="dashboard_item.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="461">
+              <caret line="322" selection-start-line="322" selection-end-line="322" />
             </state>
           </provider>
         </entry>
@@ -51,8 +52,8 @@
       <file leaf-file-name="view.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="23">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -60,29 +61,26 @@
       <file leaf-file-name="dashboard.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="432">
+              <caret line="93" column="73" selection-start-line="93" selection-start-column="73" selection-end-line="93" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom-file-input.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/custom-file-input.js">
+      <file leaf-file-name="design_management.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="33" selection-end-column="26" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="368">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalog.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/catalog.xml">
+      <file leaf-file-name="login.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4853">
-              <caret line="211" column="14" selection-start-line="211" selection-start-column="14" selection-end-line="211" selection-end-column="14" />
+            <state relative-caret-position="138">
+              <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -90,8 +88,8 @@
       <file leaf-file-name="design.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            <state relative-caret-position="-2543">
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -107,21 +105,12 @@
       <find />
       <find>404751</find>
       <find>footer-above</find>
-      <find />
       <find>.footer</find>
       <find>.price-box</find>
-      <find />
-      <find />
-      <find />
       <find>price-info</find>
       <find>product-links</find>
-      <find />
-      <find />
-      <find />
-      <find />
       <find>product_view</find>
       <find>descr</find>
-      <find />
       <find>owl</find>
       <find>owlCarousel</find>
       <find>.owl-prev</find>
@@ -129,7 +118,7 @@
       <find>bread</find>
       <find>design__types-products</find>
       <find>inputfile</find>
-      <find />
+      <find>catalog</find>
     </findStrings>
     <replaceStrings>
       <replace>jQuery</replace>
@@ -143,6 +132,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -176,6 +166,8 @@
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" />
       </list>
     </option>
   </component>
@@ -188,7 +180,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="349" />
     <option name="y" value="103" />
     <option name="width" value="1361" />
@@ -202,6 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -370,10 +363,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value=" custom.css&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/skin/frontend/rwd/default/css/custom/custom.css&#10;app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -438,6 +431,7 @@
       <workItem from="1542471473474" duration="225000" />
       <workItem from="1542738313042" duration="6143000" />
       <workItem from="1542824338355" duration="1513000" />
+      <workItem from="1543428118538" duration="3086000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535201693796</created>
@@ -464,7 +458,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38736000" />
+    <option name="totallyTimeSpent" value="42433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -476,7 +470,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
@@ -484,12 +478,11 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32890365" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2635659" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2635659" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19349681" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2835498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -501,6 +494,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="File Transfer" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2835498" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -568,20 +562,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8188">
-          <caret line="356" column="16" selection-start-line="356" selection-start-column="16" selection-end-line="356" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/catalog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4853">
-          <caret line="211" column="14" selection-start-line="211" selection-start-column="14" selection-end-line="211" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -834,55 +814,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/catalog.xml">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4853">
-          <caret line="211" column="14" selection-start-line="211" selection-start-column="14" selection-end-line="211" selection-end-column="14" />
+        <state relative-caret-position="432">
+          <caret line="93" column="73" selection-start-line="93" selection-start-column="73" selection-end-line="93" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
+    <entry file="file://$USER_HOME$/Desktop/custom-file-input.js" />
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/catalog.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="23">
+          <caret line="211" column="14" selection-start-line="211" selection-start-column="14" selection-end-line="211" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/custom-file-input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        <state relative-caret-position="23">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="461">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="471" column="29" selection-start-line="471" selection-start-column="29" selection-end-line="471" selection-end-column="29" />
+        <state relative-caret-position="388">
+          <caret line="571" column="21" selection-start-line="571" selection-start-column="21" selection-end-line="571" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2543">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
         </state>
       </provider>
     </entry>

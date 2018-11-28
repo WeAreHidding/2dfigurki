@@ -29,6 +29,11 @@ main p {
 main button {
   width: 50%; }
 
+.catalogue {
+  border-bottom: 1px solid #f2f2f6;
+  box-shadow: 0 4px 2px -2px #f2f2f6;
+}
+
 main .list-inline a {
   padding-right: 15px; }
 
@@ -489,6 +494,84 @@ main .product-design h3 {
   height: 100%;
   fill: #f1e5e6;
 }
+
+
+.account .form-signin {
+  background: white;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  margin: auto; }
+
+.account h1 {
+  font-size: 25px;
+  font-weight: bolder; }
+
+.account h2 {
+  font-size: 15px;
+  text-transform: none;}
+
+.account a {
+  color: deeppink; }
+.account a:hover {
+  text-decoration: underline; }
+
+.account input {
+  padding: 12px;
+  border-radius: 0; }
+
+.account li {
+  margin-bottom: 15px; }
+
+.account button {
+  font-size: 15px;
+  border-radius: 0; }
+
+.account .title {
+  overflow: hidden;
+  font-size: 15px; }
+
+.account .title:before,
+.account .title:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+  border: solid #FFF;
+  border-width: 0 10px; }
+
+.account .title:before {
+  margin-left: -100%; }
+
+.account .title:after {
+  margin-right: -100%; }
+
+.account .remember {
+  font-size: 14px;}
+.account .remember a {
+  font-size: 14px;
+  color: #000; }
+.account .remember label {
+  color: #000;
+  font-size: 14px;
+  font-weight: unset;
+  font-family: inherit;}
+
+.account .contacts a {
+  background: #f6f6f9;
+  border: none;
+  color: #b7bcc3;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  width: 48%; }
+.account .contacts a:hover {
+  background: #f1f1f1; }
+
+
 
 
 
