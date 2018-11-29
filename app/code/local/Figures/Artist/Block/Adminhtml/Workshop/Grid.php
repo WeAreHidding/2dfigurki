@@ -111,6 +111,13 @@ class Figures_Artist_Block_Adminhtml_Workshop_Grid extends Mage_Adminhtml_Block_
         $this->setMassactionIdField('id');
         $this->getMassactionBlock()->setFormFieldName('id');
 
+        $this->getMassactionBlock()->addItem('export', array(
+            'label'=> Mage::helper('tax')->__('Export'),
+            'url'  => $this->getUrl('*/artist_massactions/massExport', array('' => '')),
+            'confirm' => Mage::helper('tax')->__('Start now?')
+        ));
+
+
         $this->getMassactionBlock()->addItem('delete', array(
             'label'=> Mage::helper('tax')->__('Delete'),
             'url'  => $this->getUrl('*/artist_massactions/massDelete', array('' => '')),
