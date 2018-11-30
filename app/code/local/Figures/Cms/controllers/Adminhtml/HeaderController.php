@@ -7,4 +7,40 @@ class Figures_Cms_Adminhtml_HeaderController extends Mage_Adminhtml_Controller_A
         $this->loadLayout();
         $this->renderLayout();
     }
+
+    public function editAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    public function newAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    public function saveEditAction()
+    {
+        $data = $this->getRequest()->getParams();
+        $this->_getHeaderModel()->saveHeaderItem($data);
+
+        $this->_redirectUrl($this->getUrl('adminhtml/header/index'));
+    }
+
+    public function saveNewAction()
+    {
+        $data = $this->getRequest()->getParams();
+        $this->_getHeaderModel()->addHeaderItem($data);
+
+        $this->_redirectUrl($this->getUrl('adminhtml/header/index'));
+    }
+
+    /**
+     * @return Figures_Cms_Model_Header
+     */
+    protected function _getHeaderModel()
+    {
+        return Mage::getModel('figures_cms/header');
+    }
 }

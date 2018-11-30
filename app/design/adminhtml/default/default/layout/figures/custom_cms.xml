@@ -1,11 +1,18 @@
 <?xml version="1.0"?>
 <layout>
     <adminhtml_header_index>
-        <reference name="head">
-            <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
-        </reference>
         <reference name="content">
-            <block type="figures_cms/adminhtml_header" name="custom_header"/>
+            <block type="figures_cms/adminhtml_header" name="header_grid"/>
         </reference>
     </adminhtml_header_index>
+    <adminhtml_header_edit>
+        <reference name="content">
+            <block type="figures_cms/adminhtml_header_edit" name="header_edit"/>
+        </reference>
+    </adminhtml_header_edit>
+    <adminhtml_header_new>
+        <reference name="content">
+            <block type="figures_cms/adminhtml_header_new" name="header_new"/>
+        </reference>
+    </adminhtml_header_new>
 </layout>

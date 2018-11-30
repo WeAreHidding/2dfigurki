@@ -1,0 +1,40 @@
+<?php
+/** @var $this Figures_Cms_Block_Adminhtml_Header_Edit */
+$rowData = $this->getRowData();
+?>
+<div class="entry-edit">
+    <div id="info">
+        <div class="entry-edit-head" style="height:18px !important;"><h4>Edit header item</h4></div>
+        <fieldset>
+            <form id="editHeader" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/header/saveEdit") ?>" style="padding-top: 20px">
+                <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                <input type="hidden" name="id" value="<?php echo $this->_rowId ?>" />
+                <p style="font-weight:bold; padding-top:10px">Name</p>
+                <input type="text" class="input-text required-entry" maxlength="255" title="name" value="<?php echo $rowData['name'] ?>" name="name" id="name" style="width: 100%;">
+                <p style="font-weight:bold; padding-top:10px">Link</p>
+                <input type="text" class="input-text required-entry" maxlength="255" title="link" value="<?php echo $rowData['link'] ?>" name="link" id="link" style="width: 100%;">
+                <p style="font-weight:bold; padding-top:10px">Position (try to avoid similar numbers)</p>
+                <input type="text" class="input-text required-entry" maxlength="255" title="position" value="<?php echo $rowData['position'] ?>" name="position" id="position" style="width: 100%;">
+                <p style="font-weight:bold; padding-top:10px">Enabled?</p>
+                <select id="is_enabled" name="is_enabled">
+                    <option value="0" <?php if(!$rowData['is_enabled']) : echo 'selected'; endif; ?>>No</option>
+                    <option value="1" <?php if($rowData['is_enabled']) : echo 'selected'; endif; ?>>Yes</option>
+                </select>
+            </form>
+            <div style="padding-top:20px; text-align:right">
+                <button id="saveGeneral" class="scalable" type="button" onclick="saveHeaderItem()">Save</button>
+                <button class="scalable back" type="button" style="margin-right:10px" onclick="goBack()">Back</button>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function saveHeaderItem() {
+        editForm = new varienForm('editHeader', '');
+        editForm.submit();
+    }
+    function goBack() {
+        location = '<?php echo $this->getUrl('adminhtml/header/index') ?>';
+    }
+</script>

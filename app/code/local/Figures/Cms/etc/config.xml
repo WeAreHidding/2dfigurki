@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Cms>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </Figures_Cms>
     </modules>
     <global>
@@ -16,6 +16,12 @@
                 <class>Figures_Cms_Helper</class>
             </figures_cms>
         </helpers>
+        <models>
+            <figures_cms>
+                <class>Figures_Cms_Model</class>
+                <resourceModel>figures_cms_mysql4</resourceModel>
+            </figures_cms>
+        </models>
         <resources>
             <figures_cms_setup>
                 <setup>
