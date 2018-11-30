@@ -1,31 +1,8 @@
 <?php
 /**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magento.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magento.com for more information.
- *
- * @category    design
- * @package     rwd_default
- * @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @var Figures_Cms_Block_Header $this
  */
-/**
- * @var Mage_Page_Block_Html_Header $this
- */
+$headerItems = $this->getHeaderItems();
 ?>
 
 <header>
@@ -35,9 +12,9 @@
                 <div class="navbar-header">
                 </div>
                 <ul class="nav navbar-right">
-                    <li><a href="#" class="navbar-divider"> Sell Your Art</a></li>
-                    <li><a href="#" class="navbar-divider"> Log In</a></li>
-                    <li><a href="#"> Sign Up</a></li>
+                    <li><a href="<?php echo $this->getUrl('customer_dashboard') ?>" class="navbar-divider"> Sell Your Art</a></li>
+                    <li><a href="<?php echo $this->getUrl('customer/account/login') ?>" class="navbar-divider"> Log In</a></li>
+                    <li><a href="<?php echo $this->getUrl('customer/account/create') ?>"> Sign Up</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,9 +25,9 @@
             <div class="blog-header py-3">
                 <div class="row align-items-center">
                     <div class="col-2 pt-1 col_logo">
-                        <a class="navbar-brand" href="#">
-                            <img src="<?php echo $this->getSkinUrl('images/custom/bootstrap.jpg'); ?>" class="d-inline-block align-top" alt="Logotype">
-                            <span class="site_name text-muted">Company</span>
+                        <a class="navbar-brand" href="<?php echo $this->getBaseUrl() ?>">
+                            <img src="<?php echo $this->getSkinUrl('images/logo.png') ?>" class="d-inline-block align-top" alt="Logotype">
+                            <span class="site_name text-muted"><?php echo $this->getStoreName() ?></span>
                         </a>
                     </div>
                     <div class="col-8 col_search">
@@ -73,17 +50,9 @@
         <div class="container">
             <div class="nav-scroller py-1 mb-2">
                 <ul class="nav">
-                    <li><a class="p-2 text-muted" href="#">Men's</a></li>
-                    <li><a class="p-2 text-muted" href="#">Women's</a></li>
-                    <li><a class="p-2 text-muted" href="#">Kids & Babies</a></li>
-                    <li><a class="p-2 text-muted" href="#">Device Cases</a></li>
-                    <li><a class="p-2 text-muted" href="#">Stickers</a></li>
-                    <li><a class="p-2 text-muted" href="#">Greeting Cards</a></li>
-                    <li><a class="p-2 text-muted" href="#">Wall Art</a></li>
-                    <li><a class="p-2 text-muted" href="#">Home Decor</a></li>
-                    <li><a class="p-2 text-muted" href="#">Stationary</a></li>
-                    <li><a class="p-2 text-muted" href="#">Bags</a></li>
-                    <li><a class="p-2 text-muted" href="#">Gifts</a></li>
+                    <?php foreach ($headerItems as $headerItem) : ?>
+                        <li><a class="p-2 text-muted" href="<?php echo $headerItem['link'] ?>"><?php echo $headerItem['name'] ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>

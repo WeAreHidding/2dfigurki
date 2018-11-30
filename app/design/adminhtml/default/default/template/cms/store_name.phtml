@@ -1,0 +1,24 @@
+<?php
+/** @var $this Figures_Cms_Block_Adminhtml_Header_StoreName */
+?>
+<div class="entry-edit" style="width: 40%;">
+    <div id="info">
+        <fieldset>
+            <form id="saveStore" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/header/saveStoreName") ?>" style="padding-top: 20px">
+                <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                <p style="font-weight:bold; padding-top:10px">Store Name</p>
+                <input type="text" class="input-text required-entry" maxlength="255" title="position" value="<?php echo $this->getStoreName() ?>" name="store_name" id="store_name" style="width: 100%;">
+            </form>
+            <div style="padding-top:20px; text-align:right">
+                <button id="saveGeneral" class="scalable" type="button" onclick="saveStoreName()">Save</button>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function saveStoreName() {
+        editForm = new varienForm('saveStore', '');
+        editForm.submit();
+    }
+</script>

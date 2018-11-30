@@ -59,4 +59,17 @@ class Figures_Cms_Model_Header extends Figures_Cms_Model_Abstract
             $data
         );
     }
+
+    /**
+     * @return array
+     */
+    public function getFrontendItems()
+    {
+        return $this->_connection->fetchAll(
+            $this->_connection->select()
+                ->from('custom_cms_header', ['name', 'link'])
+                ->where('is_enabled = 1')
+                ->order('position')
+        );
+    }
 }

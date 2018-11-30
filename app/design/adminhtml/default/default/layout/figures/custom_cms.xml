@@ -3,6 +3,7 @@
     <adminhtml_header_index>
         <reference name="content">
             <block type="figures_cms/adminhtml_header" name="header_grid"/>
+            <block type="figures_cms/adminhtml_header_storeName" name="header_store_name"/>
         </reference>
     </adminhtml_header_index>
     <adminhtml_header_edit>

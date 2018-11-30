@@ -36,6 +36,14 @@ class Figures_Cms_Adminhtml_HeaderController extends Mage_Adminhtml_Controller_A
         $this->_redirectUrl($this->getUrl('adminhtml/header/index'));
     }
 
+    public function saveStoreNameAction()
+    {
+        $storeName = $this->getRequest()->getParam('store_name');
+
+        Mage::getModel('core/config')->saveConfig('general/store_information/name', $storeName);
+        $this->_redirectUrl($this->getUrl('adminhtml/header/index'));
+    }
+
     /**
      * @return Figures_Cms_Model_Header
      */
