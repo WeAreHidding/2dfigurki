@@ -35,12 +35,31 @@ class Figures_Artist_Adminhtml_Artist_MassactionsController extends Mage_Adminht
             $imagePath = $path . 'user_images/' . $designItem['customer_id'] . $designItem['image_path'];
             preg_match("/[^\/]+$/", $designItem['image_path'], $matches);
             $designItem['image_name'] = $designItem['customer_id'] . '_' . $matches[0];
+            $designItem['image_url']  = Mage::getBaseUrl('media') . 'workshop/user_images/' . $designItem['customer_id'] . $designItem['image_path'];
             unset($designItem['image_path']);
             copy(
                 $imagePath,
                 $imagesSavePath . $designItem['image_name']
                 );
-            $this->getWriter($csvSavePath)->writeRow($designItem);
+            $formCatsNames = [];
+            foreach (explode(',', $designItem['proposed_form_category']) as $formCategoryId) {
+                $category = Mage::getModel('catalog/category')->load($formCategoryId);
+                $formCatsNames[] = $category->getName();
+            }
+            $row = [
+                'Design ID' => $designItem['id'],
+                'Customer ID' => $designItem['customer_id'],
+                'Designer NickName' => $designItem['artist_name'],
+                'Design Name' => $designItem['char_name'],
+                'Design Description' => $designItem['description'],
+                'Main Tag' => $designItem['main_tag'],
+                'Tags' => $designItem['tags'],
+                'Created' => $designItem['created_at'],
+                'Image Name' => $designItem['image_name'],
+                'Image Url' => $designItem['image_url'],
+                'Form Categories' => implode(',', $formCatsNames),
+            ];
+            $this->getWriter($csvSavePath)->writeRow($row);
         }
 
         $filename = $this->_createArchieve($path);
