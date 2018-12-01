@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Artist>
-            <version>0.1.4</version>
+            <version>0.2.2</version>
         </Figures_Artist>
     </modules>
     <global>
@@ -41,6 +41,16 @@
                 </connection>
             </figures_artist_setup>
         </resources>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <track_new_order>
+                        <class>Figures_Artist_Model_Observer</class>
+                        <method>trackNewOrder</method>
+                    </track_new_order>
+                </observers>
+            </sales_order_place_after>
+        </events>
     </global>
     <frontend>
         <routers>
@@ -98,4 +108,16 @@
             </adminhtml>
         </routers>
     </admin>
+    <crontab>
+        <jobs>
+            <calculate_comissions>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>figures_artist/cron::calculateComissions</model>
+                </run>
+            </calculate_comissions>
+        </jobs>
+    </crontab>
 </config>

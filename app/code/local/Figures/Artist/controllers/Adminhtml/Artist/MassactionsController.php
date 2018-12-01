@@ -34,7 +34,7 @@ class Figures_Artist_Adminhtml_Artist_MassactionsController extends Mage_Adminht
         foreach ($designData as $designItem) {
             $imagePath = $path . 'user_images/' . $designItem['customer_id'] . $designItem['image_path'];
             preg_match("/[^\/]+$/", $designItem['image_path'], $matches);
-            $designItem['image_name'] = $designItem['customer_id'] . '_' . $matches[0];
+            $designItem['image_name'] = $designItem['id'] . '_' . $matches[0];
             $designItem['image_url']  = Mage::getBaseUrl('media') . 'workshop/user_images/' . $designItem['customer_id'] . $designItem['image_path'];
             unset($designItem['image_path']);
             copy(

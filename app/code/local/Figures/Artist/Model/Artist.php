@@ -102,6 +102,17 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         );
     }
 
+    public function getArtistProductByProductId($productId)
+    {
+        $connection = $this->_getConnection();
+
+        return $connection->fetchRow(
+            $connection->select()
+                ->from('artist_product', ['artist_id', 'work_id'])
+                ->where('product_id = ?', $productId)
+        );
+    }
+
     /**
      * @param $artistId
      * @param $productId
