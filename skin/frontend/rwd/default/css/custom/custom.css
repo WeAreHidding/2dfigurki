@@ -117,6 +117,10 @@ main .product-design h3 {
   font-weight: bold;
   padding-top: 10px; }
 
+.icon-rotate {
+  transform: rotate(180deg); }
+
+.validation_class {border: 2px solid #dc4165; }
 
 .cont-pad {
   padding-left: 15px;
@@ -571,6 +575,71 @@ main .product-design h3 {
 .account .contacts a:hover {
   background: #f1f1f1; }
 
+
+.register .form-signin {
+  background: white;
+  width: 100%;
+  max-width: 660px;
+  padding: 15px;
+  margin: auto; }
+
+.register h1 {
+  font-size: 25px;
+  font-weight: bolder; }
+
+.register h2 {
+  color: darkgray;
+  font-size: 15px;
+  font-style: italic; }
+
+.register a {
+  color: deeppink; }
+.register a:hover {
+  text-decoration: underline; }
+
+.register input[type='text'], .register input[type='email'], .register input[type='password'] {
+  border-radius: 0;
+  height: 40px;
+  padding: 12px;
+  width: 100%}
+
+.register li {
+  margin-bottom: 15px; }
+
+.register button {
+  font-size: 15px;
+  border-radius: 0; }
+
+.register label {
+  font-weight: bold; }
+
+.register .required_field {
+  color: deeppink; }
+.register .required_field:after {
+  content: ' *'; }
+
+.modal_success .modal-body {
+  background: #b7e8fa; }
+
+.modal_success .modal-dialog {
+  margin: 0;
+  margin-left: 80%; }
+
+.modal_success p {
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase; }
+
+.modal_success a {
+  color: #6d7fcc;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-decoration: underline; }
+
+.modal-backdrop {
+  display: none; }
 
 
 

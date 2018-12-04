@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,62 +33,30 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="571" column="21" selection-start-line="571" selection-start-column="21" selection-end-line="571" selection-end-column="21" />
+            <state relative-caret-position="174">
+              <caret line="620" selection-start-line="620" selection-end-line="620" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_item.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css">
+      <file leaf-file-name="register.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="322" selection-start-line="322" selection-end-line="322" />
+            <state relative-caret-position="206">
+              <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+              <folding>
+                <element signature="e#6#949#0#PHP" expanded="true" />
+                <element signature="e#959#1080#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="93" column="73" selection-start-line="93" selection-start-column="73" selection-end-line="93" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="design_management.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.phtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="design.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="design.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2543">
-              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+            <state relative-caret-position="243">
+              <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -98,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$</find>
       <find>boot</find>
       <find>bootstrap</find>
       <find>startRoom</find>
@@ -119,6 +85,7 @@
       <find>design__types-products</find>
       <find>inputfile</find>
       <find>catalog</find>
+      <find>$</find>
     </findStrings>
     <replaceStrings>
       <replace>jQuery</replace>
@@ -140,7 +107,6 @@
         <option value="$PROJECT_DIR$/app/design/frontend/default/shoe_store/template/catalog/product/new_products.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/default/template/persistent/customer/form/register.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/persistent/customer/form/register.phtml" />
-        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml" />
         <option value="$PROJECT_DIR$/app/etc/modules/Figures_Cusomer.php" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/app/code/local/Figures/Customer/etc/config.xml" />
@@ -163,11 +129,12 @@
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/styles.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/catalog.xml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml" />
-        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" />
         <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css" />
-        <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design_management.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml" />
+        <option value="$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css" />
+        <option value="$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml" />
       </list>
     </option>
   </component>
@@ -180,7 +147,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="349" />
     <option name="y" value="103" />
     <option name="width" value="1361" />
@@ -366,7 +333,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value=" custom.css&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/skin/frontend/rwd/default/css/custom/custom.css&#10;app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" />
+    <property name="SearchEverywhereHistoryKey" value="design&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml&#10;custom.css&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/skin/frontend/rwd/default/css/custom/custom.css&#10;register.phtml&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml&#10; custom.css&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/skin/frontend/rwd/default/css/custom/custom.css&#10;app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml&#9;FILE&#9;file://C:/OpenServer/domains/local.2df.com/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -431,7 +398,9 @@
       <workItem from="1542471473474" duration="225000" />
       <workItem from="1542738313042" duration="6143000" />
       <workItem from="1542824338355" duration="1513000" />
-      <workItem from="1543428118538" duration="3086000" />
+      <workItem from="1543428118538" duration="3622000" />
+      <workItem from="1543753727825" duration="14000" />
+      <workItem from="1543944894165" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535201693796</created>
@@ -458,7 +427,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42433000" />
+    <option name="totallyTimeSpent" value="45123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -470,7 +439,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
@@ -478,9 +447,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32890365" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2635659" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.26252723" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19989339" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.31449893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -641,13 +610,6 @@
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/layout/persistent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-552" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Block/Form/Register.php">
@@ -816,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/dashboard.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="2139">
           <caret line="93" column="73" selection-start-line="93" selection-start-column="73" selection-end-line="93" selection-end-column="73" />
         </state>
       </provider>
@@ -831,29 +793,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/default/template/catalog/product/view.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="437">
           <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/dashboard_item.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
+        <state relative-caret-position="7406">
           <caret line="322" selection-start-line="322" selection-end-line="322" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="571" column="21" selection-start-line="571" selection-start-column="21" selection-end-line="571" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2543">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -866,8 +814,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/login.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+        <state relative-caret-position="46">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/persistent/customer/form/register.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#949#0#PHP" expanded="true" />
+            <element signature="e#959#1080#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/rwd/default/css/custom/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="620" selection-start-line="620" selection-end-line="620" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/rwd/figures/template/dashboard/pages/design.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
         </state>
       </provider>
     </entry>

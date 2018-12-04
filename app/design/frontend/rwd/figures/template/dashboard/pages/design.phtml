@@ -140,3 +140,21 @@ $formCategories = $this->getFormCategories();
         e.preventDefault();
     });
 </script>
+
+<button class="btn btn-info" onclick="jQuery('#SuccessForm').modal('show')">Show Modal</button>
+
+<div class="modal fade modal_success" id="SuccessForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-left">
+                <div class="container">
+                    <p>Thank you for sharing your art!</p>
+                    <p>We will process your image and create products soon.
+                        You can see the status of you submission in <a href="#">Uploaded Designs</a> tab.
+                        It may take up to few days.</p>
+                    <p>You may join our <a href="#">Discord group</a> :3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
