@@ -23,6 +23,26 @@ class Figures_Artist_Model_Observer extends Varien_Object
         }
     }
 
+    public function trackPaidOrder($observer)
+    {
+        $invoice = $observer->getEvent()->getInvoice();
+        $order = $invoice->getOrder();
+
+        foreach ($order->getAllItems() as $orderItem) {
+            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus(), 'artist_comission_status' => 'order_paid'], $orderItem->getId());
+        }
+    }
+
+    public function trackShippedOrder($observer)
+    {
+        $shipment = $observer->getEvent()->getShipment();
+        $order = $shipment->getOrder();
+
+        foreach ($order->getAllItems() as $orderItem) {
+            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus(), 'artist_comission_status' => 'order_shipped'], $orderItem->getId());
+        }
+    }
+
     /**
      * @return Figures_Artist_Model_Comission
      */

@@ -33,4 +33,10 @@
             <block type="figures_artist/adminhtml_workshop_forms_created" name="workshop_general"/>
         </reference>
     </adminhtml_artist_workshop_editcreated>
+
+    <adminhtml_sales_orderitem_index>
+        <reference name="content">
+            <block type="figures_artist/adminhtml_sales_orderItem" name="order_item_grid"/>
+        </reference>
+    </adminhtml_sales_orderitem_index>
 </layout>

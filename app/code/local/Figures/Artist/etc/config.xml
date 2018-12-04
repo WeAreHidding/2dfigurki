@@ -50,6 +50,22 @@
                     </track_new_order>
                 </observers>
             </sales_order_place_after>
+            <sales_order_invoice_save_before>
+                <observers>
+                    <track_paid_order>
+                        <class>Figures_Artist_Model_Observer</class>
+                        <method>trackPaidOrder</method>
+                    </track_paid_order>
+                </observers>
+            </sales_order_invoice_save_before>
+            <sales_order_shipment_save_after>
+                <observers>
+                    <track_shipped_order>
+                        <class>Figures_Artist_Model_Observer</class>
+                        <method>trackShippedOrder</method>
+                    </track_shipped_order>
+                </observers>
+            </sales_order_shipment_save_after>
         </events>
     </global>
     <frontend>
@@ -88,6 +104,15 @@
                     </finance>
                 </children>
             </figures_artist>
+            <sales>
+                <children>
+                    <order_item module="figures_artist">
+                        <title>Order Items</title>
+                        <action>adminhtml/sales_orderItem</action>
+                        <sort_order>20</sort_order>
+                    </order_item>
+                </children>
+            </sales>
         </menu>
         <layout>
             <updates>
