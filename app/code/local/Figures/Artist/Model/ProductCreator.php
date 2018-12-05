@@ -89,6 +89,13 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         return $connection->fetchOne($connection->select()->from($table, 'id')->where('name = ?', $name));
     }
 
+    public function validateSpecificAttributes($table, $name)
+    {
+        $connection = Mage::getModel('core/resource')->getConnection('core_write');
+
+        return $connection->fetchOne($connection->select()->from($table, 'id')->where('name = ?', $name)) ? false : true;
+    }
+
     /**
      * Format URL key from name or defined key
      *

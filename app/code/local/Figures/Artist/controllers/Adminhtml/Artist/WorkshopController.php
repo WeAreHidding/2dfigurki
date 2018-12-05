@@ -185,9 +185,21 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                     unset($dataByFormCategory[$key]);
                     continue;
                 }
-                if ($items['genre'] || $items['genre_old']) {
-                    continue;
-                } elseif ($items['genre_item'] || $items['genre_item_old']) {
+                if (($items['genre'] || $items['genre_old']) && ($items['genre_item'] || $items['genre_item_old'])) {
+                    if ($items['genre']) {
+                        if (!$this->_getProductCreatorModel()->validateSpecificAttributes('artist_genre', $items['genre'])) {
+                            $invalidMessage = 'Such genre already exists for FORM #' . $key;
+                            unset($dataByFormCategory[$key]);
+                            continue;
+                        }
+                    }
+                    if ($items['genre_item']) {
+                        if (!$this->_getProductCreatorModel()->validateSpecificAttributes('artist_fandom', $items['genre_item'])) {
+                            $invalidMessage = 'Such fandom already exists for FORM #' . $key;
+                            unset($dataByFormCategory[$key]);
+                            continue;
+                        }
+                    }
                     continue;
                 }
 
