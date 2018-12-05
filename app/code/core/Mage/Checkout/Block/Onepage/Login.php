@@ -64,7 +64,7 @@ class Mage_Checkout_Block_Onepage_Login extends Mage_Checkout_Block_Onepage_Abst
 
     public function getSuccessUrl()
     {
-        return $this->getUrl('*/*');
+        return $this->getUrl('customer_dashboard');
     }
 
     public function getErrorUrl()

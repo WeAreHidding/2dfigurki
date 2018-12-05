@@ -120,7 +120,7 @@ main .product-design h3 {
 .icon-rotate {
   transform: rotate(180deg); }
 
-.validation_class {border: 2px solid #dc4165; }
+.validation_class {border: 2px solid #dc4165 !important;}
 
 .cont-pad {
   padding-left: 15px;

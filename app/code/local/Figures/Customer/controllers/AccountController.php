@@ -42,6 +42,12 @@ class Figures_Customer_AccountController extends Mage_Customer_AccountController
                     $customer->setGroupId(20);
                 }
                 $customer->save();
+                $address = Mage::getModel("customer/address");
+                $address->setCustomerId($customer->getId())
+                    ->setFirstname($customer->getFirstname())
+                    ->setLastname($customer->getLastname())
+                    ->setTelephone($this->getRequest()->getPost('phone'));
+                $address->save();
                 $this->_dispatchRegisterSuccess($customer);
                 $this->_successProcessRegistration($customer);
                 return;

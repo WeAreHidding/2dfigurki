@@ -7,7 +7,7 @@
         <?php echo $this->getBlockHtml('formkey'); ?>
         <ul class="list-inline">
             <li><h1>Log In</h1></li>
-            <li><h2>Don't have an account? <a href="#">Sign Up</a></h2></li>
+            <li><h2>Don't have an account? <a href="<?php echo $this->getUrl('customer/account/create') ?>">Sign Up</a></h2></li>
             <li><label for="inputEmail" class="sr-only">Email address</label></li>
             <li>
                 <input type="email" id="email" name="login[username]" class="form-control" placeholder="Email" required autofocus>
@@ -23,7 +23,7 @@
             </li>
             <li class="text-left remember">
                 <input id="check-me" type="checkbox" value="remember-me"><label for="check-me">Remember Me</label>
-                <a class="float-right" href="#">Forgot password?</a>
+                <a class="float-right" href="<?php echo $this->getUrl('customer/account/forgotpassword') ?>">Forgot password?</a>
             </li>
             <li><p class="title">Or Log In with</p></li>
             <li class="text-left contacts">
