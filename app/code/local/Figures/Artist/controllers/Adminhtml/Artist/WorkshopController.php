@@ -96,37 +96,33 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                 if ($key == 'additional_info') {
                     continue;
                 }
-                $genreToCreate = $gIToCreate = $gCatId = true;
                 $fCatId = $key;
 
-                if (!$genreCategory = $dataArray['genre']) {
-                    $genreCategory = $dataArray['genre_old'];
-                    $genreToCreate = false;
+                if ($dataArray['genre']) {
+                    $genreId = $this->_getProductCreatorModel()->addSpecialAttributeItem('artist_genre', $dataArray['genre']);
+                } else {
+                    $genreId = $dataArray['genre_old'];
                 }
-                if (!$gICategory = $dataArray['genre_item']) {
-                    $gICategory = $dataArray['genre_item_old'];
-                    $gIToCreate = false;
-                }
-
-                if ($genreToCreate) {
-                    $gCatId = $this->_getProductCreatorModel()->createCategory(['name' => $genreCategory, 'category_custom_type' => 'GENRE', 'parent_id' => $fCatId ?: $dataArray['genre_item_old']]);
-                }
-                if ($gIToCreate) {
-                    $this->_getProductCreatorModel()->createCategory(['name' => $gICategory, 'category_custom_type' => 'GENRE_ITEM', 'parent_id' => $gCatId ?: $dataArray['genre_old']]);
+                if ($dataArray['genre_item']) {
+                    $fandomId = $this->_getProductCreatorModel()->addSpecialAttributeItem('artist_fandom', $dataArray['genre_item']);
+                } else {
+                    $fandomId = $dataArray['genre_item_old'];
                 }
                 $imagePath = $this->_loadImage($datasArray['additional_info']['work_id'], $datasArray['additional_info']['artist_id'], $fCatId);
 
                 $productData = [
                     'name'        => $dataArray['title'],
                     'price'       => $dataArray['price'],
-                    'parent_cat'  => $gICategory,
+                    'parent_cat_id' => $fCatId,
                     'image_path'  => $imagePath,
                     'main_tag'    => $dataArray['main_tag'],
                     'tags'        => $dataArray['tags'],
                     'description' => $dataArray['description'],
                     'artist_id'   => $datasArray['additional_info']['artist_id'],
                     'form_cat_id' => $key,
-                    'work_id'     => $datasArray['additional_info']['work_id']
+                    'work_id'     => $datasArray['additional_info']['work_id'],
+                    'genre_id'    => $genreId,
+                    'fandom_id'   => $fandomId
                 ];
 
                 $productId = $this->_getProductCreatorModel()->createProduct($productData);

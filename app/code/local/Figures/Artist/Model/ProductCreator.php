@@ -45,18 +45,13 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $product->setShortDescription($productData['description']);
         $product->setMainTag($productData['main_tag']);
         $product->setTags($productData['tags']);
+        $product->setGenreId($productData['genre_id']);
+        $product->setFandomId($productData['fandom_id']);
         $product->setArtistId($productData['artist_id']);
-
-        $category = Mage::getResourceModel('catalog/category_collection')
-            ->addFieldToFilter('name', $productData['parent_cat'])
-            ->getFirstItem();
-        if (!$categoryId = $category->getId()) {
-            $categoryId = $productData['parent_cat'];
-        }
-
+        $product->setWorkId($productData['work_id']);
         $product->setAttributeSetId(4);
         $product->setTypeId('simple');
-        $product->setCategoryIds(array($categoryId));
+        $product->setCategoryIds(array($productData['parent_cat']));
         $product->setWebsiteIDs(array(1));
         $product->setWeight(4.0000);
         $product->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
@@ -83,6 +78,15 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             print_r("Critical during product creation! Contact developer\n\n");
             print_r($ex); die();
         }
+    }
+
+    public function addSpecialAttributeItem($table, $name)
+    {
+        $connection = Mage::getModel('core/resource')->getConnection('core_write');
+
+        $connection->insert($table, ['name' => $name]);
+
+        return $connection->fetchOne($connection->select()->from($table, 'id')->where('name = ?', $name));
     }
 
     /**

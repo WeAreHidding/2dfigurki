@@ -46,13 +46,25 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Products extends Figures_Art
         return $result;
     }
 
-    public function getGenreCategories($parentId = false)
+    public function getGenreCategories()
     {
-        return $this->getCategoryByFilter('GENRE', $parentId);
+        return $this->_getConnection()->fetchAll(
+            $this->_getConnection()->select()->from('artist_genre')
+        );
     }
 
     public function getGenreItemCategories()
     {
-        return $this->getCategoryByFilter('GENRE_ITEM');
+        return $this->_getConnection()->fetchAll(
+            $this->_getConnection()->select()->from('artist_fandom')
+        );
+    }
+
+    /**
+     * @return Varien_Db_Adapter_Pdo_Mysql
+     */
+    protected function _getConnection()
+    {
+        return Mage::getModel('core/resource')->getConnection('core_write');
     }
 }
