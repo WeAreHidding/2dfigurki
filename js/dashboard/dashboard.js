@@ -36,7 +36,7 @@ function loadContent(content) {
 
     jQuery.ajax({
         url: "/figures_dashboard/dashboard/loadTab",
-        type: "POST",
+        type: "GET",
         data: {tab: content},
         success: function (block) {
             jQuery("#dashboardMainContainer").append(block);
@@ -82,10 +82,28 @@ function saveDesign(formData) {
         type: "POST",
         data: formData,
         success: function (msg) {
-            console.log(msg)
         },
         cache: false,
         contentType: false,
         processData: false
+    });
+}
+
+//Statistics
+
+//Sales tab
+function getSalesData(customerId) {
+    var filter  = jQuery('#salesFilter');
+    var from    = jQuery('#salesDateFrom');
+    var to      = jQuery('#salesDateTo');
+    console.log(to.val());
+    jQuery.ajax({
+        url: "/figures_dashboard/dashboard/getSalesData",
+        type: "POST",
+        data: {status: filter.val(), from: from.val(), to: to.val(), customer_id: customerId},
+        success: function (msg) {
+            console.log(msg)
+        },
+        cache: false
     });
 }

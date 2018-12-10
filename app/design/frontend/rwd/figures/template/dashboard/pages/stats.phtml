@@ -93,25 +93,24 @@
                     <div class="row align-items-center">
 
                         <div class="offset-lg-1 col-lg-3 col-12">
-                            <select class="form-control">
-                                <option value="0">All Points of Sale</option>
-                                <option value="1">Marketplace</option>
-                                <option value="2">External Marketplace</option>
+                            <select id="salesFilter" class="form-control">
+                                <option value="all">All Statuses</option>
+                                <option value="not_paid">Comission not paid</option>
+                                <option value="paid">Comission paid</option>
                             </select>
                         </div>
                         <div class="col-lg-3 col-12">
-                            <input type="date" class="form-control" placeholder="From">
+                            <input id="salesDateFrom" type="date" class="form-control" placeholder="From">
                         </div>
                         <div class="col-lg-3 col-12">
-                            <input type="date" class="form-control" placeholder="To">
+                            <input id="salesDateTo" type="date" class="form-control" placeholder="To">
                         </div>
                         <div class="col-lg-1 col-12">
-                            <a onclick="" class="pointer">Clear</a>
+                            <button class="btn btn-info" onclick="getSalesData(<?php echo $this->_customer->getId()?>)">Show</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="offset-4 col-4 col-auto">
-                            <button>X</button>
                             <h6>No entries for the current period</h6>
                         </div>
                     </div>

@@ -18,7 +18,8 @@ class Figures_Artist_Model_Observer extends Varien_Object
                 'order_item_id' => $orderItem->getId(),
                 'qty_sold' => $orderItem->getQtyOrdered(),
                 'price' => $orderItem->getPrice(),
-                'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id'])
+                'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id']),
+                'artist_comission_status' => 'not_paid'
             ]);
         }
     }
@@ -29,7 +30,7 @@ class Figures_Artist_Model_Observer extends Varien_Object
         $order = $invoice->getOrder();
 
         foreach ($order->getAllItems() as $orderItem) {
-            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus(), 'artist_comission_status' => 'order_paid'], $orderItem->getId());
+            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus()], $orderItem->getId());
         }
     }
 
@@ -39,7 +40,7 @@ class Figures_Artist_Model_Observer extends Varien_Object
         $order = $shipment->getOrder();
 
         foreach ($order->getAllItems() as $orderItem) {
-            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus(), 'artist_comission_status' => 'order_shipped'], $orderItem->getId());
+            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus()], $orderItem->getId());
         }
     }
 

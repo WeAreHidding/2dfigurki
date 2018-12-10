@@ -212,16 +212,16 @@
     border-radius: 5px;
     padding: 10px; }
 
-.statistics button {
-    display: block;
-    margin: 0 auto;
-    background: #fff;
-    color: #dc4165;
-    border: 1px solid #000;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
-    font-size: 30px; }
+/*.statistics button {*/
+    /*display: block;*/
+    /*margin: 0 auto;*/
+    /*background: #fff;*/
+    /*color: #dc4165;*/
+    /*border: 1px solid #000;*/
+    /*border-radius: 100px;*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*font-size: 30px; }*/
 .statistics button:hover {
     background: darkgray;
     cursor: pointer; }

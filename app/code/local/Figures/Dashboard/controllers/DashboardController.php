@@ -84,6 +84,24 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $this->getResponse()->setBody($html);
     }
 
+    public function getSalesDataAction()
+    {
+        $params = $this->getRequest()->getParams();
+        $bind = "artist_id = {$params['customer_id']} AND created_at >= '{$params['from']}' AND created_at <= '{$params['to']}'";
+        if ($params['status'] != 'all') {
+            $bind .=  "AND artist_comission_status = {$params['status']}";
+        }
+
+        $salesData = $this->_getSalesModel()->getSales($bind, true);
+    }
+
+    /**
+     * @return Figures_Artist_Model_Sales
+     */
+    protected function _getSalesModel()
+    {
+        return Mage::getModel('figures_artist/sales');
+    }
 
     /**
      * @return Figures_Artist_Model_Artist

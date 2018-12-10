@@ -21,6 +21,25 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
         );
     }
 
+    public function getSales($bind = '', $getProductLink = false)
+    {
+        $connection = $this->_getConnection();
+
+        $salesData = $connection->fetchAll(
+            $connection->select()
+                ->from('artist_sales')
+                ->where($bind)
+        );
+        if ($getProductLink) {
+            foreach ($salesData as $key => $item) {
+                $product = Mage::getModel('catalog/product')->setStoreId(1)->load($item['product_id']);
+                $salesData[$key]['product_url'] = $product->getProductUrl();
+            }
+        }
+
+        return $salesData;
+    }
+
     public function getCollection()
     {
         $connection = $this->_getConnection();
