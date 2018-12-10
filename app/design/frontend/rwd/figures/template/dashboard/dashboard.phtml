@@ -81,18 +81,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
-                        <li>Hello, Nickname</li>
+                        <li>Hello, <?php echo $this->getCustomerNickname() ?></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="container">
-            <?php echo $this->getChildHtml('customer_dashboard_design'); ?>
-            <?php echo $this->getChildHtml('customer_dashboard_design_management'); ?>
-            <?php echo $this->getChildHtml('customer_dashboard_totals'); ?>
-            <?php echo $this->getChildHtml('customer_dashboard_stats'); ?>
-        </div>
+        <div id="dashboardMainContainer" class="container"></div>
     </div>
 </div>
 <?php endif; ?>

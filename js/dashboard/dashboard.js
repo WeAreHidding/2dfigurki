@@ -29,10 +29,63 @@ function menuToggle(a) {
 }
 
 function loadContent(content) {
-    jQuery('#content_dash').css("display", "none");
-    jQuery('#content_design').css("display", "none");
-    jQuery('#content_design_management').css("display", "none");
-    jQuery('#content_stats').css("display", "none");
+    jQuery('#content_dash').remove();
+    jQuery('#content_design').remove();
+    jQuery('#content_design_management').remove();
+    jQuery('#content_stats').remove();
 
-    jQuery('#content_'+content).css("display", "block");
+    jQuery.ajax({
+        url: "/figures_dashboard/dashboard/loadTab",
+        type: "POST",
+        data: {tab: content},
+        success: function (block) {
+            jQuery("#dashboardMainContainer").append(block);
+        },
+        cache: false
+    });
+}
+
+//Design functionality
+
+function validateDesign() {
+    var isValid     = true;
+    var name        = jQuery('#char_name');
+    var mainTag     = jQuery('#main_tag');
+    var description = jQuery('#description');
+    var tags        = jQuery('#tags');
+    var formCats    = jQuery('.check-form');
+    console.log(formCats);
+
+    if (!name.val()) {
+        isValid = false;
+        name.addClass('not-valid-field');
+    }
+    if (!mainTag.val()) {
+        isValid = false;
+        mainTag.addClass('not-valid-field');
+    }
+    if (!description.val()) {
+        isValid = false;
+        description.addClass('not-valid-field');
+    }
+    if (!tags.val()) {
+        isValid = false;
+        tags.addClass('not-valid-field');
+    }
+
+    return isValid;
+}
+
+function saveDesign(formData) {
+    jQuery.ajax({
+        url: "/figures_dashboard/dashboard/saveInfo",
+        type: "POST",
+        data: formData,
+        success: function (msg) {
+            console.log(msg)
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
 }

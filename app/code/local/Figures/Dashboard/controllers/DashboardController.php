@@ -56,6 +56,34 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $model->save();
     }
 
+    public function loadTabAction()
+    {
+        $tabName = $this->getRequest()->getParam('tab');
+        $block = false;
+        switch ($tabName) {
+            case 'dash':
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard')->setTemplate('dashboard/pages/dashboard.phtml');
+                break;
+            case 'design':
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard_design')->setTemplate('dashboard/pages/design.phtml');
+                break;
+            case 'design_management':
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard_designManagement')->setTemplate('dashboard/pages/design_management.phtml');
+                break;
+            case 'stats':
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard')->setTemplate('dashboard/pages/stats.phtml');
+                break;
+        }
+
+        if (!$block) {
+            return;
+        }
+
+        $html = $block->toHtml();
+
+        $this->getResponse()->setBody($html);
+    }
+
 
     /**
      * @return Figures_Artist_Model_Artist
