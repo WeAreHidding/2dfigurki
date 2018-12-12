@@ -93,6 +93,27 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         }
 
         $salesData = $this->_getSalesModel()->getSales($bind, true);
+        if (!$salesData) {
+            $this->getResponse()->setBody('<div class="offset-4 col-4 col-auto">
+                            <h6>No entries for the current period</h6>
+                        </div>');
+            return;
+        }
+        $html = '';
+        foreach ($salesData as $item) {
+            $html .= '
+            <div class="tool row"><span>' . $item['created_at'] .'</span>
+            <span><a href="' . $item['product_link'] . '">' . $item['product_name'] .'</a></span>
+            <span>' . $item['price'] .'</span>
+            <span>' . $item['discount'] .'%</span>
+            <span>' . $item['comission'] .'%</span>
+            <span>' . $item['order_status'] .'</span>
+            <span>' . $item['artist_status'] .'</span></div>
+            ';
+        }
+
+
+        $this->getResponse()->setBody($html);
     }
 
     /**

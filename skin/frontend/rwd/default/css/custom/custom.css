@@ -122,6 +122,8 @@ main .product-design h3 {
 
 .not-valid-field {border: 2px solid #dc4165 !important;}
 
+.not-valid-text {color: #dc4165 !important;}
+
 .cont-pad {
   padding-left: 15px;
   padding-right: 15px; }

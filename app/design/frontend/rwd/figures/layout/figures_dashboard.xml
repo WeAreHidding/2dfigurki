@@ -5,11 +5,13 @@
             <action method="setTitle"><title>Dashboard</title></action>
             <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
             <!--<action method="addJs"><script>plugins/tagit/tag-it.min.js</script></action>-->
+            <action method="addCss"><stylesheet>css/custom/dashboard/custom_checkbox.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/plugins/bootstrap.min.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/plugins/jquery.mCustomScrollbar.min.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/custom/dashboard.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/custom/dashboard_item.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/custom/loader.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom/dashboard/dashboard.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom/dashboard/dashboard_item.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom/dashboard/loader.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/custom/animate.css</stylesheet></action>
             <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
             <action method="addJs"><script>plugins/bootstrap.min.js</script></action>
             <action method="addJs"><script>plugins/jquery.mCustomScrollbar.min.js</script></action>

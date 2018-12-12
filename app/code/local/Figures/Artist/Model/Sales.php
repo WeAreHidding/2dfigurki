@@ -34,6 +34,7 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
             foreach ($salesData as $key => $item) {
                 $product = Mage::getModel('catalog/product')->setStoreId(1)->load($item['product_id']);
                 $salesData[$key]['product_url'] = $product->getProductUrl();
+                $salesData[$key]['product_name'] = $product->getName();
             }
         }
 

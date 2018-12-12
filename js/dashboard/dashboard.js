@@ -48,13 +48,21 @@ function loadContent(content) {
 //Design functionality
 
 function validateDesign() {
+    var message = '';
+
     var isValid     = true;
     var name        = jQuery('#char_name');
     var mainTag     = jQuery('#main_tag');
     var description = jQuery('#description');
     var tags        = jQuery('#tags');
-    var formCats    = jQuery('.check-form');
-    console.log(formCats);
+    var forms       = jQuery('#formsGroup');
+    var terms       = jQuery('#termsLabel');
+    var copyright   = jQuery('#copyrightLabel');
+
+    if (!jQuery('#downForm').is(":visible")) {
+        isValid = false;
+        message = 'Please, upload image. ';
+    }
 
     if (!name.val()) {
         isValid = false;
@@ -73,6 +81,26 @@ function validateDesign() {
         tags.addClass('not-valid-field');
     }
 
+    if (jQuery('.check-form:checked').length === 0) {
+        isValid = false;
+        forms.addClass('not-valid-field');
+    }
+
+    if (!jQuery('#terms').is(":checked")) {
+        isValid = false;
+        terms.addClass('not-valid-text');
+    }
+
+    if (!jQuery('#copyright').is(":checked")) {
+        isValid = false;
+        copyright.addClass('not-valid-text');
+    }
+
+    if (!isValid) {
+        message += 'Please, fill all mandatory fields.';
+        showNotify('No needed data', message, 'danger');
+    }
+
     return isValid;
 }
 
@@ -81,12 +109,31 @@ function saveDesign(formData) {
         url: "/figures_dashboard/dashboard/saveInfo",
         type: "POST",
         data: formData,
-        success: function (msg) {
+        success: function () {
+            showNotify('Your design is saved! ', 'You will get response in few days', 'success');
+            loadContent('design');
         },
         cache: false,
         contentType: false,
         processData: false
     });
+}
+
+function removeValidation(element) {
+    element.removeClassName('not-valid-text');
+    element.removeClassName('not-valid-field');
+}
+
+function imageIsLoaded(e) {
+    jQuery('#downImg').attr('src', e.target.result);
+    jQuery('#downForm').show();
+    jQuery('#downFigure').hide();
+}
+
+function closeImageLoaded() {
+    jQuery('#downForm').hide();
+    jQuery('#downFigure').show();
+    jQuery(":file").val('');
 }
 
 //Statistics
@@ -101,9 +148,32 @@ function getSalesData(customerId) {
         url: "/figures_dashboard/dashboard/getSalesData",
         type: "POST",
         data: {status: filter.val(), from: from.val(), to: to.val(), customer_id: customerId},
-        success: function (msg) {
-            console.log(msg)
+        success: function (block) {
+            jQuery("#salesList").empty();
+            jQuery("#salesList").append(block);
         },
         cache: false
+    });
+}
+
+function showNotify(title,text,type,delay) {
+    delay = typeof delay !== 'undefined' ? delay : 5000;
+    title="<strong>"+title+":</strong>";
+
+    jQuery.notify({
+        icon: 'glyphicon glyphicon-star',
+        title: title,
+        message: text
+    },{
+        delay: delay,
+        z_index: 999,
+        placement: {
+            from: "bottom"
+        },
+        animate: {
+            enter: 'animated fadeInDown',
+            exit: 'animated fadeOutUp'
+        },
+        type: type
     });
 }

@@ -12,55 +12,54 @@ $formCategories = $this->getFormCategories();
                 <label id="downLabel" for="ws_image" class="ws_label">
                     <div id="downForm" class="downForm">
                         <img id="downImg" class="download-img" src="#" alt="your image" />
-                        <button class="downClose" onclick="closeImageLoaded()">x</button>
+                        <button type="button" class="downClose" onclick="closeImageLoaded()">✖</button>
                     </div>
                     <figure id="downFigure">
                         <svg id="downSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
                             <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
                         </svg>
                     </figure>
-                    <div class="text-center"><span title="text"></span></div>
 
                 </label>
             </div>
             <a href="#">Need help uploading?</a>
 
-            <div class="row design__dropzone">
-                <div class="col-1">
-                    <i class="fas fa-info-circle"></i>
-                </div>
-                <div class="col-11">
-                    <h2>File requirements: </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>
-                        At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,
-                        quibusdam quidem sint tempore vitae. Deserunt.</p>
-                    <br>
-                    <h2>Design guide: </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.
-                        Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,
-                        soluta sunt ullam ut, vel!</p>
-                </div>
-            </div>
+<!--            <div class="row design__dropzone">-->
+<!--                <div class="col-1">-->
+<!--                    <i class="fas fa-info-circle"></i>-->
+<!--                </div>-->
+<!--                <div class="col-11">-->
+<!--                    <h2>File requirements: </h2>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>1500px x 1980px</span>-->
+<!--                        At dolor, excepturi hic illum, itaque laudantium maiores minima natus necessitatibus nemo nulla optio pariatur perspiciatis,-->
+<!--                        quibusdam quidem sint tempore vitae. Deserunt.</p>-->
+<!--                    <br>-->
+<!--                    <h2>Design guide: </h2>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>.-->
+<!--                        Ab dicta ipsam iure quis rerum ut. Ad adipisci, at culpa doloribus magni molestiae nostrum obcaecati repudiandae,-->
+<!--                        soluta sunt ullam ut, vel!</p>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <hr>
 
             <div class="row design__form">
                 <div class="col-6">
                     <label>Title</label>
-                    <input type="text" class="form-control" id="char_name" name="char_name" placeholder="Short Title For Your Design">
+                    <input type="text" class="form-control" id="char_name" name="char_name" placeholder="Short Title For Your Design" onkeypress="removeValidation(this)">
                     <label>Description</label>
-                    <textarea class="form-control" id="description" name="description" placeholder="Brief description of your design"></textarea>
+                    <textarea class="form-control" id="description" name="description" placeholder="Brief description of your design" onkeypress="removeValidation(this)"></textarea>
                 </div>
                 <div class="col-6">
                     <label>Main Tag</label>
-                    <input type="text" class="form-control" id="main_tag" name="main_tag" placeholder="Short Title For Your Design">
+                    <input type="text" class="form-control" id="main_tag" name="main_tag" placeholder="One word to describe your design" onkeypress="removeValidation(this)">
                     <label>Tags</label>
-                    <textarea class="form-control" id="tags" name="tags" placeholder="Brief description of your design"></textarea>
+                    <textarea class="form-control" id="tags" name="tags" placeholder="A bunch of words to describe your design" onkeypress="removeValidation(this)"></textarea>
                 </div>
             </div>
 
             <?php if ($formCategories) : ?>
-                <div id="formsGroup" class="row design__types">
+                <div id="formsGroup" class="row design__types" onclick="removeValidation(this)">
                     <div class="col-12">
                         <h2 style="padding-bottom: 10px;">What product your design is suitable for?</h2>
                         <ul class="design__types-products list-inline">
@@ -78,10 +77,12 @@ $formCategories = $this->getFormCategories();
             <div class="row design__agrees">
                 <ul class="list-inline">
                     <li>
-                        <input id="form_agree" type="checkbox"><h3><label for="form_agree">I have read and agree to the <a href="#">Terms and Conditions</a></label></h3>
+                        <input type="checkbox" id="terms" class="css-checkbox"/>
+                        <label id="termsLabel" for="terms" class="css-label lite-x-cyan" onclick="removeValidation(this)">I have read and agree to the <a href="#">Terms and Conditions</a></label>
                     </li>
                     <li>
-                        <input id="form_confirm" type="checkbox"><h4><label for="form_confirm">I confirm that I hold copyrights for the image or a license to use it</label></h4>
+                        <input type="checkbox" id="copyright" class="css-checkbox"/>
+                        <label id="copyrightLabel" for="copyright" class="css-label lite-x-cyan" onclick="removeValidation(this)">I confirm that I hold copyrights for the image or a license to use it</label>
                     </li>
                     <li>
                         <button class="btn btn-info" type="submit">Submit</button>
@@ -97,34 +98,6 @@ $formCategories = $this->getFormCategories();
 <script type="text/javascript">
     'use strict';
 
-    ;( function ( document, window, index )
-    {
-        var inputs = document.querySelectorAll( '.inputfile' );
-        Array.prototype.forEach.call( inputs, function( input )
-        {
-            var label	 = input.nextElementSibling,
-                labelVal = label.innerHTML;
-
-            input.addEventListener( 'change', function( e )
-            {
-                var fileName = '';
-                if( this.files && this.files.length > 1 )
-                    fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-                else
-                    fileName = e.target.value.split( '\\' ).pop();
-
-                if( fileName )
-                    label.querySelector( 'span' ).innerHTML = fileName;
-                else
-                    label.innerHTML = labelVal;
-            });
-
-            // Firefox bug fix
-            input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
-            input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
-        });
-    }( document, window, 0 ));
-
     jQuery(function () {
         jQuery(":file").change(function () {
             if (this.files && this.files[0]) {
@@ -135,18 +108,6 @@ $formCategories = $this->getFormCategories();
         });
     });
 
-    function imageIsLoaded(e) {
-        jQuery('#downImg').attr('src', e.target.result);
-        jQuery('#downForm').css('display','block');
-        jQuery('#downFigure').css('display','none');
-    }
-
-    function closeImageLoaded() {
-        jQuery('#downForm').css('display','none');
-        jQuery('#downFigure').css('display','block');
-        jQuery('#downLabel > span').text('');
-    }
-
     jQuery("#productFormArea").submit(function(e) {
         var formData = new FormData(jQuery(this)[0]);
         if (validateDesign(formData)) {
@@ -156,29 +117,3 @@ $formCategories = $this->getFormCategories();
         e.preventDefault();
     });
 </script>
-
-<!--<button class="btn btn-info" onclick="jQuery('#SuccessForm').modal('show')">Show Modal</button>-->
-
-<div class="content">
-    <h1>Test</h1>
-    <button class="btn btn-success wdt25" onclick="showNotify('pidkluchi','vge normalniy jquery','success');">Success</button>
-    <button class="btn btn-warning wdt25" onclick="showNotify('pidkluchi','vge normalniy jquery','warning');">Warning</button>
-    <button class="btn btn-danger wdt25" onclick="showNotify('pidkluchi','vge normalniy jquery','danger');">Danger</button>
-    <br><br>
-</div>
-
-<div class="modal fade modal_success" id="SuccessForm" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body text-left">
-                <div class="container">
-                    <p>Thank you for sharing your art!</p>
-                    <p>We will process your image and create products soon.
-                        You can see the status of you submission in <a href="#">Uploaded Designs</a> tab.
-                        It may take up to few days.</p>
-                    <p>You may join our <a href="#">Discord group</a> :3</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
