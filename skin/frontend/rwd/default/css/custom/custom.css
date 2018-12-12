@@ -331,8 +331,8 @@ main .product-design h3 {
 .btn-gplus {
   background-color: #dd4b39 !important; }
 
-.btn-li {
-  background-color: #0082ca !important; }
+.btn-disc {
+  background-color: #6d7fcc !important; }
 
 .btn-pint {
   background-color: #ec4a89 !important; }
@@ -382,6 +382,38 @@ main .product-design h3 {
   color: #ccc;
 }
 /*======================================================*/
+.downForm {
+  display: none;
+  width: 158px;
+  height: 193px;
+  border: 1px solid black;
+  margin: 0 auto 10px;
+}
+
+.downForm img {
+  width: 100%;
+  height: 100%;
+}
+
+.downForm button {
+  position: relative;
+  top: -4.5em;
+  left: -1.2em;
+  background: white;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 20px;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1em;
+  line-height: 1;
+}
+
+.downForm button:hover {
+  background: #d3394c;
+  color: #ffffff;
+  border-color: #000000;
+}
 
 .box > input {
   display: none;
@@ -443,6 +475,7 @@ main .product-design h3 {
 
 .inputfile-5 + label {
   color: #6d7fcc;
+  padding-top: 30px;
 }
 
 .inputfile-5:focus + label,
@@ -452,13 +485,13 @@ main .product-design h3 {
 }
 
 .inputfile-5 + label figure {
-  width: 100px;
-  height: 135px;
   background-color: #6d7fcc;
   display: block;
   position: relative;
   padding: 30px;
   margin: 0 auto 10px;
+  width: 158px;
+  height: 193px;
 }
 
 .inputfile-5:focus + label figure,

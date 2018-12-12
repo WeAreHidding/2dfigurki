@@ -13,6 +13,7 @@
             <action method="addJs"><script>plugins/bootstrap.min.js</script></action>
             <action method="addJs"><script>plugins/jquery.mCustomScrollbar.min.js</script></action>
             <action method="addJs"><script>plugins/popper.min.js</script></action>
+            <action method="addJs"><script>plugins/bootstrap-notify.min.js</script></action>
             <action method="addJs"><script>dashboard/dashboard.js</script></action>
             <!--<action method="addJs"><script>dashboard/design.js</script></action>-->
         </reference>

@@ -96,3 +96,21 @@
     </div>
 </div>
 <?php endif; ?>
+
+<script>
+    function showNotify(title,text,type_text) {
+        title="<strong>"+title+":</strong>";
+        jQuery.notify({
+            icon: 'glyphicon glyphicon-star',
+            title: title,
+            message: text
+        },{
+            delay: 10000,
+            z_index: 9999999999,
+            placement: {
+                from: "bottom"
+            },
+            type: type_text
+        });
+    }
+</script>
