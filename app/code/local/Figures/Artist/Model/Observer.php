@@ -19,8 +19,10 @@ class Figures_Artist_Model_Observer extends Varien_Object
                 'qty_sold' => $orderItem->getQtyOrdered(),
                 'price' => $orderItem->getPrice(),
                 'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id']),
-                'artist_comission_status' => 'not_paid'
+                'artist_comission_status' => 'not_paid',
+                'artist_comission_net' => $orderItem->getPrice() * $this->_getComissionModel()->getArtistComission($artistData['artist_id']) / 100
             ]);
+            $this->_getArtistModel()->increaseProductValues($orderItem->getProductId(), 1, $orderItem->getPrice());
         }
     }
 

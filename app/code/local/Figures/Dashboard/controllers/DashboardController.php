@@ -103,7 +103,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         foreach ($salesData as $item) {
             $html .= '
             <div class="tool row"><span>' . $item['created_at'] .'</span>
-            <span><a href="' . $item['product_link'] . '">' . $item['product_name'] .'</a></span>
+            <span><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></span>
             <span>' . $item['price'] .'</span>
             <span>' . $item['discount'] .'%</span>
             <span>' . $item['comission'] .'%</span>

@@ -68,6 +68,9 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
             foreach ($workData as $key => $workItem) {
                 $workData[$key]['image_path'] = Mage::getBaseUrl('media') . 'workshop/user_images/' .
                     $workItem['customer_id'] . $workItem['image_path'];
+                $salesData = $connection->fetchRow("SELECT COUNT(*) as total_count, SUM(artist_comission_net) as total_sum FROM artist_sales WHERE  product_id = 65");
+                $workData[$key]['total_count'] = $salesData['total_count'];
+                $workData[$key]['total_sum'] = $salesData['total_sum'];
                 $workData[$key]['product_data'] =
                     $connection->fetchCol(
                         $connection->select()
@@ -132,6 +135,26 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
             'main_tag'   => $mainTag,
             'parent_form_category' => $formCategoryId
         ]);
+    }
+
+    /**
+     * @param $productId
+     * @param $qty
+     * @param $price
+     * @throws Zend_Db_Adapter_Exception
+     */
+    public function increaseProductValues($productId, $qty, $price)
+    {
+        $connection = $this->_getConnection();
+        $data = $connection->fetchRow(
+            $connection->select()->from('artist_product', ['total_sold', 'total_income'])->where('product_id = ?', $productId)
+        );
+        $connection->update('artist_product',
+            [
+                'total_sold'   => $data['total_sold'] + $qty,
+                'total_income' => $data['total_income'] + $price
+            ],
+            'product_id=' . $productId);
     }
 
     public function toEng($string)
