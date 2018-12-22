@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Artist>
-            <version>0.2.4</version>
+            <version>0.2.5</version>
         </Figures_Artist>
     </modules>
     <global>
@@ -100,7 +100,7 @@
                     <finance module="figures_artist">
                         <title>Artist Finance Configuration</title>
                         <sort_order>2</sort_order>
-                        <action>adminhtml/artist_workshop</action>
+                        <action>adminhtml/config_config</action>
                     </finance>
                 </children>
             </figures_artist>

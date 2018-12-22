@@ -11,7 +11,7 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Created extends Figures_Arti
     public function __construct()
     {
         parent::__construct();
-        $this->setHtmlId('analog_parent_created_products_form');
+        $this->setHtmlId('created_products_form');
         $this->setTemplate('artist/created_products.phtml');
 
         $this->_rowId = $this->getRequest()->getParam('id');

@@ -1,0 +1,45 @@
+<?php
+/** @var $this Figures_Artist_Block_Adminhtml_Config_Config */
+?>
+
+<div class="entry-edit">
+    <div id="info">
+        <div class="entry-edit-head" style="height:18px !important;"><h4>Comission</h4></div>
+        <fieldset id="proposed_info">
+            <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/artist_workshop/saveGeneral") ?>" style="padding-top: 20px">
+                <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                <p style="font-weight:bold; padding-top:10px">Minimal comission (%)</p>
+                <input type="text" class="input-text required-entry" maxlength="255" title="char_name" value="<?php echo $this->getMinimalPercent() ?>" name="char_name" id="char_name" style="width: 100%;">
+            </form>
+            <div style="padding-top:20px; text-align:right">
+                <button id="saveGeneral" class="scalable" type="button" onclick="saveData()">Save</button>
+            </div>
+        </fieldset>
+
+        <div class="entry-edit-head" style="height:18px !important;"><h4>Finances</h4></div>
+        <fieldset id="proposed_info">
+            <p style="font-weight:bold; padding-top:10px">Total comissions to pay (USD) : <?php echo  $this->getTotalMoneyToPay() ?></p>
+        </fieldset>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function saveData() {
+        editForm = new varienForm('generalFormArea', '');
+        editForm.submit();
+    }
+
+    function launchComissionCalculation() {
+        new Ajax.Request(url, {
+            parameters: {method: 'POST', status:status, id:rowId},
+            onFailure: function() {
+                alert('Save failed');
+            },
+            onSuccess: function() {
+                currentStatus = status;
+                refreshButtons();
+                location.reload();
+            }
+        });
+    }
+</script>

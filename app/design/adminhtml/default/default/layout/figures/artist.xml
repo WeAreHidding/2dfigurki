@@ -39,4 +39,10 @@
             <block type="figures_artist/adminhtml_sales_orderItem" name="order_item_grid"/>
         </reference>
     </adminhtml_sales_orderitem_index>
+
+    <adminhtml_config_config_index>
+        <reference name="content">
+            <block type="figures_artist/adminhtml_config_config" name="artist_config"/>
+        </reference>
+    </adminhtml_config_config_index>
 </layout>
