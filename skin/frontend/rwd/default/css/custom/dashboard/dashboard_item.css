@@ -321,3 +321,7 @@
 .tools .tool .tool-status .tool-link {
     font-size: 20px; }
 
+.thead-dark {
+    background: #6d7fcc;
+    color: #ffffff;
+}

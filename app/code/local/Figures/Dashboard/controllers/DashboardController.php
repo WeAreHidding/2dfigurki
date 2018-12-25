@@ -99,19 +99,39 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
                         </div>');
             return;
         }
-        $html = '';
+        $html = '
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <td>created_at</td>
+                        <td>product_name</td>
+                        <td>price</td>
+                        <td>discount</td>
+                        <td>comission</td>
+                        <td>order_status</td>
+                        <td>artist_status</td>
+                    </tr>
+                </thead>
+                <tbody>
+        ';
         foreach ($salesData as $item) {
             $html .= '
-            <div class="tool row"><span>' . $item['created_at'] .'</span>
-            <span><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></span>
-            <span>' . $item['price'] .'</span>
-            <span>' . $item['discount'] .'%</span>
-            <span>' . $item['comission'] .'%</span>
-            <span>' . $item['order_status'] .'</span>
-            <span>' . $item['artist_status'] .'</span></div>
+
+                    <tr>
+                        <td>' . $item['created_at'] .'</td>
+                        <td><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></td>
+                        <td>' . $item['price'] .'</td>
+                        <td>' . $item['discount'] .'%</td>
+                        <td>' . $item['comission'] .'%</td>
+                        <td>' . $item['order_status'] .'</td>
+                        <td>' . $item['artist_status'] .'</td>
+                    </tr>    
             ';
         }
 
+        $html.='
+                </tbody>
+            </table>   ';
 
         $this->getResponse()->setBody($html);
     }
