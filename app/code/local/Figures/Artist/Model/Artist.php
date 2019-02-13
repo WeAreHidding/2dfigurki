@@ -68,7 +68,7 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
             foreach ($workData as $key => $workItem) {
                 $workData[$key]['image_path'] = Mage::getBaseUrl('media') . 'workshop/user_images/' .
                     $workItem['customer_id'] . $workItem['image_path'];
-                $salesData = $connection->fetchRow("SELECT COUNT(*) as total_count, SUM(artist_comission_net) as total_sum FROM artist_sales WHERE  product_id = 65");
+                $salesData = $connection->fetchRow("SELECT COUNT(*) as total_count, SUM(artist_comission_net) as total_sum FROM artist_sales WHERE  work_id = {$workItem['id']}");
                 $workData[$key]['total_count'] = $salesData['total_count'];
                 $workData[$key]['total_sum'] = $salesData['total_sum'];
                 $workData[$key]['product_data'] =

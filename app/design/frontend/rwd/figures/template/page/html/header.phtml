@@ -3,6 +3,7 @@
  * @var Figures_Cms_Block_Header $this
  */
 $headerItems = $this->getHeaderItems();
+$session = $this->getSession();
 ?>
 
 <header>
@@ -12,9 +13,15 @@ $headerItems = $this->getHeaderItems();
                 <div class="navbar-header">
                 </div>
                 <ul class="nav navbar-right">
-                    <li><a href="<?php echo $this->getUrl('customer_dashboard') ?>" class="navbar-divider"> Sell Your Art</a></li>
-                    <li><a href="<?php echo $this->getUrl('customer/account/login') ?>" class="navbar-divider"> Log In</a></li>
-                    <li><a href="<?php echo $this->getUrl('customer/account/create') ?>"> Sign Up</a></li>
+                    <?php if ($session->isLoggedIn()) : ?>
+                        <li><span class="navbar-divider"> Logged as <?php echo $session->getCustomer()->getData('artist_nickname') ?></span></li>
+                        <li><a href="<?php echo $this->getUrl('customer_dashboard') ?>" class="navbar-divider"> Dashboard</a></li>
+                        <li><a href="<?php echo Mage::helper('customer')->getLogoutUrl() ?>"> Log Out</a></li>
+                    <?php else : ?>
+                        <li><a href="<?php echo $this->getUrl('customer_dashboard') ?>" class="navbar-divider"> Sell Your Art</a></li>
+                        <li><a href="<?php echo $this->getUrl('customer/account/login') ?>" class="navbar-divider"> Log In</a></li>
+                        <li><a href="<?php echo $this->getUrl('customer/account/create') ?>"> Sign Up</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>

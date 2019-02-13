@@ -43,7 +43,7 @@
                 </li>`
                 <li><hr></li>
                 <li id="menu-logout" onclick="menuToggle(this);">
-                    <a href="#Logout">
+                    <a href="<?php echo Mage::helper('customer')->getLogoutUrl() ?>">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
                     </a>

@@ -6,23 +6,27 @@ class Figures_Artist_Model_Observer extends Varien_Object
 {
     public function trackNewOrder($observer)
     {
-        $order = $observer->getOrder();
-        foreach ($order->getAllItems() as $orderItem) {
-            if (!$artistData = $this->_getArtistModel()->getArtistProductByProductId($orderItem->getProductId())) {
-                continue;
+        try {
+            $order = $observer->getOrder();
+            foreach ($order->getAllItems() as $orderItem) {
+                if (!$artistData = $this->_getArtistModel()->getArtistProductByProductId($orderItem->getProductId())) {
+                    continue;
+                }
+                $this->_getSalesModel()->saveArtistSoldItem([
+                    'artist_id' => $artistData['artist_id'],
+                    'product_id' => $orderItem->getProductId(),
+                    'work_id' => $artistData['work_id'],
+                    'order_item_id' => $orderItem->getId(),
+                    'qty_sold' => $orderItem->getQtyOrdered(),
+                    'price' => $orderItem->getPrice(),
+                    'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id']),
+                    'artist_comission_status' => 'not_paid',
+                    'artist_comission_net' => $orderItem->getPrice() * $this->_getComissionModel()->getArtistComission($artistData['artist_id']) / 100
+                ]);
+                $this->_getArtistModel()->increaseProductValues($orderItem->getProductId(), 1, $orderItem->getPrice());
             }
-            $this->_getSalesModel()->saveArtistSoldItem([
-                'artist_id' => $artistData['artist_id'],
-                'product_id' => $orderItem->getProductId(),
-                'work_id' => $artistData['work_id'],
-                'order_item_id' => $orderItem->getId(),
-                'qty_sold' => $orderItem->getQtyOrdered(),
-                'price' => $orderItem->getPrice(),
-                'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id']),
-                'artist_comission_status' => 'not_paid',
-                'artist_comission_net' => $orderItem->getPrice() * $this->_getComissionModel()->getArtistComission($artistData['artist_id']) / 100
-            ]);
-            $this->_getArtistModel()->increaseProductValues($orderItem->getProductId(), 1, $orderItem->getPrice());
+        } catch (Exception $e) {
+            Mage::log($e->getMessage(), null, 'artist_critical.log', true);
         }
     }
 

@@ -78,14 +78,15 @@
     display: flex; }
 
 .design .design__types .design__types-products li input[type="checkbox"]:checked + label {
-    background: #9654CC;
+    background: #6d7fcc;
 }
 
 .design .design__types .design__types-products label {
+    background: darkgray;
+    border: 1px solid darkgray;
     width: 100%; }
+
 .design .design__types .design__types-products input {
-    /*-webkit-appearance: none;*/
-    /*-moz-appearance: none;*/
     display: none;
 }
 

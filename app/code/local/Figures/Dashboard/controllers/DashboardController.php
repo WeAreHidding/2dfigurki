@@ -103,13 +103,13 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <td>created_at</td>
-                        <td>product_name</td>
-                        <td>price</td>
-                        <td>discount</td>
-                        <td>comission</td>
-                        <td>order_status</td>
-                        <td>artist_status</td>
+                        <td>Ordered at</td>
+                        <td>Product Name</td>
+                        <td>Product Price</td>
+                        <td>Discount</td>
+                        <td>Your comission</td>
+                        <td>Order status</td>
+                        <td>Comission Status</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -122,9 +122,9 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
                         <td><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></td>
                         <td>' . $item['price'] .'</td>
                         <td>' . $item['discount'] .'%</td>
-                        <td>' . $item['comission'] .'%</td>
+                        <td>' . $item['artist_comission'] .'%</td>
                         <td>' . $item['order_status'] .'</td>
-                        <td>' . $item['artist_status'] .'</td>
+                        <td>' . $item['artist_comission_status'] .'</td>
                     </tr>    
             ';
         }
