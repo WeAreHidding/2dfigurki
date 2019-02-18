@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_etsy_index>
+        <reference name="head">
+            <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="figures_api/adminhtml_etsy_form" name="etsy_form"/>
+        </reference>
+    </adminhtml_etsy_index>
+</layout>

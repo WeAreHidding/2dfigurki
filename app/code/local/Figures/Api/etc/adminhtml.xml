@@ -1,0 +1,15 @@
+<config>
+    <menu>
+        <figures_api module="figures_api">
+            <title>API</title>
+            <sort_order>72</sort_order>
+            <children>
+                <etsy module="figures_api">
+                    <title>Etsy</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/etsy</action>
+                </etsy>
+            </children>
+        </figures_api>
+    </menu>
+</config>
