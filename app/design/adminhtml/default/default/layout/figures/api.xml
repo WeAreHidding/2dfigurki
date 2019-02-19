@@ -8,4 +8,12 @@
             <block type="figures_api/adminhtml_etsy_form" name="etsy_form"/>
         </reference>
     </adminhtml_etsy_index>
+    <adminhtml_etsy_indexupdate>
+        <reference name="head">
+            <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="figures_api/adminhtml_etsy_update" name="etsy_update"/>
+        </reference>
+    </adminhtml_etsy_indexupdate>
 </layout>

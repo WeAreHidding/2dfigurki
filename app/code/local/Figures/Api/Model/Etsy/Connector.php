@@ -4,6 +4,10 @@
  */
 class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
 {
+    protected $_updateListingAttributes = ['title', 'description'];
+
+    protected $_updateInventoryAttributes = ['sku', 'price', 'quantity'];
+
     /**
      * @return mixed
      */
@@ -17,10 +21,11 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
     /**
      * @param $methodName
      * @param $params
+     * @param $put
      *
      * @return mixed
      */
-    public function call($methodName, $params)
+    public function call($methodName, $params, $put = false)
     {
         $credentials = $this->_getOauth()->getCredentials();
         $methods = $this->getMethods();
@@ -32,34 +37,120 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
             $params = null;
         }
 
-//        if ($method['visibility'] === 'private') {
-            try {
-                $oauth = new OAuth($credentials['etsy_consumer_key'], $credentials['etsy_consumer_secret'], OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
-                $oauth->disableSSLChecks();
-                $oauth->setToken($credentials['etsy_oauth_token'], $credentials['etsy_oauth_token_secret']);
+        try {
+            $oauth = new OAuth($credentials['etsy_consumer_key'], $credentials['etsy_consumer_secret'], OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
+            $oauth->disableSSLChecks();
+            $oauth->setToken($credentials['etsy_oauth_token'], $credentials['etsy_oauth_token_secret']);
 
+            if ($put) {
+                $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_PUT);
+            } else {
                 $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_GET);
-                $json = $oauth->getLastResponse();
-
-                return json_decode($json, true);
-            } catch (OAuthException $e) {
-                var_dump($e->getMessage());
-                exit;
             }
-//        } else {
-//            try {
-//                $oauth = new OAuth($credentials['etsy_consumer_key'], $credentials['etsy_consumer_secret'], OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
-//                $oauth->disableSSLChecks();
-//
-//                $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_GET);
-//                $json = $oauth->getLastResponse();
-//
-//                return json_decode($json, true);
-//            } catch (OAuthException $e) {
-//                var_dump($e->getMessage());
-//                exit;
-//            }
-//        }
+            $json = $oauth->getLastResponse();
+
+            return json_decode($json, true);
+        } catch (OAuthException $e) {
+            return ['error' => $oauth->getLastResponse()];
+        }
+    }
+
+    /**
+     * @param $listingId
+     * @param $params
+     *
+     * @return array
+     */
+    public function callUpdate($listingId, $params)
+    {
+        $needUpdateInventory = $needUpdateListing = false;
+        $inventoryParams = $listingParams = [];
+        $response = ['error' => '', 'ok' => ''];
+
+        foreach ($params as $param => $value) {
+            if (in_array($param, $this->_updateInventoryAttributes) && $value) {
+                $needUpdateInventory = true;
+                $inventoryParams[$param] = $value;
+            } elseif (in_array($param, $this->_updateListingAttributes) && $value) {
+                $needUpdateListing = true;
+                $listingParams[$param] = $value;
+                $listingParams['listing_id'] = $listingId;
+            }
+        }
+
+        if (!$needUpdateInventory && !$needUpdateListing) {
+            $response = ['error' => 'Missing params for response'];
+        }
+
+        if ($needUpdateInventory) {
+            $productsJson = $this->_getUpdateInventoryLayout($listingId, $inventoryParams);
+            if (!empty($productsJson['error'])) {
+                $response['error'] .= 'ERROR when trying to get inventory data : ' . $productsJson['error'] . '<br>';
+            } else {
+                $responseInventory = $this->call('updateInventory', ['listing_id' => $listingId, 'products' => $productsJson], true);
+                if (!empty($responseInventory['error'])) {
+                    $response['error'] .= 'ERROR when trying to update inventory data : ' . $responseInventory['error'] . '<br>';
+                } else {
+                    $response['ok'] .= 'OK for inventory update, params - ' . implode(',', $inventoryParams) . '<br>';
+                }
+            }
+        }
+        if ($needUpdateListing) {
+            $responseListing = $this->call('updateListing', $listingParams, true);
+            if (!empty($responseListing['error'])) {
+                $response['error'] .= 'ERROR when trying to update listing data : ' . $responseListing['error'] . '<br>';
+            } else {
+                $response['ok'] .= 'OK for listing update, params - ' . implode(',', $listingParams) . '<br>';
+            }
+        }
+
+        return $response;
+    }
+
+    /**
+     * @param $listingId
+     * @param $inventoryParams
+     * @return mixed|string
+     */
+    protected function _getUpdateInventoryLayout($listingId, $inventoryParams)
+    {
+        $response = $this->call('getInventory', ['listing_id' => $listingId]);
+
+        if (!empty($response['error'])) {
+            return $response;
+        }
+
+        if (!empty($inventoryParams['sku'])) {
+            $sku = $inventoryParams['sku'];
+        } else {
+            $sku = $response['results']['products'][0]['sku'];
+        }
+        if (!empty($inventoryParams['price'])) {
+            $price = (float)$inventoryParams['price'];
+        } else {
+            $price = (float)$response['results']['products'][0]['offerings'][0]['price']['currency_formatted_raw'];
+        }
+        if (!empty($inventoryParams['quantity'])) {
+            $quantity = (int)$inventoryParams['quantity'];
+        } else {
+            $quantity = (int)$response['results']['products'][0]['offerings'][0]['quantity'];
+        }
+
+        $products = [
+            [
+                'property_values' => $response['results']['products'][0]['property_values'],
+                'sku'             => $sku,
+                'offerings'       => [
+                    [
+                        'price'      => $price,
+                        'quantity'   => $quantity,
+                        'is_enabled' => (int)$response['results']['products'][0]['offerings'][0]['is_enabled']
+                    ]
+                ]
+            ]
+        ];
+
+        return json_encode($products);
     }
 
     /**

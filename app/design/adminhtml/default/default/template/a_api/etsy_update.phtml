@@ -1,0 +1,69 @@
+<?php
+/** @var $this Figures_Api_Block_Adminhtml_Etsy_Update */
+?>
+<div class="side-col">
+    <ul class="tabs">
+        <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
+        <?php if ($editableData['status'] == 'Accepted') : ?>
+            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
+            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
+        <?php endif; ?>
+    </ul>
+</div>
+<div class="main-col">
+    <div class="entry-edit">
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Manual update</h4></div>
+            <fieldset id="proposed_info">
+                <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/callUpdate") ?>" style="padding-top: 20px">
+                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                    <p style="font-weight:bold; padding-top:10px">Listing id</p>
+                    <input type="text" class="input-text" title="listing_id" name="listing_id" id="listing_id" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Title</p>
+                    <input type="text" class="input-text" title="title" name="title" id="title" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Description</p>
+                    <input type="text" class="input-text" title="description" name="description" id="description" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Sku</p>
+                    <input type="text" class="input-text" title="sku" name="sku" id="sku" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Price</p>
+                    <input type="text" class="input-text" title="price" name="price" id="price" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Quantity</p>
+                    <input type="text" class="input-text" title="quantity" name="quantity" id="quantity" style="width: 100%;">
+                </form>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="callMethod" class="scalable" type="button" onclick="saveData()">Etsy, LOVI BLET</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="entry-edit">
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Update with CSV</h4></div>
+            <fieldset id="proposed_info">
+                <form id="csvArea" class="entry-edit" method="POST" enctype="multipart/form-data" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/callUpdateCsv") ?>" style="padding-top: 20px">
+                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                    <p style="font-weight:bold; padding-top:10px"><a target="_blank" rel="noopener noreferrer" href="<?php echo Mage::getBaseUrl('media') . DS . 'api/etsy_update_product.csv' ?>">Download file with headers</a></p>
+                    <input id="etsy_csv" class="product_image" name="etsy_csv" type="file"/>
+                </form>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="callMethod" class="scalable" type="button" onclick="processCsv()">Etsy, LOVI BLET</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+
+    function saveData() {
+        editForm = new varienForm('generalFormArea', '');
+        editForm.submit();
+    }
+
+    function processCsv() {
+        editForm = new varienForm('csvArea', '');
+        editForm.submit();
+    }
+</script>
