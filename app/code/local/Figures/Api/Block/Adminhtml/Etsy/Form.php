@@ -66,6 +66,14 @@ class Figures_Api_Block_Adminhtml_Etsy_Form extends Mage_Adminhtml_Block_Widget
         return $this->getUrl('adminhtml/etsy/', array('method' => $method));
     }
 
+    public function getFavoriteMethods()
+    {
+        $connection =  $this->_getConnection();
+        return $connection->fetchCol(
+            $connection->select()->from('etsy_favorite_functions', 'method_name')
+        );
+    }
+
     public function isConfigured()
     {
         return $this->_getOauth()->isConfigured();

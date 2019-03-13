@@ -1,13 +1,11 @@
 <?php
-/** @var $this Figures_Api_Block_Adminhtml_Etsy_Update */
+/** @var $this Figures_Api_Block_Adminhtml_Etsy_Create */
 ?>
 <div class="side-col">
     <ul class="tabs">
-        <li style="cursor: pointer"><a class="tab-item-link">View info</a></li>
-        <?php if ($editableData['status'] == 'Accepted') : ?>
-            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editProducts') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Product creation</a></li>
-            <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/artist_workshop/editCreated') . 'id/' . $editableData['id'] ?>" class="tab-item-link">Created products</a></li>
-        <?php endif; ?>
+        <li style="cursor: pointer"><a class="tab-item-link">Update products</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy/indexCreate') ?>" class="tab-item-link">Create products</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy') ?>" class="tab-item-link">All API functions</a></li>
     </ul>
 </div>
 <div class="main-col">
@@ -31,7 +29,7 @@
                     <input type="text" class="input-text" title="quantity" name="quantity" id="quantity" style="width: 100%;">
                 </form>
                 <div style="padding-top:20px; text-align:right">
-                    <button id="callMethod" class="scalable" type="button" onclick="saveData()">Etsy, LOVI BLET</button>
+                    <button id="callMethod" class="scalable" type="button" onclick="saveData()">Update</button>
                 </div>
             </fieldset>
         </div>
@@ -47,7 +45,7 @@
                     <input id="etsy_csv" class="product_image" name="etsy_csv" type="file"/>
                 </form>
                 <div style="padding-top:20px; text-align:right">
-                    <button id="callMethod" class="scalable" type="button" onclick="processCsv()">Etsy, LOVI BLET</button>
+                    <button id="callMethod" class="scalable" type="button" onclick="processCsv()">Update with CSV</button>
                 </div>
             </fieldset>
         </div>

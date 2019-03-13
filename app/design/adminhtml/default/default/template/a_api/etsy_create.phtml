@@ -1,0 +1,78 @@
+<?php
+/** @var $this Figures_Api_Block_Adminhtml_Etsy_Create */
+?>
+<div class="side-col">
+    <ul class="tabs">
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy/indexUpdate') ?>" class="tab-item-link">Update products</a></li>
+        <li style="cursor: pointer"><a class="tab-item-link">Create products</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy') ?>" class="tab-item-link">All API functions</a></li>
+    </ul>
+</div>
+<div class="main-col">
+    <div class="entry-edit">
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Manual create</h4></div>
+            <fieldset id="proposed_info">
+                <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/callCreate") ?>" style="padding-top: 20px">
+                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                    <p style="font-weight:bold; padding-top:10px">Title</p>
+                    <input type="text" class="input-text" title="title" name="title" id="title" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Description</p>
+                    <input type="text" class="input-text" title="description" name="description" id="description" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Price</p>
+                    <input type="text" class="input-text" title="price" name="price" id="price" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">Quantity</p>
+                    <input type="text" class="input-text" title="quantity" name="quantity" id="quantity" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">who_made</p>
+                    <select id="who_made" name="who_made">
+                        <option value="i_did">i_did</option>
+                        <option value="collective">collective</option>
+                        <option value="someone_else">someone_else</option>
+                    </select>
+                    <p style="font-weight:bold; padding-top:10px">when_made</p>
+                    <input type="text" class="input-text" title="when_made" name="when_made" id="when_made" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">shipping_template_id</p>
+                    <input type="text" class="input-text" title="shipping_template_id" name="shipping_template_id" id="shipping_template_id" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">state</p>
+                    <select id="state" name="state">
+                        <option value="active">active</option>
+                        <option value="draft">draft</option>
+                    </select>
+                </form>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="callMethod" class="scalable" type="button" onclick="saveData()">Create</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="entry-edit">
+        <div id="info">
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Create with CSV</h4></div>
+            <fieldset id="proposed_info">
+                <form id="csvArea" class="entry-edit" method="POST" enctype="multipart/form-data" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/callCreateCsv") ?>" style="padding-top: 20px">
+                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                    <p style="font-weight:bold; padding-top:10px"><a target="_blank" rel="noopener noreferrer" href="<?php echo Mage::getBaseUrl('media') . DS . 'api/etsy_create_product.csv' ?>">Download file with headers</a></p>
+                    <input id="etsy_csv" class="product_image" name="etsy_csv" type="file"/>
+                </form>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="callMethod" class="scalable" type="button" onclick="processCsv()">Create with CSV</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+
+    function saveData() {
+        editForm = new varienForm('generalFormArea', '');
+        editForm.submit();
+    }
+
+    function processCsv() {
+        editForm = new varienForm('csvArea', '');
+        editForm.submit();
+    }
+</script>

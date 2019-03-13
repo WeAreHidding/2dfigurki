@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Api>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </Figures_Api>
     </modules>
     <global>

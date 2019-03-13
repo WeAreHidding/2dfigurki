@@ -2,32 +2,51 @@
 /** @var $this Figures_Api_Block_Adminhtml_Etsy_Form */
 $methods = $this->getAllMethods();
 $fieldsForMethod = $this->getFieldsForSelectedMethod();
+$favoriteMethods = $this->getFavoriteMethods();
 ?>
 
-<div class="entry-edit">
-    <div id="info">
-        <div class="entry-edit-head" style="height:18px !important;"><h4>Comission</h4></div>
-        <fieldset id="proposed_info">
-            <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/call") ?>" style="padding-top: 20px">
-                <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
-                <p style="font-weight:bold; padding-top:10px"><?php echo $this->__('Method:'); ?></p>
-                <select id="methodsSelect" name="methods_select" onchange="changeMethod()">
-                    <?php if (!$this->getSelectedMethod()) : ?>
-                        <option disabled selected value> -- select an method -- </option>
-                    <?php endif; ?>
-                    <?php foreach (array_keys($methods) as $methodName) : ?>
-                        <option value="<?php echo $methodName ?>" <?php echo $methodName == $this->getSelectedMethod() ? 'selected' : '' ?>><?php echo $methodName; ?></option>
+<div class="side-col">
+    <ul class="tabs">
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy/indexUpdate') ?>" class="tab-item-link">Update products</a></li>
+        <li style="cursor: pointer"><a href="<?php echo $this->getUrl('adminhtml/etsy/indexCreate') ?>" class="tab-item-link">Create products</a></li>
+        <li style="cursor: pointer"><a class="tab-item-link">All API functions</a></li>
+    </ul>
+</div>
+<div class="main-col">
+    <div class="entry-edit">
+        <div id="info">
+            <?php if ($favoriteMethods) : ?>
+                <div class="entry-edit-head" style="height:18px !important;"><h4>Go to method</h4></div>
+                <fieldset id="favorite_methods">
+                    <?php foreach ($favoriteMethods as $favoriteMethod) : ?>
+                        <p style="font-weight:bold; padding-top:10px"><a href="<?php echo $this->getUrl('adminhtml/etsy/') . 'index/method/' . $favoriteMethod  ?>"><?php echo $favoriteMethod ?></a></p>
                     <?php endforeach; ?>
-                </select>
-                <?php foreach ($fieldsForMethod as $name => $default) : ?>
-                    <p style="font-weight:bold; padding-top:10px"><?php echo $name ?></p>
-                    <input type="text" class="input-text" title="<?php echo $name ?>" value="<?php echo $default ?>" name="<?php echo $name ?>" id="<?php echo $name ?>" style="width: 100%;">
-                <?php endforeach; ?>
-            </form>
-            <div style="padding-top:20px; text-align:right">
-                <button id="callMethod" class="scalable" type="button" onclick="saveData()">Call</button>
-            </div>
-        </fieldset>
+                </fieldset>
+            <?php endif; ?>
+
+            <div class="entry-edit-head" style="height:18px !important;"><h4>Methods</h4></div>
+            <fieldset id="proposed_info">
+                <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/call") ?>" style="padding-top: 20px">
+                    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                    <p style="font-weight:bold; padding-top:10px"><?php echo $this->__('Method:'); ?></p>
+                    <select id="methodsSelect" name="methods_select" onchange="changeMethod()">
+                        <?php if (!$this->getSelectedMethod()) : ?>
+                            <option disabled selected value> -- select an method -- </option>
+                        <?php endif; ?>
+                        <?php foreach (array_keys($methods) as $methodName) : ?>
+                            <option value="<?php echo $methodName ?>" <?php echo $methodName == $this->getSelectedMethod() ? 'selected' : '' ?>><?php echo $methodName; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php foreach ($fieldsForMethod as $name => $default) : ?>
+                        <p style="font-weight:bold; padding-top:10px"><?php echo $name ?></p>
+                        <input type="text" class="input-text" title="<?php echo $name ?>" value="<?php echo $default ?>" name="<?php echo $name ?>" id="<?php echo $name ?>" style="width: 100%;">
+                    <?php endforeach; ?>
+                </form>
+                <div style="padding-top:20px; text-align:right">
+                    <button id="callMethod" class="scalable" type="button" onclick="saveData()">Call</button>
+                </div>
+            </fieldset>
+        </div>
     </div>
 </div>
 

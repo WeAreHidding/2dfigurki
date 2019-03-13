@@ -21,11 +21,11 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
     /**
      * @param $methodName
      * @param $params
-     * @param $put
+     * @param $httpMethod
      *
      * @return mixed
      */
-    public function call($methodName, $params, $put = false)
+    public function call($methodName, $params, $httpMethod = null)
     {
         $credentials = $this->_getOauth()->getCredentials();
         $methods = $this->getMethods();
@@ -41,9 +41,14 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
             $oauth = new OAuth($credentials['etsy_consumer_key'], $credentials['etsy_consumer_secret'], OAUTH_SIG_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI);
             $oauth->disableSSLChecks();
             $oauth->setToken($credentials['etsy_oauth_token'], $credentials['etsy_oauth_token_secret']);
+            if (!$httpMethod) {
+                $httpMethod =  $method['http_method'];
+            }
 
-            if ($put) {
+            if ($httpMethod == 'PUT') {
                 $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_PUT);
+            } elseif ($httpMethod == 'POST') {
+                $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_POST);
             } else {
                 $oauth->fetch($url, $params, OAUTH_HTTP_METHOD_GET);
             }
@@ -87,7 +92,7 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
             if (!empty($productsJson['error'])) {
                 $response['error'] .= 'ERROR when trying to get inventory data : ' . $productsJson['error'] . '<br>';
             } else {
-                $responseInventory = $this->call('updateInventory', ['listing_id' => $listingId, 'products' => $productsJson], true);
+                $responseInventory = $this->call('updateInventory', ['listing_id' => $listingId, 'products' => $productsJson], 'PUT');
                 if (!empty($responseInventory['error'])) {
                     $response['error'] .= 'ERROR when trying to update inventory data : ' . $responseInventory['error'] . '<br>';
                 } else {
@@ -96,7 +101,7 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
             }
         }
         if ($needUpdateListing) {
-            $responseListing = $this->call('updateListing', $listingParams, true);
+            $responseListing = $this->call('updateListing', $listingParams, 'PUT');
             if (!empty($responseListing['error'])) {
                 $response['error'] .= 'ERROR when trying to update listing data : ' . $responseListing['error'] . '<br>';
             } else {

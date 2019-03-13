@@ -14,6 +14,12 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
         $this->renderLayout();
     }
 
+    public function indexCreateAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
     /**
      * @throws Zend_Db_Adapter_Exception
      */
@@ -49,18 +55,8 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
         unset($params['methods_select']);
 
         $response = $this->_getConnector()->call($methodName, $params);
-//        echo '<pre>';
-//        print_r($response);
-//        echo '<pre>';die();
-
-        if (!empty($response['results'])) {
-            $filepath = $this->_prepareCsv($response['results'], $methodName);
-            $this->_prepareDownloadResponse(basename($filepath), array('type' => 'filename', 'value' => $filepath));
-        } else {
-            Mage::getSingleton('adminhtml/session')->addError(
-                'No API response'
-            );
-        }
+        $filepath = $this->_prepareCsv($response, $methodName);
+        $this->_prepareDownloadResponse(basename($filepath), array('type' => 'filename', 'value' => $filepath));
     }
 
     public function callUpdateAction()
@@ -87,13 +83,88 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
 
     public function callUpdateCsvAction()
     {
-        $fileName = $this->_saveCsv();
-        var_dump($fileName);
+        $filePath = $this->_saveCsv();
+        $csvData = $this->_getCsvHelper()->csvToArray($filePath);
+
+        $totalCount = count($csvData);
+        $counter = 0;
+        $sleepCounter = 0;
+        foreach ($csvData as $item) {
+            $listingId = $item['listing_id'];
+            unset($item['listing_id']);
+            $report = $this->_getConnector()->callUpdate($listingId, $item);
+            if (!empty($report['error'])) {
+                Mage::getSingleton('adminhtml/session')->addError(
+                    $report['error']
+                );
+                break;
+            }
+            $counter++;
+            $sleepCounter++;
+            if ($sleepCounter == 5) {
+                sleep(1);
+                $sleepCounter = 0;
+            }
+        }
+
+        Mage::getSingleton('adminhtml/session')->addNotice(
+            "Processed $counter/$totalCount rows"
+        );
+    }
+
+    public function callCreateAction()
+    {
+        $params = $this->getRequest()->getParams();
+        unset($params['form_key']);
+
+        $params['is_supply'] = 1;
+        $report = $this->_getConnector()->call('createListing', $params);
+
+        if (!empty($report['error'])) {
+            Mage::getSingleton('adminhtml/session')->addError(
+                $report['error']
+            );
+        } else {
+            Mage::getSingleton('adminhtml/session')->addSuccess(
+                'New product was created'
+            );
+        }
+        var_dump($report); die();
+
+        $this->_redirectReferer($this->getUrl('adminhtml/etsy/indexCreate'));
+    }
+
+    public function callCreateCsvAction()
+    {
+        $filePath = $this->_saveCsv();
+        $csvData = $this->_getCsvHelper()->csvToArray($filePath);
+
+        $totalCount = count($csvData);
+        $counter = 0;
+        $sleepCounter = 0;
+        foreach ($csvData as $item) {
+            $report = $this->_getConnector()->call('createListing', $item);
+            if (!empty($report['error'])) {
+                Mage::getSingleton('adminhtml/session')->addError(
+                    $report['error']
+                );
+                break;
+            }
+            $counter++;
+            $sleepCounter++;
+            if ($sleepCounter == 5) {
+                sleep(1);
+                $sleepCounter = 0;
+            }
+        }
+
+        Mage::getSingleton('adminhtml/session')->addNotice(
+            "Processed $counter/$totalCount rows"
+        );
     }
 
     protected function _saveCsv()
     {
-        var_dump($_FILES);
         $type = 'etsy_csv';
         if (isset($_FILES[$type]['name']) && $_FILES[$type]['name'] != '') {
             $uploader = new Varien_File_Uploader($type);
@@ -113,20 +184,19 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
         return false;
     }
 
-    protected function _prepareCsv($dataArray, $methodName)
+    protected function _prepareCsv($response, $methodName)
     {
         $dir = Mage::getBaseDir('media') . DS . 'api/';
         $filename =  $methodName . date('Y-m-d')  . '.csv';
-        $fp = fopen($dir . DS . $filename, 'w');
 
-        array_unshift($dataArray, array_keys($dataArray[0]));
-        foreach ($dataArray as $fields) {
-            fputcsv($fp, $fields);
+        if ($methodName == 'findAllShopListingsActive') {
+            $dataArray = $response['results'];
+        } else {
+            echo '<pre>';print_r($response);echo '<pre>';die();
         }
+        $path = $this->_getCsvHelper()->arrayToCsv($dataArray, $dir . DS . $filename);
 
-        fclose($fp);
-
-        return $dir . DS . $filename;
+        return $path;
     }
 
     /**
@@ -144,5 +214,13 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
     protected function _getOauth()
     {
         return Mage::getModel('figures_api/etsy_oauth');
+    }
+
+    /**
+     * @return Figures_Artist_Helper_Csv
+     */
+    protected function _getCsvHelper()
+    {
+        return Mage::helper('figures_artist/csv');
     }
 }
