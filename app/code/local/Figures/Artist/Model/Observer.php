@@ -20,10 +20,10 @@ class Figures_Artist_Model_Observer extends Varien_Object
                     'qty_sold' => $orderItem->getQtyOrdered(),
                     'price' => $orderItem->getPrice(),
                     'artist_comission' => $this->_getComissionModel()->getArtistComission($artistData['artist_id']),
-                    'artist_comission_status' => 'not_paid',
-                    'artist_comission_net' => $orderItem->getPrice() * $this->_getComissionModel()->getArtistComission($artistData['artist_id']) / 100
+                    'artist_comission_status' => Figures_Artist_Model_Sales::COMISSION_NOT_PAID,
+                    'artist_comission_net' => $orderItem->getPrice() * $orderItem->getQtyOrdered() * $this->_getComissionModel()->getArtistComission($artistData['artist_id']) / 100
                 ]);
-                $this->_getArtistModel()->increaseProductValues($orderItem->getProductId(), 1, $orderItem->getPrice());
+                $this->_getArtistModel()->increaseProductValues($orderItem->getProductId(), $orderItem->getQtyOrdered(), $orderItem->getPrice());
             }
         } catch (Exception $e) {
             Mage::log($e->getMessage(), null, 'artist_critical.log', true);
@@ -46,7 +46,7 @@ class Figures_Artist_Model_Observer extends Varien_Object
         $order = $shipment->getOrder();
 
         foreach ($order->getAllItems() as $orderItem) {
-            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus()], $orderItem->getId());
+            $this->_getSalesModel()->updateArtistSoldItem(['order_status' => $order->getStatus(), 'artist_comission_status' => Figures_Artist_Model_Sales::COMISSION_PAID], $orderItem->getId());
         }
     }
 

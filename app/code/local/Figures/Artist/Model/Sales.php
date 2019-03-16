@@ -4,6 +4,13 @@
  */
 class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
 {
+    const COMISSION_NOT_PAID = 'not_paid';
+    const COMISSION_PAID     = 'paid';
+
+    /**
+     * @param $data
+     * @throws Zend_Db_Adapter_Exception
+     */
     public function saveArtistSoldItem($data)
     {
         $this->_getConnection()->insert(
@@ -12,6 +19,11 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
         );
     }
 
+    /**
+     * @param $data
+     * @param $oiId
+     * @throws Zend_Db_Adapter_Exception
+     */
     public function updateArtistSoldItem($data, $oiId)
     {
         $this->_getConnection()->update(
@@ -21,7 +33,7 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
         );
     }
 
-    public function getSales($bind = '', $getProductLink = false)
+    public function getSales($bind = '1', $getProductLink = false)
     {
         $connection = $this->_getConnection();
 
@@ -39,6 +51,28 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
         }
 
         return $salesData;
+    }
+
+    public function getMoneySumByBind($bind = '1')
+    {
+        $connection = $this->_getConnection();
+
+        return $salesData = $connection->fetchOne(
+            $connection->select()
+                ->from('artist_sales', 'SUM(artist_comission_net) as sum')
+                ->where($bind)
+        ) ?: 0.00;
+    }
+
+    public function getSoldQtySumByBind($bind = '1')
+    {
+        $connection = $this->_getConnection();
+
+        return $salesData = $connection->fetchOne(
+            $connection->select()
+                ->from('artist_sales', 'SUM(qty_sold) as sold')
+                ->where($bind)
+        ) ?: 0;
     }
 
     public function getCollection()

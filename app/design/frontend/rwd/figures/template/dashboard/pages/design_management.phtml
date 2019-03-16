@@ -16,7 +16,7 @@ $designsData = $this->getDesignData();
                                 <span class="checkmark"></span>
                             </label>
                         </li>
-                        <li class="img-full"><img class="float-right" src="<?php echo $designItem['image_path'] ?>"></li>
+                        <li><img class="float-right" src="<?php echo $designItem['image_path'] ?>"></li>
                     </ul>
                 </div>
                 <div class="col-2 tool-about">
@@ -30,10 +30,11 @@ $designsData = $this->getDesignData();
                 </div>
                 <div class="col-3 tool-sales">
                     <h2>Sales</h2>
-                    <h3><?php echo $designItem['total_count'] ?> times</h3>
+                    <h3><?php echo $designItem['total_count'] ?> time(s)</h3>
                     <br>
-                    <h2>Commissions</h2>
-                    <h3><?php echo $designItem['total_sum'] ?> USD</h3>
+                    <h2>Commissions: </h2>
+                    <h4>Not paid: <?php echo $designItem['total_sum_not_paid'] ?: 0 ?> USD</h4>
+                    <h4>Paid: <?php echo $designItem['total_sum_paid'] ?: 0 ?> USD</h4>
                 </div>
                 <div class="col-3 tool-products">
 

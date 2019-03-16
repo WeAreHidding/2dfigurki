@@ -67,10 +67,10 @@ class Figures_Artist_Model_Artist extends Mage_Core_Model_Abstract
         if ($workData) {
             foreach ($workData as $key => $workItem) {
                 $workData[$key]['image_path'] = Mage::getBaseUrl('media') . 'workshop/user_images/' .
-                    $workItem['customer_id'] . $workItem['image_path'];
-                $salesData = $connection->fetchRow("SELECT COUNT(*) as total_count, SUM(artist_comission_net) as total_sum FROM artist_sales WHERE  work_id = {$workItem['id']}");
-                $workData[$key]['total_count'] = $salesData['total_count'];
-                $workData[$key]['total_sum'] = $salesData['total_sum'];
+                    $workItem['customer_id'] . $workItem['image_path'];//SUM(artist_comission_net) as total_sum
+                $workData[$key]['total_count'] = $connection->fetchOne("SELECT SUM(qty_sold) FROM artist_sales WHERE  work_id = {$workItem['id']}");
+                $workData[$key]['total_sum_not_paid'] = $connection->fetchOne("SELECT SUM(artist_comission_net) FROM artist_sales WHERE  work_id = {$workItem['id']}  AND artist_comission_status = 'not_paid'");
+                $workData[$key]['total_sum_paid'] = $connection->fetchOne("SELECT SUM(artist_comission_net) FROM artist_sales WHERE  work_id = {$workItem['id']} AND artist_comission_status = 'paid'");
                 $workData[$key]['product_data'] =
                     $connection->fetchCol(
                         $connection->select()

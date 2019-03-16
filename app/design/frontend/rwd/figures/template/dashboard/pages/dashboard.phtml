@@ -1,6 +1,8 @@
 <?php
-/** @var $this Figures_Dashboard_Block_Dashboard */
+/** @var $this Figures_Dashboard_Block_Dashboard_Dashboard */
 
+$currentComissions = $this->getCurrentComissions();
+$totalComissions = $this->getTotalComissions();
 ?>
 <div id="content_dash" class="content_main">
     <div class="dashboard">
@@ -14,10 +16,11 @@
                     </li>
                     <li><hr></li>
                     <li><h4>USD</h4></li>
-                    <li><h5>0.00</h5></li>
+                    <li><h5><?php echo $currentComissions['sum'] ?></h5></li>
+                    <li><h5 style="color:green;"><?php echo $totalComissions['sum_paid'] ?></h5></li>
                     <li><hr></li>
                     <li><h6>Sales</h6></li>
-                    <li><h5>30</h5></li>
+                    <li><h5><?php echo $currentComissions['qty'] ?></h5></li>
                     <li><h6>Items</h6></li>
                     <li><button class="btn btn-info">View more</button></li>
                 </ul>
@@ -25,17 +28,18 @@
             <div class="offset-1 col-5 dashboard__comissions">
                 <ul class="list-inline">
                     <li class="dashboard__title">
-                        <h2><i class="fas fa-credit-card"></i> Comissions</h2>
-                        <select title="select_state" class="form-control" name="state">
-                            <option value="AL">Last 30 Days: 21 Aug. - 19 Sep</option>
-                        </select>
+                        <h2><i class="fas fa-credit-card"></i> Total Comissions</h2>
+<!--                        <select title="select_state" class="form-control" name="state">-->
+<!--                            <option value="AL">Last 30 Days: 21 Aug. - 19 Sep</option>-->
+<!--                        </select>-->
                     </li>
                     <li><hr></li>
                     <li><h4>USD</h4></li>
-                    <li><h5>0.00</h5></li>
+                    <li><h5><?php echo $totalComissions['sum'] ?></h5></li>
+                    <li><h5 style="color:green;"><?php echo $totalComissions['sum_paid'] ?></h5></li>
                     <li><hr></li>
                     <li><h6>Sales</h6></li>
-                    <li><h5>30</h5></li>
+                    <li><h5><?php echo $totalComissions['qty'] ?></h5></li>
                     <li><h6>items</h6></li>
                     <li><button class="btn btn-info">View more</button></li>
                 </ul>

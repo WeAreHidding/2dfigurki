@@ -28,7 +28,10 @@ function menuToggle(a) {
     }
 }
 
-function loadContent(content) {
+function loadContent(content, check) {
+    // if (check) {
+    //     var hash = window.location.hash.substr(1);
+    // }
     jQuery('#content_dash').remove();
     jQuery('#content_design').remove();
     jQuery('#content_design_management').remove();
@@ -143,7 +146,7 @@ function getSalesData(customerId) {
     var filter  = jQuery('#salesFilter');
     var from    = jQuery('#salesDateFrom');
     var to      = jQuery('#salesDateTo');
-    console.log(to.val());
+
     jQuery.ajax({
         url: "/figures_dashboard/dashboard/getSalesData",
         type: "POST",

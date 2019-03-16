@@ -62,7 +62,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $block = false;
         switch ($tabName) {
             case 'dash':
-                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard')->setTemplate('dashboard/pages/dashboard.phtml');
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard_dashboard')->setTemplate('dashboard/pages/dashboard.phtml');
                 break;
             case 'design':
                 $block = $this->getLayout()->createBlock('figures_dashboard/dashboard_design')->setTemplate('dashboard/pages/design.phtml');
@@ -89,7 +89,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $params = $this->getRequest()->getParams();
         $bind = "artist_id = {$params['customer_id']} AND created_at >= '{$params['from']}' AND created_at <= '{$params['to']}'";
         if ($params['status'] != 'all') {
-            $bind .=  "AND artist_comission_status = {$params['status']}";
+            $bind .=  " AND artist_comission_status = '{$params['status']}'";
         }
 
         $salesData = $this->_getSalesModel()->getSales($bind, true);
