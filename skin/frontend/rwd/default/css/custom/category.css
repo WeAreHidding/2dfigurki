@@ -1,0 +1,76 @@
+.icon-rotate {
+    transform: rotate(180deg); }
+
+.category .category-sidebar p {
+    color: black;
+    font-size: 16px; }
+
+.category .category-sidebar i {
+    cursor: pointer;
+    display: inline;
+    text-align: right;
+    transition: 0.5s ease-in-out; }
+
+.category .category-sidebar ul {
+    display: block;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0; }
+
+.category .category-sidebar li {
+    color: #4e555b;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 15px; }
+.category .category-sidebar li:hover {
+    color: #000;
+    border-left: 2px solid red;
+    padding-left: 13px; }
+
+.category .category-sidebar .sidebar-title {
+    padding-bottom: 30px; }
+.category .category-sidebar .sidebar-title p {
+    float: left; }
+.category .category-sidebar .sidebar-title i {
+    float: right; }
+
+.category .category-products {
+    display: flex;
+    flex-wrap: wrap; }
+.category .category-products .category-product-card {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin: 1%;
+    padding: 1%;
+    flex-basis: 18%;
+    display: block;
+    max-width: 18%; }
+.category .category-products .category-product-card .category-product-image img {
+    max-width: 100%;
+    margin-bottom: 15px; }
+.category .category-products .category-product-card .category-product-info {
+    margin-top: auto; }
+.category .category-products .category-product-card .category-product-info a {
+    color: #6D7FCC; }
+.category .category-products .category-product-card .category-product-info a:hover {
+    text-decoration: underline; }
+.category .category-products .category-product-card .category-product-info h4 {
+    font-size: 12px; }
+.category .category-products .category-product-card .category-product-info h5 {
+    color: darkgray;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+.category .category-products .category-product-card .category-product-info h6 {
+    font-size: 12px; }
+
+.category-header {
+    color: black;
+    font-size: 15px;
+    padding-bottom: 30px; }
+.category-header h2 {
+    font-size: 20px; }
+.category-header span {
+    color: darkgray; }
+.category-header select {
+    border: none;
+    font-size: 12px; }
