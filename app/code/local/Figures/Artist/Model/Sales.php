@@ -7,6 +7,11 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
     const COMISSION_NOT_PAID = 'not_paid';
     const COMISSION_PAID     = 'paid';
 
+    protected $_codesLabels = [
+        'not_paid' => 'Not credited yet',
+        'paid'     => 'Credited',
+    ];
+
     /**
      * @param $data
      * @throws Zend_Db_Adapter_Exception
@@ -73,6 +78,11 @@ class Figures_Artist_Model_Sales extends Mage_Core_Model_Abstract
                 ->from('artist_sales', 'SUM(qty_sold) as sold')
                 ->where($bind)
         ) ?: 0;
+    }
+
+    public function getLabelForComissionStatus($code)
+    {
+        return $this->_codesLabels[$code];
     }
 
     public function getCollection()

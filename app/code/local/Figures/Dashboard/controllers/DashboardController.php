@@ -84,15 +84,16 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $this->getResponse()->setBody($html);
     }
 
-    public function getSalesDataAction()
-    {
+    public function getCreditDataAction()
+    {//TODO: credit
         $params = $this->getRequest()->getParams();
         $bind = "artist_id = {$params['customer_id']} AND created_at >= '{$params['from']}' AND created_at <= '{$params['to']}'";
         if ($params['status'] != 'all') {
             $bind .=  " AND artist_comission_status = '{$params['status']}'";
         }
 
-        $salesData = $this->_getSalesModel()->getSales($bind, true);
+        $salesModel = $this->_getSalesModel();
+        $salesData = $salesModel->getSales($bind, true);
         if (!$salesData) {
             $this->getResponse()->setBody('<div class="offset-4 col-4 col-auto">
                             <h6>No entries for the current period</h6>
@@ -107,6 +108,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
                         <td>Product Name</td>
                         <td>Product Price</td>
                         <td>Discount</td>
+                        <td>Comission %</td>
                         <td>Your comission</td>
                         <td>Order status</td>
                         <td>Comission Status</td>
@@ -116,15 +118,69 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         ';
         foreach ($salesData as $item) {
             $html .= '
-
                     <tr>
                         <td>' . $item['created_at'] .'</td>
                         <td><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></td>
                         <td>' . $item['price'] .'</td>
                         <td>' . $item['discount'] .'%</td>
                         <td>' . $item['artist_comission'] .'%</td>
+                        <td>' . $item['artist_comission_net'] . ' USD</td>
                         <td>' . $item['order_status'] .'</td>
-                        <td>' . $item['artist_comission_status'] .'</td>
+                        <td>' . $salesModel->getLabelForComissionStatus($item['artist_comission_status']) .'</td>
+                    </tr>    
+            ';
+        }
+
+        $html.='
+                </tbody>
+            </table>   ';
+
+        $this->getResponse()->setBody($html);
+    }
+
+    public function getSalesDataAction()
+    {
+        $params = $this->getRequest()->getParams();
+        $bind = "artist_id = {$params['customer_id']} AND created_at >= '{$params['from']}' AND created_at <= '{$params['to']}'";
+        if ($params['status'] != 'all') {
+            $bind .=  " AND artist_comission_status = '{$params['status']}'";
+        }
+
+        $salesModel = $this->_getSalesModel();
+        $salesData = $salesModel->getSales($bind, true);
+        if (!$salesData) {
+            $this->getResponse()->setBody('<div class="offset-4 col-4 col-auto">
+                            <h6>No entries for the current period</h6>
+                        </div>');
+            return;
+        }
+        $html = '
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <td>Ordered at</td>
+                        <td>Product Name</td>
+                        <td>Product Price</td>
+                        <td>Discount</td>
+                        <td>Comission %</td>
+                        <td>Your comission</td>
+                        <td>Order status</td>
+                        <td>Comission Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+        ';
+        foreach ($salesData as $item) {
+            $html .= '
+                    <tr>
+                        <td>' . $item['created_at'] .'</td>
+                        <td><a href="' . $item['product_url'] . '">' . $item['product_name'] .'</a></td>
+                        <td>' . $item['price'] .'</td>
+                        <td>' . $item['discount'] .'%</td>
+                        <td>' . $item['artist_comission'] .'%</td>
+                        <td>' . $item['artist_comission_net'] . ' USD</td>
+                        <td>' . $item['order_status'] .'</td>
+                        <td>' . $salesModel->getLabelForComissionStatus($item['artist_comission_status']) .'</td>
                     </tr>    
             ';
         }

@@ -22,6 +22,16 @@ class Figures_Dashboard_Block_Dashboard extends Mage_Core_Block_Template
         return $this->_customer->getData('artist_nickname');
     }
 
+    public function getArtistMoney()
+    {
+        return $this->_getMoneyModel()->getArtistMoney($this->_customer->getId());
+    }
+
+    public function getArtistComission()
+    {
+        return $this->_getComissionModel()->getArtistComission($this->_customer->getId());
+    }
+
     /**
      * @return Figures_Artist_Model_Sales
      */
@@ -32,5 +42,29 @@ class Figures_Dashboard_Block_Dashboard extends Mage_Core_Block_Template
         }
 
         return $this->_salesModel;
+    }
+
+    /**
+     * @return Figures_Artist_Model_Comission
+     */
+    protected function _getComissionModel()
+    {
+        return Mage::getModel('figures_artist/comission');
+    }
+
+    /**
+     * @return Figures_Artist_Model_Money
+     */
+    protected function _getMoneyModel()
+    {
+        return Mage::getModel('figures_artist/money');
+    }
+
+    /**
+     * @return Figures_Artist_Model_Artist
+     */
+    protected function _getArtistModel()
+    {
+        return Mage::getModel('figures_artist/artist');
     }
 }

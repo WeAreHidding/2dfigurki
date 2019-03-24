@@ -15,14 +15,18 @@ class Figures_Artist_Model_Money extends Mage_Core_Model_Abstract
         parent::_construct();
     }
 
-    public function addMoney($artistId, $count)
+    public function addMoney($artistId, $count, $description)
     {
-
+        $currentMoney = $this->getArtistMoney($artistId);
+        $this->_connection->update('artist_money', ['value' => $currentMoney + $count], 'artist_id = ' . $artistId);
+        $this->logMoneyChange($artistId, '+' . $count, $description);
     }
 
-    public function removeMoney($artistId, $count)
+    public function removeMoney($artistId, $count, $description)
     {
-
+        $currentMoney = $this->getArtistMoney($artistId);
+        $this->_connection->update('artist_money', ['value' => $currentMoney - $count], 'artist_id = ' . $artistId);
+        $this->logMoneyChange($artistId, '-' . $count, $description);
     }
 
     /**
@@ -34,9 +38,27 @@ class Figures_Artist_Model_Money extends Mage_Core_Model_Abstract
         $this->_connection->insert('artist_money', ['artist_id' => $artistId]);
     }
 
-    public function logMoneyChange($artistId, $value)
+    public function logMoneyChange($artistId, $value, $description)
     {
+        $this->_connection->update('artist_money_log', ['value' => $value, 'description' => $description], 'artist_id = ' . $artistId);
+    }
 
+    public function getArtistMoney($artistId)
+    {
+        return $this->_connection->fetchOne($this->_connection->select()->from('artist_money', 'value')->where('artist_id = ?', $artistId));
+    }
+
+    public function getMoneyLogs($artistId)
+    {
+        $connection = $this->_getConnection();
+
+        $log = $connection->fetchAll(
+            $connection->select()
+                ->from('artist_money_log')
+                ->where('artist_id = ?', $artistId)
+        );
+
+        return $log;
     }
 
     /**

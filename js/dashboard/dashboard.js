@@ -4,12 +4,6 @@ jQuery(document).ready(function() {
         theme: "minimal"
     });
     loadContent("dash");
-
-    jQuery('#sidebarCollapse').on('click', function () {
-        jQuery('#sidebar, #content').toggleClass('active');
-        jQuery('.collapse.in').toggleClass('in');
-        jQuery('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    });
 });
 
 function menuToggle(a) {
@@ -140,6 +134,24 @@ function closeImageLoaded() {
 }
 
 //Statistics
+
+//Credit tab
+function getCreditData(customerId) {
+    var filter  = jQuery('#creditFilter');
+    var from    = jQuery('#creditDateFrom');
+    var to      = jQuery('#creditDateTo');
+
+    jQuery.ajax({
+        url: "/figures_dashboard/dashboard/getCreditData",
+        type: "POST",
+        data: {status: filter.val(), from: from.val(), to: to.val(), customer_id: customerId},
+        success: function (block) {
+            jQuery("#creditList").empty();
+            jQuery("#creditList").append(block);
+        },
+        cache: false
+    });
+}
 
 //Sales tab
 function getSalesData(customerId) {

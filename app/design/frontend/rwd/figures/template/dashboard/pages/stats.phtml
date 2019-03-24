@@ -12,76 +12,31 @@
                     <div class="row">
                         <div class="offset-4 col-4 credit__title">
                             <h2>Credit</h2>
-                            <span>Since Last Payout</span>
-                        </div>
-                        <div class="col-4">
-                            <select class="form-control">
-                                <option value="0">Last 30 days</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-12">
-                            <h3>Balance</h3>
-                            <div class="credit__price">
-                                <h4>USD</h4>
-                                <h5>322</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12">
-                            <h3>Comissions</h3>
-                            <div class="credit__price">
-                                <h4>USD</h4>
-                                <h5>500</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12">
-                            <h3>Items Sold</h3>
-                            <div class="credit__price">
-                                <h4>Items</h4>
-                                <h5>17</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container credit-b">
-                    <div class="row">
-                        <div class="offset-4 col-4 col-auto">
-                            <h2>Credit Breakdown</h2>
-                            <span>Credits appear 14 days after completed purchase.</span>
                         </div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="offset-lg-2 col-lg-2 col-12">
-                            <select class="form-control">
-                                <option value="0">All credits sources</option>
+                        <div class="offset-lg-1 col-lg-3 col-12">
+                            <select id="creditFilter" class="form-control">
+                                <option value="all">All Statuses</option>
+                                <option value="not_paid">Comission not paid</option>
+                                <option value="paid">Comission paid</option>
                             </select>
                         </div>
-                        <div class="col-lg-2 col-12">
-                            <select class="form-control">
-                                <option value="0">All Points of Sale</option>
-                                <option value="1">Marketplace</option>
-                                <option value="2">External Marketplace</option>
-                            </select>
+                        <div class="col-lg-3 col-12">
+                            <input id="creditDateFrom" type="date" class="form-control" placeholder="From">
                         </div>
-                        <div class="col-lg-2 col-12">
-                            <input type="date" class="form-control" placeholder="From">
+                        <div class="col-lg-3 col-12">
+                            <input id="creditDateTo" type="date" class="form-control" placeholder="To">
                         </div>
-                        <div class="col-lg-2 col-12">
-                            <input type="date" class="form-control" placeholder="To">
-                        </div>
-                        <div class="col-lg-2 col-12">
-                            <a onclick="" class="pointer">Clear</a>
+                        <div class="col-lg-1 col-12">
+                            <button class="btn btn-info" onclick="getCreditData(<?php echo $this->_customer->getId()?>)">Show</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="offset-4 col-4 col-auto">
-                            <h6>No entries for the current period</h6>
-                        </div>
+                    <div id="creditList" class="tools">
                     </div>
                 </div>
             </div>
+
             <div id="menu-sales" class="tab-pane fade">
                 <div class="container sales">
                     <div class="row">
@@ -90,7 +45,6 @@
                         </div>
                     </div>
                     <div class="row align-items-center">
-
                         <div class="offset-lg-1 col-lg-3 col-12">
                             <select id="salesFilter" class="form-control">
                                 <option value="all">All Statuses</option>
@@ -115,5 +69,4 @@
         </div>
 
     </div>
-
 </div>

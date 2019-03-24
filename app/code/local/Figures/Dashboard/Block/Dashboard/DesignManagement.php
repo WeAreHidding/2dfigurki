@@ -20,12 +20,4 @@ class Figures_Dashboard_Block_Dashboard_DesignManagement extends Figures_Dashboa
                 return '<li>' . $status . '</li>';
         }
     }
-
-    /**
-     * @return Figures_Artist_Model_Artist
-     */
-    protected function _getArtistModel()
-    {
-        return Mage::getModel('figures_artist/artist');
-    }
 }
