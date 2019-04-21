@@ -10,6 +10,7 @@
             <catalog>
                 <rewrite>
                     <product_view>Figures_Catalog_Block_Product_View</product_view>
+                    <product_list>Figures_Catalog_Block_Product_List</product_list>
                 </rewrite>
             </catalog>
             <figures_catalog>
@@ -17,9 +18,21 @@
             </figures_catalog>
         </blocks>
         <helpers>
-            <figures_dashboard>
+            <figures_catalog>
                 <class>Figures_Catalog_Helper</class>
-            </figures_dashboard>
+            </figures_catalog>
         </helpers>
     </global>
+    <frontend>
+        <routers>
+            <catalog>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <Figures_Catalog before="Mage_Customer">Figures_Catalog</Figures_Catalog>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
 </config>

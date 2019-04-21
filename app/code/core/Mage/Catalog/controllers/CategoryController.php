@@ -158,6 +158,8 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 
             $this->_initLayoutMessages('catalog/session');
             $this->_initLayoutMessages('checkout/session');
+            $block = $this->getLayout()->getBlock('product_list');
+            $block->setData('category_id', $category->getId());
             $this->renderLayout();
         }
         elseif (!$this->getResponse()->isRedirect()) {

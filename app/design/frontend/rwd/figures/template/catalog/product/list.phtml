@@ -1,7 +1,14 @@
+<?php
+/** @var $this Figures_Catalog_Block_Product_List */
 
+$filters = $this->getAvailableFilters();
+?>
 <div class="row category-header">
     <div class="col-6">
-        <h2>Boyfriend Greeting Cards <span>52269 results</span></h2>
+        <div id="category-list">
+            <a onclick="closeCategory(this);" class="btn btn-primary btn-sm">Men's <i class="fa fa-remove"></i></a>
+            <a onclick="closeCategory(this);" class="btn btn-primary btn-sm">WoMen's <i class="fa fa-remove"></i></a>
+        </div>
     </div>
     <div class="col-6 text-right">
         <select title="Sort by">
@@ -14,173 +21,33 @@
 
 <div class="row category">
 
-    <div class="col-2 category-sidebar">
-        <div class="category-sidebar__department">
-            <div class="sidebar-title">
-                <p>Department</p> <a class="sidebar__department-arrow" onclick="toggleBlock(this,'department_list')"><i class="fa fa-angle-up"></i></a>
-            </div>
-            <ul id="department_list" class="sidebar-list list-inline">
-                <li>All departments</li>
-                <li>Men's</li>
-                <li>Women's</li>
-                <li>Kids</li>
-                <li>Device Cases</li>
-                <li>Wall Art</li>
-                <li>Home decor</li>
-                <li>Stationary</li>
-                <li>Bags</li>
-            </ul>
-        </div>
+    <?php if ($filters) : ?>
+        <div class="col-2 category-sidebar">
 
-        <div class="category-sidebar__product">
-            <div class="sidebar-title">
-                <p>Product</p> <a class="sidebar__product-arrow" onclick="toggleBlock(this,'product_list')"><i class="fa fa-angle-up"></i></a>
-            </div>
-            <ul id="product_list" class="sidebar-list list-inline">
-                <li>All stationary</li>
-                <li>Greeting cards</li>
-                <li>Postcards</li>
-                <li>Stickers</li>
-                <li>Spiral notebooks</li>
-            </ul>
-        </div>
-    </div>
+            <?php echo $filters; ?>
 
-    <div class="col-10 category-products">
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
+            <div class="category-sidebar__prices">
+                <div class="sidebar-title">
+                    <p>Prices</p> <a class="sidebar__price-arrow" onclick="toggleBlock(this,'price_list')"><i class="fa fa-angle-up"></i></a>
+                </div>
+                <ul id="price_list" class="sidebar-list list-inline">
+                    <li>
+                        <label for="min_price">From</label>
+                        <input id="min_price" class="form-control" type="number" min="0" name="min_price" title="input min price" value="0">
+                    </li>
+                    <li>
+                        <label for="max_price">To</label>
+                        <input  id="max_price" class="form-control" type="number" min="0" name="max_price" title="input max price" value="0">
+                    </li>
+                    <li>
+                        <button class="btn btn-outline-primary" style="width: 100%">OK</button>
+                    </li>
+                </ul>
             </div>
         </div>
+    <?php endif; ?>
 
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <img src="/img/logo.jpg">
-            </div>
-            <div class="category-product-info">
-                <h4>$99.99</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto ducimus ipsa iure, molestiae numquam obcaecati optio perferendis quidem quis quod quos ratione sequi similique sit ullam vero voluptates.</h5>
-                <h6>by <a href="#">Author</a></h6>
-            </div>
-        </div>
-
-    </div>
+    <div class="col-10 category-products"></div>
 
 </div>
 
@@ -197,12 +64,8 @@
         </nav>
     </div>
 </div>
+<input type="hidden" id="category" value="<?php echo $this->getCategoryId() ?>">
 
 <hr>
 
-<script>
-    function toggleBlock(block,slide) { "use strict";
-        jQuery("#"+slide).slideToggle("slow");
-        jQuery(block).find('i').toggleClass('icon-rotate');
-    }
-</script>
+<div id="loader" class="loading" style="display:none;">Loading&#8230;</div>
