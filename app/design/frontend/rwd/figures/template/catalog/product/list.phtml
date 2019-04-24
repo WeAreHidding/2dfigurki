@@ -5,16 +5,13 @@ $filters = $this->getAvailableFilters();
 ?>
 <div class="row category-header">
     <div class="col-6">
-        <div id="category-list">
-            <a onclick="closeCategory(this);" class="btn btn-primary btn-sm">Men's <i class="fa fa-remove"></i></a>
-            <a onclick="closeCategory(this);" class="btn btn-primary btn-sm">WoMen's <i class="fa fa-remove"></i></a>
-        </div>
+        <div id="category-list"></div>
     </div>
     <div class="col-6 text-right">
-        <select title="Sort by">
-            <option value="1">Most relevant</option>
-            <option value="2">More expensive</option>
-            <option value="3">More cheaper</option>
+        <select id="sort_by" title="Sort by">
+            <option value="default">Most relevant</option>
+            <option value="price_asc">More expensive</option>
+            <option value="price_desc">More cheaper</option>
         </select>
     </div>
 </div>
@@ -40,7 +37,7 @@ $filters = $this->getAvailableFilters();
                         <input  id="max_price" class="form-control" type="number" min="0" name="max_price" title="input max price" value="0">
                     </li>
                     <li>
-                        <button class="btn btn-outline-primary" style="width: 100%">OK</button>
+                        <button class="btn btn-outline-primary" style="width: 100%" onclick="processPriceFilter()">OK</button>
                     </li>
                 </ul>
             </div>
@@ -53,13 +50,13 @@ $filters = $this->getAvailableFilters();
 
 <div class="row category-footer">
     <div class="col-10 offset-2">
-        <nav aria-label="Page navigation example" class="float-right">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <nav class="float-right">
+            <ul id="pager" class="pagination">
+<!--                <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+<!--                <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--                <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
             </ul>
         </nav>
     </div>

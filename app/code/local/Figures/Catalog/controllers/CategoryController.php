@@ -4,22 +4,26 @@ require_once Mage::getModuleDir('controllers', 'Mage_Catalog').DS.'CategoryContr
 
 class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
 {
+    const PRODUCTS_PER_PAGE = 1;
+
     public function loadProductsAction()
     {
         $id = $this->getRequest()->getParam('category_id');
+        $filters = $this->getRequest()->getParam('filters');
+        $sort = $this->getRequest()->getParam('sort');
+        $page = $this->getRequest()->getParam('page') ?: 1;
         $data = [];
 
-        if ($id) {
+        if ($id && $filters && $sort) {
             $checkoutHelper = Mage::helper('checkout/cart');
-            $filters = $this->getRequest()->getParam('filters');
-            var_dump($filters); die();
             $cartItemsIds = $this->_getCartItemsProductIds();
             $category = Mage::getModel('catalog/category')->load($id);
 
             $productCollection = Mage::getModel('catalog/product')->getCollection()
                 ->addAttributeToSelect('*')
-                ->addCategoryFilter($category)
-                ->load();
+                ->addCategoryFilter($category);
+
+            $productCollection = $this->_processFilters($productCollection, $filters, $sort, $page);
 
             foreach ($productCollection as $product) {
                 $data[] = [
@@ -36,6 +40,62 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
 
         $html = $this->_prepareHtml($data);
         $this->getResponse()->setBody($html);
+    }
+
+    public function getPagesCountAction()
+    {
+        $id = $this->getRequest()->getParam('category_id');
+        $filters = $this->getRequest()->getParam('filters');
+        $pagesCount = 1;
+
+        if ($id && $filters) {
+            $category = Mage::getModel('catalog/category')->load($id);
+
+            $productCollection = Mage::getModel('catalog/product')->getCollection()
+                ->addAttributeToSelect('*')
+                ->addCategoryFilter($category);
+
+            $productCollection = $this->_processFilters($productCollection, $filters);
+            $pagesCount = $productCollection->getSize() / static::PRODUCTS_PER_PAGE;
+        }
+
+        $this->getResponse()->setBody($pagesCount);
+    }
+
+    /**
+     * @param $collection
+     * @param $filters
+     * @param string $sort
+     * @param string $page
+     *
+     * @return mixed
+     */
+    protected function _processFilters($collection, $filters, $sort = '', $page = '')
+    {
+        foreach ($filters as $filterId => $filter) {
+            if (!$filter) {
+                continue;
+            }
+            if ($filterId == 'price') {
+                $filter = explode('-', $filter);
+                $collection->addFieldToFilter('price', ['from'=> $filter[0],'to'=> $filter[1]]);
+                continue;
+            }
+
+            $collection->addAttributeToFilter($filterId, ['in' => $filter]);
+        }
+
+        if ($sort && ($sort != 'default')) {
+            $sort = explode('_', $sort);
+            $collection->addAttributeToSort($sort[0], $sort[1]);
+        }
+
+        if ($page) {
+            $collection->setCurPage($page)
+                ->setPageSize(static::PRODUCTS_PER_PAGE);
+        }
+
+        return $collection;
     }
 
     protected function _prepareHtml($data)

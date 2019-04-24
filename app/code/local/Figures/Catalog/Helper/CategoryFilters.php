@@ -10,7 +10,7 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
         'artist_id' => [
             'front_id'   => 'designer',
             'front_name' => 'Designer',
-            'type'       => 'radio'
+            'type'       => 'check'
         ]
     ];
 
@@ -42,7 +42,8 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
             $html .= '<ul id="' . $frontIdentifier . '" class="sidebar-list list-inline">';
             foreach ($filter as $id => $filterItem) {
                 $html .= '<li><label class="container_' . $type . '">' . $filterItem;
-                $html .= '<input data-filter="' . $id . '" name="' . $type .'" type="' . $htmlType . '" class="' . $type . '-item" onclick="processFilter(this, \'' . $frontIdentifier . '\')">';
+                $html .= '<input data-parent="' . $frontName . '" data-label="' . $filterItem . '" data-filter="' . $id . '" name="' . $type .'" type="' . $htmlType . '" 
+                    class="' . $type . '-item" onclick="processFilter(this, \'' . $frontIdentifier . '\')">';
                 $html .= '<span class="' . $type . 'mark"></span>';
                 $html .= '</label></li>';
             }

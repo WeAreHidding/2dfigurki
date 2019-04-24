@@ -309,3 +309,6 @@
 .category-header select {
     border: none;
     font-size: 12px; }
+.current-page {
+    background-color: lightblue;
+}
