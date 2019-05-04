@@ -51,7 +51,7 @@ class Figures_Artist_Helper_Csv extends Mage_Core_Helper_Abstract
     {
         if (is_null($this->_reader)) {
             $this->_reader = new Varien_File_Csv();
-            $this->_reader->setDelimiter(";");
+            $this->_reader->setDelimiter(",");
         }
 
         return $this->_reader;

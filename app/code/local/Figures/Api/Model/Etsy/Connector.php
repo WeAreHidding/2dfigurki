@@ -22,10 +22,11 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
      * @param $methodName
      * @param $params
      * @param $httpMethod
+     * @param $imageListingId
      *
      * @return mixed
      */
-    public function call($methodName, $params, $httpMethod = null)
+    public function call($methodName, $params, $httpMethod = null, $imageListingId = null)
     {
         $credentials = $this->_getOauth()->getCredentials();
         $methods = $this->getMethods();
@@ -33,6 +34,9 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
 
         $this->_prepareParams($params);
         $url = $this->_buildUrl($method['uri'], $params);
+        if ($imageListingId) {
+            $url = "https://openapi.etsy.com/v2/listings/". $imageListingId ."/images";
+        }
         if (empty($params) || !$params) {
             $params = null;
         }
@@ -110,6 +114,16 @@ class Figures_Api_Model_Etsy_Connector extends Figures_Cms_Model_Abstract
         }
 
         return $response;
+    }
+
+    public function loadImage($listingId, $sourceFile)
+    {
+        $mimeType = mime_content_type($sourceFile);
+        $params = ['@image' => '@'.$sourceFile.';type='.$mimeType];
+
+        $responseListing = $this->call('images', $params, 'POST', $listingId);
+
+        return $responseListing;
     }
 
     /**

@@ -4,7 +4,7 @@ require_once Mage::getModuleDir('controllers', 'Mage_Catalog').DS.'CategoryContr
 
 class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
 {
-    const PRODUCTS_PER_PAGE = 1;
+    const PRODUCTS_PER_PAGE = 2;
 
     public function loadProductsAction()
     {

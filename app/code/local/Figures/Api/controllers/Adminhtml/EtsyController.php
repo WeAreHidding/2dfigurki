@@ -117,50 +117,16 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
         $params = $this->getRequest()->getParams();
         unset($params['form_key']);
 
-        $params['is_supply'] = 1;
-        $report = $this->_getConnector()->call('createListing', $params);
-
-        if (!empty($report['error'])) {
-            Mage::getSingleton('adminhtml/session')->addError(
-                $report['error']
-            );
-        } else {
-            Mage::getSingleton('adminhtml/session')->addSuccess(
-                'New product was created'
-            );
-        }
-        var_dump($report); die();
-
-        $this->_redirectReferer($this->getUrl('adminhtml/etsy/indexCreate'));
+        $report = $this->_getCreator()->create([$params]);
+        echo $report; die();
     }
 
     public function callCreateCsvAction()
     {
         $filePath = $this->_saveCsv();
         $csvData = $this->_getCsvHelper()->csvToArray($filePath);
-
-        $totalCount = count($csvData);
-        $counter = 0;
-        $sleepCounter = 0;
-        foreach ($csvData as $item) {
-            $report = $this->_getConnector()->call('createListing', $item);
-            if (!empty($report['error'])) {
-                Mage::getSingleton('adminhtml/session')->addError(
-                    $report['error']
-                );
-                break;
-            }
-            $counter++;
-            $sleepCounter++;
-            if ($sleepCounter == 5) {
-                sleep(1);
-                $sleepCounter = 0;
-            }
-        }
-
-        Mage::getSingleton('adminhtml/session')->addNotice(
-            "Processed $counter/$totalCount rows"
-        );
+        $report = $this->_getCreator()->create($csvData);
+        echo $report; die();
     }
 
     protected function _saveCsv()
@@ -214,6 +180,14 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
     protected function _getOauth()
     {
         return Mage::getModel('figures_api/etsy_oauth');
+    }
+
+    /**
+     * @return false|Figures_Api_Model_Etsy_Creator
+     */
+    protected function _getCreator()
+    {
+        return Mage::getModel('figures_api/etsy_creator');
     }
 
     /**

@@ -8,8 +8,8 @@ $installer->startSetup();
 $connection = $installer->getConnection();
 $table = 'core_config_data';
 
-$connection->insert($table, ['path' => 'etsy_consumer_key', 'value' => '57ifs9p84p5efueacutz4fri']);
-$connection->insert($table, ['path' => 'etsy_consumer_secret', 'value' => 'kvep116vxo']);
+$connection->insert($table, ['path' => 'etsy_consumer_key', 'value' => '']);
+$connection->insert($table, ['path' => 'etsy_consumer_secret', 'value' => '']);
 
 $connection->insert($table, ['path' => 'etsy_last_oauth_token_secret', 'value' => '']);
 

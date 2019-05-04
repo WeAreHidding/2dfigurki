@@ -15,14 +15,26 @@
             <fieldset id="proposed_info">
                 <form id="generalFormArea" class="entry-edit" method="POST" action="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/etsy/callCreate") ?>" style="padding-top: 20px">
                     <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
-                    <p style="font-weight:bold; padding-top:10px">Title</p>
+                    <p style="font-weight:bold; padding-top:10px">title</p>
                     <input type="text" class="input-text" title="title" name="title" id="title" style="width: 100%;">
-                    <p style="font-weight:bold; padding-top:10px">Description</p>
+                    <p style="font-weight:bold; padding-top:10px">description</p>
                     <input type="text" class="input-text" title="description" name="description" id="description" style="width: 100%;">
-                    <p style="font-weight:bold; padding-top:10px">Price</p>
+                    <p style="font-weight:bold; padding-top:10px">price</p>
                     <input type="text" class="input-text" title="price" name="price" id="price" style="width: 100%;">
-                    <p style="font-weight:bold; padding-top:10px">Quantity</p>
+                    <p style="font-weight:bold; padding-top:10px">quantity</p>
                     <input type="text" class="input-text" title="quantity" name="quantity" id="quantity" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">sku</p>
+                    <input type="text" class="input-text" title="sku" name="sku" id="sku" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">materials</p>
+                    <input type="text" class="input-text" title="materials" name="materials" id="materials" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">tags</p>
+                    <input type="text" class="input-text" title="tags" name="tags" id="tags" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">is_supply</p>
+                    <input type="text" class="input-text" title="is_supply" name="is_supply" id="is_supply" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">image</p>
+                    <input type="text" class="input-text" title="image" name="image" id="image" style="width: 100%;">
+                    <p style="font-weight:bold; padding-top:10px">taxonomy_id</p>
+                    <input type="text" class="input-text" title="taxonomy_id" name="taxonomy_id" id="taxonomy_id" style="width: 100%;">
                     <p style="font-weight:bold; padding-top:10px">who_made</p>
                     <select id="who_made" name="who_made">
                         <option value="i_did">i_did</option>
