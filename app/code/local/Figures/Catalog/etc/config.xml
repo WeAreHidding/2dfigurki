@@ -22,6 +22,11 @@
                 <class>Figures_Catalog_Helper</class>
             </figures_catalog>
         </helpers>
+        <models>
+            <figures_catalog>
+                <class>Figures_Catalog_Model</class>
+            </figures_catalog>
+        </models>
     </global>
     <frontend>
         <routers>
@@ -33,6 +38,20 @@
                     </modules>
                 </args>
             </catalog>
+            <figures_catalog>
+                <use>standard</use>
+                <args>
+                    <frontName>figures_catalog</frontName>
+                    <module>Figures_Catalog</module>
+                </args>
+            </figures_catalog>
         </routers>
+        <layout>
+            <updates>
+                <figures_catalog>
+                    <file>figures_catalog.xml</file>
+                </figures_catalog>
+            </updates>
+        </layout>
     </frontend>
 </config>

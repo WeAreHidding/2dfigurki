@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <figures_catalog_search_search>
+        <reference name="head">
+            <action method="setTitle"><title>Search</title></action>
+            <action method="addItem"><type>skin_css</type><name>css/custom/category.css</name></action>
+        </reference>
+
+        <reference name="content">
+            <block type="figures_catalog/search" name="custom_Search" template="catalog/search/search_result.phtml">
+            </block>
+        </reference>
+    </figures_catalog_search_search>
+</layout>

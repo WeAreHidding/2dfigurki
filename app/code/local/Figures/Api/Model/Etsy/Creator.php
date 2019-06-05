@@ -43,28 +43,29 @@ class Figures_Api_Model_Etsy_Creator extends Mage_Core_Model_Abstract
                 $this->_errors[] = "Row #$number : Etsy API error, import was stopped. Message: " . $report['error'];
                 break;
             }
+
             if (!$listingId = $report['results'][0]['listing_id']) {
                 $this->_errors[] = "Row #$number : Etsy API error, import was stopped. Message: cannot request listing id for created product.";
-                break;
-            }
-
-            if ($sku) {
-                $report = $this->_getConnector()->callUpdate($listingId, ['sku' => $sku]);
-                $this->_errors[] = "Etsy API error, import was stopped. Message: " . $report['error'] . ". Row #$number";
                 break;
             }
 
             if ($image) {
                 $report = $this->_getConnector()->loadImage($listingId, $image);
                 if (!empty($report['error'])) {
-                    $this->_errors[] = "Etsy API error, import was stopped. Message: " . $report['error'] . ". Row #$number";
+                    $this->_errors[] = "Row #$number: Etsy API error, import was stopped. Message: " . $report['error'];
+                    break;
+                }
+            }
+
+            if ($sku) {
+                $report = $this->_getConnector()->callUpdate($listingId, ['sku' => $sku]);
+                if (!empty($report['error'])) {
+                    $this->_errors[] = "Row #$number: Etsy API error, import was stopped. Message: " . $report['error'];
                     break;
                 }
             }
 
             $this->_success[] = "Row #$number imported successfully";
-
-            break;
         }
 
         return $this->_getReportHtml();
@@ -77,6 +78,7 @@ class Figures_Api_Model_Etsy_Creator extends Mage_Core_Model_Abstract
             foreach ($this->_allowedParams as $code => $option) {
                 if ($option == 'c' && !in_array($code, array_keys($row))) {
                     $this->_errors[] = "Missing required attribute: $code";
+                    break;
                 }
             }
             if ($diff = array_diff(array_keys($row), array_keys($this->_allowedParams))) {

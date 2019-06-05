@@ -34,6 +34,10 @@ class Figures_Routing_Controller_Router extends Mage_Core_Controller_Varien_Rout
             return true;
         }
 
+        if ($this->checkSearchCase($request, $pathInfoInLowercase)) {
+            return true;
+        }
+
         return false;
     }
 
@@ -52,5 +56,20 @@ class Figures_Routing_Controller_Router extends Mage_Core_Controller_Varien_Rout
 
             return true;
         }
+
+        return false;
+    }
+
+    public function checkSearchCase($request, $pathInfoInLowercase)
+    {
+        if (preg_match('/search/', $pathInfoInLowercase, $matches)) {
+            $request->setModuleName('figures_catalog')
+                ->setControllerName('search')
+                ->setActionName('search');
+
+            return true;
+        }
+
+        return false;
     }
 }
