@@ -42,6 +42,11 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
         $this->getResponse()->setBody($html);
     }
 
+    public function getCartItemsCountAction(){
+        $count = (Mage::helper('checkout/cart')->getSummaryCount()) ? Mage::helper('checkout/cart')->getSummaryCount() : 0;
+        $this->getResponse()->setBody($count);
+    }
+
     public function getPagesCountAction()
     {
         $id = $this->getRequest()->getParam('category_id');
