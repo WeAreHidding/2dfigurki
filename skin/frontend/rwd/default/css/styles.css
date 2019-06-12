@@ -10603,3 +10603,23 @@ div.calendar table td.button {
   color: inherit;
   text-transform: none;
 }
+
+
+.search .basket-product-amount {
+  height: 0;
+}
+
+.search .basket-product-amount span {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background: #6d7fcc;
+  padding: 7px;
+  border-radius: 2em;
+  position: relative;
+  top: -14px;
+  left: 35px;
+  font-weight: bold;
+  text-align: center;
+}
