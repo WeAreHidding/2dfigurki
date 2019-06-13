@@ -10610,12 +10610,12 @@ div.calendar table td.button {
 }
 
 .search .basket-product-amount span {
-  font-size: 12px;
+  font-size: 10px;
   width: 30px;
   height: 30px;
   color: #fff;
   background: #6d7fcc;
-  padding: 7px;
+  padding: 5px;
   border-radius: 2em;
   position: relative;
   top: -14px;
