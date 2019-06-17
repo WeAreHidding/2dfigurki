@@ -1,7 +1,10 @@
 <?php $price = $this->getPrice(); ?>
-<?php $_product = $this->getProduct(); ?>
+<?php $_product = $this->getProduct();
+echo '<pre>';
+print_r($_product->getData());
+echo '</pre>';
+?>
 <main id="main" role="main" class="container">
-
 <div class="row catalogue">
     <div class="col-lg-6 col-12">
         <div class="fotorama" data-nav="thumbs" data-loop="true" data-arrows="true">
@@ -80,78 +83,7 @@
     <div class="container">
         <h2>Get the design on the amazing products</h2>
         <div class="owl-carousel owl-theme">
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.conmasgracia.org/wp-content/uploads/2018/05/1.jpg" alt="img_design">
-                <h3>IPhone Galaxy XS</h3>
-                <span>$20.99</span>
-                <div class="product-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-            </div>
+            <?php echo $this->getArtistsOtherProducts();?>
         </div>
     </div>
 </div>
