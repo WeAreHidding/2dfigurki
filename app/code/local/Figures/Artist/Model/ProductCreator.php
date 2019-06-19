@@ -12,8 +12,13 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
     public function createCategory($categoryData)
     {
         Mage::app("admin");
-        $parentId = $categoryData['parent_id'] ?: 2;
-        $url = $this->formatUrlKey($categoryData['name']);
+        $parentId = empty($categoryData['parent_id']) ?: 2;
+        if (empty($categoryData['url_key'])) {
+            $url = $this->formatUrlKey($categoryData['name']);
+        } else {
+            $url = $categoryData['url_key'];
+        }
+
         try{
             $category = Mage::getModel('catalog/category');
             $category->setName($categoryData['name']);
@@ -24,7 +29,6 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
             $category->setStoreId(Mage::app()->getStore()->getId());
             $parentCategory = Mage::getModel('catalog/category')->load($parentId);
             $category->setPath($parentCategory->getPath());
-            $category->setcategory_custom_type($categoryData['category_custom_type']);
             $category->save();
         } catch(Exception $e) {
             return $e;
