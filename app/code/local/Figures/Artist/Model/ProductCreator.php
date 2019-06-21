@@ -12,7 +12,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
     public function createCategory($categoryData)
     {
         Mage::app("admin");
-        $parentId = empty($categoryData['parent_id']) ?: 2;
+        $parentId = !empty($categoryData['parent_id']) ? $categoryData['parent_id'] : 2;
         if (empty($categoryData['url_key'])) {
             $url = $this->formatUrlKey($categoryData['name']);
         } else {
