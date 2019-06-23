@@ -1,0 +1,81 @@
+
+<div id="content_account" class="content_main">
+
+    <?php
+    $AccountData = $this->getAccountData();
+    extract($AccountData);
+    ?>
+
+    <div class="account">
+        <h1>ACCOUNT SETTINGS</h1>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">E-mail</span>
+            </div>
+            <input id="acc_email" name="acc_email" type="email" class="form-control" aria-describedby="basic-addon1" value="<?=$email;?>">
+            <button type="submit" class="btn btn-info" onclick="changeEmail(event)">Change</button>
+        </div>
+            <p id="changeEmailMsg"></p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Password</span>
+            </div>
+            <input id="acc_password" name="acc_password" type="password" class="form-control" type="password">
+            <button class="btn btn-info" onclick="changePassword(event)">Change</button>
+        </div>
+        <p id="changePasswordMsg"></p>
+    </div>
+</div>
+
+<script>
+    function changeEmail() {
+
+        event.preventDefault();
+
+        if (window.inProgress) {
+            return;
+        }
+        var email = jQuery("#acc_email").val();
+
+        jQuery.ajax({
+            url: "/figures_dashboard/dashboard/changeEmail",
+            type: "POST",
+            data: {email:email},
+            beforeSend: function() {
+                window.inProgress = true;
+                jQuery('#acc_email').removeClass('is-invalid is-valid');
+            },
+            success: function (msg) {
+                window.inProgress = false;
+                jQuery("#changeEmailMsg").html(msg);
+            },
+            cache: false
+        });
+    }
+
+    function changePassword() {
+
+        event.preventDefault();
+
+        if (window.inProgress) {
+            return;
+        }
+        var password = jQuery("#acc_password").val();
+
+        jQuery.ajax({
+            url: "/figures_dashboard/dashboard/changePassword",
+            type: "POST",
+            data: {password:password},
+            beforeSend: function() {
+                window.inProgress = true;
+                jQuery('#acc_password').removeClass('is-invalid is-valid');
+            },
+            success: function (msg) {
+                window.inProgress = false;
+                jQuery("#changePasswordMsg").html(msg);
+            },
+            cache: false
+        });
+    }
+
+</script>
