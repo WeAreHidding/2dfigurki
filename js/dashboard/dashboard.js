@@ -18,6 +18,7 @@ function menuToggle(a) {
         case 'menu-design-management': loadContent("design_management"); break;
         case 'menu-dash': loadContent("dash"); break;
         case 'menu-stats': loadContent("stats"); break;
+        case 'menu-account': loadContent("account"); break;
         default: console.log('error'); break;
     }
 }
@@ -30,6 +31,7 @@ function loadContent(content, check) {
     jQuery('#content_design').remove();
     jQuery('#content_design_management').remove();
     jQuery('#content_stats').remove();
+    jQuery('#content_account').remove();
 
     jQuery.ajax({
         url: "/figures_dashboard/dashboard/loadTab",
