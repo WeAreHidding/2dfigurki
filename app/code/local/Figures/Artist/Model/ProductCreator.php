@@ -42,7 +42,7 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $product = new Mage_Catalog_Model_Product();
 
         // Build the product
-        $product->setSku($this->getSku($productData['parent_cat_id'], $productData['work_id']));
+        $product->setSku($this->getSku($productData['parent_cats_ids'][0], $productData['work_id']));
         $product->setName($productData['name']);
         $product->setPrice($productData['price']);
         $product->setDescription($productData['description']);
@@ -55,8 +55,8 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $product->setWorkId($productData['work_id']);
         $product->setAttributeSetId(4);
         $product->setTypeId('simple');
-        $product->setCategoryIds(array($productData['parent_cat_id']));
-        $product->setWebsiteIDs(array(1));
+        $product->setCategoryIds($productData['parent_cats_ids']);
+        $product->setWebsiteIDs([1]);
         $product->setWeight(4.0000);
         $product->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
         $product->setStatus(1);
@@ -120,7 +120,6 @@ class Figures_Artist_Model_ProductCreator extends Mage_Core_Model_Abstract
         $category = Mage::getModel('catalog/category')
             ->getCollection()
             ->addAttributeToSelect('*')
-            ->addFieldToFilter('category_custom_type', 'FORM')
             ->addFieldToFilter('entity_id', $formCategoryId)
             ->addIsActiveFilter()
             ->getFirstItem();

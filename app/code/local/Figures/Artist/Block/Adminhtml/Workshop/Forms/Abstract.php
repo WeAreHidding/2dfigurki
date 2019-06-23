@@ -28,33 +28,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
         ];
     }
 
-    public function getFormCategories()
-    {
-        return $this->getCategoryByFilter('FORM');
-    }
-
-    public function getCategoryByFilter($customType, $parentId = false)
-    {
-        $categoryData = [];
-        $categories = Mage::getModel('catalog/category')
-            ->getCollection()
-            ->addAttributeToSelect('*')
-            ->addFieldToFilter('category_custom_type', $customType)
-            ->addIsActiveFilter();
-        if ($parentId) {
-            $categories->addFieldToFilter('parent_id', $parentId);
-        }
-
-        foreach ($categories as $category) {
-            $categoryData[] = [
-                'name' => $category->getName(),
-                'id'   => $category->getId()
-            ];
-        }
-
-        return $categoryData;
-    }
-
     public function getEditableData()
     {
         return $this->_rowData;
@@ -78,6 +51,39 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Abstract extends Mage_Adminh
         }
 
         return $result;
+    }
+
+    public function getFormCategories()
+    {
+        return $this->_getMinimizedDataForCategories(CustomEntities::helper()->getFormCategories());
+    }
+
+    public function getGenreCategories()
+    {
+        return $this->_getMinimizedDataForCategories(CustomEntities::helper()->getGenreCategories());
+    }
+
+    public function getGenreItemCategories()
+    {
+        return $this->_getMinimizedDataForCategories(CustomEntities::helper()->getFandomCategories());
+    }
+
+    /**
+     * @param $categories
+     * @return array
+     */
+    protected function _getMinimizedDataForCategories($categories)
+    {
+        $minimized = [];
+
+        foreach ($categories as $category) {
+            $minimized[] = [
+                'name' => $category->getName(),
+                'id'   => $category->getId()
+            ];
+        }
+
+        return $minimized;
     }
 
     protected function _initRowData()

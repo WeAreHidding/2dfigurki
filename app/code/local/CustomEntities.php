@@ -1,9 +1,9 @@
 <?php
 class CustomEntities
 {
-    const FORM_ID     = 10;
-    const GENRE_ID    = 20;
-    const FANDOM_ID   = 30;
+    const FORM_ID     = 3;
+    const GENRE_ID    = 4;
+    const FANDOM_ID   = 5;
 
     const FORM_NAME   = 'Form';
     const GENRE_NAME  = 'Genre';
@@ -46,5 +46,28 @@ class CustomEntities
     public static function getAttributesBunchForCategory($categoryId)
     {
         return isset(static::$_attributesBunch[$categoryId]) ? static::$_attributesBunch[$categoryId] : [];
+    }
+
+    /**
+     * @param $name
+     * @return mixed|null
+     */
+    public static function getCategoryIdByName($name)
+    {
+        $mapping = [
+            static::FORM_NAME   => static::FORM_ID,
+            static::GENRE_NAME  => static::GENRE_ID,
+            static::FANDOM_NAME => static::FANDOM_ID
+        ];
+
+        return isset($mapping[$name]) ? $mapping[$name] : null;
+    }
+
+    /**
+     * @return Mage_Core_Helper_Abstract|Figures_Catalog_Helper_CustomEntities
+     */
+    public static function helper()
+    {
+        return Mage::helper('figures_catalog/customEntities');
     }
 }
