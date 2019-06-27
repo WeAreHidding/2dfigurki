@@ -63,6 +63,7 @@ function loadProducts() {
     hideLoader();
 }
 
+
 //filters
 function initFilters() {
     disableLoadingFlag = true;

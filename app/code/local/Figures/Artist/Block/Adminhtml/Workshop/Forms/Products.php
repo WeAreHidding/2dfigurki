@@ -46,20 +46,6 @@ class Figures_Artist_Block_Adminhtml_Workshop_Forms_Products extends Figures_Art
         return $result;
     }
 
-    public function getGenreCategories()
-    {
-        return $this->_getConnection()->fetchAll(
-            $this->_getConnection()->select()->from('artist_genre')
-        );
-    }
-
-    public function getGenreItemCategories()
-    {
-        return $this->_getConnection()->fetchAll(
-            $this->_getConnection()->select()->from('artist_fandom')
-        );
-    }
-
     /**
      * @return Varien_Db_Adapter_Pdo_Mysql
      */

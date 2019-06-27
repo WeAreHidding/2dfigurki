@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="front for cart count">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="57092247-bcfd-46db-89dc-6da237f8e5bc" name="Default" comment="front for cart count" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,114 +231,6 @@
               <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="local" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="local" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="local" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Catalog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="local" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Catalog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="rwd" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="rwd" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="rwd" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="template" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="rwd" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="template" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="catalog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="local.2df.com" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\Open Server 5.3.0\OSPanel\domains\local.2df.com" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="design" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="rwd" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="figures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="template" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="catalog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="product" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -419,7 +309,7 @@
       <workItem from="1543944894165" duration="3941000" />
       <workItem from="1544635327162" duration="2345000" />
       <workItem from="1560421084460" duration="7358000" />
-      <workItem from="1561632181415" duration="296000" />
+      <workItem from="1561632181415" duration="951000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535201693796</created>
@@ -456,11 +346,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560353034763</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="front for cart count">
+      <created>1561632481100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561632481100</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58594000" />
+    <option name="totallyTimeSpent" value="59249000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,7 +371,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -483,14 +380,14 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989339" weight="0.3288889" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.13953489" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3288889" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49840087" visible="true" weight="0.29666665" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3288889" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="File Transfer" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.29666665" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />

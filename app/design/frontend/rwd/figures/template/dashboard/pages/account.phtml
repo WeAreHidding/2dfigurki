@@ -1,0 +1,95 @@
+
+<div id="content_account" class="content_main">
+
+    <?php
+    $AccountData = $this->getAccountData();
+    extract($AccountData);
+    ?>
+
+    <div class="account">
+        <h1>ACCOUNT SETTINGS</h1>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">E-mail</span>
+            </div>
+            <input id="acc_email" name="acc_email" type="email" class="form-control" aria-describedby="basic-addon1" value="<?=$email;?>">
+            <button type="submit" class="btn btn-info" onclick="changeEmail(event)">Change</button>
+        </div>
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">Password</span>
+                </div>
+                <input id="acc_password" name="acc_password" type="password" class="form-control" type="password">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">Password repeat</span>
+                </div>
+                <input id="acc_password" name="acc_password" type="password" class="form-control" type="password">
+                <button type="submit" class="btn btn-info" onclick="changePassword(event)">Change</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    function changeEmail() {
+
+        event.preventDefault();
+
+        if (window.inProgress) {
+            return;
+        }
+        var email = jQuery("#acc_email").val();
+
+        jQuery.ajax({
+            url: "/figures_dashboard/dashboard/changeEmail",
+            type: "POST",
+            data: {email:email},
+            beforeSend: function() {
+                window.inProgress = true;
+            },
+            success: function (data) {
+                window.inProgress = false;
+                if(data.status=="success"){
+                    showNotify(data.title, data.message, 'success');
+                } else if(data.status=="error"){
+                    showNotify(data.title , data.message, 'danger');
+                }
+            },
+            cache: false
+        });
+    }
+
+    function changePassword() {
+
+        event.preventDefault();
+
+        if (window.inProgress) {
+            return;
+        }
+        var password = jQuery("#acc_password").val();
+
+        jQuery.ajax({
+            url: "/figures_dashboard/dashboard/changePassword",
+            type: "POST",
+            data: {password:password},
+            beforeSend: function() {
+                window.inProgress = true;
+            },
+
+            success: function (data) {
+                window.inProgress = false;
+                if(data.status=="success"){
+                    showNotify(data.title, data.message, 'success');
+                } else if(data.status=="error"){
+                    showNotify(data.title , data.message, 'danger');
+                }
+            },
+            cache: false
+        });
+    }
+
+</script>

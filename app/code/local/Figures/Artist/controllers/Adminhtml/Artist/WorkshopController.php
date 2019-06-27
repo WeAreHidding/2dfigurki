@@ -99,30 +99,28 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
                 $fCatId = $key;
 
                 if ($dataArray['genre']) {
-                    $genreId = $this->_getProductCreatorModel()->addSpecialAttributeItem('artist_genre', $dataArray['genre']);
+                    $genreId = $this->_getProductCreatorModel()->createCategory(['name' => $dataArray['genre'], 'parent_id' => CustomEntities::GENRE_ID]);
                 } else {
                     $genreId = $dataArray['genre_old'];
                 }
                 if ($dataArray['genre_item']) {
-                    $fandomId = $this->_getProductCreatorModel()->addSpecialAttributeItem('artist_fandom', $dataArray['genre_item']);
+                    $fandomId = $this->_getProductCreatorModel()->createCategory(['name' => $dataArray['genre_item'], 'parent_id' => CustomEntities::FANDOM_ID]);
                 } else {
                     $fandomId = $dataArray['genre_item_old'];
                 }
                 $imagePath = $this->_loadImage($datasArray['additional_info']['work_id'], $datasArray['additional_info']['artist_id'], $fCatId);
 
                 $productData = [
-                    'name'        => $dataArray['title'],
-                    'price'       => $dataArray['price'],
-                    'parent_cat_id' => $fCatId,
-                    'image_path'  => $imagePath,
-                    'main_tag'    => $dataArray['main_tag'],
-                    'tags'        => $dataArray['tags'],
-                    'description' => $dataArray['description'],
-                    'artist_id'   => $datasArray['additional_info']['artist_id'],
-                    'form_cat_id' => $key,
-                    'work_id'     => $datasArray['additional_info']['work_id'],
-                    'genre_id'    => $genreId,
-                    'fandom_id'   => $fandomId
+                    'name'            => $dataArray['title'],
+                    'price'           => $dataArray['price'],
+                    'parent_cats_ids' => [$fCatId, $genreId, $fandomId],
+                    'image_path'      => $imagePath,
+                    'main_tag'        => $dataArray['main_tag'],
+                    'tags'            => $dataArray['tags'],
+                    'description'     => $dataArray['description'],
+                    'artist_id'       => $datasArray['additional_info']['artist_id'],
+                    'form_cat_id'     => $key,
+                    'work_id'         => $datasArray['additional_info']['work_id']
                 ];
 
                 $productId = $this->_getProductCreatorModel()->createProduct($productData);
@@ -254,29 +252,6 @@ class Figures_Artist_Adminhtml_Artist_WorkshopController extends Mage_Adminhtml_
         $pfc = $connection->fetchOne($connection->select()->from('artist_work', 'proposed_form_category')->where('id = ?', $workId));
 
         return explode(',', $pfc);
-    }
-
-    public function getFandomCategoriesAction()
-    {
-        $genreId = $this->getRequest()->getParam('genre_cat_id');
-
-        $categoryData = [];
-        $categories = Mage::getModel('catalog/category')
-            ->getCollection()
-            ->addAttributeToSelect('*')
-            ->addFieldToFilter('category_custom_type', 'GENRE_ITEM')
-            ->addIsActiveFilter();
-
-        $categories->addFieldToFilter('parent_id', $genreId);
-
-        foreach ($categories as $category) {
-            $categoryData[] = [
-                'name' => $category->getName(),
-                'id'   => $category->getId()
-            ];
-        }
-
-        $this->getResponse()->setBody(json_encode($categoryData));
     }
 
     public function deleteProductAction()

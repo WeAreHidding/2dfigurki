@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Figures_Cms>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </Figures_Cms>
     </modules>
     <global>

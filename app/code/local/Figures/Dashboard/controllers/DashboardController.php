@@ -73,6 +73,9 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
             case 'stats':
                 $block = $this->getLayout()->createBlock('figures_dashboard/dashboard')->setTemplate('dashboard/pages/stats.phtml');
                 break;
+            case 'account':
+                $block = $this->getLayout()->createBlock('figures_dashboard/dashboard_account')->setTemplate('dashboard/pages/account.phtml');
+                break;
         }
 
         if (!$block) {
@@ -207,4 +210,97 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
     {
         return Mage::getModel('figures_artist/artist');
     }
+
+
+    /*controllers for Dashboard/account*/
+
+    public function changeEmailAction()
+    {
+        $response_array = [];
+        header('Content-type: application/json');
+
+        $params = $this->getRequest()->getParams();
+
+        if (!filter_var($params["email"], FILTER_VALIDATE_EMAIL)) {
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Email address is not correct!");
+            echo json_encode($response_array);
+            return;
+        }
+
+        $customer = Mage::getSingleton('customer/session')->getCustomer();
+        $id = $customer->getId();
+        $collection = Mage::getModel('customer/customer')->getCollection();
+        $collection->addAttributeToSelect('email');
+        $collection->addFieldToFilter(array(
+            array('attribute'=>'email','eq'=>$params["email"]),
+        ));
+        $collection->addFieldToFilter(array(
+            array('attribute'=>'entity_id','neq'=>$id),
+        ));
+
+        $existingmails = $collection->getColumnValues('entity_id');
+
+        if(!empty($existingmails)){
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Email address is already in use!");
+            echo json_encode($response_array);
+            return;
+        }
+
+        $data = array('email'=>$params["email"]);
+
+        $model = Mage::getModel('customer/customer')->load($id)->addData($data);
+        try {
+            $model->setId($id)->save();
+            $response_array['status'] = 'success';
+            $response_array['title'] = __("SUCCESS");
+            $response_array['message'] = __("Data updated successfully!");
+            echo json_encode($response_array);
+
+        } catch (Exception $e){
+            echo $e->getMessage();
+        }
+
+        return;
+    }
+
+    public function changePasswordAction()
+    {
+        $response_array = [];
+        header('Content-type: application/json');
+
+        $params = $this->getRequest()->getParams();
+
+        if(!preg_match("/^[a-zA-Z\d]{6,}$/", $params["password"])){
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Please enter 6 or more characters without leading or trailing spaces!");
+            echo json_encode($response_array);
+            return;
+        }
+
+        $customer = Mage::getSingleton('customer/session')->getCustomer();
+        $id = $customer->getId();
+
+        try {
+            $customer = Mage::getModel('customer/customer')->load($id);
+            $customer->setPassword($params["password"]);
+            $customer->save();
+            $response_array['status'] = 'success';
+            $response_array['title'] = __("SUCCESS");
+            $response_array['message'] = __('Your Password has been Changed Successfully');
+            echo json_encode($response_array);
+        }
+        catch(Exception $e) {
+            echo  'Error : '.$e->getMessage();
+        }
+
+        return;
+
+    }
+
+
 }

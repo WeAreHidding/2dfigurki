@@ -58,7 +58,6 @@ class Figures_Catalog_Model_Search extends Mage_Core_Model_Abstract
             ->getCollection()
             ->addAttributeToSelect('*')
             ->addAttributeToFilter('name', array('like' => '%' . $this->_searchString. '%'))
-//            ->addFieldToFilter('category_custom_type', $customType)
             ->addIsActiveFilter();
 
         foreach ($categories as $category) {

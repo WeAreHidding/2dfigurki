@@ -2,28 +2,19 @@
 
 class Figures_Dashboard_Block_Dashboard_Design extends Figures_Dashboard_Block_Dashboard
 {
-    protected function _getCategoryByFilter($customType)
+    public function getFormCategories()
     {
-        $categoryData = [];
-        $categories = Mage::getModel('catalog/category')
-            ->getCollection()
-            ->addAttributeToSelect('*')
-            ->addFieldToFilter('category_custom_type', $customType)
-            ->addIsActiveFilter();
+        $formCategories = CustomEntities::helper()->getFormCategories();
+        $formCategoriesMinimized = [];
 
-        foreach ($categories as $category) {
-            $categoryData[] = [
-                'name' => $category->getName(),
-                'id'   => $category->getId()
+        foreach ($formCategories as $formCategory) {
+            $formCategoriesMinimized[] = [
+                'name' => $formCategory->getName(),
+                'id'   => $formCategory->getId()
             ];
         }
 
-        return $categoryData;
-    }
-
-    public function getFormCategories()
-    {
-        return $this->_getCategoryByFilter('FORM');
+        return $formCategoriesMinimized;
     }
 
 }
