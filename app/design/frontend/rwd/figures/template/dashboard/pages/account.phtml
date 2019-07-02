@@ -8,25 +8,26 @@
 
     <div class="account">
         <h1>ACCOUNT SETTINGS</h1>
-        <div class="input-group mb-3">
+       <!-- <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="addon-wrapping">E-mail</span>
             </div>
             <input id="acc_email" name="acc_email" type="email" class="form-control" aria-describedby="basic-addon1" value="<?=$email;?>">
             <button type="submit" class="btn btn-info" onclick="changeEmail(event)">Change</button>
-        </div>
-        <form>
+        </div> -->
+        <h2>Password Change</h2>
+        <form id = "acChangePassForm">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="addon-wrapping">Password</span>
                 </div>
-                <input id="acc_password" name="acc_password" type="password" class="form-control" type="password">
+                <input id="acc_password" name="acc_password" type="password" class="form-control">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="addon-wrapping">Password repeat</span>
                 </div>
-                <input id="acc_password" name="acc_password" type="password" class="form-control" type="password">
+                <input id="repeat_acc_password" name="repeat_acc_password" type="password" class="form-control">
                 <button type="submit" class="btn btn-info" onclick="changePassword(event)">Change</button>
             </div>
         </form>
@@ -35,7 +36,7 @@
 </div>
 
 <script>
-    function changeEmail() {
+   /* function changeEmail() {
 
         event.preventDefault();
 
@@ -61,7 +62,7 @@
             },
             cache: false
         });
-    }
+    }*/
 
     function changePassword() {
 
@@ -70,12 +71,12 @@
         if (window.inProgress) {
             return;
         }
-        var password = jQuery("#acc_password").val();
+        var formData = jQuery('#acChangePassForm').serializeArray();
 
         jQuery.ajax({
             url: "/figures_dashboard/dashboard/changePassword",
             type: "POST",
-            data: {password:password},
+            data: formData,
             beforeSend: function() {
                 window.inProgress = true;
             },

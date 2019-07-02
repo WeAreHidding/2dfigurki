@@ -1,6 +1,7 @@
 <?php
 /** @var $this Figures_Catalog_Block_Product_List */
 $filters = $this->getAvailableFilters();
+$filters2 = $this->getFiltersHtml();
 ?>
 <div class="row category-header">
     <div class="col-6">
@@ -17,10 +18,12 @@ $filters = $this->getAvailableFilters();
 
 <div class="row category">
 
-    <?php if ($filters) : ?>
+    <?php //if ($filters) : ?>
         <div class="col-2 category-sidebar">
 
-            <?php echo $filters; ?>
+            <?php echo $filters2; ?>
+
+
 
             <div class="category-sidebar__prices">
                 <div class="sidebar-title">
@@ -41,7 +44,7 @@ $filters = $this->getAvailableFilters();
                 </ul>
             </div>
         </div>
-    <?php endif; ?>
+    <?php //endif; ?>
 
     <div class="col-10 category-products"></div>
 
