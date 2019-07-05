@@ -83,7 +83,7 @@ class Figures_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abst
                 $html.='
                      <li>
                         <label class="container_check">'.$children_category['name'].'
-                            <input data-parent="Genre" data-label="Movies" data-filter="1" name="check" type="checkbox" class="check-item" onclick="processFilter(this, \'genre_id\')">
+                            <input data-parent="Genre" data-label="Movies" data-filter="1" name="check" type="checkbox" class="check-item" onclick="processFilter(this, '.$children_category['entity_id'].')">
                             <span class="checkmark"></span>
                         </label>
                     </li>
