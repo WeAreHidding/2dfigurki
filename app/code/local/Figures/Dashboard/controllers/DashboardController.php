@@ -214,7 +214,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
 
     /*controllers for Dashboard/account*/
 
-    public function changeEmailAction()
+    /*public function changeEmailAction()
     {
         $response_array = [];
         header('Content-type: application/json');
@@ -265,7 +265,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         }
 
         return;
-    }
+    }*/
 
     public function changePasswordAction()
     {
@@ -274,10 +274,18 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
 
         $params = $this->getRequest()->getParams();
 
-        if(!preg_match("/^[a-zA-Z\d]{6,}$/", $params["password"])){
+        if(!preg_match("/^[a-zA-Z\d]{6,}$/", $params["acc_password"])){
             $response_array['status'] = 'error';
             $response_array['title'] = __("ERROR");
             $response_array['message'] = __("Please enter 6 or more characters without leading or trailing spaces!");
+            echo json_encode($response_array);
+            return;
+        }
+
+        if($params['acc_password']!==$params['repeat_acc_password']){
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Passwords doesn't match");
             echo json_encode($response_array);
             return;
         }
@@ -287,7 +295,7 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
 
         try {
             $customer = Mage::getModel('customer/customer')->load($id);
-            $customer->setPassword($params["password"]);
+            $customer->setPassword($params["acc_password"]);
             $customer->save();
             $response_array['status'] = 'success';
             $response_array['title'] = __("SUCCESS");

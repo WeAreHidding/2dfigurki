@@ -88,4 +88,5 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
     {
         return Mage::getModel('core/resource')->getConnection('core_read');
     }
+
 }
