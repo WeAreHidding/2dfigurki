@@ -155,7 +155,7 @@ class Figures_Api_Adminhtml_EtsyController extends Mage_Adminhtml_Controller_Act
         $dir = Mage::getBaseDir('media') . DS . 'api/';
         $filename =  $methodName . date('Y-m-d')  . '.csv';
 
-        if ($methodName == 'findAllShopListingsActive') {
+        if ($methodName == 'findAllShopListingsActive1') {
             $dataArray = $response['results'];
         } else {
             echo '<pre>';print_r($response);echo '<pre>';die();
