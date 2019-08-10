@@ -214,12 +214,18 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
 
     /*controllers for Dashboard/account*/
 
-    public function changeEmailAction()
+    /*public function changeEmailAction()
     {
+        $response_array = [];
+        header('Content-type: application/json');
+
         $params = $this->getRequest()->getParams();
 
         if (!filter_var($params["email"], FILTER_VALIDATE_EMAIL)) {
-            echo '<span class="text-danger">'.__("Email address is not correct!").'</span>'."<script>jQuery('#acc_email').addClass('is-invalid');</script>";
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Email address is not correct!");
+            echo json_encode($response_array);
             return;
         }
 
@@ -237,7 +243,10 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $existingmails = $collection->getColumnValues('entity_id');
 
         if(!empty($existingmails)){
-            echo '<span class="text-danger">'.__("Email address is already in use!").'</span>';
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Email address is already in use!");
+            echo json_encode($response_array);
             return;
         }
 
@@ -246,21 +255,38 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
         $model = Mage::getModel('customer/customer')->load($id)->addData($data);
         try {
             $model->setId($id)->save();
-            echo '<span class="text-success">'.__("Data updated successfully!").'</span>';
+            $response_array['status'] = 'success';
+            $response_array['title'] = __("SUCCESS");
+            $response_array['message'] = __("Data updated successfully!");
+            echo json_encode($response_array);
 
         } catch (Exception $e){
             echo $e->getMessage();
         }
 
         return;
-    }
+    }*/
 
     public function changePasswordAction()
     {
+        $response_array = [];
+        header('Content-type: application/json');
+
         $params = $this->getRequest()->getParams();
 
-        if(!preg_match("/^[a-zA-Z\d]{6,}$/", $params["password"])){
-            echo '<span class="text-danger">'.__("Please enter 6 or more characters without leading or trailing spaces!").'</span>'."<script>jQuery('#acc_password').addClass('is-invalid');</script>";
+        if(!preg_match("/^[a-zA-Z\d]{6,}$/", $params["acc_password"])){
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Please enter 6 or more characters without leading or trailing spaces!");
+            echo json_encode($response_array);
+            return;
+        }
+
+        if($params['acc_password']!==$params['repeat_acc_password']){
+            $response_array['status'] = 'error';
+            $response_array['title'] = __("ERROR");
+            $response_array['message'] = __("Passwords doesn't match");
+            echo json_encode($response_array);
             return;
         }
 
@@ -269,9 +295,12 @@ class Figures_Dashboard_DashboardController extends Mage_Core_Controller_Front_A
 
         try {
             $customer = Mage::getModel('customer/customer')->load($id);
-            $customer->setPassword($params["password"]);
+            $customer->setPassword($params["acc_password"]);
             $customer->save();
-            echo '<span class="text-success">'.__('Your Password has been Changed Successfully').'</span>';
+            $response_array['status'] = 'success';
+            $response_array['title'] = __("SUCCESS");
+            $response_array['message'] = __('Your Password has been Changed Successfully');
+            echo json_encode($response_array);
         }
         catch(Exception $e) {
             echo  'Error : '.$e->getMessage();
