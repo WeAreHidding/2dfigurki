@@ -7,7 +7,7 @@ class Figures_Catalog_Helper_CustomEntities extends Mage_Core_Helper_Abstract
      */
     public function getFormCategories($filters = [])
     {
-        return $this->_getCategory(CustomEntities::FORM_ID, $filters);
+        return $this->getCustomEntitiesChildCategories(CustomEntities::FORM_ID, $filters);
     }
 
     /**
@@ -16,7 +16,7 @@ class Figures_Catalog_Helper_CustomEntities extends Mage_Core_Helper_Abstract
      */
     public function getGenreCategories($filters = [])
     {
-        return $this->_getCategory(CustomEntities::GENRE_ID, $filters);
+        return $this->getCustomEntitiesChildCategories(CustomEntities::GENRE_ID, $filters);
     }
 
     /**
@@ -25,26 +25,52 @@ class Figures_Catalog_Helper_CustomEntities extends Mage_Core_Helper_Abstract
      */
     public function getFandomCategories($filters = [])
     {
-        return $this->_getCategory(CustomEntities::FANDOM_ID, $filters);
+        return $this->getCustomEntitiesChildCategories(CustomEntities::FANDOM_ID, $filters);
     }
 
     /**
-     * @param $categoryId
+     * @param $customEntityId
      * @param $filters
+     * @param $asArray
      *
      * @return mixed
      */
-    protected function _getCategory($categoryId, $filters)
+    public function getCustomEntitiesChildCategories($customEntityId, $filters = [], $asArray = false)
     {
         $categories = Mage::getModel('catalog/category')->getCollection()
             ->addAttributeToSelect('*')
-            ->addAttributeTofilter('parent_id', $categoryId);
+            ->addAttributeTofilter('parent_id', $customEntityId);
 
         if ($filters) {
             foreach ($filters as $attributeName => $filter) {
                 $categories->addAttributeToFilter($attributeName, $filter);
             }
         }
+
+        if ($asArray) {
+            $array = [];
+            foreach ($categories as $category) {
+                $array[] = $category->getId();
+            }
+            $categories = $array;
+        }
+
         return $categories;
+    }
+
+    public function getCategoriesForProduct($customEntityId, $product)
+    {
+        $productCategoriesIds = $categoriesForProduct = [];
+        $availableCategories = $this->getCustomEntitiesChildCategories($customEntityId, []);
+        foreach ($product->getCategoryCollection() as $category) {
+            $productCategoriesIds[] = $category->getId();
+        }
+        foreach ($availableCategories as $availableCategory) {
+            if (in_array($availableCategory->getId(), $productCategoriesIds)) {
+                $categoriesForProduct[$availableCategory->getId()] = $availableCategory->getName();
+            }
+        }
+
+        return $categoriesForProduct;
     }
 }

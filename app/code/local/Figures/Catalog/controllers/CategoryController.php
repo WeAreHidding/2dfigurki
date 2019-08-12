@@ -4,7 +4,7 @@ require_once Mage::getModuleDir('controllers', 'Mage_Catalog').DS.'CategoryContr
 
 class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
 {
-    const PRODUCTS_PER_PAGE = 2;
+    const PRODUCTS_PER_PAGE = 10;
 
     public function loadProductsAction()
     {
@@ -23,7 +23,7 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
                 ->addAttributeToSelect('*')
                 ->addCategoryFilter($category);
 
-            $productCollection = $this->_processFilters($productCollection, $filters, $sort, $page);
+            $productCollection = $this->_getCategoryFiltersHelper()->filterCollection($productCollection, $filters, $sort, $page);
 
             foreach ($productCollection as $product) {
                 $data[] = [
@@ -67,42 +67,6 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
         $this->getResponse()->setBody($pagesCount);
     }
 
-    /**
-     * @param $collection
-     * @param $filters
-     * @param string $sort
-     * @param string $page
-     *
-     * @return mixed
-     */
-    protected function _processFilters($collection, $filters, $sort = '', $page = '')
-    {
-        foreach ($filters as $filterId => $filter) {
-            if (!$filter) {
-                continue;
-            }
-            if ($filterId == 'price') {
-                $filter = explode('-', $filter);
-                $collection->addFieldToFilter('price', ['from'=> $filter[0],'to'=> $filter[1]]);
-                continue;
-            }
-
-            $collection->addAttributeToFilter($filterId, ['in' => $filter]);
-        }
-
-        if ($sort && ($sort != 'default')) {
-            $sort = explode('_', $sort);
-            $collection->addAttributeToSort($sort[0], $sort[1]);
-        }
-
-        if ($page) {
-            $collection->setCurPage($page)
-                ->setPageSize(static::PRODUCTS_PER_PAGE);
-        }
-
-        return $collection;
-    }
-
     protected function _prepareHtml($data)
     {
         if (!$data) {
@@ -132,5 +96,13 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
         $itemsProductIds = array_map(function($item) { return $item->getProductId(); }, $items);
 
         return $itemsProductIds;
+    }
+
+    /**
+     * @return Figures_Catalog_Helper_CategoryFilters
+     */
+    protected function _getCategoryFiltersHelper()
+    {
+        return Mage::helper('figures_catalog/categoryFilters');
     }
 }

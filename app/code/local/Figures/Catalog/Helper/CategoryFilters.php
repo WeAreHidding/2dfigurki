@@ -2,10 +2,23 @@
 class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
 {
     protected $_definedFilters = [
-        'genre_id' => [
-            'front_id'   => 'genre',
-            'front_name' => 'Genre',
-            'type'       => 'check'
+        'form' => [
+            'front_id'    => CustomEntities::FORM_URL,
+            'front_name'  => CustomEntities::FORM_NAME,
+            'type'        => 'check',
+            'category_id' => CustomEntities::FORM_ID
+        ],
+        'genre' => [
+            'front_id'    => CustomEntities::GENRE_URL,
+            'front_name'  => CustomEntities::GENRE_NAME,
+            'type'        => 'check',
+            'category_id' => CustomEntities::GENRE_ID
+        ],
+        'fandom' => [
+            'front_id'    => CustomEntities::FANDOM_URL,
+            'front_name'  => CustomEntities::FANDOM_NAME,
+            'type'        => 'check',
+            'category_id' => CustomEntities::FANDOM_ID
         ],
         'artist_id' => [
             'front_id'   => 'designer',
@@ -14,17 +27,50 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
         ]
     ];
 
-    public function formatFiltersForFrontend($filters)
+    public function getAvailableFilters($productCollection)
     {
-        $genreFilterList  = array_unique($filters['genre_id']);
-        $artistFilterList = array_unique($filters['artist_id']);
+        $filters = $artistIds = [];
+        foreach ($productCollection as $product) {
+            foreach ($this->_definedFilters as $identifier => $definedFilter) {
+                if (isset($definedFilter['category_id'])) {
+                    $filters[$identifier] = CustomEntities::helper()->getCategoriesForProduct($definedFilter['category_id'], $product);
+                }
+                //to do general filter by attribute later
+            }
+            $artistIds[] = $product->getArtistId();
+        }
 
-        $formattedFilters =  [
-            'genre_id' => $this->_getGenreLabelsByIds($genreFilterList),
-            'artist_id' => $this->_getArtistNamesByIds($artistFilterList),
-        ];
+        $filters['artist_id'] = $this->_getArtistNamesByIds($artistIds);
 
-        return $this->_convertFiltersToHtml($formattedFilters);
+        return $filters ? $this->_convertFiltersToHtml($filters) : false;
+    }
+
+    public function filterCollection($productCollection, $filters, $sort = '', $page = '')
+    {
+        foreach ($filters as $filterId => $filter) {
+            if (!$filter) {
+                continue;
+            }
+            if ($filterId == 'price') {
+                $filter = explode('-', $filter);
+                $productCollection->addFieldToFilter('price', ['from'=> $filter[0],'to'=> $filter[1]]);
+                continue;
+            }
+
+            $productCollection->addAttributeToFilter($filterId, ['in' => $filter]);
+        }
+
+        if ($sort && ($sort != 'default')) {
+            $sort = explode('_', $sort);
+            $productCollection->addAttributeToSort($sort[0], $sort[1]);
+        }
+
+        if ($page) {
+            $productCollection->setCurPage($page)
+                ->setPageSize(static::PRODUCTS_PER_PAGE);
+        }
+
+        return $productCollection;
     }
 
     protected function _convertFiltersToHtml($formattedFilters)
@@ -51,17 +97,6 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
         }
 
         return $html;
-    }
-
-    protected function _getGenreLabelsByIds($genreIds)
-    {
-        $connection = $this->_getConnection();
-
-        return $connection->fetchPairs(
-            $connection->select()
-                ->from('artist_genre')
-                ->where('id IN(?)', $genreIds)
-        );
     }
 
     protected function _getArtistNamesByIds($artistIds)

@@ -1,7 +1,6 @@
 <?php
 /** @var $this Figures_Catalog_Block_Product_List */
 $filters = $this->getAvailableFilters();
-$filters2 = $this->getFiltersHtml();
 ?>
 <div class="row category-header">
     <div class="col-6">
@@ -18,13 +17,9 @@ $filters2 = $this->getFiltersHtml();
 
 <div class="row category">
 
-    <?php //if ($filters) : ?>
+    <?php if ($filters) : ?>
         <div class="col-2 category-sidebar">
-
-            <?php echo $filters2; ?>
-
-
-
+            <?php echo $filters ?>
             <div class="category-sidebar__prices">
                 <div class="sidebar-title">
                     <p>Prices</p> <a class="sidebar__price-arrow" onclick="toggleBlock(this,'price_list')"><i class="fa fa-angle-up"></i></a>
@@ -44,29 +39,9 @@ $filters2 = $this->getFiltersHtml();
                 </ul>
             </div>
         </div>
-    <?php //endif; ?>
+    <?php endif; ?>
 
-    <div class="col-10 category-products">
-        <!--
-        <div class="category-product-card">
-            <div class="category-product-image">
-                <a href="http://timsul35.beget.tech/test-product-1.html">
-                    <img src="http://timsul35.beget.tech/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/d/o/download.jpg">
-                </a>
-            </div>
-            <div class="category-product-info">
-            <h5>$12.60</h5>
-            <h6>test product 1</h6>
-            <button class="btn btn-outline-info">
-                <i class="fa fa-check"></i>
-                <i class="fa fa-shopping-bag"></i>
-            </button>
-            </div>
-         </div>
-
-        -->
-
-    </div>
+    <div class="col-10 category-products"></div>
 
 </div>
 
