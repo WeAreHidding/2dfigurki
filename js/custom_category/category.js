@@ -67,7 +67,9 @@ function loadProducts() {
 //filters
 function initFilters() {
     disableLoadingFlag = true;
-    activeFilters['genre_id'] = new Array();
+    activeFilters['form'] = new Array();
+    activeFilters['genre'] = new Array();
+    activeFilters['fandom'] = new Array();
     activeFilters['artist_id'] = new Array();
 
     jQuery(".check-item").each(function() {
