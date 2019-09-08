@@ -16,7 +16,7 @@ class Figures_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abst
             ->addCategoryFilter($category)
             ->load();
 
-       return $this->_getCategoryFiltersHelper()->getAvailableFilters($productCollection);
+       return $this->_getCategoryFiltersHelper()->getAvailableFilters($productCollection, $category);
     }
 
     /**

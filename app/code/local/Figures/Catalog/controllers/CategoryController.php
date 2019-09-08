@@ -4,8 +4,6 @@ require_once Mage::getModuleDir('controllers', 'Mage_Catalog').DS.'CategoryContr
 
 class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
 {
-    const PRODUCTS_PER_PAGE = 10;
-
     public function loadProductsAction()
     {
         $id = $this->getRequest()->getParam('category_id');
@@ -14,7 +12,7 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
         $page = $this->getRequest()->getParam('page') ?: 1;
         $data = [];
 
-        if ($id && $filters && $sort) {
+        if ($id && $sort) {
             $checkoutHelper = Mage::helper('checkout/cart');
             $cartItemsIds = $this->_getCartItemsProductIds();
             $category = Mage::getModel('catalog/category')->load($id);
@@ -23,7 +21,7 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
                 ->addAttributeToSelect('*')
                 ->addCategoryFilter($category);
 
-            $productCollection = $this->_getCategoryFiltersHelper()->filterCollection($productCollection, $filters, $sort, $page);
+            $productCollection = $this->_getCategoryFiltersHelper()->filterCollection($id, $productCollection, $filters, $sort, $page);
 
             foreach ($productCollection as $product) {
                 $data[] = [
@@ -42,7 +40,8 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
         $this->getResponse()->setBody($html);
     }
 
-    public function getCartItemsCountAction(){
+    public function getCartItemsCountAction()
+    {
         $count = (Mage::helper('checkout/cart')->getSummaryCount()) ? Mage::helper('checkout/cart')->getSummaryCount() : 0;
         $this->getResponse()->setBody($count);
     }
@@ -59,9 +58,9 @@ class Figures_Catalog_CategoryController extends Mage_Catalog_CategoryController
             $productCollection = Mage::getModel('catalog/product')->getCollection()
                 ->addAttributeToSelect('*')
                 ->addCategoryFilter($category);
+            $productCollection = $this->_getCategoryFiltersHelper()->filterCollection($id, $productCollection, $filters);
 
-            $productCollection = $this->_processFilters($productCollection, $filters);
-            $pagesCount = $productCollection->getSize() / static::PRODUCTS_PER_PAGE;
+            $pagesCount = $productCollection->getSize() / Figures_Catalog_Helper_CategoryFilters::PRODUCTS_PER_PAGE;
         }
 
         $this->getResponse()->setBody($pagesCount);

@@ -63,6 +63,11 @@ class CustomEntities
         return isset($mapping[$name]) ? $mapping[$name] : null;
     }
 
+    public static function getUrlById($id)
+    {
+        return static::$_attributesBunch[$id]['url_key'];
+    }
+
     /**
      * @return Mage_Core_Helper_Abstract|Figures_Catalog_Helper_CustomEntities
      */

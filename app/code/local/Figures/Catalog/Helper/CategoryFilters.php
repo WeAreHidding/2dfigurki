@@ -1,6 +1,8 @@
 <?php
 class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
 {
+    const PRODUCTS_PER_PAGE = 10;
+
     protected $_definedFilters = [
         'form' => [
             'front_id'    => CustomEntities::FORM_URL,
@@ -20,14 +22,14 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
             'type'        => 'check',
             'category_id' => CustomEntities::FANDOM_ID
         ],
-        'artist_id' => [
-            'front_id'   => 'designer',
-            'front_name' => 'Designer',
-            'type'       => 'check'
-        ]
+//        'artist_id' => [
+//            'front_id'   => 'designer',
+//            'front_name' => 'Designer',
+//            'type'       => 'check'
+//        ]
     ];
 
-    public function getAvailableFilters($productCollection)
+    public function getAvailableFilters($productCollection, $currentCategory)
     {
         $filters = $artistIds = [];
         foreach ($productCollection as $product) {
@@ -40,13 +42,19 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
             $artistIds[] = $product->getArtistId();
         }
 
-        $filters['artist_id'] = $this->_getArtistNamesByIds($artistIds);
+        $currentCategoryType = CustomEntities::helper()->getCategoryType($currentCategory);
+        unset($filters[$currentCategoryType]);
+
+        if (isset($this->_definedFilters['artist_id'])) {
+            $filters['artist_id'] = $this->_getArtistNamesByIds($artistIds);
+        }
 
         return $filters ? $this->_convertFiltersToHtml($filters) : false;
     }
 
-    public function filterCollection($productCollection, $filters, $sort = '', $page = '')
+    public function filterCollection($parentCatId, $productCollection, $filters, $sort = '', $page = '')
     {
+        $parentCategories = [$parentCatId];
         foreach ($filters as $filterId => $filter) {
             if (!$filter) {
                 continue;
@@ -55,9 +63,22 @@ class Figures_Catalog_Helper_CategoryFilters extends Mage_Core_Helper_Abstract
                 $filter = explode('-', $filter);
                 $productCollection->addFieldToFilter('price', ['from'=> $filter[0],'to'=> $filter[1]]);
                 continue;
+            } elseif (in_array($filterId ,[CustomEntities::FORM_URL, CustomEntities::GENRE_URL, CustomEntities::FANDOM_URL])) {
+                $parentCategories = array_merge($parentCategories, $filter);
+            } else {
+                $productCollection->addAttributeToFilter($filterId, ['in' => $filter]);
             }
+        }
 
-            $productCollection->addAttributeToFilter($filterId, ['in' => $filter]);
+        //filter by parent cats
+        $conditions = [];
+        foreach ($parentCategories as $parentCategoryId) {
+            if (is_numeric($parentCategoryId)) {
+                $conditions[] = "{{table}}.category_id = $parentCategoryId";
+            }
+        }
+        if ($conditions) {
+            $productCollection->distinct(true)->joinField('category_id', 'catalog/category_product', null, 'product_id = entity_id', implode(" OR ", $conditions), 'inner');
         }
 
         if ($sort && ($sort != 'default')) {

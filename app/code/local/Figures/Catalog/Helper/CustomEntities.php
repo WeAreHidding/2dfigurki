@@ -29,6 +29,17 @@ class Figures_Catalog_Helper_CustomEntities extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * Used for category filters (bad title)
+     *
+     * @param $category
+     * @return mixed
+     */
+    public function getCategoryType($category)
+    {
+        return CustomEntities::getUrlById($category->getData('parent_id'));
+    }
+
+    /**
      * @param $customEntityId
      * @param $filters
      * @param $asArray
