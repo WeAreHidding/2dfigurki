@@ -39,7 +39,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
 
 <head>
-<?php echo $this->getChildHtml('head') ?>
+    <?php echo $this->getChildHtml('head') ?>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
@@ -47,143 +47,14 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-
-        <div class="main text-center">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div id="3dfcarousel" class="carousel-inner" style="background: url(/media/images/orc_back.jpg) center top / cover no-repeat transparent;">
-                    <div id="firstSlide" class="carousel-item active">
-                        <img class="d-block" src="/media/images/alita-berserker.png" alt="First slide" style="max-height:400px; margin-left: auto; margin-right: auto;">
-                        <!--<div class="carousel-caption d-none d-md-block">
-                            <h3 class="text-white">Первый слайдер</h3>
-                            <p>БЛАБЛАБЛАБЛАБЛАБЛА</p>
-                        </div>-->
-                    </div>
-                    <div class="carousel-item" id="secondSlide">
-                        <img class="d-block" src="/media/images/saitama.png" alt="Second slide" style="max-height:400px; margin-left: auto; margin-right: auto;">
-                    </div>
-                    <div class="carousel-item" id="thirdSlide">
-                        <img class="d-block" src="/media/images/alita-berserker.png" alt="Third slide" style="max-height:400px; margin-left: auto; margin-right: auto;">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-            <?php echo $this->getChildHtml('breadcrumbs') ?>
-            <div class="col-main">
-                <?php echo $this->getChildHtml('global_messages') ?>
-                <?php //echo $this->getChildHtml('content') ?>
-            </div>
-        </div>
-        <script>
-
-
-           jQuery('#carouselExampleIndicators').on('slide.bs.carousel', function(e) {
-                if(e.relatedTarget.id == 'firstSlide'){
-                        jQuery('#3dfcarousel').css('background', 'url(/media/images/orc_back.jpg) center top / cover no-repeat transparent');
-
-                }else if(e.relatedTarget.id == 'thirdSlide'){
-                    jQuery('#3dfcarousel').css('background', 'url(/media/images/orc_back.jpg) center top / cover no-repeat transparent');
-                }
-                else{
-                    jQuery("#3dfcarousel").css('background', 'url(/media/images/OSk.jpg) center top / cover no-repeat transparent');
-                }
-
-            })
-
-        </script>
-
         <div class="main-container col2-right-layout">
-
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active font-weight-bold text-dark" href="#" style="font-size: 22px;">Новинки</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold text-dark" href="#" style="font-size: 22px;">Скидки</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold text-dark" href="#" style="font-size: 22px;">Скоро в продаже</a>
-                </li>
-            </ul>
-
-            <div class="row">
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <a href="#" style="text-decoration: none; color: inherit;">
-                        <div class="card">
-                            <img class="card-img-top" src="/media/images/prod1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Скорпион</h5>
-                                <p class="card-text font-weight-bold">400 тенге</p>
-                                <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                            </div>
-                        </div>
-                     </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/images/prod2.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Геральт из Ривии</h5>
-                            <p class="card-text font-weight-bold">700 тенге</p>
-                            <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/images/prod1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Скорпион</h5>
-                            <p class="card-text font-weight-bold">400 тенге</p>
-                            <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/images/prod2.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Геральт из Ривии</h5>
-                            <p class="card-text font-weight-bold">700 тенге</p>
-                            <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/images/prod1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Скорпион</h5>
-                            <p class="card-text font-weight-bold">400 тенге</p>
-                            <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pcardm">
-                    <div class="card">
-                        <img class="card-img-top" src="/media/images/prod1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Скорпион</h5>
-                            <p class="card-text font-weight-bold">400 тенге</p>
-                            <p class="card-text"><small class="text-muted">Высота: 20см</small></p>
-                        </div>
-                    </div>
+            <div class="main">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>
-
         </div>
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
@@ -194,9 +65,3 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
-
-<style>
-    .pcardm{
-        margin-top: 25px;
-    }
-</style>
