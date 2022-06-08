@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Class CustomEntities
+ */
 class CustomEntities
 {
     const FORM_ID     = 3;
