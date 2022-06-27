@@ -1,1 +1,276 @@
-<p>Zdarova</p>
+<style>
+    .close {
+        font-size: 1rem!important;
+    }
+    .card-header {
+        background: #f1f1f1;
+    }
+    .tab-content {
+        margin-top: 1rem;
+    }
+</style>
+
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-delivery-tab" data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-profile" aria-selected="false">Delivery</a>
+            <a class="nav-item nav-link" id="nav-payment-tab" data-toggle="tab" href="#nav-payment" role="tab" aria-controls="nav-payment" aria-selected="false">Payment</a>
+            <a class="nav-item nav-link" id="nav-download-tab" data-toggle="tab" href="#nav-download" role="tab" aria-controls="nav-download" aria-selected="false">Download</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-selected="false">Close Account</a>
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="card">
+                <div class="card-header">
+                    General Settings
+                </div>
+                <div class="card-body">
+                    <form class="form-group">
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+                                <label>Profile Picture</label>
+                                <div class="form-group">
+                                    <input type="file">
+                                    <br>
+                                    <small class="text-muted">Must be a .jpg, .gif or .png file smaller then 10MB and at least 400px by 400px</small>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>Wallpaper</label>
+                                <div class="form-group">
+                                    <input type="file">
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>Your name</label>
+                                <div class="form-group">
+                                    <span>Sultan kembayev</span>
+                                    <a href="/">Change or remove</a>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>Gender</label>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="radio" name="general-gender">
+                                        Male
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="general-gender">
+                                        Female
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="general-gender">
+                                        Prefer not say
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>City</label>
+                                <div class="form-group">
+                                    <input type="text">
+                                    <br>
+                                    <small class="text-muted">Start typing and choose from a suggested city to help find you.</small>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>Birthday</label>
+                                <div class="form-group">
+                                    <select name="" id="">
+                                        <option value="1">January</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <label>About</label>
+                                <div class="form-group">
+                                    <textarea name="" id="" cols="10" rows="8"></textarea>
+                                    <br>
+                                    <small class="text-muted">Tell people a little about yourself.</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-delivery" role="tabpanel" aria-labelledby="nav-delivery-tab">
+            <div class="card">
+                <div class="card-header">
+                    Delivery settings
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <form class="form-group">
+                                <div class="form-group">
+                                    <label for="delivery_full_name">Full name</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter Full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">Address line 1</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter Address line 1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">Address line 2</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter Address line 2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">State</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter State">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">City</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter City">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">ZIP code</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter ZIP code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">Country</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter Country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_full_name">Full name</label>
+                                    <input type="email" class="form-control" id="delivery_full_name" placeholder="Enter Full name">
+                                </div>
+                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <div class="card form-group">
+                                    <div class="card-header">
+                                        <button type="button" class="close" >
+                                            <span>x</span>
+                                        </button>
+                                        Address 1
+                                    </div>
+                                    <div class="card-body">
+                                        Full name
+                                        Address line 1
+                                        Address line 2
+                                        State, city, ZIP code
+                                        Country
+                                    </div>
+                                </div>
+                                <div class="card form-group">
+                                    <div class="card-header">
+                                        <button type="button" class="close" >
+                                            <span>x</span>
+                                        </button>
+                                        Address 2
+                                    </div>
+                                    <div class="card-body">
+                                        Full name
+                                        Address line 1
+                                        Address line 2
+                                        State, city, ZIP code
+                                        Country
+                                    </div>
+                                </div>
+                                <div class="card form-group">
+                                    <div class="card-header">
+                                        <button type="button" class="close" >
+                                            <span>x</span>
+                                        </button>
+                                        Address 3 test large text lalal
+                                    </div>
+                                    <div class="card-body">
+                                        Full name
+                                        Address line 1
+                                        Address line 2
+                                        State, city, ZIP code
+                                        Country
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab">
+            <div class="card">
+                <div class="card-header">
+                    Redeem commissions
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="payment-method">
+                                Paypal
+                            </label>
+                            <br>
+                            <input type="text" placeholder="Paypal email address" alt="Paypal email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="payment-method">
+                                Credit card
+                            </label>
+
+                            <div class="d-flex justify-content-start w-100">
+                                <div class="d-flex w-25">
+                                    <img class="mr-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2560px-Old_Visa_Logo.svg.png" width="50" height="35" alt="Visa">
+                                    <ul class="d-flex flex-wrap flex-column">
+                                        <li>Visa ending in 9510</li>
+                                        <li>Exp: 08 / 2021</li>
+                                        <li>Sultan Kembayev</li>
+                                        <li><small>Default credit card</small></li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <button class="btn btn-info w-100 mb-1">Use this card</button>
+                                    <div class="d-flex flex-nowrap w-100">
+                                        <button class="btn w-100 mr-1">Edit</button>
+                                        <button class="btn w-100 ml-1" disabled>Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="payment-method">
+                                Qiwi
+                            </label>
+                            <br>
+                            <input type="text" placeholder="Paypal email address" alt="Qiwi number">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-download" role="tabpanel" aria-labelledby="nav-download-tab">
+            <div class="card">
+                <div class="card-header">
+                    Download
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
