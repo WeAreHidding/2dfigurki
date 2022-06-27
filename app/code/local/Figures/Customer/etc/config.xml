@@ -5,7 +5,18 @@
             <version>0.1.0</version>
         </Figures_Customer>
     </modules>
-
+    <global>
+        <helpers>
+            <figures_customer>
+                <class>Figures_Customer_Helper</class>
+            </figures_customer>
+        </helpers>
+        <models>
+            <figures_customer>
+                <class>Figures_Customer_Model</class>
+            </figures_customer>
+        </models>
+    </global>
     <frontend>
         <routers>
             <customer>
