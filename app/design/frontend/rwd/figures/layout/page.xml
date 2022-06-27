@@ -39,6 +39,7 @@
                 <action method="addJs"><script>lib/jquery/jquery-1.12.0.min.js</script></action>
                 <action method="addJs"><script>lib/jquery/jquery-ui-1.9.2.min.js</script></action>
                 <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
+                <action method="addJs"><script>prototype/prototype-fix.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
                 <action method="addJs"><script>prototype/validation.js</script></action>
                 <action method="addJs"><script>scriptaculous/builder.js</script></action>
