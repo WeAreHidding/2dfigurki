@@ -39,12 +39,12 @@ class Figures_Customer_AccountController extends Mage_Customer_AccountController
                 $customer->cleanPasswordsValidationData();
                 $customer->setPasswordCreatedAt(time());
                 $customer->save();
-//                if ($this->getRequest()->getPost('become_a_partner')) {
+                if ($this->getRequest()->getPost('become_a_partner')) {
                     $customer->setGroupId(20);
                     $this->_getComissionModel()->setStartComission($customer->getId());
                     $this->_getMoneyModel()->setStartMoney($customer->getId());
                     $customer->save();
-//                }
+                }
                 $address = Mage::getModel("customer/address");
                 $address->setCustomerId($customer->getId())
                     ->setFirstname($customer->getFirstname())
@@ -79,7 +79,7 @@ class Figures_Customer_AccountController extends Mage_Customer_AccountController
      */
     public function indexAction()
     {
-        $this->_redirect('customer_dashboard');
+        parent::indexAction();
     }
 
     /**
